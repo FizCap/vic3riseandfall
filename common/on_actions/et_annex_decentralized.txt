@@ -1,4 +1,7 @@
-﻿on_game_started = {
+﻿on_game_started_after_lobby = {
+    trigger = {
+        has_game_rule = et_annex_decentralized_annexation_enabled
+    }
     events = {
         annex_decentralized.1
     }

@@ -1,0 +1,10 @@
+et_annex_decentralized_annexation_rule = {
+	default = et_annex_decentralized_annexation_enabled
+
+	et_annex_decentralized_annexation_enabled = {
+		flag = et_annex_decentralized_annexation_enabled
+	}
+	
+	et_annex_decentralized_annexation_disabled = {
+	}
+}

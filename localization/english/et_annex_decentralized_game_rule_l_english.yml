@@ -1,0 +1,6 @@
+l_english:
+ rule_et_annex_decentralized_annexation_rule: "Annex Decentralized Nations"
+ setting_et_annex_decentralized_annexation_enabled: "Enabled"
+ setting_et_annex_decentralized_annexation_enabled_desc: "Annexation of decentralized nations is allowed."
+ setting_et_annex_decentralized_annexation_disabled: "Disabled"
+ setting_et_annex_decentralized_annexation_disabled_desc: "Annexation of decentralized nations is not allowed."

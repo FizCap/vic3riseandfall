@@ -30,6 +30,309 @@
 				pious reserved cautious
 			}
 		}
+
+		# Historical Shoguns
+		create_character = {
+			first_name = "Yoshinori"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1394.01.22
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshikatsu"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1434.03.19
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshimasa"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { pious reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1436.01.20
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshihisa"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1465.12.11
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshitane"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1466.09.09
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshizumi"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1481.01.15
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshiharu"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1511.04.02
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshiteru"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { brave }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1536.03.31
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshihide"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1538.01.01
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshiaki"
+			last_name = "Ashikaga"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1537.12.05
+			ig_leader = yes
+		}
+		# Tokugawa Shogunate
+		create_character = {
+			first_name = "Ieyasu"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1543.01.31
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Hidetada"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1579.05.02
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Iemitsu"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1604.08.12
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Ietsuna"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1641.09.07
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Tsunayoshi"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { pious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1646.02.23
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Ienobu"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1662.04.11
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Ietsugu"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1709.08.08
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshimune"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reformer }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1684.11.27
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Ieshige"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1712.01.28
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Ieharu"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1737.06.20
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Ienari"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1773.11.18
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Ieyoshi"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1793.06.22
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Iesada"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { cautious }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1824.05.06
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Iemochi"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reserved }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1846.07.17
+			ig_leader = yes
+		}
+		create_character = {
+			first_name = "Yoshinobu"
+			last_name = "Tokugawa"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			traits = { reformer }
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1837.10.28
+			ig_leader = yes
+		}
 	}
 }
 

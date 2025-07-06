@@ -1,0 +1,21 @@
+namespace = annex_decentralized_unlimited
+
+annex_decentralized_unlimited.1 = {
+    hidden = yes
+
+    immediate = {
+        every_decentralized_country = {
+            save_scope_as = annexing_country
+            every_decentralized_country = {
+                limit = {
+                    any_scope_state = {
+                        any_neighbouring_state = { owner = scope:annexing_country }
+                    }
+                }
+                scope:annexing_country = { annex = PREV }
+            }
+        }
+    }
+}
+
+#Credit to CaesarVincens for the script

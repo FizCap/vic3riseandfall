@@ -1,10 +1,14 @@
-et_annex_decentralized_annexation_rule = {
-	default = et_annex_decentralized_annexation_enabled
+﻿et_annex_decentralized_annexation = {
+	default = annexation_disabled
 
-	et_annex_decentralized_annexation_enabled = {
-		flag = et_annex_decentralized_annexation_enabled
+	annexation_unlimited = {
+		flag = et_annex_decentralized_unlimited
 	}
-	
-	et_annex_decentralized_annexation_disabled = {
+
+	annexation_limited = {
+		flag = et_annex_decentralized_limited
+	}
+
+	annexation_disabled = {
 	}
 }

@@ -11,14 +11,14 @@ et_annex_decentralized_monthly = {
     effect = {
         if = {
             limit = {
-                year <= 1447
+                year <= 1703
                 has_game_rule = annexation_unlimited
             }
             trigger_event = annex_decentralized_unlimited.1
         }
         else_if = {
             limit = {
-                year <= 1447
+                year <= 1703
                 has_game_rule = annexation_limited
             }
             trigger_event = annex_decentralized_limited.1

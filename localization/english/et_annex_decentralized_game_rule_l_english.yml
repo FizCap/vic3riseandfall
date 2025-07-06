@@ -1,6 +1,8 @@
-l_english:
- rule_et_annex_decentralized_annexation_rule: "Annex Decentralized Nations"
- setting_et_annex_decentralized_annexation_enabled: "Enabled"
- setting_et_annex_decentralized_annexation_enabled_desc: "Annexation of decentralized nations is allowed."
- setting_et_annex_decentralized_annexation_disabled: "Disabled"
- setting_et_annex_decentralized_annexation_disabled_desc: "Annexation of decentralized nations is not allowed."
+﻿l_english:
+ rule_et_annex_decentralized_annexation: "Annex Decentralized Nations (Performance)"
+ setting_annexation_unlimited: "Unlimited Annexation"
+ setting_annexation_unlimited_desc: "Will keep merging decentralized nations until only a few remain."
+ setting_annexation_limited: "Limited Annexation"
+ setting_annexation_limited_desc: "Every month, a few decentralized nations will be merged together, but several will always remain."
+ setting_annexation_disabled: "Disabled"
+ setting_annexation_disabled_desc: "No automatic merging of decentralized nations."

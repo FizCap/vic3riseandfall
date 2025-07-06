@@ -1,8 +1,27 @@
-﻿on_game_started_after_lobby = {
-    trigger = {
-        has_game_rule = et_annex_decentralized_annexation_enabled
+﻿on_monthly_pulse = {
+    on_actions = {
+        et_annex_decentralized_monthly
     }
-    events = {
-        annex_decentralized.1
+}
+
+et_annex_decentralized_monthly = {
+    trigger = {
+        always = yes
+    }
+    effect = {
+        if = {
+            limit = {
+                year <= 1447
+                has_game_rule = annexation_unlimited
+            }
+            trigger_event = annex_decentralized_unlimited.1
+        }
+        else_if = {
+            limit = {
+                year <= 1447
+                has_game_rule = annexation_limited
+            }
+            trigger_event = annex_decentralized_limited.1
+        }
     }
 }

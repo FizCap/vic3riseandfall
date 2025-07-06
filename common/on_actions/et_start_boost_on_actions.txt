@@ -87,7 +87,7 @@ start_boost4 = {
       }
       add_modifier = {
         name = start_boost_country_modifier4
-        days = 1095
+        years = 1
       }
     }
   }

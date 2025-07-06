@@ -6,7 +6,7 @@ annex_decentralized_limited.1 = {
     immediate = {
         if = {
             limit = {
-                random_chance = 40
+                random_chance = 5
             }
             every_decentralized_country = {
                 limit = {

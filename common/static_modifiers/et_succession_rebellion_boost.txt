@@ -1,0 +1,5 @@
+et_succession_rebellion_boost = {
+    state_conscription_rate_mult = 20 
+    country_tax_income_add = 20000
+    state_tax_collection_mult = 10
+}

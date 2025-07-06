@@ -81,7 +81,10 @@ start_boost3 = {
 start_boost4 = {
   effect = {
     every_state = {
-      limit = { state_population < 10000 }
+      limit = { 
+        state_population < 10000 
+        NOT = { has_modifier = start_boost_country_modifier4 }
+      }
       add_modifier = {
         name = start_boost_country_modifier4
         days = 1095

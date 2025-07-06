@@ -36,3 +36,7 @@
   holy_roman_emperor: "Holy Roman Emperor"
   identity_holy_roman_empire: "Holy Roman Empire"
   identity_holy_roman_empire_desc: "The Holy Roman Empire is a complex political entity that unites various Germanic states under a loose confederation, with the Emperor serving as a symbolic leader. It is characterized by its decentralized structure and the coexistence of numerous semi-autonomous principalities, duchies, and free cities."
+  jap_1444.1.t: "The Shogunate's Supremacy"
+  jap_1444.1.d: "In 1444, Japan is ruled in the name of the Emperor, but true power lies with the Ashikaga Shogunate and the landowning class. The daimyo and their samurai enforce a rigid social order, and the shogun's authority is unchallenged. This dominance will shape Japan for centuries, but nothing lasts forever."
+  jap_1444.1.a: "Acknowledge the Shogunate’s Power"
+  jap_landowners_supremacy: "Shogunate"

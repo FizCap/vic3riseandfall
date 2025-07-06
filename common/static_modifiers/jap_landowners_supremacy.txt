@@ -1,0 +1,4 @@
+jap_landowners_supremacy = {
+    interest_group_pol_str_mult = 1.0 # 100% stronger
+    icon = generic_political_power
+}

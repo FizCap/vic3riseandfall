@@ -1,15 +1,35 @@
 ﻿CHARACTERS = {
 	c:JAP = {
 		create_character = {
-			first_name = "Yoshimasa"
+			first_name = "Yoshinari"
 			last_name = "Ashikaga"
-			ruler = yes
+			historical = yes
 			culture = cu:japanese
 			religion = rel:mahayana
 			traits = {
-				direct senile 
+				reserved
 			}
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			birth_date = 1436.01.20
+			ig_leader = yes
 		}
 
+		# Emperor Go-Hanazono
+		create_character = {
+			first_name = "Hikohito"
+			last_name = "Yamato"
+			historical = yes
+			culture = cu:japanese
+			religion = rel:mahayana
+			ruler = yes
+			birth_date = 1419.07.10
+			interest_group = ig_landowners
+			ideology = ideology_traditionalist
+			traits = {
+				pious reserved cautious
+			}
+		}
 	}
 }
+

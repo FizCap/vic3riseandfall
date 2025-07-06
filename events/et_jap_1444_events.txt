@@ -1,0 +1,23 @@
+namespace = jap_1444
+
+# Event: The Shogunate's Supremacy in 1444
+jap_1444.1 = {
+    type = country_event
+    title = jap_1444.1.t
+    desc = jap_1444.1.d
+    picture = GFX_event_japan_shogunate
+    duration = 1
+    trigger = {
+        tag = JAP
+        year = 1444
+    }
+    immediate = { }
+    option = {
+        name = jap_1444.1.a
+        add_modifier = {
+            name = jap_landowners_supremacy
+            days = 73000 # 200 years
+            is_decaying = yes
+        }
+    }
+}

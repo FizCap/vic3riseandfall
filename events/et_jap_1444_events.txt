@@ -1,4 +1,4 @@
-namespace = jap_1444
+﻿namespace = jap_1444
 
 # Event: The Shogunate's Supremacy in 1444
 jap_1444.1 = {

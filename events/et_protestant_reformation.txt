@@ -1,4 +1,4 @@
-et_protestant_reformation.2 = {
+﻿et_protestant_reformation.2 = {
 	title = "The Protestant Reformation"
 	desc = "Will you remain Catholic or embrace Protestantism?"
 	picture = event_picture_religion

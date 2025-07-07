@@ -13,6 +13,7 @@
 			earliest_usage_date = 1436.01.20
 			latest_usage_date = 1446.01.20
 			ig_leader = yes
+			chance = 100
 		}
 
 		# Emperor Go-Hanazono
@@ -31,6 +32,7 @@
 			}
 			earliest_usage_date = 1419.07.10
 			latest_usage_date = 1429.07.10
+			chance = 100
 		}
 
 		# Historical Shoguns
@@ -46,6 +48,7 @@
 			birth_date = 1394.01.22
 			earliest_usage_date = 1394.01.22
 			latest_usage_date = 1404.01.22
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshikatsu
@@ -59,6 +62,7 @@
 			birth_date = 1434.03.19
 			earliest_usage_date = 1434.03.19
 			latest_usage_date = 1444.03.19
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshimasa
@@ -72,6 +76,7 @@
 			birth_date = 1436.01.20
 			earliest_usage_date = 1436.01.20
 			latest_usage_date = 1446.01.20
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshihisa
@@ -85,6 +90,7 @@
 			birth_date = 1465.12.11
 			earliest_usage_date = 1465.12.11
 			latest_usage_date = 1475.12.11
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshitane
@@ -98,6 +104,7 @@
 			birth_date = 1466.09.09
 			earliest_usage_date = 1466.09.09
 			latest_usage_date = 1476.09.09
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshizumi
@@ -111,6 +118,7 @@
 			birth_date = 1481.01.15
 			earliest_usage_date = 1481.01.15
 			latest_usage_date = 1491.01.15
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshiharu
@@ -124,6 +132,7 @@
 			birth_date = 1511.04.02
 			earliest_usage_date = 1511.04.02
 			latest_usage_date = 1521.04.02
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshiteru
@@ -137,6 +146,7 @@
 			birth_date = 1536.03.31
 			earliest_usage_date = 1536.03.31
 			latest_usage_date = 1546.03.31
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshihide
@@ -150,6 +160,7 @@
 			birth_date = 1538.01.01
 			earliest_usage_date = 1538.01.01
 			latest_usage_date = 1548.01.01
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshiaki
@@ -163,6 +174,7 @@
 			birth_date = 1537.12.05
 			earliest_usage_date = 1537.12.05
 			latest_usage_date = 1547.12.05
+			chance = 100
 		}
 		# Tokugawa Shogunate
 		create_character = {
@@ -177,6 +189,7 @@
 			birth_date = 1543.01.31
 			earliest_usage_date = 1543.01.31
 			latest_usage_date = 1553.01.31
+			chance = 100
 		}
 		create_character = {
 			first_name = Hidetada
@@ -190,6 +203,7 @@
 			birth_date = 1579.05.02
 			earliest_usage_date = 1579.05.02
 			latest_usage_date = 1589.05.02
+			chance = 100
 		}
 		create_character = {
 			first_name = Iemitsu
@@ -203,6 +217,7 @@
 			birth_date = 1604.08.12
 			earliest_usage_date = 1604.08.12
 			latest_usage_date = 1614.08.12
+			chance = 100
 		}
 		create_character = {
 			first_name = Ietsuna
@@ -216,6 +231,7 @@
 			birth_date = 1641.09.07
 			earliest_usage_date = 1641.09.07
 			latest_usage_date = 1651.09.07
+			chance = 100
 		}
 		create_character = {
 			first_name = Tsunayoshi
@@ -229,6 +245,7 @@
 			birth_date = 1646.02.23
 			earliest_usage_date = 1646.02.23
 			latest_usage_date = 1656.02.23
+			chance = 100
 		}
 		create_character = {
 			first_name = Ienobu
@@ -242,6 +259,7 @@
 			birth_date = 1662.04.11
 			earliest_usage_date = 1662.04.11
 			latest_usage_date = 1672.04.11
+			chance = 100
 		}
 		create_character = {
 			first_name = Ietsugu
@@ -255,6 +273,7 @@
 			birth_date = 1709.08.08
 			earliest_usage_date = 1709.08.08
 			latest_usage_date = 1719.08.08
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshimune
@@ -268,6 +287,7 @@
 			birth_date = 1684.11.27
 			earliest_usage_date = 1684.11.27
 			latest_usage_date = 1694.11.27
+			chance = 100
 		}
 		create_character = {
 			first_name = Ieshige
@@ -281,6 +301,7 @@
 			birth_date = 1712.01.28
 			earliest_usage_date = 1712.01.28
 			latest_usage_date = 1722.01.28
+			chance = 100
 		}
 		create_character = {
 			first_name = Ieharu
@@ -294,6 +315,7 @@
 			birth_date = 1737.06.20
 			earliest_usage_date = 1737.06.20
 			latest_usage_date = 1747.06.20
+			chance = 100
 		}
 		create_character = {
 			first_name = Ienari
@@ -307,6 +329,7 @@
 			birth_date = 1773.11.18
 			earliest_usage_date = 1773.11.18
 			latest_usage_date = 1783.11.18
+			chance = 100
 		}
 		create_character = {
 			first_name = Ieyoshi
@@ -320,6 +343,7 @@
 			birth_date = 1793.06.22
 			earliest_usage_date = 1793.06.22
 			latest_usage_date = 1803.06.22
+			chance = 100
 		}
 		create_character = {
 			first_name = Iesada
@@ -333,6 +357,7 @@
 			birth_date = 1824.05.06
 			earliest_usage_date = 1824.05.06
 			latest_usage_date = 1834.05.06
+			chance = 100
 		}
 		create_character = {
 			first_name = Iemochi
@@ -346,6 +371,7 @@
 			birth_date = 1846.07.17
 			earliest_usage_date = 1846.07.17
 			latest_usage_date = 1856.07.17
+			chance = 100
 		}
 		create_character = {
 			first_name = Yoshinobu
@@ -359,6 +385,7 @@
 			birth_date = 1837.10.28
 			earliest_usage_date = 1837.10.28
 			latest_usage_date = 1847.10.28
+			chance = 100
 		}
 	}
 }

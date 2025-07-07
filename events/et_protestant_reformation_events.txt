@@ -18,7 +18,9 @@ et_protestant_reformation.1 = {
 et_protestant_reformation.2 = {
 	title = "The Protestant Reformation"
 	desc = "Will you remain Catholic or embrace Protestantism?"
-	picture = event_picture_religion
+	event_image = {
+		texture = "gfx/event_pictures/protestant_reformation.dds"
+	}
 	duration = 3
 
 	option = {

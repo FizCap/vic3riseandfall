@@ -2,5 +2,10 @@ namespace = caucasuswar
 
 # Overridden by Victoria3Timeline mod to disable the Milyutin Memorandum event
 caucasuswar.5 = {
-    # Disabled by mod for 1444 start
+    trigger = {
+        date < 1443.1.1
+    }
+    fire_only_once = yes
+    hidden = yes
+    duration = 1
 }

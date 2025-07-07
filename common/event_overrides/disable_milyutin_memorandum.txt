@@ -1,0 +1,7 @@
+# Disable the Milyutin Memorandum event and prevent Dmitri Milyutin from being generated
+
+event_override = {
+    # Disables the vanilla Milyutin Memorandum event (caucasuswar.5)
+    event = "caucasuswar.5"
+    disabled = yes
+}

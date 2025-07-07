@@ -19,3 +19,9 @@ FRA_louis_bonaparte = {
 FRA_victor_bonaparte = {
     # Disabled by Victoria3Timeline mod
 }
+
+disable_milyutin_memorandum_event = {
+    # Disables the vanilla Milyutin Memorandum event (caucasuswar.5)
+    event = "caucasuswar.5"
+    disabled = yes
+}

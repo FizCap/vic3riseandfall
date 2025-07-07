@@ -6,7 +6,9 @@ et_fatpenguin_tech_choice.1 = {
 	placement = ROOT
 	title = et_fatpenguin_tech_choice.1.t
 	desc = et_fatpenguin_tech_choice.1.d
-	picture = GFX_evt_technology
+	event_image = {
+		texture = "gfx/event_pictures/fatpenguin_event.dds"
+	}
 	duration = 3
 	trigger = { always = yes }
 	option = {

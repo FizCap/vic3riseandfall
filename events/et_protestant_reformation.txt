@@ -1,0 +1,24 @@
+﻿et_protestant_reformation.2 = {
+	title = "The Protestant Reformation"
+	desc = "Will you remain Catholic or embrace Protestantism?"
+	event_image = {
+		texture = "gfx/event_pictures/protestant_reformation.dds"
+	}
+	option = {
+		name = "Remain Catholic"
+		ai_chance = { factor = 50 }
+		# No effect
+	}
+	option = {
+		name = "Embrace Protestantism"
+		ai_chance = { factor = 50 }
+		add_modifier = { name = protestant_reformation_conversion_modifier days = 10950 }
+		set_state_religion = rel:protestant
+		every_scope_state = {
+			if = {
+				limit = { is_incorporated = yes }
+				convert_population = { target = rel:protestant value = 0.1 }
+			}
+		}
+	}
+}

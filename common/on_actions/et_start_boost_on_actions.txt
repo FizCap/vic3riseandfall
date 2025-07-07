@@ -37,7 +37,7 @@ start_boost2 = {
       has_game_rule = economic_boost_medium
       has_game_rule = economic_boost_high
     }
-    game_date <= 1544.1.1
+    game_date <= 1850.1.1
   }
   effect = {
     every_country = {

@@ -5,7 +5,9 @@ et_protestant_reformation.1 = {
   type = major_event
   title = et_protestant_reformation.1.t
   desc = et_protestant_reformation.1.d
-  picture = GFX_evt_reformation
+	event_image = {
+		texture = "gfx/event_pictures/protestant_reformation.dds"
+	}
   duration = 3
   option = {
     name = et_protestant_reformation.1.a

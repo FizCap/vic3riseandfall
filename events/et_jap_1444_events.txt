@@ -5,7 +5,9 @@ jap_1444.1 = {
     type = country_event
     title = jap_1444.1.t
     desc = jap_1444.1.d
-    picture = GFX_event_japan_shogunate
+	event_image = {
+		texture = "gfx/event_pictures/shogunate.dds"
+	}
     duration = 1
     trigger = {
         tag = JAP

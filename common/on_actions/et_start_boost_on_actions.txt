@@ -87,7 +87,11 @@ start_boost4 = {
       }
       add_modifier = {
         name = start_boost_country_modifier4
-        years = 1
+        duration = 0
+      }
+      if = {
+        limit = { state_population > 30000 has_modifier = start_boost_country_modifier4 }
+        remove_modifier = start_boost_country_modifier4
       }
     }
   }

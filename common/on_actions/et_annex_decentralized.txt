@@ -11,14 +11,14 @@ et_annex_decentralized_monthly = {
     effect = {
         if = {
             limit = {
-                year <= 1703
+                year <= 1447
                 has_game_rule = annexation_unlimited
             }
             et_annex_decentralized_unlimited_effect = yes
         }
         else_if = {
             limit = {
-                year <= 1703
+                year <= 1447
                 has_game_rule = annexation_limited
             }
             et_annex_decentralized_limited_effect = yes

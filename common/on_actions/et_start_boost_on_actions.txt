@@ -18,9 +18,9 @@ on_yearly_pulse = {
   on_actions = { start_boost5 } 
 }
 
-
-
+# Economic Boost Game Rule Effects
 start_boost = {
+  trigger = { has_game_rule = economic_boost_high }
   effect = {
     every_country = {
       add_modifier = {
@@ -32,7 +32,13 @@ start_boost = {
 }
 
 start_boost2 = {
-  trigger = { game_date <= 1544.1.1 }
+  trigger = {
+    OR = {
+      has_game_rule = economic_boost_medium
+      has_game_rule = economic_boost_high
+    }
+    game_date <= 1544.1.1
+  }
   effect = {
     every_country = {
       add_modifier = {
@@ -44,6 +50,12 @@ start_boost2 = {
 }
 
 start_boost3 = {
+  trigger = {
+    OR = {
+      has_game_rule = economic_boost_medium
+      has_game_rule = economic_boost_high
+    }
+  }
   effect = {
     every_country = {
       every_scope_state = {
@@ -79,15 +91,30 @@ start_boost3 = {
 }
 
 start_boost4 = {
+  trigger = {
+    OR = {
+      has_game_rule = economic_boost_medium
+      has_game_rule = economic_boost_high
+    }
+  }
   effect = {
     every_state = {
-      limit = { 
-        state_population < 10000 
-        NOT = { has_modifier = start_boost_country_modifier4 }
+      if = {
+        limit = { 
+          state_population < 10000 
+          NOT = { has_modifier = start_boost_country_modifier4 }
+        }
+        add_modifier = {
+          name = start_boost_country_modifier4
+          duration = 0
+        }
       }
-      add_modifier = {
-        name = start_boost_country_modifier4
-        days = 1095
+      if = {
+        limit = {
+          state_population > 30000
+          has_modifier = start_boost_country_modifier4
+        }
+        remove_modifier = start_boost_country_modifier4
       }
     }
   }

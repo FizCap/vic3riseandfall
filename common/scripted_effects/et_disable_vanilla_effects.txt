@@ -1,0 +1,21 @@
+# Disable all vanilla scripted effects that spawn French monarchs and Bonapartists
+
+generate_french_monarch = {
+    # Disabled by Victoria3Timeline mod for 1444 start
+}
+
+fra_napoleon_iii_character_template = {
+    # Disabled by Victoria3Timeline mod
+}
+
+FRA_napoleon_eugene_louis_bonaparte = {
+    # Disabled by Victoria3Timeline mod
+}
+
+FRA_louis_bonaparte = {
+    # Disabled by Victoria3Timeline mod
+}
+
+FRA_victor_bonaparte = {
+    # Disabled by Victoria3Timeline mod
+}

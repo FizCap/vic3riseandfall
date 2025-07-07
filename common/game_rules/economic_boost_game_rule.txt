@@ -1,0 +1,14 @@
+economic_boost = {
+	default = economic_boost_disabled
+
+	economic_boost_high = {
+		flag = economic_boost_high
+	}
+
+	economic_boost_medium = {
+		flag = economic_boost_medium
+	}
+
+	economic_boost_disabled = {
+	}
+}

@@ -1,0 +1,17 @@
+﻿namespace = et_ottomans
+
+# Rise of the Ottomans - World Event (text only)
+et_ottomans.1 = {
+  type = major_event
+  title = et_ottomans.1.t
+  desc = et_ottomans.1.d
+  event_image = {
+    texture = "gfx/event_pictures/riseofthe_ottomans.dds"
+  }
+  duration = 3
+  option = {
+    name = et_ottomans.1.a
+    # No effects, just text
+  }
+}
+

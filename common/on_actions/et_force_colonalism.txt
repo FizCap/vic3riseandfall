@@ -21,6 +21,10 @@ force_colonialism = {
       }
       activate_law = law_type:law_slave_trade
       activate_law = law_type:law_colonial_exploitation
+      add_modifier = {
+        name = ageofcolonialism_modfier
+        years = 50
+      }
     }
     every_country = {
       limit = { is_player = yes }

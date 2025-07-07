@@ -1,4 +1,4 @@
-namespace = caucasuswar
+﻿namespace = caucasuswar
 
 # Overridden by Victoria3Timeline mod to disable the Milyutin Memorandum event
 caucasuswar.5 = {

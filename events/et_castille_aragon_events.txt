@@ -1,0 +1,16 @@
+namespace = et_castille_aragon
+
+# Castille-Aragon Personal Union - World Event (text only)
+et_castille_aragon.1 = {
+  type = major_event
+  title = et_castille_aragon.1.t
+  desc = et_castille_aragon.1.d
+  event_image = {
+    texture = "gfx/event_pictures/castille_aragon_union.dds"
+  }
+  duration = 3
+  option = {
+    name = et_castille_aragon.1.a
+    # No effects, just text
+  }
+}

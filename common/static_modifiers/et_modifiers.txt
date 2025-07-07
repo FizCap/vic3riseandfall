@@ -32,3 +32,8 @@ holy_roman_emperor = {
     country_prestige_add = 500
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }
+
+ageofcolonialism_modfier = {
+    country_max_declared_interests_add = 30
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}

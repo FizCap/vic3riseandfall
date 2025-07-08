@@ -175,4 +175,15 @@
     }
     remove_homeland = cu:australian
   }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:mongol
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:mongol value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:mongol
+  }
 }

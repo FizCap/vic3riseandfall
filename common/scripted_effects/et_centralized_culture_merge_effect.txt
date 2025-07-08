@@ -1,10 +1,4 @@
-﻿on_game_started_after_lobby = {
-    on_actions = {
-        et_centralized_culture_merge_effect
-    }
-}
-
-et_centralized_culture_merge_effect = {
+﻿et_centralized_culture_merge_effect = {
     effect = {
         if = {
             limit = { 
@@ -3241,4 +3235,3 @@ et_centralized_culture_merge_effect = {
 		}
 	}
 }
-

@@ -6413,7 +6413,7 @@ NOR = {
 	tier = kingdom
 	cultures = { norwegian }
 	religion = catholic
-	capital = STATE_WESTERN_NORWAY
+	capital = STATE_EASTERN_NORWAY
 }
 
 NPU = {

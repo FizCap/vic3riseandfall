@@ -132,8 +132,12 @@ protestant_reformation2 = {
     effect = {
         every_country = {
             limit = {
-                country_has_primary_culture = cu:north_german
+                OR = {
+                    country_has_primary_culture = cu:south_german
+                    country_has_primary_culture = cu:north_german
+                }
                 NOT = { this = c:U78 }
+                NOT = { this = c:AUS }
             }
             custom_tooltip = protestant_reformation2_tt
             trigger_event = { id = et_protestant_reformation.2 }

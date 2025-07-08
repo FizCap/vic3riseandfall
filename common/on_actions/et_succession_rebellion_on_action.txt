@@ -1,18 +1,10 @@
-on_revolution_start = {
-    on_actions = { rebellion_start }
-}
-
-
-
 on_secession_start = {
     on_actions = { rebellion_start }
-}
 
-
-
-rebellion_start = {
-    effect = {
-        scope:target = {
+    rebellion_start = {
+        immediate = {
+            every_country = {
+                limit = { is_secessionist = yes }
                 add_modifier = {
                     name = et_succession_rebellion_boost
                     years = 5
@@ -20,3 +12,4 @@ rebellion_start = {
             }
         }
     }
+}

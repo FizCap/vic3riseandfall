@@ -80,11 +80,15 @@ et_ottomans_rise = {
         s:STATE_EAST_AEGEAN_ISLANDS = {
             add_claim = c:TUR
         }
+        c:TUR = {
+            trigger_event = { id = et_ottomans.1 }
         }
         every_country = {
+            limit = { NOT = { this = c:TUR } }
             trigger_event = { id = et_ottomans.1 }
         }
     }
+}
 
 protestant_reformation1 = {
     trigger = { year = 1518 }

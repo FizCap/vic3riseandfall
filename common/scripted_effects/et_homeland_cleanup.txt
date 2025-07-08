@@ -1,0 +1,178 @@
+﻿et_homeland_cleanup = {
+  every_state_region = {
+    limit = {
+      has_homeland = cu:yankee
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:yankee value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:yankee
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:russian
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:russian value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:russian
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:dixie
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:dixie value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:dixie
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:boer
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:boer value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:boer
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:afro_american
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:afro_american value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:afro_american
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:afro_antillean
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:afro_antillean value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:afro_antillean
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:mexican
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:mexican value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:mexican
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:central_american
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:central_american value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:central_american
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:afro_caribeno
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:afro_caribeno value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:afro_caribeno
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:north_andean
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:north_andean value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:north_andean
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:platinean
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:platinean value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:platinean
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:brazilian
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:brazilian value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:brazilian
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:afro_brazilian
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:afro_brazilian value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:afro_brazilian
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:anglo_canadian
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:anglo_canadian value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:anglo_canadian
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:franco_canadian
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:franco_canadian value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:franco_canadian
+  }
+  every_state_region = {
+    limit = {
+      has_homeland = cu:australian
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:australian value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:australian
+  }
+}

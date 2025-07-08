@@ -1,0 +1,9 @@
+﻿culture_merging = {
+	default = culture_merging_disabled
+
+	culture_merging_disabled = {    }
+
+	culture_merging_enabled = {
+		flag = culture_merging_enabled
+	}
+}

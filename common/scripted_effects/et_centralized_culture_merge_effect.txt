@@ -1,9 +1,4 @@
 ﻿et_centralized_culture_merge_effect = {
-    effect = {
-        if = {
-            limit = { 
-                has_game_rule:culture_merging = enabled
-            }
             every_country = {
                 # Iberian cultures merge into Spanish/Portuguese
                 if = {
@@ -3233,5 +3228,3 @@
 				}
 			}
 		}
-	}
-}

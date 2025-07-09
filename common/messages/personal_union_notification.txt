@@ -1,0 +1,9 @@
+﻿personal_union_notification = {
+	type = country
+	group = "diplomatic_action_notification_group"
+
+	texture = "gfx/interface/icons/notification_icons/diplomatic_play.dds"
+
+	notification_type = toast
+	color = good
+}

@@ -1,7 +1,11 @@
 ﻿et_personal_union_roll = {
     save_scope_as = pu_target_country
     random_list = {
+<<<<<<< HEAD
         20 = {
+=======
+        5 = {
+>>>>>>> f96ea43 (Adjust personal union event notification logic)
             random_neighbouring_state = {
                 limit = {
                     owner = {
@@ -22,7 +26,11 @@
                 }
             }
         }
+<<<<<<< HEAD
         80 = {
+=======
+        95 = {
+>>>>>>> f96ea43 (Adjust personal union event notification logic)
             # No effect, just do nothing
         }
     }

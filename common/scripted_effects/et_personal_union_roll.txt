@@ -1,11 +1,12 @@
 ﻿et_personal_union_roll = {
     save_scope_as = pu_target_country
     random_list = {
-        5 = {
+        95 = {
             random_neighbouring_state = {
                 limit = {
                     owner = {
                         NOT = { this = scope:pu_target_country }
+                        NOT = { is_subject_type = subject_type_personal_union }
                         has_law = law_type:law_monarchy
                         religion = {
                             shares_heritage_trait_with_state_religion = scope:pu_target_country
@@ -24,7 +25,7 @@
                 post_notification = personal_union_notification
             }
         }
-        95 = {
+        5 = {
             # No effect, just do nothing
         }
     }

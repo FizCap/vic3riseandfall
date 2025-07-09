@@ -1,0 +1,33 @@
+﻿on_character_death = {
+    on_actions = {
+        personal_union_on_character_death
+    }
+}
+
+personal_union_on_character_death = {
+    effect = {
+        if = {
+            limit = {
+                owner = { has_law = law_type:law_monarchy }
+            }
+            owner = {
+                save_scope_as = pu_target_country
+                every_neighbouring_state = {
+                    limit = {
+                        owner = {
+                            has_law = law_type:law_monarchy
+                            NOT = { this = scope:pu_target_country }
+                        }
+                    }
+                    owner = {
+                        save_scope_as = pu_inheritor_country
+                        trigger_event = {
+                            id = personal_union.1
+                            country_to_make_subject = scope:pu_target_country
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

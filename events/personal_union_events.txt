@@ -1,0 +1,23 @@
+﻿namespace = personal_union
+
+personal_union.1 = {
+    type = country_event
+    title = personal_union.1.t
+    desc = personal_union.1.d
+    picture = GFX_evt_monarch
+
+    option = {
+        name = personal_union.1.a
+        ai_chance = { factor = 1 }
+        # Accept personal union
+        create_diplomatic_pact = {
+            country = scope:pu_target_country
+            type = personal_union
+        }
+    }
+    option = {
+        name = personal_union.1.b
+        ai_chance = { factor = 0 }
+        #Decline personal union
+    }
+}

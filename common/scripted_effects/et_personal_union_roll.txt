@@ -2,15 +2,22 @@
     save_scope_as = pu_target_country
     random_list = {
 <<<<<<< HEAD
+<<<<<<< HEAD
         20 = {
 =======
         5 = {
 >>>>>>> f96ea43 (Adjust personal union event notification logic)
+=======
+        5 = {
+>>>>>>> e9fcfb0 (Added notifications for personal unions)
             random_neighbouring_state = {
                 limit = {
                     owner = {
                         NOT = { this = scope:pu_target_country }
+<<<<<<< HEAD
                         NOT = { is_subject_type = subject_type_personal_union }
+=======
+>>>>>>> e9fcfb0 (Added notifications for personal unions)
                         has_law = law_type:law_monarchy
                         religion = {
                             shares_heritage_trait_with_state_religion = scope:pu_target_country
@@ -25,12 +32,20 @@
                     }
                 }
             }
+<<<<<<< HEAD
         }
 <<<<<<< HEAD
         80 = {
 =======
         95 = {
 >>>>>>> f96ea43 (Adjust personal union event notification logic)
+=======
+            every_country = {
+                post_notification = personal_union_notification
+            }
+        }
+        95 = {
+>>>>>>> e9fcfb0 (Added notifications for personal unions)
             # No effect, just do nothing
         }
     }

@@ -10,8 +10,11 @@ et_personal_union_on_character_death = {
         owner = {
             NOT = { is_country_type = decentralized }
             has_law = law_type:law_monarchy
+<<<<<<< HEAD
             NOT = { is_subject_type = subject_type_personal_union }
             NOT = { any_scope_character = { is_heir = yes is_character_alive = yes } }
+=======
+>>>>>>> e9fcfb0 (Added notifications for personal unions)
         }
     }
     effect = {

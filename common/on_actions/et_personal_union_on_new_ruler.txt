@@ -1,10 +1,10 @@
 ﻿on_character_death = {
     on_actions = {
-        personal_union_on_character_death
+        et_personal_union_on_character_death
     }
 }
 
-personal_union_on_character_death = {
+et_personal_union_on_character_death = {
     effect = {
         if = {
             limit = {

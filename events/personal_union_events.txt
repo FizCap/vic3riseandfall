@@ -4,10 +4,14 @@ personal_union.1 = {
     type = country_event
     title = personal_union.1.t
     desc = personal_union.1.d
-    picture = GFX_evt_monarch
+    event_image = {
+        texture = "gfx/event_pictures/personal_union_generic.dds"
+    }
+    duration = 3
 
     option = {
         name = personal_union.1.a
+        default_option = yes
         ai_chance = { factor = 1 }
         # Accept personal union
         create_diplomatic_pact = {

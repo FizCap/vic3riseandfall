@@ -52,3 +52,7 @@
   et_castille_aragon.1.t: "The Union of Castile and Aragon"
   et_castille_aragon.1.d: "The crowns of Castile and Aragon have been united under a single monarch, forming a new and powerful union on the Iberian Peninsula. This marks the beginning of a new era for Spain."
   et_castille_aragon.1.a: "A new power rises in Iberia!"
+  personal_union.1.t: "A Royal Succession Opportunity"
+  personal_union.1.d: "The monarch of [SCOPE.sCountry('pu_target_country').GetName] has died without a direct heir. As a neighboring monarchy with close religious ties, you have the opportunity to form a personal union and bring their lands under your crown. Will you accept this union and become their overlord, or decline and let fate decide their future?"
+  personal_union.1.a: "Accept the personal union!"
+  personal_union.1.b: "Decline the opportunity."

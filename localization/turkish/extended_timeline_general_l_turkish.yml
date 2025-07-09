@@ -1,9 +1,9 @@
 ﻿l_turkish:
 rule_culture_merging: "Genişletilmiş Zaman Çizelgesi Kültür Birleştirme (BETA)"
-setting_disabled: "Kültürler birleştirilmeyecek."
-setting_disabled_desc: "Kültürler birleştirilmeyecek ve ayrı varlıklar olarak kalacak."
-setting_enabled: "Kültürler birleştirilecek."
-setting_enabled_desc: "İlgili kültürler, daha iyi performans için baskın bölgesel kültürlerine birleştirilecek. Bu tuhaf olacak ve desteklenmeyecek. Etkin olması için oyunun yeniden başlatılması gerekebilir."
+setting_culture_merging_disabled: "Kültürler birleştirilmeyecek."
+setting_culture_merging_disabled_desc: "Kültürler birleştirilmeyecek ve ayrı varlıklar olarak kalacak."
+setting_culture_merging_enabled: "Kültürler birleştirilecek."
+setting_culture_merging_enabled_desc: "İlgili kültürler, daha iyi performans için baskın bölgesel kültürlerine birleştirilecek. Bu tuhaf olacak ve desteklenmeyecek. Etkin olması için oyunun yeniden başlatılması gerekebilir."
 start_boost_country_modifier: "Ekonomik Destek"
 start_boost_country_modifier2: "Ekonomik Destek"
 start_boost_country_modifier4: "Hayatta Kalma Desteği"

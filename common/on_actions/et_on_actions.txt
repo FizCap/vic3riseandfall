@@ -6,7 +6,6 @@
         force_colonialism_russia
         et_ottomans_rise
         et_castille_aragon_union
-        et_ottomans_rise
     }
 }
 

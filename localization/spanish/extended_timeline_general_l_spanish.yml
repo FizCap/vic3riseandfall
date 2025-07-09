@@ -1,9 +1,9 @@
 ﻿l_spanish:
 rule_culture_merging: "Fusión de culturas de la línea de tiempo extendida (BETA)"
-setting_disabled: "Las culturas no se fusionarán."
-setting_disabled_desc: "Las culturas no se fusionarán y permanecerán como entidades separadas."
-setting_enabled: "Las culturas se fusionarán."
-setting_enabled_desc: "Las culturas relacionadas se fusionarán en su cultura regional dominante para un mejor rendimiento. Esto será extraño y no está soportado. Puede ser necesario reiniciar el juego para que surta efecto."
+setting_culture_merging_disabled: "Las culturas no se fusionarán."
+setting_culture_merging_disabled_desc: "Las culturas no se fusionarán y permanecerán como entidades separadas."
+setting_culture_merging_enabled: "Las culturas se fusionarán."
+setting_culture_merging_enabled_desc: "Las culturas relacionadas se fusionarán en su cultura regional dominante para un mejor rendimiento. Esto será extraño y no está soportado. Puede ser necesario reiniciar el juego para que surta efecto."
 start_boost_country_modifier: "Impulso económico"
 start_boost_country_modifier2: "Impulso económico"
 start_boost_country_modifier4: "Impulso de supervivencia"

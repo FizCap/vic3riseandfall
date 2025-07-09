@@ -18,6 +18,9 @@ personal_union.1 = {
             country = scope:pu_target_country
             type = personal_union
         }
+        every_country = {
+        post_notification = personal_union_notification
+            }
     }
     option = {
         name = personal_union.1.b

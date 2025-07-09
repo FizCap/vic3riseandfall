@@ -1,7 +1,7 @@
 ﻿et_personal_union_roll = {
     save_scope_as = pu_target_country
     random_list = {
-        95 = {
+        5 = {
             random_neighbouring_state = {
                 limit = {
                     owner = {
@@ -21,11 +21,8 @@
                     }
                 }
             }
-            every_country = {
-                post_notification = personal_union_notification
-            }
         }
-        5 = {
+        95 = {
             # No effect, just do nothing
         }
     }

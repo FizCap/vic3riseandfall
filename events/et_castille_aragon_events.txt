@@ -1,4 +1,4 @@
-namespace = et_castille_aragon
+﻿namespace = et_castille_aragon
 
 # Castille-Aragon Personal Union - World Event (text only)
 et_castille_aragon.1 = {

@@ -1,0 +1,16 @@
+﻿namespace = et_austria_burgundy
+
+# Austria-Burgundy Personal Union - World Event (text only)
+et_austria_burgundy.1 = {
+  type = major_event
+  title = et_austria_burgundy.1.t
+  desc = et_austria_burgundy.1.d
+  event_image = {
+    texture = "gfx/event_pictures/austria_burgundy_union.dds"
+  }
+  duration = 3
+  option = {
+    name = et_austria_burgundy.1.a
+    # No effects, just text
+  }
+}

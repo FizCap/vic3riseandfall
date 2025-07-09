@@ -4,6 +4,7 @@
         protestant_reformation2
         force_colonialism
         force_colonialism_russia
+        et_austria_burgundy_union
         et_ottomans_rise
         et_castille_aragon_union
     }
@@ -144,49 +145,6 @@ protestant_reformation2 = {
     }
 }
 
-force_colonialism = {
-    trigger = { year = 1492 }
-    effect = {
-        every_country = {
-            limit = { 
-                OR = {
-                    country_has_primary_culture = cu:british
-                    country_has_primary_culture = cu:spanish
-                    country_has_primary_culture = cu:portuguese
-                    country_has_primary_culture = cu:french
-                    country_has_primary_culture = cu:dutch
-                }
-            }
-            activate_law = law_type:law_slave_trade
-            activate_law = law_type:law_colonial_exploitation
-            add_modifier = {
-                name = ageofcolonialism_modfier
-                years = 50
-            }
-        }
-        every_country = {
-            limit = { is_player = yes }
-            trigger_event = { id = et_force_colonialism.1 }
-        }
-    }
-}
-
-force_colonialism_russia = {
-    trigger = { year = 1581 }
-    effect = {
-        every_country = {
-            limit = {
-                country_has_primary_culture = cu:russian
-            }
-            activate_law = law_type:law_frontier_colonization
-        }
-        every_country = {
-            limit = { is_player = yes }
-            trigger_event = { id = et_force_colonialism.2 }
-        }
-    }
-}
-
 japanese_shogunate_event1 = {
     effect = {
         c:JAP = {
@@ -233,12 +191,37 @@ force_slavery_startup = {
     }
 }
 
+et_austria_burgundy_union = {
+    trigger = {
+        year = 1477
+        exists = c:AUS
+        exists = c:X59
+        c:X59 = { NOT = { is_player = yes } }
+    }
+    effect = {
+        c:AUS = {
+            create_diplomatic_pact = {
+                country = c:X59
+                type = personal_union
+            }
+            trigger_event = { id = et_austria_burgundy.1 }
+        }
+        c:X59 = {
+            trigger_event = { id = et_austria_burgundy.1 }
+        }
+        every_country = {
+            limit = { AND = { NOT = { this = c:AUS } NOT = { this = c:X59 } } }
+            trigger_event = { id = et_austria_burgundy.1 }
+        }
+    }
+}
+
 et_castille_aragon_union = {
     trigger = {
         year = 1479
         exists = c:CAS
         exists = c:X22
-        NOT = { is_player = c:X22 }
+        c:X22 = { NOT = { is_player = yes } }
     }
     effect = {
         c:CAS = {

@@ -1,12 +1,4 @@
-﻿on_yearly_pulse = {
-  on_actions = { force_colonialism }
-}
-
-on_yearly_pulse = {
-  on_actions = { force_colonialism_russia }
-}
-
-force_colonialism = {
+﻿force_colonialism = {
   trigger = { year = 1492 }
   effect = {
     every_country = {

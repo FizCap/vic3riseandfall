@@ -6,7 +6,7 @@ et_hungary_boh_pu.1 = {
   title = et_hungary_boh_pu.1.t
   desc = et_hungary_boh_pu.1.d
   event_image = {
-    texture = "gfx/event_pictures/personal_union_generic.dds"
+    texture = "gfx/event_pictures/hungary_bohemian_union.dds"
   }
   duration = 3
   option = {

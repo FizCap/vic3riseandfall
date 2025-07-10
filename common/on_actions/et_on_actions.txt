@@ -240,61 +240,40 @@ force_slavery_startup = {
 et_random_character_death = {
   trigger = {
     is_character_alive = yes
-    age > 8
     year >= 1454
     NOT = { has_technology_researched = pharmaceuticals }
   }
   effect = {
     if = {
+      limit = { age < 3 }
+      random_list = {
+        7 = { kill_character = yes }   # 3.5% chance per year for all under 3
+        193 = { }
+      }
+    }
+    else_if = {
       limit = { age < 30 }
-      if = {
-        limit = { age < 18 }
-        random_list = {
-          1 = { kill_character = yes }   # ~0.5% chance per year (youth/teen)
-          199 = { }
-        }
-      }
-      else = {
-        random_list = {
-          1 = { kill_character = yes }   # ~1% chance per year (young adult 18-29)
-          199 = { }
-        }
-      }
+      # No effect for ages 3-29
     }
     else_if = {
       limit = { age < 50 }
       random_list = {
-        5 = { kill_character = yes }   # ~2.5% chance per year (middle age)
-        195 = { }
+        2 = { kill_character = yes }   # 1% chance per year (middle age)
+        198 = { }
       }
     }
     else_if = {
       limit = { age < 65 }
       random_list = {
-        15 = { kill_character = yes }  # ~7.5% chance per year (older adult)
-        185 = { }
+        7 = { kill_character = yes }  # 3.5% chance per year (older adult)
+        193 = { }
       }
     }
     else = {
       random_list = {
-        40 = { kill_character = yes }  # ~20% chance per year (elderly)
-        160 = { }
+        20 = { kill_character = yes }  # 10% chance per year (elderly)
+        180 = { }
       }
-    }
-  }
-}
-
-et_random_heir_death = {
-  trigger = {
-    age > 8
-    is_character_alive = yes
-    year >= 1454
-    NOT = { has_technology_researched = pharmaceuticals }
-  }
-  effect = {
-    random_list = {
-      8 = { kill_character = yes }
-      92 = { }
     }
   }
 }

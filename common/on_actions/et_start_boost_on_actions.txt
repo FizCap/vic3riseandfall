@@ -119,3 +119,9 @@ start_boost4 = {
     }
   }
 }
+
+et_homeland_cleanup = {
+    effect = {
+        et_homeland_cleanup_script
+    }
+}

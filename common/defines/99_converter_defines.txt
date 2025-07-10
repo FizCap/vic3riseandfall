@@ -1,1 +1,9 @@
 ﻿NGame = { START_DATE = "1444.11.11" }
+
+NCharacters {
+RULER_MIN_AGE_FOR_HEIR = 20 				# Before this age, don't randomly generate heirs for rulers
+RULER_AGE_FOR_HEIR_CHANCE_BOOST = 99 		# A year after this age start boosting chance of heir generation
+RULER_HEIR_GENERATION_CHANCE = 0.00000913 		# Per day
+RULER_HEIR_CHANCE_BOOST_SCALE = 0.001 		# Added to RULER_HEIR_CHANCE_BOOST for each year after RULER_AGE_FOR_HEIR_CHANCE_BOOST
+
+}

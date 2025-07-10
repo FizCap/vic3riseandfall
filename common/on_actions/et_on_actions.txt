@@ -253,6 +253,7 @@ et_random_character_death = {
   trigger = {
     is_character_alive = yes
     age > 8
+    year >= 1454
   }
   effect = {
     random_list = {
@@ -266,6 +267,7 @@ et_random_heir_death = {
   trigger = {
     age > 8
     is_character_alive = yes
+    year >= 1454
   }
   effect = {
     random_list = {

@@ -1,4 +1,4 @@
-﻿et_homeland_cleanup = {
+﻿et_homeland_cleanup_script = {
   every_state_region = {
     limit = {
       has_homeland = cu:yankee

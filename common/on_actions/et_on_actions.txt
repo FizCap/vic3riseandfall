@@ -17,6 +17,13 @@ on_game_started_after_lobby = {
     }
 }
 
+on_yearly_pulse_character = {
+  on_actions = {
+    et_random_character_death
+    et_random_heir_death
+  }
+}
+
 on_game_started = {
     on_actions = {
         holy_roman_emperor
@@ -259,8 +266,28 @@ et_castille_aragon_union = {
     }
 }
 
-et_homeland_cleanup = {
-    effect = {
-        et_homeland_cleanup
+
+et_random_character_death = {
+  trigger = {
+    is_character_alive = yes
+  }
+  effect = {
+    random_list = {
+      1 = { kill_character = yes }
+      199 = { }
     }
+  }
+}
+
+et_random_heir_death = {
+  trigger = {
+    age > 8
+    is_character_alive = yes
+  }
+  effect = {
+    random_list = {
+      8 = { kill_character = yes }
+      92 = { }
+    }
+  }
 }

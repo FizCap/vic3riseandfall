@@ -271,12 +271,45 @@ et_random_character_death = {
   trigger = {
     is_character_alive = yes
     age > 8
-    year >= 1711
+    year >= 1454
+    NOT = { has_technology_researched = pharmaceuticals }
   }
   effect = {
-    random_list = {
-      1 = { kill_character = yes }
-      199 = { }
+    if = {
+      limit = { age < 30 }
+      if = {
+        limit = { age < 18 }
+        random_list = {
+          1 = { kill_character = yes }   # ~0.5% chance per year (youth/teen)
+          199 = { }
+        }
+      }
+      else = {
+        random_list = {
+          1 = { kill_character = yes }   # ~1% chance per year (young adult 18-29)
+          199 = { }
+        }
+      }
+    }
+    else_if = {
+      limit = { age < 50 }
+      random_list = {
+        5 = { kill_character = yes }   # ~2.5% chance per year (middle age)
+        195 = { }
+      }
+    }
+    else_if = {
+      limit = { age < 65 }
+      random_list = {
+        15 = { kill_character = yes }  # ~7.5% chance per year (older adult)
+        185 = { }
+      }
+    }
+    else = {
+      random_list = {
+        40 = { kill_character = yes }  # ~20% chance per year (elderly)
+        160 = { }
+      }
     }
   }
 }
@@ -285,7 +318,8 @@ et_random_heir_death = {
   trigger = {
     age > 8
     is_character_alive = yes
-    year >= 1711
+    year >= 1454
+    NOT = { has_technology_researched = pharmaceuticals }
   }
   effect = {
     random_list = {

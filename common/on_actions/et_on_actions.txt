@@ -253,7 +253,10 @@ et_random_character_death = {
     }
     else_if = {
       limit = { age < 30 }
-      # No effect for ages 3-29
+      random_list = {
+        1 = { kill_character = yes }   # 0.5% chance per year for ages 3-29
+        199 = { }
+      }
     }
     else_if = {
       limit = { age < 50 }

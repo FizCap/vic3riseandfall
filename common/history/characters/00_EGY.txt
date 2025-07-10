@@ -1,16 +1,25 @@
 ﻿CHARACTERS = {
 	c:EGY = {
 		create_character = {
-			first_name = "Jaqmaq"
-			last_name = "Burji"
+			first_name = SAYF_AD_DIN
+			last_name = "Jaqmaq"
 			ruler = yes
 			culture = cu:circassian
 			religion = rel:sunni
 			birth_date = 1372.1.1
+			historical = yes
 			traits = {
 				kidney_stones meticulous 
 			}
 		}
-
+		create_character = {
+			first_name = AL_MANSUR_FAKHR_AL_DIN_UTHMAN
+			last_name = "Jaqmaq"
+			heir = yes
+			culture = cu:circassian
+			religion = rel:sunni
+			historical = yes
+			birth_date = 1411.1.1
+		}
 	}
 }

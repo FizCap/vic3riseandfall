@@ -10,5 +10,17 @@
 			}
 		}
 
+		create_character = {
+			first_name = "Ladislaus"
+			last_name = "von_Habsburg"
+			ruler = yes
+			culture = cu:south_german
+			religion = rel:catholic
+			birth_date = 1440.2.22
+			traits = {
+				psychological_affliction
+				pious
+			}
+		}
 	}
 }

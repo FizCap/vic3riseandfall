@@ -1,0 +1,16 @@
+namespace = et_hungary_boh_pu
+
+# Hungary-Bohemia Personal Union - World Event (text only)
+et_hungary_boh_pu.1 = {
+  type = major_event
+  title = et_hungary_boh_pu.1.t
+  desc = et_hungary_boh_pu.1.d
+  event_image = {
+    texture = "gfx/event_pictures/personal_union_generic.dds"
+  }
+  duration = 3
+  option = {
+    name = et_hungary_boh_pu.1.a
+    # No effects, just text
+  }
+}

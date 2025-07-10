@@ -62,3 +62,6 @@
   notification_personal_union_notification_name: "Personal Union Formed"
   notification_personal_union_notification_desc: "A new personal union has been established between [SCOPE.sCountry('pu_inheritor_country').GetName] and [SCOPE.sCountry('pu_target_country').GetName]."
   notification_personal_union_notification_tooltip: "#header $notification_personal_union_notification_name$#!\n$TOOLTIP_DELIMITER$\n$notification_personal_union_notification_desc$"
+  et_hungary_boh_pu.1.t: "The Crown of Bohemia Granted to Ladislaus V"
+  et_hungary_boh_pu.1.d: "Following the death of King Albert, the Bohemian nobility has chosen to grant the crown to Ladislaus V of Habsburg. The union of Hungary and Bohemia under his rule marks a new era for both kingdoms, as the young king is entrusted with the fate of these lands."
+  et_hungary_boh_pu.1.a: "A new union is forged."

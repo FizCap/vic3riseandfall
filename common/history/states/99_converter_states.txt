@@ -4789,6 +4789,7 @@
 		}
 		add_homeland = cu:mongol
 		add_homeland = cu:russian
+		add_homeland = cu:buryat
 	}
 	s:STATE_ISFAHAN = {
 		create_state = {

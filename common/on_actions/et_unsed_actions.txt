@@ -1,0 +1,25 @@
+﻿et_heir_storage = {
+  trigger = {
+    is_monarch = yes 
+  }
+  effect = {
+    et_heir_storage_effect = yes
+  }
+}
+
+et_heir_production = {
+  effect = {
+    every_country = {
+      limit = {
+        ruler = { has_modifier = et_has_an_heir }
+        NOT = { any_scope_character = { is_heir = yes is_character_alive = yes } }
+      }
+      create_character = {
+        age = { 0 8 }
+        culture = ruler.culture
+        religion = ruler.religion
+      }
+      ruler = { remove_modifier = et_has_an_heir }
+    }
+  }
+}

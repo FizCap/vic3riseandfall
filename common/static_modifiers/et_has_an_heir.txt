@@ -1,0 +1,4 @@
+﻿et_has_an_heir = {
+    country_prestige_add = 1
+    icon = generic_political_power
+}

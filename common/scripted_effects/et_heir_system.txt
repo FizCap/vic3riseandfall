@@ -1,0 +1,6 @@
+et_heir_storage_effect = { #will randomly add heir modifier to monarch
+    random_list = {
+        99 = { add_modifier = et_has_an_heir }
+        1 = { }
+    }
+}

@@ -22,6 +22,8 @@ on_yearly_pulse_character = {
   on_actions = {
     et_random_character_death
     et_random_heir_death
+    et_heir_storage
+    et_heir_production
   }
 }
 

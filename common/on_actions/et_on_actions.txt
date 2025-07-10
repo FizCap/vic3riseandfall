@@ -252,6 +252,7 @@ et_castille_aragon_union = {
 et_random_character_death = {
   trigger = {
     is_character_alive = yes
+    age > 8
   }
   effect = {
     random_list = {

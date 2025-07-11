@@ -1,4 +1,4 @@
-namespace = et_fatpenguin_tech_choice
+﻿namespace = et_fatpenguin_tech_choice
 
 # Fatpenguin Technology Choice Event
 et_fatpenguin_tech_choice.1 = {

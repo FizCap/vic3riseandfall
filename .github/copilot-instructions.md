@@ -1,5 +1,26 @@
 - Place new on_actions in `common/on_actions/`
 
+
+## Scopes in On_Actions and Scripted Effects
+Different actions and triggers operate in different scopes (such as country, character, state, etc.). It is important to use the correct scope for your logic to work as intended. For example, in the following on_action:
+
+```
+et_random_character_death = {
+  trigger = {
+    is_character_alive = yes
+    year >= 1454
+    NOT = { owner = { has_technology_researched = pharmaceuticals } }
+  }
+  effect = {
+    # ...effect logic...
+  }
+}
+```
+
+Here, the on_action is triggered by a yearly character pulse, so the default scope is a character. However, to check if the character's country has researched a technology, you must use `owner = { ... }` to switch to the country scope. Without `owner =`, the condition would incorrectly check the character for the technology, which would not work.
+
+Supported scopes for triggers and effects are listed in the `docs/` folder (see `on_actions.log`, `triggers.log`, and `effects.log`). Always consult these files to ensure you are using the correct scope for your logic.
+
 For any on_action created, ensure it includes some sort of pulse at the top (e.g., monthly, yearly, or custom pulse trigger).
 
 ## On_Action and Scripted Effect Patterns
@@ -77,3 +98,7 @@ For this mod, always use the `et_` prefix for new files in these folders (e.g., 
 ---
 
 For questions about scripting syntax or mod structure, consult the `docs/` folder or reference Paradox modding wikis. If unclear, ask for clarification or examples from the user.
+
+Note: The `ai_strategies` scripting files use their own unique set of commands and structure, which are not fully documented in the standard scripting docs. For details and examples, consult the new reference file in the `docs/` folder or review the vanilla files in `common/ai_strategies/`.
+
+If you do not know what to do, you can search the mod files or the vanilla game files for examples. There are many examples and commands found in almost every file, in both this mod and the vanilla files. Use these as references before asking for help.

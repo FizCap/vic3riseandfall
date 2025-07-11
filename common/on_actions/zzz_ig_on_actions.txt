@@ -117,7 +117,10 @@ on_revolution_start = {
 
 converter_revolution_start_on_actions = {
 	effect = {
-		scope:target = { converter_copy_ideologies_effect = yes }
+		if = {
+			limit = { scope:target = { exists = yes } }
+			scope:target = { converter_copy_ideologies_effect = yes }
+		}
 	}
 }
 

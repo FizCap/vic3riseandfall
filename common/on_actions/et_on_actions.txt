@@ -241,7 +241,7 @@ et_random_character_death = {
   trigger = {
     is_character_alive = yes
     year >= 1454
-    NOT = { has_technology_researched = pharmaceuticals }
+    NOT = { owner = { has_technology_researched = pharmaceuticals } }
   }
   effect = {
     if = {

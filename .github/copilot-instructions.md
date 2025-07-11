@@ -1,6 +1,21 @@
 - Place new on_actions in `common/on_actions/`
 
 For any on_action created, ensure it includes some sort of pulse at the top (e.g., monthly, yearly, or custom pulse trigger).
+
+## On_Action and Scripted Effect Patterns
+Most on_action effects should simply have an `effect =` block that calls a scripted effect. For example:
+
+```
+et_homeland_cleanup = {
+    effect = {
+        et_homeland_cleanup_script = yes
+    }
+}
+```
+
+This pattern means the on_action triggers a scripted effect, which contains the actual logic.
+
+**Important:** In scripted effects themselves, do **not** use `effect =`. Scripted effects should only contain the effect logic directly. Always remove any `effect =` block from inside scripted effects.
 ## Scripted_ Folders: Where to Place New Files
 When adding new files for custom scripting, follow the vanilla folder structure:
 

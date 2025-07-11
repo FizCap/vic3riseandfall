@@ -21,7 +21,6 @@ on_game_started_after_lobby = {
 on_yearly_pulse_character = {
   on_actions = {
     et_random_character_death
-    et_random_heir_death
   }
 }
 

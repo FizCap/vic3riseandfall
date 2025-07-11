@@ -1077,6 +1077,26 @@ SRB = { #Sorbia, Sorb People
 	
 	ai_will_do = { always = yes }
 }
+SPA = { #Spanish, Spanish People
+	states = {
+		STATE_CATALONIA
+		STATE_ARAGON
+		STATE_VALENCIA
+		STATE_TOLEDO
+		STATE_ANDALUSIA
+		STATE_GRANADA
+		STATE_BADAJOZ
+		STATE_CASTILE
+		STATE_NAVARRA
+		STATE_ASTURIAS
+		STATE_GALICIA
+		STATE_BALEARES
+	}
+
+	required_states_fraction = 0.75
+	
+	ai_will_do = { always = yes }
+}
 SUD = { #Sudan, Sudanese/Beja People, Includes Bedouin so must be limited by state
 	states = {
 		STATE_BLUE_NILE

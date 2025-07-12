@@ -1,6 +1,8 @@
 ﻿et_heir_storage = {
   trigger = {
-    is_monarch = yes 
+    is_monarch = yes
+    NOT = { has_modifier = et_has_an_heir }
+    owner = { NOT = { any_scope_character = { is_heir = yes is_character_alive = yes } } }
   }
   effect = {
     et_heir_storage_effect = yes
@@ -15,9 +17,11 @@ et_heir_production = {
         NOT = { any_scope_character = { is_heir = yes is_character_alive = yes } }
       }
       create_character = {
+        name = poopoocaca
         age = { 0 8 }
         culture = ruler.culture
         religion = ruler.religion
+        heir = yes
       }
       ruler = { remove_modifier = et_has_an_heir }
     }

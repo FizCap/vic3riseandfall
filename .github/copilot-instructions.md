@@ -1,3 +1,4 @@
+````instructions
 - Place new on_actions in `common/on_actions/`
 
 
@@ -102,3 +103,50 @@ For questions about scripting syntax or mod structure, consult the `docs/` folde
 Note: The `ai_strategies` scripting files use their own unique set of commands and structure, which are not fully documented in the standard scripting docs. For details and examples, consult the new reference file in the `docs/` folder or review the vanilla files in `common/ai_strategies/`.
 
 If you do not know what to do, you can search the mod files or the vanilla game files for examples. There are many examples and commands found in almost every file, in both this mod and the vanilla files. Use these as references before asking for help.
+
+## Character and Heir System Debugging
+
+When working with character systems (especially heir creation), keep these critical points in mind:
+
+### Character Creation for Heirs
+Always include `heir = yes` when creating heir characters:
+```
+create_character = {
+  age = { 0 8 }
+  culture = ruler.culture
+  religion = ruler.religion
+  heir = yes  # Essential - without this, character won't be designated as heir
+}
+```
+
+### On_Action Scope Management
+- `on_monthly_pulse_character` operates in **character scope**, despite documentation saying "none"
+- Use `owner = { ... }` to access country properties from character scope
+- Use `ruler = { ... }` to access monarch from country scope
+- Always validate scope by checking vanilla examples in `game/common/on_actions/00_code_on_actions.txt`
+
+### Preventing Logic Loops in Modifier Systems
+When creating systems that add/remove modifiers, include guards to prevent infinite loops:
+```
+et_heir_storage = {
+  trigger = {
+    is_monarch = yes
+    NOT = { has_modifier = et_has_an_heir }  # Don't add if already present
+    owner = { NOT = { any_scope_character = { is_heir = yes is_character_alive = yes } } }  # Don't add if heir exists
+  }
+  effect = {
+    et_heir_storage_effect = yes
+  }
+}
+```
+
+### Debugging Process
+1. Verify all referenced scripted effects and modifiers exist
+2. Check that on_actions are properly registered in the main file
+3. Trace the complete flow from trigger to effect
+4. Validate scope usage at each step
+5. Test probability values for game balance
+6. Use `get_errors` tool to check for syntax issues
+
+For detailed debugging information, see `docs/heir_system_debugging_guide.md`.
+````

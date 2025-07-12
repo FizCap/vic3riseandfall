@@ -1,5 +1,5 @@
 ﻿force_colonialism = {
-  trigger = { year = 1492 }
+  trigger = { year = 1445 }
   effect = {
     every_country = {
       limit = { 

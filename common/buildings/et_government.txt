@@ -25,11 +25,6 @@ building_university = {
 	   ai_value = {
 			   value = 1000
 
-			   if = {
-					   limit = { owner = { NOT = { has_technology_researched = fatpenguin_banking } } }
-					   subtract = 1000
-			   }
-
 			   if = { # British dictates
 					   limit = {
 							   owner = {

@@ -5295,9 +5295,9 @@
 	s:STATE_CAPE_VERDE = {
 		region_state:G18 = {
 			create_pop = {
-				culture = greek
-				religion = animist
-				size = 1
+				culture = portugese
+				religion = catholic
+				size = 3000
 			}
 		}
 	}

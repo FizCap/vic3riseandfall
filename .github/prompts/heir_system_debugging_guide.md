@@ -184,3 +184,34 @@ When implementing or modifying heir systems:
 - Use descriptive comments in code for future debugging
 - Consider edge cases like existing heirs, dead monarchs, etc.
 - Balance gameplay impact with historical plausibility
+
+## Heir Naming Limitations and Best Practices
+
+### Inheriting Last Names in Heir Creation
+
+Victoria 3's scripting system does not support dynamic inheritance of a character's last name (e.g., `last_name = ruler.last_name` is not valid). Attempts to reference another character's name property in `create_character` will not work and will result in either errors or the game generating a random name based on culture.
+
+#### What Works
+- If you omit `first_name` and `last_name` in `create_character`, the game will auto-generate a culturally appropriate name for the new character.
+- You can specify a static last name (e.g., `last_name = "Kastrioti"`), but this must be hardcoded and cannot be dynamically inherited from the ruler.
+- Character templates can be used for pre-defined dynasties, but not for dynamic inheritance.
+
+#### What Does Not Work
+- `last_name = ruler.last_name` or similar dynamic references are not supported in effect blocks.
+- There is no built-in effect or trigger to copy a property from one character to another at creation.
+
+#### Best Practice
+- For generic heir creation, omit the `first_name` and `last_name` fields and let the game generate a name based on the heir's culture.
+- For historical or special cases, use character templates or hardcoded names.
+
+**Example:**
+```vic3
+create_character = {
+  age = { 0 8 }
+  culture = ruler.culture
+  religion = ruler.religion
+  heir = yes
+}
+```
+
+This will ensure the heir is created with a plausible name, even if it does not match the ruler's last name.

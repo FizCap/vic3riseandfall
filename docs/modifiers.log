@@ -991,7 +991,7 @@ power_bloc_disallow_war_bool:
 power_bloc_income_transfer_to_leader_factor:
   Mask: power_bloc
   Name: Income Transfer to Power Bloc Leader
-  Description: Base percentage of tax income transferred from concept_power_bloc_memembers to the Power Bloc Leader
+  Description: Base percentage of tax income transferred from Power Bloc Members to the Power Bloc Leader
 power_bloc_invite_acceptance_add:
   Mask: power_bloc
   Name: Power Bloc Invitation Acceptance Chance
@@ -1230,7 +1230,7 @@ state_pollution_generation_add:
   Description: An increase or decrease to how much pollution is generated in a state
 state_pollution_reduction_health_mult:
   Mask: state
-  Name: Pollution Effects Reduction
+  Name: Pollution Health Effects Reduction
   Description: An increase of decrease to the effects of Pollution Impact on the health of your population
 state_pop_pol_str_add:
   Mask: state
@@ -5153,70 +5153,6 @@ state_navajo_standard_of_living_add:
 state_neapolitan_standard_of_living_add:
   Mask: state
   Name: [concept_sol] Modifier for Neapolitan
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-brazil_colony-cosmopolitan_french_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Francien-Brazilian
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-brazil_colony-dutch_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Dutch-Brazilian
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-canada_colony-dutch_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Canadian
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-caribbean_colony-cosmopolitan_french_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Francien-Caraibic
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-caribbean_colony-danish_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Danish-Caraibic
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-caribbean_colony-dutch_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Dutch-Caraibic
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-caribbean_colony-english_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for English-Caraibic
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-central_america_colony-english_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Central American
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-colombia_colony-cosmopolitan_french_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Francien-Colombian
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-colombia_colony-dutch_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Dutch-Colombian
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-mexico_colony-castillian_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Mexican
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-texas_colony-castillian_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Texan
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-usa_north_colony-castillian_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Castilian-American
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-usa_north_colony-dutch_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Dutch-American
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-usa_north_colony-swedish_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Swedish-American
-  Description: A bonus or penalty to a specific culture's [concept_sol]
-state_neo-usa_south_colony-castillian_standard_of_living_add:
-  Mask: state
-  Name: [concept_sol] Modifier for Floridian
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_nepali_standard_of_living_add:
   Mask: state

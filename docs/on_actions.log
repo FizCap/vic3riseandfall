@@ -2,6 +2,12 @@ On Action Documentation:
 
 --------------------
 
+start_boost:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_law_enactment_fail:
 From Code: Yes
 Expected Scope: none
@@ -26,6 +32,12 @@ Expected Scope: none
 
 --------------------
 
+et_personal_union_on_character_death:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 korea_half_yearly_events:
 From Code: No
 Expected Scope: country
@@ -41,6 +53,12 @@ Expected Scope: country
 on_yearly_pulse_country:
 From Code: Yes
 Expected Scope: country
+
+--------------------
+
+protestant_reformation2:
+From Code: No
+Expected Scope: none
 
 --------------------
 
@@ -122,6 +140,12 @@ Expected Scope: none
 
 --------------------
 
+et_natural_disaster_yearly_events:
+From Code: No
+Expected Scope: country
+
+--------------------
+
 on_become_independent:
 From Code: Yes
 Expected Scope: none
@@ -148,6 +172,12 @@ Expected Scope: none
 
 on_political_movement_disbanded:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_random_character_death:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -398,6 +428,12 @@ Expected Scope: none
 
 --------------------
 
+on_treaty_article_removed:
+From Code: Yes
+Expected Scope: none
+
+--------------------
+
 on_character_creation:
 From Code: Yes
 Expected Scope: none
@@ -416,9 +452,21 @@ Expected Scope: state
 
 --------------------
 
+force_slavery_startup:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_our_convoys_raided:
 From Code: Yes
 Expected Scope: none
+
+--------------------
+
+stts_events_pulse:
+From Code: No
+Expected Scope: country
 
 --------------------
 
@@ -442,6 +490,12 @@ Expected Scope: none
 
 on_rank_changed:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+start_boost2:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -476,6 +530,12 @@ Expected Scope: none
 
 --------------------
 
+japanese_shogunate_event1:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_sway_offer_accepted:
 From Code: Yes
 Expected Scope: none
@@ -484,6 +544,12 @@ Expected Scope: none
 
 on_wargoal_removed:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_homeland_cleanup:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -668,6 +734,12 @@ Expected Scope: none
 
 --------------------
 
+start_boost4:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_diplomatic_action_third_party_break_accepted:
 From Code: Yes
 Expected Scope: none
@@ -686,6 +758,12 @@ Expected Scope: none
 
 --------------------
 
+et_hungary_boh_pu:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_investment_increased:
 From Code: Yes
 Expected Scope: none
@@ -700,6 +778,12 @@ Expected Scope: none
 
 on_mobilized_general:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+stts_civil_war_won:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -734,6 +818,18 @@ Expected Scope: none
 
 --------------------
 
+et_centralized_culture_merge_action_effect:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+et_castille_aragon_union:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_law_checkpoint_debate:
 From Code: Yes
 Expected Scope: country
@@ -748,6 +844,12 @@ Expected Scope: none
 
 on_character_death:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+dynamic_homeland_action:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -878,6 +980,24 @@ Expected Scope: none
 
 --------------------
 
+et_ottomans_rise:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+start_boost3:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+et_heir_storage:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_civil_war_won:
 From Code: Yes
 Expected Scope: none
@@ -887,6 +1007,12 @@ Expected Scope: none
 on_law_checkpoint_stall:
 From Code: Yes
 Expected Scope: country
+
+--------------------
+
+force_colonialism:
+From Code: No
+Expected Scope: none
 
 --------------------
 
@@ -1010,6 +1136,12 @@ Expected Scope: country
 
 --------------------
 
+force_colonialism_russia:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_objective_completed:
 From Code: Yes
 Expected Scope: none
@@ -1040,6 +1172,12 @@ Expected Scope: none
 
 --------------------
 
+et_annex_decentralized_monthly:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_country_default:
 From Code: Yes
 Expected Scope: none
@@ -1048,6 +1186,12 @@ Expected Scope: none
 
 on_spreading_technology:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+protestant_reformation1:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -1124,6 +1268,12 @@ Expected Scope: none
 
 --------------------
 
+remove_primary_cultures:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_diplo_play_start:
 From Code: Yes
 Expected Scope: none
@@ -1144,6 +1294,12 @@ Expected Scope: none
 
 on_treaty_dissolved:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_austria_burgundy_union:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -1185,6 +1341,12 @@ Expected Scope: none
 --------------------
 
 converter_BRZ_je_on_actions:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+et_heir_production:
 From Code: No
 Expected Scope: none
 
@@ -1234,6 +1396,12 @@ Expected Scope: country
 
 on_migration_target_created_other:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+holy_roman_emperor:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -1300,6 +1468,12 @@ Expected Scope: none
 
 on_diplo_play_back_down:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+fatpenguin_tech_unlock:
+From Code: No
 Expected Scope: none
 
 --------------------

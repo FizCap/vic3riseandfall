@@ -2,10 +2,22 @@
 - Place new on_actions in `common/on_actions/`
 
 
-## Scopes in On_Actions and Scripted Effects
-Different actions and triggers operate in different scopes (such as country, character, state, etc.). It is important to use the correct scope for your logic to work as intended. For example, in the following on_action:
 
-```
+## Understanding and Using Scopes
+
+### What Are Scopes?
+
+In Paradox scripting, **scope** determines what entity (country, character, state, etc.) a block of code refers to. Many bugs are caused by referencing the wrong scope, so always check and set scope explicitly.
+
+### Key Scope Patterns
+
+- **Default Scope:** Each on_action, effect, or trigger starts in a default scope (e.g., character, country, state). The default is set by the pulse or event that fires it.
+- **Switching Scope:** Use keywords like `owner = { ... }`, `ruler = { ... }`, or `state = { ... }` to switch to another entity’s scope.
+- **Nested Scopes:** You can nest scope switches to reach the correct context for your logic.
+
+#### Example: Character On_Action with Country Check
+
+```plaintext
 et_random_character_death = {
   trigger = {
     is_character_alive = yes
@@ -17,12 +29,48 @@ et_random_character_death = {
   }
 }
 ```
+- Here, the on_action is in **character** scope (because it’s a character pulse).
+- To check a country property, use `owner = { ... }` to switch to the character’s country.
 
-Here, the on_action is triggered by a yearly character pulse, so the default scope is a character. However, to check if the character's country has researched a technology, you must use `owner = { ... }` to switch to the country scope. Without `owner =`, the condition would incorrectly check the character for the technology, which would not work.
+#### Example: Accessing Monarch from Country Scope
 
-Supported scopes for triggers and effects are listed in the `docs/` folder (see `on_actions.log`, `triggers.log`, and `effects.log`). Always consult these files to ensure you are using the correct scope for your logic.
+```plaintext
+trigger = {
+  ruler = { has_trait = trait_et_great_reformer }
+}
+```
+- This checks if the country’s ruler has a specific trait.
 
-For any on_action created, ensure it includes some sort of pulse at the top (e.g., monthly, yearly, or custom pulse trigger).
+#### Example: State Scope from Country
+
+```plaintext
+effect = {
+  random_owned_state = {
+    # Now in state scope
+    add_building = building_railway
+  }
+}
+```
+
+### Scope Reference
+
+- **owner**: Switches from character to their country, or from state to owning country.
+- **ruler**: Switches from country to its ruler character.
+- **state**: Switches from country to a specific state.
+- **any_** and **every_**: Loops over all entities of a type, changing scope for each iteration.
+
+### Best Practices
+
+- **Always check the docs:** See `docs/on_actions.log`, `docs/triggers.log`, and `docs/effects.log` for supported scopes.
+- **Validate with vanilla:** If unsure, check `game/common/on_actions/00_code_on_actions.txt` for vanilla examples.
+- **Explicit is better:** If your logic fails, try adding explicit scope switches.
+- **Document your intent:** Comment scope switches in complex logic for future maintainers.
+
+### Common Pitfalls
+
+- **Forgetting to switch scope:** E.g., checking a country property in character scope without `owner = { ... }`.
+- **Misusing `effect =` in scripted effects:** Only use `effect =` in on_actions, never in scripted effects themselves.
+- **Assuming pulse scope:** Always confirm what entity the pulse or event is acting on.
 
 ## On_Action and Scripted Effect Patterns
 Most on_action effects should simply have an `effect =` block that calls a scripted effect. For example:

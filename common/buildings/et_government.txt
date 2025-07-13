@@ -7,7 +7,7 @@ building_university = {
 	levels_per_mesh = 5
 
 	unlocking_technologies = {
-		academia
+		fatpenguin_banking
 	}
 
 	production_method_groups = {

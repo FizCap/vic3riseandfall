@@ -30,6 +30,12 @@ on_game_started = {
     }
 }
 
+on_colony_created = {
+    on_actions = {
+        colony_grant_claim
+    }
+}
+
 # --- Event Definitions ---
 
 et_random_character_death = {
@@ -74,4 +80,10 @@ et_random_character_death = {
       }
     }
   }
+}
+
+colony_grant_claim = {
+    effect = {
+        et_grant_colony_claim_effect = yes
+    }
 }

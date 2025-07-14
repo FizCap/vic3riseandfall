@@ -1,3 +1,46 @@
+# Scope Usage and Best Practices (Victoria 3)
+
+## Understanding Scopes
+
+- **Every effect and trigger only works in certain scopes** (e.g., country, state, state_region, character, etc.). Always check the docs for supported scopes before using an effect or trigger.
+- **ROOT** refers to the original scope when the effect or trigger was called. **THIS** is the current scope. Use these for context passing, but prefer named scopes for clarity in complex scripts.
+- **Saving Scopes:** Use `save_scope_as = my_scope` to save the current scope for later use. You can then reference it as `scope:my_scope` in effects or triggers.
+- **Dynamic Scopes:** When using a saved scope, always reference it as `scope:your_scope_name` (e.g., `add_claim = scope:colonizer`). The `scope:` prefix is required for dynamic scope usage.
+- **Scope Chains:** You can chain scopes, e.g., `owner = { save_scope_as = colonizer }` then later `add_claim = scope:colonizer` in a different scope.
+- **Event Targets:** Some event targets (like `scope:suez_scope`) are set up in the event’s `immediate` or `option` blocks and then referenced in options or effects.
+
+## Example Patterns
+
+- Save a country scope, then use it later:
+  ```vic3
+  owner = { save_scope_as = colonizer }
+  state_region = {
+    add_claim = scope:colonizer
+  }
+  ```
+- Use a saved scope in an event option:
+  ```vic3
+  s:STATE_SINAI = {
+    add_claim = scope:suez_scope
+  }
+  ```
+
+## Best Practices
+
+- Always check the supported scopes for an effect or trigger in the docs.
+- When using a saved scope, always use the `scope:` prefix.
+- Save the scope before leaving it (before switching to another scope).
+- Use clear and unique names for saved scopes to avoid confusion.
+- Use ROOT and THIS for context, but prefer named scopes for clarity in complex scripts.
+
+## Common Pitfalls
+
+- Using a scope name without the `scope:` prefix for dynamic references (e.g., `add_claim = colonizer` will not work, must be `add_claim = scope:colonizer`).
+- Not saving the scope before switching, resulting in an undefined reference.
+- Using an effect or trigger in the wrong scope (e.g., `add_claim` only works in `state_region` scope).
+
+Refer to vanilla events (like `canal_events.txt`) for working examples of advanced scope usage.
+````instructions
 - Place new on_actions in `common/on_actions/`
 
 
@@ -59,9 +102,158 @@ For this mod, always use the `et_` prefix for new files in these folders (e.g., 
 
 **Timeline Setting:** This mod takes place in 1444, starting at the end of the Europa Universalis IV era and extending the Victoria 3 timeline.
 ## Project Overview
-- This is a total conversion mod for Victoria 3, extending the timeline and adding new mechanics, events, cultures, and countries, with a focus on historical plausibility and performance.
-- The mod structure mirrors Paradox's own, with most content in `common/`, `events/`, `localization/`, and `docs/`.
-- Key design goal: enable smooth conversion from Europa Universalis IV to Victoria 3, supporting a wide range of historical scenarios.
+
+---
+## Quick Reference: Scripting Conventions and Best Practices (from docs)
+
+### Understanding Scope Keywords: ROOT, THIS, owner, prev, FROM, target
+In Paradox scripting, these keywords help you control and reference different scopes:
+
+- **ROOT**: The original scope when the effect or trigger was called. It’s the “starting point” and is preserved even as you switch scopes. For example, if an effect is called on a country, ROOT will always be that country, even if you switch to a state or character inside the effect.
+- **THIS**: The current scope. As you use scope-switching commands (like `owner = { ... }` or `state_region = { ... }`), THIS changes to whatever you’re currently operating on.
+- **owner**: A scope switch keyword. It changes the current scope to the owner of the current object (e.g., from a state to the country that owns it, or from a character to their country).
+- **prev**: The previous scope before the last scope switch. Useful in loops or nested effects.
+- **FROM**: Used in some event/trigger contexts to refer to the scope that triggered the event (not always available).
+- **target**: Used when you have a named target in an event or effect.
+
+**Example:**
+```vic3
+# In state scope
+owner = { add_claim = THIS }  # THIS is the state, owner is the country
+state_region = { add_claim = ROOT }  # ROOT is whatever called the effect (could be a country)
+```
+
+**Summary Table:**
+
+| Keyword   | What it means                        | When to use                        |
+|-----------|--------------------------------------|------------------------------------|
+| ROOT      | The original scope                   | When you want to refer to the caller |
+| THIS      | The current scope                    | When you want to refer to the current object |
+| owner     | Switches to the owner of THIS        | To act in the owner’s scope        |
+| prev      | The previous scope                   | For nested/looped effects          |
+| FROM      | The event’s source scope (sometimes) | In events/triggers                 |
+| target    | A named target scope                 | When set by an event/effect        |
+
+### Linking Custom On_Actions to Vanilla Triggers
+To hook custom logic into a vanilla on_action (such as `on_colony_created`), use this two-step pattern:
+
+1. **On_Action Registration Block:**
+   Register your custom on_action to fire on the vanilla trigger:
+   ```vic3
+   my_custom_action = {
+       on_actions = {
+           on_colony_created
+       }
+   }
+   ```
+2. **Effect Block:**
+   Define the effect for your custom on_action, calling your scripted effect:
+   ```vic3
+   my_custom_action = {
+       effect = {
+           my_scripted_effect = yes
+       }
+   }
+   ```
+This pattern is required for custom logic to hook into vanilla on_actions in Victoria 3 modding. Always use this two-step approach for new on_action logic.
+
+### Important Warning: Do Not Invent Syntax
+- Do not make up or invent syntaxes (e.g., `has_colony`).
+- Most supported syntaxes are listed in the `docs/` folder (`effects.log`, `triggers.log`, etc.).
+- Always check the documentation before using a new effect, trigger, or keyword.
+- If unsure, search the docs or vanilla files for valid examples.
+
+### Scopes
+- Each effect, trigger, or on_action starts in a default scope (e.g., country, character, state).
+- Switch scope explicitly using keywords like `owner = { ... }`, `ruler = { ... }`, `state = { ... }`.
+- Use `any_`, `every_`, and `random_` for looping or acting on multiple entities.
+- Always check and set scope explicitly to avoid bugs.
+
+#### Example Scope Switches
+```plaintext
+owner = { ... }         # Switch from character/state to country
+ruler = { ... }         # Switch from country to its ruler character
+random_owned_state = { ... }  # Switch from country to a random state
+```
+
+### On_Actions
+- Place new on_actions in `common/on_actions/`.
+- Most on_actions should have an `effect = { ... }` block that calls a scripted effect.
+- Example:
+  ```
+  et_homeland_cleanup = {
+      effect = {
+          et_homeland_cleanup_script = yes
+      }
+  }
+  ```
+- In scripted effects, do NOT use `effect =`; only use it in on_actions.
+
+### Scripted Effects/Triggers/Modifiers
+- Place new scripted effects in `common/scripted_effects/` (prefix: `et_`).
+- Place new scripted triggers in `common/scripted_triggers/` (prefix: `et_`).
+- Place new scripted modifiers in `common/scripted_modifiers/` (prefix: `et_`).
+- Follow vanilla folder structure for all custom scripting.
+
+### Scripting Keyword Patterns
+- `any_` is a trigger (checks all elements)
+- `random_` is an effect (acts on one element)
+- `every_` is an effect (acts on all elements)
+
+### Character and Heir System
+- Always use `heir = yes` when creating heirs:
+  ```
+  create_character = {
+    age = { 0 8 }
+    culture = ruler.culture
+    religion = ruler.religion
+    heir = yes
+  }
+  ```
+- For on_actions like `on_monthly_pulse_character`, use `owner = { ... }` to access country properties from character scope.
+
+### Debugging and Validation
+- Validate all referenced scripted effects and modifiers exist.
+- Check that on_actions are registered in the main file.
+- Trace the flow from trigger to effect and validate scope usage at each step.
+- Use `get_errors` to check for syntax issues.
+- Refer to `docs/on_actions.log`, `docs/triggers.log`, `docs/effects.log` for supported scopes and examples.
+
+### General Best Practices
+- All files and localization keys for new features use the `et_` prefix.
+- Prefer referencing/extending existing scripted blocks over duplicating logic.
+- For converter logic, coordinate changes across `common/`, `events/`, and `localization/`.
+- Document intent with comments, especially for complex scope switches.
+
+---
+## Useful Documentation Files
+- `docs/effects.log`: List of effects and their supported scopes.
+- `docs/triggers.log`: List of triggers and their supported scopes.
+- `docs/modifiers.log`: List of modifiers and their descriptions.
+- `docs/on_actions.log`: List of on_actions and their expected scopes.
+- `docs/event_targets.log`: List of event targets and their input/output scopes.
+
+---
+## Example: Preventing Modifier Loops
+```plaintext
+et_heir_storage = {
+  trigger = {
+    is_monarch = yes
+    NOT = { has_modifier = et_has_an_heir }
+    owner = { NOT = { any_scope_character = { is_heir = yes is_character_alive = yes } } }
+  }
+  effect = {
+    et_heir_storage_effect = yes
+  }
+}
+```
+
+---
+## For More Details
+- See the `docs/` folder for up-to-date lists and debugging guides.
+- If unsure, check vanilla files in `game/common/` for examples.
+
+---
 
 ## Directory Structure & Key Files
 - `common/`: Core game definitions (countries, cultures, scripted effects, decisions, etc.).

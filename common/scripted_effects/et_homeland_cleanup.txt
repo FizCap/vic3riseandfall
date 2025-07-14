@@ -186,4 +186,27 @@
     }
     remove_homeland = cu:mongol
   }
+    every_state_region = {
+    limit = {
+      has_homeland = cu:cajun
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:cajun value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:cajun
+  }
+      every_state_region = {
+    limit = {
+      has_homeland = cu:afro_caribbean
+      NOT = {
+        any_scope_state = {
+          culture_percent_state = { target = cu:afro_caribbean value >= 0.1 }
+        }
+      }
+    }
+    remove_homeland = cu:afro_caribbean
+  }
 }
+

@@ -2045,6 +2045,7 @@
 			state_type = incorporated
 		}
 		add_homeland = cu:portuguese
+		add_claim = c:POR
 	}
 	s:STATE_CASTILE = {
 		create_state = {

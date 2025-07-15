@@ -1,3 +1,27 @@
+# Disabling Journal Entries Based on Game Rules (Victoria 3 Modding)
+
+## Best Practice Summary (from Turtle Island case)
+
+To disable a journal entry when a specific game rule is enabled (e.g., culture merging):
+
+- Add a check for the game rule in the `possible` block of the journal entry, like this:
+  ```vic3
+  possible = {
+      ...existing conditions...
+      NOT = { has_game_rule = culture_merging_enabled }
+  }
+  ```
+- This ensures the journal entry cannot be started or completed if the game rule is enabled, regardless of other conditions.
+- Placing the check in `is_shown_when_inactive` only hides the entry, but does not prevent it from being triggered or completed if already active. The `possible` block is the most reliable place for disabling activation.
+- Always verify the exact name of the game rule and use the correct syntax for `has_game_rule`.
+- If you want to hide the entry as well, you can also add the check to `is_shown_when_inactive`, but the `possible` block is essential for full disabling.
+
+## Debugging Tips
+- If the entry does not appear, test by removing the game rule check to isolate the issue.
+- Confirm all other conditions are met for your country/state.
+- Use vanilla files and documentation to verify syntax and scope.
+
+---
 # Scope Usage and Best Practices (Victoria 3)
 
 ## Understanding Scopes

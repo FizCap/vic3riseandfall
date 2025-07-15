@@ -1,0 +1,57 @@
+﻿# Disables the vanilla Turtle Island journal entry if the culture merging game rule is enabled
+# This file overrides the vanilla entry when loaded by the mod
+je_unite_the_nations = {
+    is_shown_when_inactive = {
+        NOT = { is_country_type = decentralized }
+        country_is_in_north_america = yes
+        any_primary_culture = {
+            has_discrimination_trait = indigenous_american_heritage
+        }
+        OR = {
+            NOT = {
+                exists = c:TIS
+            }
+            AND = {
+                exists = c:TIS
+                c:TIS = this
+            }
+        }
+    }
+    possible = {
+        is_subject = no
+        NOT = { has_game_rule = culture_merging_enabled }
+    }
+    complete = {
+        custom_tooltip = {
+            text = je_unite_the_nations_complete_tt
+            NOT = {
+                any_decentralized_country = {
+                    country_is_in_north_america = yes
+                    any_primary_culture = {
+                        shares_heritage_trait_with_any_primary_culture = ROOT
+                    }
+                }
+            }
+        }
+        any_scope_state = {
+            is_homeland_of_country_cultures = ROOT
+            count >= 5
+        }
+    }
+    on_complete = {
+        if = {
+            limit = { is_country_type = unrecognized }
+            set_country_type = recognized
+        }
+        add_modifier = {
+            name = turtle_island_state_of_nations
+            months = -1 # FOREVER
+        }
+    }
+    fail = {
+    }
+    on_fail = {
+    }
+    weight = 100
+    should_be_pinned_by_default = yes
+}

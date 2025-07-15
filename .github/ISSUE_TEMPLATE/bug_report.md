@@ -29,7 +29,7 @@ Example: "Technology menu should open normally"
 - Mod version: [e.g., v2.1]
 - Other mods used: [list or "none"]
 
-**Required Files**
+**Optional Files**
 - Attach your save file (.v3)
 - Attach error.log (from `~/Documents/Paradox Interactive/Victoria 3/logs/error.log`)
 - Attach game.log (from `~/Documents/Paradox Interactive/Victoria 3/logs/game.log`)

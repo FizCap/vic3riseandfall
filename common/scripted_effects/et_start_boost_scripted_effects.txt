@@ -1,45 +1,198 @@
-﻿et_add_random_resource_buildings = {
+﻿et_add_random_naval_buildings = {
     random_list = {
-        25 = { } # 0 buildings
-        25 = { et_add_buildings_randomly_1 = yes }
-        25 = { et_add_buildings_randomly_2 = yes }
-        25 = { et_add_buildings_randomly_3 = yes }
+        25 = { } # 0 naval bases
+        25 = {
+            if = {
+                limit = {
+                    is_coastal = yes
+                    owner = { has_technology_researched = admiralty }
+                }
+                create_building = {
+                    building = building_naval_base
+                    level = 1
+                    reserves = 1
+                }
+            }
+        }
+        25 = {
+            if = {
+                limit = {
+                    is_coastal = yes
+                    owner = { has_technology_researched = admiralty }
+                }
+                create_building = {
+                    building = building_naval_base
+                    level = 2
+                    reserves = 1
+                }
+            }
+        }
+        25 = {
+            if = {
+                limit = {
+                    is_coastal = yes
+                    owner = { has_technology_researched = admiralty }
+                }
+                create_building = {
+                    building = building_naval_base
+                    level = 3
+                    reserves = 1
+                }
+            }
+        }
+    }
+}
+et_add_random_resource_buildings_5x = {
+    et_add_random_resource_buildings = yes
+    et_add_random_resource_buildings = yes
+    et_add_random_resource_buildings = yes
+    et_add_random_resource_buildings = yes
+    et_add_random_resource_buildings = yes
+}
+
+et_add_random_resource_buildings = {
+    random_list = {
+        25 = { }
+        25 = { et_add_random_resource_building_level = { LEVEL = 1 } }
+        25 = { et_add_random_resource_building_level = { LEVEL = 2 } }
+        25 = { et_add_random_resource_building_level = { LEVEL = 3 } }
     }
 }
 
-et_add_buildings_randomly_1 = {
+et_add_random_resource_building_level = {
     random_list = {
-        5 = { create_building = { building = building_rye_farm level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_wheat_farm level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_rice_farm level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_maize_farm level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_millet_farm level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_vineyard_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_livestock_ranch level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_coffee_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_cotton_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_silk_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_dye_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_opium_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_tea_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_tobacco_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_sugar_plantation level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_coal_mine level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_iron_mine level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_lead_mine level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_sulfur_mine level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_fishing_wharf level = 1 reserves = 1 } }
-        5 = { create_building = { building = building_logging_camp level = 1 reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_rye_farm } create_building = { building = building_rye_farm level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_wheat_farm } create_building = { building = building_wheat_farm level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_rice_farm } create_building = { building = building_rice_farm level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_maize_farm } create_building = { building = building_maize_farm level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_millet_farm } create_building = { building = building_millet_farm level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_vineyard_plantation } create_building = { building = building_vineyard_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_livestock_ranch } create_building = { building = building_livestock_ranch level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_coffee_plantation } create_building = { building = building_coffee_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_cotton_plantation } create_building = { building = building_cotton_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_silk_plantation } create_building = { building = building_silk_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_dye_plantation } create_building = { building = building_dye_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_opium_plantation } create_building = { building = building_opium_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_tea_plantation } create_building = { building = building_tea_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_tobacco_plantation } create_building = { building = building_tobacco_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_sugar_plantation } create_building = { building = building_sugar_plantation level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_coal_mine } create_building = { building = building_coal_mine level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_iron_mine } create_building = { building = building_iron_mine level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_lead_mine } create_building = { building = building_lead_mine level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_sulfur_mine } create_building = { building = building_sulfur_mine level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_fishing_wharf } create_building = { building = building_fishing_wharf level = $LEVEL$ reserves = 1 } }
+        5 = { trigger = { can_construct_building = building_logging_camp } create_building = { building = building_logging_camp level = $LEVEL$ reserves = 1 } }
     }
 }
 
-et_add_buildings_randomly_2 = {
-    et_add_buildings_randomly_1 = yes
-    et_add_buildings_randomly_1 = yes
-}
-
-et_add_buildings_randomly_3 = {
-    et_add_buildings_randomly_1 = yes
-    et_add_buildings_randomly_1 = yes
-    et_add_buildings_randomly_1 = yes
+et_add_random_buildings = {
+    # Trade Center: 0-3
+    random_list = {
+        25 = { } # 0
+        25 = { create_building = { building = building_trade_center level = 1 reserves = 1 } }
+        25 = { create_building = { building = building_trade_center level = 2 reserves = 1 } }
+        25 = { create_building = { building = building_trade_center level = 3 reserves = 1 } }
+    }
+    # Construction Sector: 0-3
+    random_list = {
+        25 = { } # 0
+        25 = { create_building = { building = building_construction_sector level = 1 reserves = 1 } }
+        25 = { create_building = { building = building_construction_sector level = 2 reserves = 1 } }
+        25 = { create_building = { building = building_construction_sector level = 3 reserves = 1 } }
+    }
+    # Arts Academy: 0-2
+    random_list = {
+        33 = { } # 0
+        33 = { create_building = { building = building_arts_academy level = 1 reserves = 1 } }
+        34 = { create_building = { building = building_arts_academy level = 2 reserves = 1 } }
+    }
+    # Government Administration: 0-10
+    random_list = {
+        10 = { } # 0
+        10 = { create_building = { building = building_government_administration level = 1 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 2 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 3 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 4 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 5 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 6 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 7 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 8 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 9 reserves = 1 } }
+        10 = { create_building = { building = building_government_administration level = 10 reserves = 1 } }
+    }
+    # Urban buildings: 0-2 for all
+    # Arms Industries
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_arms_industry level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_arms_industry level = 2 reserves = 1 } }
+    }
+    # Artillery Foundry
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_artillery_foundry level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_artillery_foundry level = 2 reserves = 1 } }
+    }
+    # Food Industries
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_food_industry level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_food_industry level = 2 reserves = 1 } }
+    }
+    # Furniture Manufacturies
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_furniture_manufacturies level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_furniture_manufacturies level = 2 reserves = 1 } }
+    }
+    # Glassworks
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_glassworks level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_glassworks level = 2 reserves = 1 } }
+    }
+    # Paper Mills
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_paper_mills level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_paper_mills level = 2 reserves = 1 } }
+    }
+    # Textile Mills
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_textile_mills level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_textile_mills level = 2 reserves = 1 } }
+    }
+    # Tooling Workshops
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_tooling_workshops level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_tooling_workshops level = 2 reserves = 1 } }
+    }
+    # Military Shipyards
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_military_shipyards level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_military_shipyards level = 2 reserves = 1 } }
+    }
+    # Shipyards
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_shipyards level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_shipyards level = 2 reserves = 1 } }
+    }
+    # Steel Mills
+    random_list = {
+        75 = { } # 0
+        20 = { create_building = { building = building_steel_mills level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_steel_mills level = 2 reserves = 1 } }
+    }
+    # Barracks: 1-5 per state
+    random_list = {
+        20 = { create_building = { building = building_barracks level = 1 reserves = 1 } }
+        20 = { create_building = { building = building_barracks level = 2 reserves = 1 } }
+        20 = { create_building = { building = building_barracks level = 3 reserves = 1 } }
+        20 = { create_building = { building = building_barracks level = 4 reserves = 1 } }
+        20 = { create_building = { building = building_barracks level = 5 reserves = 1 } }
+    }
 }

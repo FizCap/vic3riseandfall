@@ -1,3 +1,21 @@
+# Notes: Random Building Generation Lessons Learned (2025-07-16)
+
+### Common Mistakes & Fixes
+- **Wrong Effect Command:** Used `add_building` instead of `create_building`. Only `create_building` works for scripted effects in Victoria 3.
+- **Randomization Weights:** Initial weights for urban/industrial buildings were too high, resulting in too many buildings. Adjusted to 75% chance for none, 20% for level 1, 5% for level 2 for more realistic distribution.
+- **Barracks Generation:** Originally allowed 0 barracks; user wanted 1-5 always. Fixed by removing the 0 option and distributing weights evenly across levels 1-5.
+- **Effect Not Triggering:** Scripted effect (`et_add_random_buildings`) was not being called from on_actions or other logic. Always ensure new effects are actually invoked in the game flow.
+- **Syntax Consistency:** All building creation must use the correct syntax: `create_building = { building = building_xxx level = N reserves = 1 }`.
+- **Testing & Iteration:** Multiple rounds of testing and user feedback were needed to tune the weights and logic for desired gameplay results.
+
+### Best Practices
+- Always check the effect/trigger syntax in the docs or vanilla files before implementing.
+- Use `random_list` for weighted randomization, and adjust weights to match gameplay intent.
+- For effects that should never generate 0 (like barracks), remove the 0-weighted entry entirely.
+- Document all changes and logic decisions in the instructions for future maintainers.
+- Validate that all scripted effects are actually called from on_actions or events.
+- When in doubt, test in-game and iterate based on results and player feedback.
+
 # Disabling Journal Entries Based on Game Rules (Victoria 3 Modding)
 
 ## Best Practice Summary (from Turtle Island case)

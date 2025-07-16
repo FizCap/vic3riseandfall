@@ -2,10 +2,6 @@
   on_actions = { start_boost }
 }
 
-on_yearly_pulse = {
-  on_actions = { start_boost2 }
-}
-
 on_game_started_after_lobby = {
   on_actions = { start_boost3 }
 }
@@ -31,46 +27,22 @@ start_boost = {
   }
 }
 
-start_boost2 = {
+start_boost3 = {
   trigger = {
-    OR = {
-      has_game_rule = economic_boost_medium
-      has_game_rule = economic_boost_high
-    }
-    game_date <= 1544.1.1
+    has_game_rule = economic_boost_enabled
   }
   effect = {
-    every_country = {
-      add_modifier = {
-        name = start_boost_country_modifier2
-        days = 365
-      }
+    every_state = {
+      et_add_random_resource_buildings_5x = yes
+      et_add_random_naval_buildings = yes
+      et_add_random_buildings = yes
     }
   }
 }
 
-start_boost3 = {
-  trigger = {
-    OR = {
-      has_game_rule = economic_boost_medium
-      has_game_rule = economic_boost_high
-    }
-  }
-  effect = {
-      every_state = {
-        et_add_random_resource_buildings_5x = yes
-        et_add_random_naval_buildings = yes
-        et_add_random_buildings = yes
-      }
-    }
-  }
-
 start_boost4 = {
   trigger = {
-    OR = {
-      has_game_rule = economic_boost_medium
-      has_game_rule = economic_boost_high
-    }
+    has_game_rule = economic_boost_enabled
   }
   effect = {
     every_state = {

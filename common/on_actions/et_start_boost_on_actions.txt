@@ -32,13 +32,20 @@ start_boost3 = {
     has_game_rule = economic_boost_enabled
   }
   effect = {
+<<<<<<< HEAD
     every_state = {
       et_add_random_resource_buildings_5x = yes
       et_add_random_naval_buildings = yes
       et_add_random_buildings = yes
+=======
+      every_state = {
+        et_add_random_resource_buildings_5x = yes
+        et_add_random_naval_buildings = yes
+        et_add_random_buildings = yes
+      }
+>>>>>>> 55a6438 (Generate buildings BETA)
     }
   }
-}
 
 start_boost4 = {
   trigger = {

@@ -2,10 +2,6 @@
   on_actions = { start_boost }
 }
 
-on_yearly_pulse = {
-  on_actions = { start_boost2 }
-}
-
 on_game_started_after_lobby = {
   on_actions = { start_boost3 }
 }
@@ -31,71 +27,22 @@ start_boost = {
   }
 }
 
-start_boost2 = {
-  trigger = {
-    OR = {
-      has_game_rule = economic_boost_medium
-      has_game_rule = economic_boost_high
-    }
-    game_date <= 1850.1.1
-  }
-  effect = {
-    every_country = {
-      add_modifier = {
-        name = start_boost_country_modifier2
-        days = 365
-      }
-    }
-  }
-}
-
 start_boost3 = {
   trigger = {
-    OR = {
-      has_game_rule = economic_boost_medium
-      has_game_rule = economic_boost_high
-    }
+    has_game_rule = economic_boost_enabled
   }
   effect = {
-    every_country = {
-      every_scope_state = {
-        limit = { 
-          is_coastal = yes 
-          owner = { has_technology_researched = admiralty }
-        }
-        create_building = {
-          building = "building_naval_base"
-          level = 1
-          reserves = 1
-        }
-      }
-      capital = {
-        create_building = {
-          building = "building_construction_sector"
-          level = 1
-          reserves = 1
-        }
-        create_building = {
-          building = "building_barracks"
-          level = 1
-          reserves = 1
-        }
-        create_building = {
-          building = "building_trade_center"
-          level = 1
-          reserves = 1
-        }
-      }
+    every_state = {
+      et_add_random_resource_buildings_5x = yes
+      et_add_random_naval_buildings = yes
+      et_add_random_buildings = yes
     }
   }
 }
 
 start_boost4 = {
   trigger = {
-    OR = {
-      has_game_rule = economic_boost_medium
-      has_game_rule = economic_boost_high
-    }
+    has_game_rule = economic_boost_enabled
   }
   effect = {
     every_state = {

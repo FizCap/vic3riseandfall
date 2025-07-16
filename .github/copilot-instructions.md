@@ -1,3 +1,45 @@
+# Notes: Random Building Generation Lessons Learned (2025-07-16)
+
+### Common Mistakes & Fixes
+- **Wrong Effect Command:** Used `add_building` instead of `create_building`. Only `create_building` works for scripted effects in Victoria 3.
+- **Randomization Weights:** Initial weights for urban/industrial buildings were too high, resulting in too many buildings. Adjusted to 75% chance for none, 20% for level 1, 5% for level 2 for more realistic distribution.
+- **Barracks Generation:** Originally allowed 0 barracks; user wanted 1-5 always. Fixed by removing the 0 option and distributing weights evenly across levels 1-5.
+- **Effect Not Triggering:** Scripted effect (`et_add_random_buildings`) was not being called from on_actions or other logic. Always ensure new effects are actually invoked in the game flow.
+- **Syntax Consistency:** All building creation must use the correct syntax: `create_building = { building = building_xxx level = N reserves = 1 }`.
+- **Testing & Iteration:** Multiple rounds of testing and user feedback were needed to tune the weights and logic for desired gameplay results.
+
+### Best Practices
+- Always check the effect/trigger syntax in the docs or vanilla files before implementing.
+- Use `random_list` for weighted randomization, and adjust weights to match gameplay intent.
+- For effects that should never generate 0 (like barracks), remove the 0-weighted entry entirely.
+- Document all changes and logic decisions in the instructions for future maintainers.
+- Validate that all scripted effects are actually called from on_actions or events.
+- When in doubt, test in-game and iterate based on results and player feedback.
+
+# Disabling Journal Entries Based on Game Rules (Victoria 3 Modding)
+
+## Best Practice Summary (from Turtle Island case)
+
+To disable a journal entry when a specific game rule is enabled (e.g., culture merging):
+
+- Add a check for the game rule in the `possible` block of the journal entry, like this:
+  ```vic3
+  possible = {
+      ...existing conditions...
+      NOT = { has_game_rule = culture_merging_enabled }
+  }
+  ```
+- This ensures the journal entry cannot be started or completed if the game rule is enabled, regardless of other conditions.
+- Placing the check in `is_shown_when_inactive` only hides the entry, but does not prevent it from being triggered or completed if already active. The `possible` block is the most reliable place for disabling activation.
+- Always verify the exact name of the game rule and use the correct syntax for `has_game_rule`.
+- If you want to hide the entry as well, you can also add the check to `is_shown_when_inactive`, but the `possible` block is essential for full disabling.
+
+## Debugging Tips
+- If the entry does not appear, test by removing the game rule check to isolate the issue.
+- Confirm all other conditions are met for your country/state.
+- Use vanilla files and documentation to verify syntax and scope.
+
+---
 # Scope Usage and Best Practices (Victoria 3)
 
 ## Understanding Scopes

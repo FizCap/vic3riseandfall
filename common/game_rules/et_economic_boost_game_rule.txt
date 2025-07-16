@@ -1,5 +1,5 @@
 economic_boost = {
-	default = economic_boost_disabled
+	default = economic_boost_enabled
 
 	economic_boost_enabled = {
 		flag = economic_boost_enabled

@@ -1,0 +1,45 @@
+﻿et_add_random_resource_buildings = {
+    random_list = {
+        25 = { } # 0 buildings
+        25 = { et_add_buildings_randomly_1 = yes }
+        25 = { et_add_buildings_randomly_2 = yes }
+        25 = { et_add_buildings_randomly_3 = yes }
+    }
+}
+
+et_add_buildings_randomly_1 = {
+    random_list = {
+        5 = { create_building = { building = building_rye_farm level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_wheat_farm level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_rice_farm level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_maize_farm level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_millet_farm level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_vineyard_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_livestock_ranch level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_coffee_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_cotton_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_silk_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_dye_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_opium_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_tea_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_tobacco_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_sugar_plantation level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_coal_mine level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_iron_mine level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_lead_mine level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_sulfur_mine level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_fishing_wharf level = 1 reserves = 1 } }
+        5 = { create_building = { building = building_logging_camp level = 1 reserves = 1 } }
+    }
+}
+
+et_add_buildings_randomly_2 = {
+    et_add_buildings_randomly_1 = yes
+    et_add_buildings_randomly_1 = yes
+}
+
+et_add_buildings_randomly_3 = {
+    et_add_buildings_randomly_1 = yes
+    et_add_buildings_randomly_1 = yes
+    et_add_buildings_randomly_1 = yes
+}

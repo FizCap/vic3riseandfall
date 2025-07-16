@@ -59,32 +59,48 @@ start_boost3 = {
   effect = {
     every_country = {
       every_scope_state = {
-        limit = { 
-          is_coastal = yes 
-          owner = { has_technology_researched = admiralty }
+        trigger = {
+          OR = {
+            has_potential_resource = bg_rye_farms
+            has_potential_resource = bg_wheat_farms
+            has_potential_resource = bg_rice_farms
+            has_potential_resource = bg_maize_farms
+            has_potential_resource = bg_millet_farms
+            has_potential_resource = bg_vineyard_plantations
+            has_potential_resource = bg_livestock_ranches
+            has_potential_resource = bg_coffee_plantations
+            has_potential_resource = bg_cotton_plantations
+            has_potential_resource = bg_silk_plantations
+            has_potential_resource = bg_dye_plantations
+            has_potential_resource = bg_opium_plantations
+            has_potential_resource = bg_tea_plantations
+            has_potential_resource = bg_tobacco_plantations
+            has_potential_resource = bg_sugar_plantations
+            has_potential_resource = bg_coal_mines
+            has_potential_resource = bg_iron_mines
+            has_potential_resource = bg_lead_mines
+            has_potential_resource = bg_sulfur_mines
+            has_potential_resource = bg_fishing_wharves
+            has_potential_resource = bg_logging_camps
+          }
         }
-        create_building = {
-          building = "building_naval_base"
-          level = 1
-          reserves = 1
+        et_add_random_resource_buildings = yes
+        if = {
+          limit = {
+            is_coastal = yes
+            owner = { has_technology_researched = admiralty }
+          }
+          create_building = {
+            building = building_naval_base
+            level = 1
+            reserves = 1
+          }
         }
       }
       capital = {
-        create_building = {
-          building = "building_construction_sector"
-          level = 1
-          reserves = 1
-        }
-        create_building = {
-          building = "building_barracks"
-          level = 1
-          reserves = 1
-        }
-        create_building = {
-          building = "building_trade_center"
-          level = 1
-          reserves = 1
-        }
+        create_building = { building = building_construction_sector level = 1 reserves = 1 }
+        create_building = { building = building_barracks level = 1 reserves = 1 }
+        create_building = { building = building_trade_center level = 1 reserves = 1 }
       }
     }
   }

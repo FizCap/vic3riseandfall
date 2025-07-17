@@ -16,12 +16,12 @@ on_yearly_pulse = {
 
 # Economic Boost Game Rule Effects
 start_boost = {
-  trigger = { has_game_rule = economic_boost_high }
+  trigger = { has_game_rule = economic_boost_enabled }
   effect = {
     every_country = {
       add_modifier = {
         name = start_boost_country_modifier
-        days = 365
+        days = 1095
       }
     }
   }

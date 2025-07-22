@@ -1,0 +1,18 @@
+﻿l_english:
+
+ concept_china: "China"
+ concept_china_desc: "[GetStrategicRegion('region_north_china').GetName] [GetStrategicRegion('region_south_china').GetName]"
+ concept_siberia: "Siberia"
+ concept_siberia_desc: "[GetStrategicRegion('region_east_siberia').GetName] [GetStrategicRegion('region_west_siberia').GetName]"
+ concept_india: "India"
+ concept_india_desc: "[GetStrategicRegion('region_madras').GetName] [GetStrategicRegion('region_bengal').GetName] [GetStrategicRegion('region_bombay').GetName] [GetStrategicRegion('region_punjab').GetName] [GetStrategicRegion('region_central_india').GetName]"
+ concept_british_isles: "British isles"
+ concept_british_isles_desc: "[GetStrategicRegion('region_england').GetName] [GetStrategicRegion('region_north_sea_coast').GetName]"
+ concept_france: "France"
+ concept_france_desc: "[GetStrategicRegion('region_france').GetName] [GetStrategicRegion('region_occitania').GetName]"
+ concept_germany: "Germany"
+ concept_germany_desc: "[GetStrategicRegion('region_rhine').GetName] [GetStrategicRegion('region_north_germany').GetName] [GetStrategicRegion('region_south_germany').GetName]"
+ concept_nordic_states: "Nordic states"
+ concept_nordic_states_desc: "[GetStrategicRegion('region_baltic').GetName] [GetStrategicRegion('region_finland').GetName]"
+ concept_russia: "Russia"
+ concept_russia_desc: "[GetStrategicRegion('region_russia').GetName] [GetStrategicRegion('region_dnieper').GetName] [GetStrategicRegion('region_belarus').GetName] [GetStrategicRegion('region_arctic_russia').GetName] [GetStrategicRegion('region_urals').GetName]"

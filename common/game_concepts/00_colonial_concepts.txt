@@ -1,0 +1,16 @@
+﻿concept_siberia = {}
+
+concept_china = {}
+
+concept_india = {}
+
+concept_british_isles = {}
+
+concept_france = {}
+
+concept_germany = {}
+
+concept_nordic_states = {}
+
+concept_russia = {}
+

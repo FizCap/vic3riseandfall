@@ -1,4 +1,10 @@
 ﻿l_english:
+  et_research_Debuff: "Apply Research Debuff (1444-1820)"
+  rule_et_research_debuff_rule: "Research Debuff (1444-1820)"
+  setting_et_research_debuff_enabled: "Enabled"
+  setting_et_research_debuff_enabled_desc: "All countries suffer a -95% research speed penalty between 1444 and 1820."
+  setting_et_research_debuff_disabled: "Disabled"
+  setting_et_research_debuff_disabled_desc: "No research debuff is applied."
   rule_et_annex_decentralized_annexation: "Annex Decentralized Nations (Performance)"
   setting_annexation_unlimited: "Unlimited Annexation"
   setting_annexation_unlimited_desc: "Will keep merging decentralized nations until only a few remain."

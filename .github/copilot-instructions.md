@@ -1,3 +1,45 @@
+
+# Notes: Research Debuff/Game Rule Implementation (2025-07-27)
+
+## Lessons Learned & Common Pitfalls
+
+This section documents the main mistakes and fixes from implementing the research debuff/game rule system, so future modders (and Copilot) can avoid the same issues. If you're adding similar features, check here first!
+
+### On_Action Registration & Scope
+- Early attempts missed the vanilla pattern for on_action registration and effect blocks. Remember: always use an `effect = { ... }` block in on_actions, and never put `effect =` inside scripted effects themselves.
+
+### Modifier Placement
+- The research debuff modifier was first put in `scripted_modifiers`, but it needs to be in `static_modifiers` for permanent or recurring country effects. Always check which folder is correct for your modifier type.
+
+### Game Rule Logic
+- The logic for enabling/disabling the debuff was initially backwards or in the wrong place. Double-check your game rule structure and make sure the debuff only applies when the rule is enabled.
+
+### Localization Key Format
+- Used non-standard keys at first (like `et_research_debuff_rule` instead of `rule_et_research_debuff_rule`). Stick to the Paradox format for all game rule and setting keys, and keep them in the main general localization file for consistency.
+
+### Modifier Duration Syntax
+- Tried to use `add_modifier = { name = ... days = 30 }` (inline), but vanilla uses block syntax for temporary modifiers. Also, for permanent modifiers, just use the name with no days argument.
+
+### Modifier Application Logic
+- Forgot to check if the modifier was already present, which could cause stacking or redundant applications. Always add a NOT = { has_modifier = ... } check before adding a recurring modifier.
+
+### Removing the Modifier After 1820
+- Originally, there was no logic to remove the debuff after 1820. Add a scripted effect and on_action to remove the modifier from all countries when the year is 1820 or later.
+
+### Localization for Scripted Effects
+- Missed a localization key for the scripted effect (`et_research_Debuff`). Always add a localization entry for any scripted effect that might show up in the UI or logs.
+
+---
+**Best Practices for Future Modding:**
+- Follow vanilla patterns for on_actions, scripted effects, and localization keys.
+- Use the right folder for static vs. scripted modifiers.
+- Double-check game rule logic and flag usage.
+- Use block syntax for temporary modifiers, omit days for permanent ones.
+- Always check for existing modifiers before adding new ones.
+- Add logic to remove time-limited modifiers when their window ends.
+- Make sure all scripted effects and on_actions have proper localization.
+
+Refer to this section for quick reminders and to help new contributors avoid common mistakes!
 # Notes: Random Building Generation Lessons Learned (2025-07-16)
 
 ### Common Mistakes & Fixes

@@ -9,6 +9,13 @@
     }
 }
 
+on_monthly_pulse_country = {
+    on_actions = {
+        et_research_Debuff
+        et_remove_research_Debuff_trigger
+    }
+}
+
 on_game_started_after_lobby = {
     on_actions = {
         japanese_shogunate_event1

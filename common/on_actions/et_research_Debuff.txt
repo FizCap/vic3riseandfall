@@ -1,0 +1,13 @@
+﻿et_research_Debuff = {
+    effect = {
+        limit = {
+            year >= 1444
+            year < 1820
+            has_game_rule = et_research_debuff_rule_enabled
+        }
+        if = {
+            limit = { NOT = { has_modifier = et_era_tech_penalty } }
+            add_modifier = et_era_tech_penalty
+        }
+    }
+}

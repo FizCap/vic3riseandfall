@@ -1,0 +1,6 @@
+et_remove_research_Debuff = {
+    every_country = {
+        limit = { has_modifier = et_era_tech_penalty }
+        remove_modifier = et_era_tech_penalty
+    }
+}

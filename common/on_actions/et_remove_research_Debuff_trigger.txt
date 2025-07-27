@@ -1,0 +1,8 @@
+et_remove_research_Debuff_trigger = {
+    effect = {
+        if = {
+            limit = { year >= 1820 }
+            et_remove_research_Debuff = yes
+        }
+    }
+}

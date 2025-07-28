@@ -15,6 +15,7 @@ on_monthly_pulse_country = {
     on_actions = {
         et_research_Debuff
         et_remove_research_Debuff_trigger
+        et_aggressive_ai_on_action
     }
 }
 
@@ -22,6 +23,13 @@ on_game_started_after_lobby = {
     on_actions = {
         japanese_shogunate_event1
         et_homeland_cleanup
+    }
+}
+
+on_game_started = {
+    on_actions = {
+        holy_roman_emperor
+        force_slavery_startup
     }
 }
 

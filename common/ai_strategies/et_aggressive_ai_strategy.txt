@@ -1,0 +1,35 @@
+﻿ai_strategy_et_aggressive_ai = {
+    type = diplomatic
+    weight = 100
+    aggression = {
+        value = 5.0
+    }
+    diplomatic_play_boldness = {
+        value = 5.0
+    }
+    recklessness = {
+        value = 5.0
+    }
+    wargoal_weights = {
+        conquer_state = 5.0
+        return_state = 5.0
+        if = {
+            limit = { has_law = law_type:law_monarchy }
+            make_protectorate = 20.0
+            transfer_subject = 20.0
+        }
+    }
+    state_value = {
+        if = {
+            limit = {
+                scope:target_state = {
+                    state_region = {
+                        is_homeland = root.primary_culture
+                    }
+                }
+                can_reach_target_state = yes
+            }
+            add = 1000
+        }
+    }
+}

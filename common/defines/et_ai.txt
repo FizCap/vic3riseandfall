@@ -1,1 +1,0 @@
-HIGH_AGGRESSION_BASE_EFFECT_MULT = 4.0 # The impact of high ai aggression game rule on how often the AI starts diplomatic plays

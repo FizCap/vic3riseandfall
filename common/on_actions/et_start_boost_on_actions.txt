@@ -2,6 +2,10 @@
   on_actions = { start_boost }
 }
 
+on_yearly_pulse = {
+  on_actions = { start_boost2 }
+}
+
 on_game_started_after_lobby = {
   on_actions = { start_boost3 }
 }
@@ -21,7 +25,26 @@ start_boost = {
     every_country = {
       add_modifier = {
         name = start_boost_country_modifier
-        days = 1095
+        years = 5
+        is_decaying = yes
+      }
+    }
+  }
+}
+
+start_boost2 = {
+  trigger = {
+    has_game_rule = economic_boost_enabled
+    year <= 1544
+  }
+  effect = {
+    every_country = {
+      if = {
+        limit = { is_ai = yes NOT = { has_modifier = start_boost_country_modifier2 } }
+        add_modifier = {
+          name = start_boost_country_modifier2
+          days = 364
+        }
       }
     }
   }
@@ -33,7 +56,7 @@ start_boost3 = {
   }
   effect = {
     every_state = {
-      et_add_random_resource_buildings_5x = yes
+      et_add_random_resource_buildings_15x = yes
       et_add_random_naval_buildings = yes
       et_add_random_buildings = yes
     }

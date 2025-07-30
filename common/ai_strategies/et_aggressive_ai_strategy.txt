@@ -1,35 +1,120 @@
 ﻿ai_strategy_et_aggressive_ai = {
+    icon = "gfx/interface/icons/ai_strategy_icons/conquer_region.dds"
+    
     type = diplomatic
-    weight = 100
+    
+    # Reduces infamy thresholds to make AI more willing to take aggressive actions
+    undesirable_infamy_level = {
+        value = 35  # Down from default 50
+    }
+    
+    unacceptable_infamy_level = {
+        value = 75  # Down from default 100
+    }
+    
+    # Increase aggression towards neighboring countries
     aggression = {
-        value = 5.0
-    }
-    diplomatic_play_boldness = {
-        value = 5.0
-    }
-    recklessness = {
-        value = 5.0
-    }
-    wargoal_weights = {
-        conquer_state = 5.0
-        return_state = 5.0
-        if = {
-            limit = { has_law = law_type:law_monarchy }
-            make_protectorate = 20.0
-            transfer_subject = 20.0
-        }
-    }
-    state_value = {
+        value = 1.5  # Higher base aggression (vanilla default ~0.25)
+        
+        # Extra aggressive toward neighboring countries
         if = {
             limit = {
-                scope:target_state = {
-                    state_region = {
-                        is_homeland = root.primary_culture
-                    }
-                }
-                can_reach_target_state = yes
+                has_strategic_adjacency = scope:target_country
             }
-            add = 1000
+            add = 1.0
+        }
+        
+        # Less aggressive toward distant countries
+        if = {
+            limit = {
+                NOT = { has_strategic_adjacency = scope:target_country }
+            }
+            multiply = 0.3
+        }
+    }
+    
+    # More willing to escalate diplomatic plays
+    diplomatic_play_boldness = {
+        value = 15.0  # Higher than default -25 to 25 range
+        
+        # Extra bold against neighbors
+        if = {
+            limit = {
+                has_strategic_adjacency = scope:target_country
+            }
+            add = 10.0
+        }
+    }
+    
+    # Less likely to stay neutral in diplomatic plays
+    diplomatic_play_neutrality = {
+        value = -15  # Lower than default 0
+    }
+    
+    # More reckless in general
+    recklessness = {
+        value = 0.5  # Higher than default 0
+    }
+    
+    # Prefer conquest wargoals over diplomatic ones
+    wargoal_weights = {
+        conquer_state = 3.0  # Much higher than default 1.5
+        return_state = 2.5   # Higher than default 1.5
+        make_protectorate = 0.3  # Much lower to discourage distant puppeting
+        transfer_subject = 0.3   # Much lower
+        take_treaty_port = 0.5   # Lower
+        force_nationalization = 0.1  # Very low
+    }
+    
+    # Prioritize conquest as secret goal
+    secret_goal_weights = {
+        conquer = 3.0  # Much higher than default 1.5
+        protect = 0.3  # Much lower than default 0.5
+    }
+    
+    # Enhanced scoring for conquest of neighbors
+    secret_goal_scores = {
+        conquer = {
+            # Base score for reachable neighbors
+            if = {
+                limit = {
+                    can_reach_target_country = yes
+                    has_strategic_adjacency = scope:target_country
+                }
+                add = 50
+            }
+            
+            # Penalty for distant countries
+            if = {
+                limit = {
+                    NOT = { has_strategic_adjacency = scope:target_country }
+                }
+                add = -50
+            }
+        }
+    }
+    
+    possible = {
+        is_subject = no
+        is_at_war = no
+    }
+    
+    weight = {
+        value = 100
+        
+        # Higher weight for countries with military tech
+        if = {
+            limit = {
+                has_technology_researched = standing_army
+            }
+            add = 25
+        }
+        
+        if = {
+            limit = {
+                has_technology_researched = military_drill
+            }
+            add = 25
         }
     }
 }

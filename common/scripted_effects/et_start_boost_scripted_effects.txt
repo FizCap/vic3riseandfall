@@ -409,14 +409,14 @@ et_add_random_buildings = {
     }
     # Government Administration: 0-8 (large empires had extensive bureaucracy)
     random_list = {
-        5 = { } # 0
-        18 = { create_building = { building = building_government_administration level = 1 reserves = 1 } }
-        18 = { create_building = { building = building_government_administration level = 2 reserves = 1 } }
-        18 = { create_building = { building = building_government_administration level = 3 reserves = 1 } }
-        14 = { create_building = { building = building_government_administration level = 4 reserves = 1 } }
+        15 = { } # 0
+        15 = { create_building = { building = building_government_administration level = 1 reserves = 1 } }
+        15 = { create_building = { building = building_government_administration level = 2 reserves = 1 } }
+        15 = { create_building = { building = building_government_administration level = 3 reserves = 1 } }
+        12 = { create_building = { building = building_government_administration level = 4 reserves = 1 } }
         10 = { create_building = { building = building_government_administration level = 5 reserves = 1 } }
         8 = { create_building = { building = building_government_administration level = 6 reserves = 1 } }
-        5 = { create_building = { building = building_government_administration level = 7 reserves = 1 } }
+        6 = { create_building = { building = building_government_administration level = 7 reserves = 1 } }
         4 = { create_building = { building = building_government_administration level = 8 reserves = 1 } }
     }
     # Arms Industries: 0-3 (weapon making existed but was small-scale)

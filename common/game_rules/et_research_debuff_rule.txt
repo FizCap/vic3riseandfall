@@ -1,9 +1,0 @@
-﻿et_research_debuff_rule = {
-    default = et_research_debuff_disabled
-
-    et_research_debuff_disabled = { }
-
-    et_research_debuff_enabled = {
-        flag = et_research_debuff_rule_enabled
-    }
-}

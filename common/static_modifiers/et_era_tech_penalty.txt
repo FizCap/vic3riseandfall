@@ -1,3 +1,4 @@
 ﻿et_era_tech_penalty = {
-    country_tech_research_speed_mult = -0.70 # -95% research speed
+    country_tech_research_speed_mult = -0.90 # -95% research speed"
+    country_tech_spread_mult = -0.90 # -70% spread decrease
 }

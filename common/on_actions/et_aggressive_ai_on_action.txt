@@ -1,5 +1,0 @@
-﻿et_aggressive_ai_on_action = {
-    effect = {
-            set_strategy = ai_strategy_et_aggressive_ai
-        }
-    }

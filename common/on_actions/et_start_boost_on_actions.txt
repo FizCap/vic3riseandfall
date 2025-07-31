@@ -1,21 +1,32 @@
-﻿on_game_started_after_lobby = {
+﻿on_monthly_pulse_country = {
+  on_actions = {
+    ai_improvement1
+    ai_improvement2
+    ai_improvement3
+    ai_improvement4
+    ai_improvement5
+  }
+}
+
+on_yearly_pulse_country = {
+  on_actions = {
+    start_boost2
+    ai_improvement6
+  }
+}
+
+on_game_started_after_lobby = {
   on_actions = { start_boost }
 }
 
 on_yearly_pulse = {
-  on_actions = { start_boost2 }
+  on_actions = {
+    start_boost4
+  }
 }
 
 on_game_started_after_lobby = {
   on_actions = { start_boost3 }
-}
-
-on_yearly_pulse = { 
-  on_actions = { start_boost4 } 
-}
-
-on_yearly_pulse = { 
-  on_actions = { start_boost5 } 
 }
 
 # Economic Boost Game Rule Effects
@@ -35,17 +46,14 @@ start_boost = {
 start_boost2 = {
   trigger = {
     has_game_rule = economic_boost_enabled
-    year <= 1544
+    is_ai = yes
+    NOT = { has_technology = central_banking }
   }
   effect = {
-    every_country = {
-      if = {
-        limit = { is_ai = yes NOT = { has_modifier = start_boost_country_modifier2 } }
-        add_modifier = {
-          name = start_boost_country_modifier2
-          days = 364
-        }
-      }
+    add_modifier = {
+      name = start_boost_country_modifier2
+      days = 364
+      hidden = yes
     }
   }
 }
@@ -86,6 +94,109 @@ start_boost4 = {
         }
         remove_modifier = start_boost_country_modifier4
       }
+    }
+  }
+}
+
+ai_improvement1 = {
+  trigger = {
+    has_game_rule = ai_improvement_enabled
+    weekly_net_fixed_income < 5000
+    is_ai = yes
+    NOT = { has_variable = et_budget_cooldown }
+  }
+  effect = {
+    set_government_wage_level = very_low
+    set_military_wage_level = very_low
+    "building_port" = { set_subsidized = no }
+    set_variable = {
+      name = et_budget_cooldown
+      days = 30
+    }
+  }
+}
+
+ai_improvement2 = {
+  trigger = {
+    has_game_rule = ai_improvement_enabled
+    weekly_net_fixed_income >= 5001
+    weekly_net_fixed_income < 15001
+    is_ai = yes
+    NOT = { has_variable = et_budget_cooldown }
+  }
+  effect = {
+    set_government_wage_level = low
+    set_military_wage_level = low
+    "building_port" = { set_subsidized = no }
+    set_variable = {
+      name = et_budget_cooldown
+      days = 30
+    }
+  }
+}
+
+ai_improvement3 = {
+  trigger = {
+    has_game_rule = ai_improvement_enabled
+    weekly_net_fixed_income >= 15001
+    weekly_net_fixed_income < 50001
+    is_ai = yes
+    NOT = { has_variable = et_budget_cooldown }
+  }
+  effect = {
+    set_government_wage_level = medium
+    set_military_wage_level = medium
+    set_variable = {
+      name = et_budget_cooldown
+      days = 30
+    }
+  }
+}
+ai_improvement4 = {
+  trigger = {
+    has_game_rule = ai_improvement_enabled
+    weekly_net_fixed_income >= 50001
+    weekly_net_fixed_income < 100001
+    is_ai = yes
+    NOT = { has_variable = et_budget_cooldown }
+  }
+  effect = {
+    set_government_wage_level = high
+    set_military_wage_level = high
+    set_variable = {
+      name = et_budget_cooldown
+      days = 30
+    }
+  }
+}
+ai_improvement5 = {
+  trigger = {
+    has_game_rule = ai_improvement_enabled
+    weekly_net_fixed_income >= 100001
+    is_ai = yes
+    NOT = { has_variable = et_budget_cooldown }
+  }
+  effect = {
+    set_government_wage_level = very_high
+    set_military_wage_level = very_high
+    set_variable = {
+      name = et_budget_cooldown
+      days = 30
+    }
+  }
+}
+
+ai_improvement6 = {
+  trigger = {
+    has_game_rule = ai_improvement_enabled
+    is_ai = yes
+    bureaucracy < 0
+  }
+  effect = {
+    add_modifier = {
+      name = et_negative_bureaucracy
+      days = 364
+      hidden = yes
     }
   }
 }

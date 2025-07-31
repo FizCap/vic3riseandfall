@@ -15,7 +15,6 @@ on_monthly_pulse_country = {
     on_actions = {
         et_research_Debuff
         et_remove_research_Debuff_trigger
-        et_aggressive_ai_on_action
     }
 }
 
@@ -37,13 +36,6 @@ on_yearly_pulse_character = {
   on_actions = {
     et_random_character_death
   }
-}
-
-on_game_started = {
-    on_actions = {
-        holy_roman_emperor
-        force_slavery_startup
-    }
 }
 
 on_colony_created = {
@@ -146,6 +138,7 @@ et_ottomans_rise = {
             add_claim = c:TUR
         }
         c:TUR = {
+            set_strategy = ai_strategy_et_aggressive_ai
             trigger_event = { id = et_ottomans.1 }
         }
         every_country = {

@@ -42,3 +42,14 @@ et_annex_decentralized_annexation = {
     annexation_disabled = {
     }
 }
+
+ai_improvement = {
+    default = ai_improvement_enabled
+
+    ai_improvement_enabled = {
+        flag = ai_improvement_enabled
+    }
+
+    ai_improvement_disabled = {
+    }
+}

@@ -30,11 +30,6 @@
             set_military_wage_level = very_high
         }
 
-        # TEST: If weekly net income is less than 0, add holy_roman_emperor modifier for 1 year
-        if = {
-            limit = { income > 50000 }
-            add_modifier = { name = holy_roman_emperor days = 30 }
-        }
         set_variable = { name = et_budget_cooldown days = 30 }
 
         # Bureaucracy modifier logic always runs

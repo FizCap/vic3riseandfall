@@ -1,6 +1,6 @@
 ﻿start_boost_country_modifier = {
     state_pop_qualifications_mult = 100
-    country_tax_income_add = 50000
+    country_tax_income_add = 15000
     building_training_rate_add = 1000
     military_formation_organization_gain_add = 10
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
@@ -20,6 +20,10 @@ start_boost_country_modifier4 = {
     state_birth_rate_mult = 2.0
     state_mortality_mult = -1.0
     military_formation_organization_gain_add = 10
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+testing_treasury = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }
 

@@ -1,10 +1,6 @@
 ﻿on_monthly_pulse_country = {
   on_actions = {
-    ai_improvement1
-    ai_improvement2
-    ai_improvement3
-    ai_improvement4
-    ai_improvement5
+    ai_improvement
   }
 }
 
@@ -98,107 +94,10 @@ start_boost4 = {
   }
 }
 
-ai_improvement1 = {
-  trigger = {
-    has_game_rule = ai_improvement_enabled
-    weekly_net_fixed_income < 5000
-    is_ai = yes
-    NOT = { has_variable = et_budget_cooldown }
-  }
-  effect = {
-    set_government_wage_level = very_low
-    set_military_wage_level = very_low
-    "building_port" = { set_subsidized = no }
-    set_variable = {
-      name = et_budget_cooldown
-      days = 30
+ai_improvement = {
+    effect = {
+        ai_improvement_effect = yes
     }
-  }
-}
-
-ai_improvement2 = {
-  trigger = {
-    has_game_rule = ai_improvement_enabled
-    weekly_net_fixed_income >= 5001
-    weekly_net_fixed_income < 15001
-    is_ai = yes
-    NOT = { has_variable = et_budget_cooldown }
-  }
-  effect = {
-    set_government_wage_level = low
-    set_military_wage_level = low
-    "building_port" = { set_subsidized = no }
-    set_variable = {
-      name = et_budget_cooldown
-      days = 30
-    }
-  }
-}
-
-ai_improvement3 = {
-  trigger = {
-    has_game_rule = ai_improvement_enabled
-    weekly_net_fixed_income >= 15001
-    weekly_net_fixed_income < 50001
-    is_ai = yes
-    NOT = { has_variable = et_budget_cooldown }
-  }
-  effect = {
-    set_government_wage_level = medium
-    set_military_wage_level = medium
-    set_variable = {
-      name = et_budget_cooldown
-      days = 30
-    }
-  }
-}
-ai_improvement4 = {
-  trigger = {
-    has_game_rule = ai_improvement_enabled
-    weekly_net_fixed_income >= 50001
-    weekly_net_fixed_income < 100001
-    is_ai = yes
-    NOT = { has_variable = et_budget_cooldown }
-  }
-  effect = {
-    set_government_wage_level = high
-    set_military_wage_level = high
-    set_variable = {
-      name = et_budget_cooldown
-      days = 30
-    }
-  }
-}
-ai_improvement5 = {
-  trigger = {
-    has_game_rule = ai_improvement_enabled
-    weekly_net_fixed_income >= 100001
-    is_ai = yes
-    NOT = { has_variable = et_budget_cooldown }
-  }
-  effect = {
-    set_government_wage_level = very_high
-    set_military_wage_level = very_high
-    set_variable = {
-      name = et_budget_cooldown
-      days = 30
-    }
-  }
-}
-
-ai_improvement6 = {
-  trigger = {
-    has_game_rule = ai_improvement_enabled
-    is_ai = yes
-    bureaucracy < 0
-  }
-  effect = {
-    add_modifier = {
-      name = et_negative_bureaucracy
-      days = 364
-      hidden = yes
-    }
-  }
 }
 
 et_homeland_cleanup = {

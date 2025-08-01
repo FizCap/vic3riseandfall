@@ -1,0 +1,38 @@
+﻿on_monthly_pulse_country = {
+	on_actions = {
+		et_investment_pool_monthly
+	}
+}
+
+et_investment_pool_monthly = {
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_journal_entry = et_treasury_investment_pool_transfer }
+				OR = {
+					investment_pool > 0
+					gold_reserves > 0
+				}
+			}
+			add_journal_entry = { type = et_treasury_investment_pool_transfer }
+		}
+		
+		if = {
+			limit = {
+				has_variable = et_auto_transfer_var
+				gold_reserves > 0
+			}
+			set_variable = {
+				name = et_amount_to_transfer_var
+				value = gold_reserves
+			}
+			add_investment_pool = var:et_amount_to_transfer_var
+			change_variable = {
+				name = et_amount_to_transfer_var
+				multiply = -1
+			}
+			add_treasury = var:et_amount_to_transfer_var
+			remove_variable = et_amount_to_transfer_var
+		}
+	}
+}

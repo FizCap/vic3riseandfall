@@ -7,7 +7,6 @@
 on_yearly_pulse_country = {
   on_actions = {
     start_boost2
-    ai_improvement6
   }
 }
 
@@ -96,7 +95,9 @@ start_boost4 = {
 
 ai_improvement = {
     effect = {
-        ai_improvement_effect = yes
+        et_ai_improvement_effect_great_power = yes
+        et_ai_improvement_effect_major_power = yes
+        et_ai_improvement_effect_minor_power = yes
     }
 }
 

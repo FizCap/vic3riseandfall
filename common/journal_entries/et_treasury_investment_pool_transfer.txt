@@ -7,11 +7,7 @@ is_shown_when_inactive = {
 }
 
 	possible = {
-		# Auto-activate if there are funds to transfer
-		OR = {
-			investment_pool > 100000
-			gold_reserves > 100000
-		}
+		always = yes
 	}
 
 	# Manual fund transfer options using scripted buttons

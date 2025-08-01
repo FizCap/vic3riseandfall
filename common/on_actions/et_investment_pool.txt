@@ -16,23 +16,47 @@ et_investment_pool_monthly = {
 			}
 			add_journal_entry = { type = et_treasury_investment_pool_transfer }
 		}
-		
+
+		# Unique auto-transfer logic: keep 20% of gold reserves, move rest to investment pool
 		if = {
 			limit = {
 				has_variable = et_auto_transfer_var
 				gold_reserves > 0
 			}
+			# Calculate minimum reserve to keep (20%)
 			set_variable = {
-				name = et_amount_to_transfer_var
-				value = gold_reserves
+				name = et_reserve_floor
+				value = gold_reserves_limit
 			}
-			add_investment_pool = var:et_amount_to_transfer_var
 			change_variable = {
-				name = et_amount_to_transfer_var
-				multiply = -1
+				name = et_reserve_floor
+				multiply = 0.2
 			}
-			add_treasury = var:et_amount_to_transfer_var
-			remove_variable = et_amount_to_transfer_var
+
+			# If above reserve, move surplus
+			if = {
+				limit = {
+					gold_reserves > var:et_reserve_floor
+				}
+				set_variable = {
+					name = et_surplus_gold
+					value = gold_reserves
+				}
+				change_variable = {
+					name = et_surplus_gold
+					subtract = var:et_reserve_floor
+				}
+				# Move surplus to investment pool and subtract from treasury
+				add_investment_pool = var:et_surplus_gold
+				change_variable = {
+					name = et_surplus_gold
+					multiply = -1
+				}
+				add_treasury = var:et_surplus_gold
+			}
+			# Clean up variables
+			remove_variable = et_reserve_floor
+			remove_variable = et_surplus_gold
 		}
 	}
 }

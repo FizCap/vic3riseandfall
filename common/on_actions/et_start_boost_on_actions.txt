@@ -4,12 +4,6 @@
   }
 }
 
-on_yearly_pulse_country = {
-  on_actions = {
-    start_boost2
-  }
-}
-
 on_game_started_after_lobby = {
   on_actions = { start_boost }
 }
@@ -34,21 +28,6 @@ start_boost = {
         years = 5
         is_decaying = yes
       }
-    }
-  }
-}
-
-start_boost2 = {
-  trigger = {
-    has_game_rule = economic_boost_enabled
-    is_ai = yes
-    NOT = { has_technology = central_banking }
-  }
-  effect = {
-    add_modifier = {
-      name = start_boost_country_modifier2
-      days = 364
-      hidden = yes
     }
   }
 }

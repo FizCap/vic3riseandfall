@@ -1,0 +1,16 @@
+﻿# This will do investment pool calculations based on the gold reserves.
+
+et_reserve_floor = {
+	value = gold_reserves_limit
+	multiply = 0.2
+}
+
+et_surplus_gold = {
+	value = gold_reserves
+	subtract = et_reserve_floor
+}
+
+et_surplus_gold_neg = {
+	value = 0
+	subtract = et_surplus_gold
+}

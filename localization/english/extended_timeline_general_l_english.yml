@@ -84,6 +84,6 @@
   setting_ai_improvement_enabled_desc: "Experimental: Changes vanilla AI to aggressively balance its budget and avoid running deficits. Behavior may be unpredictable."
   setting_ai_improvement_disabled: "Disabled"
   setting_ai_improvement_disabled_desc: "AI countries will not receive any special bonuses or budget-balancing changes."
-  rule_ai_improvement: "ET: AI Boost Game Rule"
+  rule_ai_improvement: "ET: AI Improvement Game Rule"
   et_negative_bureaucracy: "Negative Bureaucracy"
   et_era_tech_penalty: "Era Technology Penalty"

@@ -6,7 +6,7 @@
 		always = yes
 	}
 
-	cooldown = { days = 30 }
+	cooldown = { days = 180 }
 
 	possible = {
 		investment_pool > 100000

@@ -1,0 +1,24 @@
+﻿et_treasury_investment_pool_transfer = {
+	icon = "gfx/interface/icons/investment_pool.dds"
+	group = je_group_economy
+
+is_shown_when_inactive = {
+	always = yes
+}
+
+	possible = {
+		# Auto-activate if there are funds to transfer
+		OR = {
+			investment_pool > 100000
+			gold_reserves > 100000
+		}
+	}
+
+	# Manual fund transfer options using scripted buttons
+	scripted_button = et_transfer_to_treasury_button
+	scripted_button = et_auto_transfer_activate_button
+	scripted_button = et_auto_transfer_deactivate_button
+
+	should_be_pinned_by_default = yes
+	weight = 100
+}

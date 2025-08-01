@@ -1,0 +1,81 @@
+﻿et_ai_improvement = {
+    trigger = {
+        has_game_rule = ai_improvement_enabled
+        is_ai = yes
+    }
+    effect = {
+        if = {
+            limit = {
+                weekly_net_fixed_income < 5000
+                NOT = { has_variable = et_budget_cooldown }
+            }
+            set_government_wage_level = very_low
+            set_military_wage_level = very_low
+            set_variable = {
+                name = et_budget_cooldown
+                days = 30
+            }
+        }
+        else_if = {
+            limit = {
+                weekly_net_fixed_income >= 5001
+                weekly_net_fixed_income < 15001
+                NOT = { has_variable = et_budget_cooldown }
+            }
+            set_government_wage_level = low
+            set_military_wage_level = low
+            set_variable = {
+                name = et_budget_cooldown
+                days = 30
+            }
+        }
+        else_if = {
+            limit = {
+                weekly_net_fixed_income >= 15001
+                weekly_net_fixed_income < 50001
+                NOT = { has_variable = et_budget_cooldown }
+            }
+            set_government_wage_level = medium
+            set_military_wage_level = medium
+            set_variable = {
+                name = et_budget_cooldown
+                days = 30
+            }
+        }
+        else_if = {
+            limit = {
+                weekly_net_fixed_income >= 50001
+                weekly_net_fixed_income < 100001
+                NOT = { has_variable = et_budget_cooldown }
+            }
+            set_government_wage_level = high
+            set_military_wage_level = high
+            set_variable = {
+                name = et_budget_cooldown
+                days = 30
+            }
+        }
+        else_if = {
+            limit = {
+                weekly_net_fixed_income >= 100001
+                NOT = { has_variable = et_budget_cooldown }
+            }
+            set_government_wage_level = very_high
+            set_military_wage_level = very_high
+            set_variable = {
+                name = et_budget_cooldown
+                days = 30
+            }
+        }
+        if = {
+            limit = {
+                bureaucracy < 0
+            }
+            add_modifier = {
+                name = et_negative_bureaucracy
+                days = 364
+                hidden = yes
+            }
+        }
+    }
+}

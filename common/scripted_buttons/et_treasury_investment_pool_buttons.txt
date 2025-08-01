@@ -1,0 +1,80 @@
+﻿et_transfer_to_treasury_button = {
+	name = "et_transfer_to_treasury_button"
+	desc = "et_transfer_to_treasury_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	cooldown = { days = 30 }
+
+	possible = {
+		investment_pool > 100000
+		OR = {
+			is_ai = yes
+			is_player = yes
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = {
+				gold_reserves <= 0
+				investment_pool > 100000
+			}
+			add = 100
+		}
+	}
+
+	effect = {
+		add_investment_pool = -100000
+		add_treasury = 100000
+	}
+}
+
+et_auto_transfer_activate_button = {
+	name = "et_auto_transfer_activate_button"
+	desc = "et_auto_transfer_activate_button_desc"
+
+	visible = {
+		NOT = {
+			has_variable = et_auto_transfer_var
+		}
+	}
+
+	possible = {
+		always = yes
+	}
+
+	ai_chance = {
+		value = 100
+	}
+
+	effect = {
+		set_variable = et_auto_transfer_var
+		custom_tooltip = et_auto_transfer_tt
+	}
+}
+
+et_auto_transfer_deactivate_button = {
+	name = "et_auto_transfer_deactivate_button"
+	desc = "et_auto_transfer_deactivate_button_desc"
+
+	visible = {
+		has_variable = et_auto_transfer_var
+	}
+
+	possible = {
+		always = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		remove_variable = et_auto_transfer_var
+		custom_tooltip = et_stop_auto_transfer_tt
+	}
+}

@@ -6,11 +6,6 @@
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }
 
-start_boost_country_modifier2 = {
-    country_loan_interest_rate_mult = -1.00
-    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
-}
-
 start_boost_country_modifier4 = {
     state_tax_capacity_add = 25
     state_infrastructure_add = 10
@@ -21,10 +16,6 @@ start_boost_country_modifier4 = {
     state_mortality_mult = -1.0
     military_formation_organization_gain_add = 10
     military_formation_organization_gain_add = 10
-    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
-}
-
-testing_treasury = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }
 

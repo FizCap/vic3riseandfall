@@ -4,12 +4,6 @@
   }
 }
 
-on_yearly_pulse_country = {
-  on_actions = {
-    start_boost2
-  }
-}
-
 on_game_started_after_lobby = {
   on_actions = { start_boost }
 }
@@ -37,24 +31,6 @@ start_boost = {
         name = start_boost_country_modifier
         years = 5
         is_decaying = yes
-      }
-    }
-  }
-}
-
-start_boost2 = {
-  trigger = {
-    has_game_rule = economic_boost_enabled
-    year <= 1544
-  }
-  effect = {
-    every_country = {
-      if = {
-        limit = { is_ai = yes NOT = { has_modifier = start_boost_country_modifier2 } }
-        add_modifier = {
-          name = start_boost_country_modifier2
-          days = 364
-        }
       }
     }
   }

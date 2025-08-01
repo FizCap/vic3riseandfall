@@ -30,7 +30,7 @@
             set_military_wage_level = very_high
         }
 
-        set_variable = { name = et_budget_cooldown days = 30 }
+        set_variable = { name = et_budget_cooldown years = 1 }
 
         # Bureaucracy modifier logic always runs
         if = {

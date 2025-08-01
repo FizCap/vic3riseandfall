@@ -74,9 +74,7 @@ start_boost4 = {
 
 ai_improvement = {
     effect = {
-        et_ai_improvement_effect_great_power = yes
-        et_ai_improvement_effect_major_power = yes
-        et_ai_improvement_effect_minor_power = yes
+        et_ai_improvement_effect_dynamic = yes
     }
 }
 

@@ -1,0 +1,11 @@
+et_reserve_income_ratio = {
+    if = {
+        limit = { income > expenses }
+        value = gold_reserves_limit
+        subtract = expenses
+        divide = income
+    }
+    else = {
+        value = 1000
+    }
+}

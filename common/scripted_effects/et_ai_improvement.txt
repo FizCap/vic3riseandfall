@@ -1,99 +1,41 @@
-﻿et_ai_improvement_effect_great_power = {
+﻿et_ai_improvement_effect_dynamic = {
     if = {
         limit = {
             has_game_rule = ai_improvement_enabled
             is_ai = yes
-            country_rank = rank_value:great_power
         }
+        # Use reserve/income ratio for dynamic scaling
         if = {
-            limit = { weekly_net_fixed_income < 10000 }
+            limit = { et_reserve_income_ratio > 100 }
             set_government_wage_level = very_low
             set_military_wage_level = very_low
-            set_variable = { name = et_budget_cooldown days = 30 }
         }
         else_if = {
-            limit = { weekly_net_fixed_income < 30000 }
+            limit = { et_reserve_income_ratio > 50 }
             set_government_wage_level = low
             set_military_wage_level = low
-            set_variable = { name = et_budget_cooldown days = 30 }
-        }
-        else = {
-            set_government_wage_level = medium
-            set_military_wage_level = medium
-            set_variable = { name = et_budget_cooldown days = 30 }
-        }
-
-        # Bureaucracy modifier logic always runs
-        if = {
-            limit = {
-                bureaucracy < -10
-                NOT = { has_modifier = et_negative_bureaucracy }
-            }
-            add_modifier = { name = et_negative_bureaucracy days = 365 hidden = yes }
-        }
-    }
-}
-
-et_ai_improvement_effect_major_power = {
-    if = {
-        limit = {
-            has_game_rule = ai_improvement_enabled
-            is_ai = yes
-            country_rank = rank_value:major_power
-        }
-        if = {
-            limit = { weekly_net_fixed_income < 4000 }
-            set_government_wage_level = very_low
-            set_military_wage_level = very_low
-            set_variable = { name = et_budget_cooldown days = 30 }
         }
         else_if = {
-            limit = { weekly_net_fixed_income < 12000 }
-            set_government_wage_level = low
-            set_military_wage_level = low
-            set_variable = { name = et_budget_cooldown days = 30 }
-        }
-        else = {
+            limit = { et_reserve_income_ratio > 10 }
             set_government_wage_level = medium
             set_military_wage_level = medium
-            set_variable = { name = et_budget_cooldown days = 30 }
-        }
-
-        # Bureaucracy modifier logic always runs
-        if = {
-            limit = {
-                bureaucracy < -10
-                NOT = { has_modifier = et_negative_bureaucracy }
-            }
-            add_modifier = { name = et_negative_bureaucracy days = 365 hidden = yes }
-        }
-    }
-}
-
-et_ai_improvement_effect_minor_power = {
-    if = {
-        limit = {
-            has_game_rule = ai_improvement_enabled
-            is_ai = yes
-            country_rank < rank_value:minor_power
-        }
-        if = {
-            limit = { weekly_net_fixed_income < 1000 }
-            set_government_wage_level = very_low
-            set_military_wage_level = very_low
-            set_variable = { name = et_budget_cooldown days = 30 }
         }
         else_if = {
-            limit = { weekly_net_fixed_income < 4000 }
-            set_government_wage_level = low
-            set_military_wage_level = low
-            set_variable = { name = et_budget_cooldown days = 30 }
+            limit = { et_reserve_income_ratio > 5 }
+            set_government_wage_level = high
+            set_military_wage_level = high
         }
         else = {
-            set_government_wage_level = medium
-            set_military_wage_level = medium
-            set_variable = { name = et_budget_cooldown days = 30 }
+            set_government_wage_level = very_high
+            set_military_wage_level = very_high
         }
+
+        # TEST: If weekly net income is less than 0, add holy_roman_emperor modifier for 1 year
+        if = {
+            limit = { income > 50000 }
+            add_modifier = { name = holy_roman_emperor days = 30 }
+        }
+        set_variable = { name = et_budget_cooldown days = 30 }
 
         # Bureaucracy modifier logic always runs
         if = {

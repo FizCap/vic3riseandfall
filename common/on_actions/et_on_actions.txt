@@ -137,7 +137,11 @@ et_ottomans_rise = {
             add_claim = c:TUR
         }
         c:TUR = {
-            set_strategy = ai_strategy_et_aggressive_ai
+            set_strategy = ai_strategy_et_warmonger_ai
+            add_modifier = {
+                name = rise_of_the_ottomans
+                years = 5
+            }
             trigger_event = { id = et_ottomans.1 }
         }
         every_country = {
@@ -257,6 +261,10 @@ et_random_character_death = {
   }
   effect = {
     if = {
+      limit = { age < -1 } #kill immortal characters that should not exist
+      kill_character = yes
+    }
+    else_if = {
       limit = { age < 3 }
       random_list = {
         7 = { kill_character = yes }   # 3.5% chance per year for all under 3

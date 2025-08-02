@@ -1,0 +1,119 @@
+et_scripted_button_build_admin_center = {
+    name = "et_scripted_button_build_admin_center"
+    desc = "et_scripted_button_build_admin_center_desc"
+    
+    effect = {
+        et_manual_build_government_administration = yes
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+            can_construct_building = building_government_administration
+        }
+    }
+
+et_scripted_button_build_railway = {
+    name = "et_scripted_button_build_railway"
+    desc = "et_scripted_button_build_railway_desc"
+    
+    effect = {
+        et_manual_build_railway = yes
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+            can_construct_building = building_railway
+        }
+    }
+
+et_scripted_button_build_port = {
+    name = "et_scripted_button_build_port"
+    desc = "et_scripted_button_build_port_desc"
+    
+    effect = {
+        et_manual_build_port = yes
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+            can_construct_building = building_port
+        }
+    }
+
+et_scripted_button_auto_build_admin_toggle = {
+    name = "et_scripted_button_auto_build_admin_toggle"
+    desc = "et_scripted_button_auto_build_admin_toggle_desc"
+    
+    effect = {
+        if = {
+            limit = { has_variable = et_auto_build_admin_enabled }
+            remove_variable = et_auto_build_admin_enabled
+        }
+        else = {
+            set_variable = et_auto_build_admin_enabled
+        }
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+        always = yes
+    }
+}
+
+et_scripted_button_auto_build_railway_toggle = {
+    name = "et_scripted_button_auto_build_railway_toggle"
+    desc = "et_scripted_button_auto_build_railway_toggle_desc"
+    
+    effect = {
+        if = {
+            limit = { has_variable = et_auto_build_railway_enabled }
+            remove_variable = et_auto_build_railway_enabled
+        }
+        else = {
+            set_variable = et_auto_build_railway_enabled
+        }
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+        always = yes
+    }
+}
+
+et_scripted_button_auto_build_port_toggle = {
+    name = "et_scripted_button_auto_build_port_toggle"
+    desc = "et_scripted_button_auto_build_port_toggle_desc"
+    
+    effect = {
+        if = {
+            limit = { has_variable = et_auto_build_port_enabled }
+            remove_variable = et_auto_build_port_enabled
+        }
+        else = {
+            set_variable = et_auto_build_port_enabled
+        }
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+        always = yes
+    }
+}

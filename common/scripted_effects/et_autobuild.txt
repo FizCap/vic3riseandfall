@@ -1,0 +1,79 @@
+﻿et_ai_auto_build_government_administration = {
+    #auto build government administration when bureaucracy is low
+    every_scope_state = {
+        limit = {
+            any_scope_building = {
+                is_building_type = building_government_administration
+                occupancy > 0.25
+            }
+            can_construct_building = building_government_administration
+        }
+        start_building_construction = building_government_administration
+    }
+}
+
+et_ai_auto_build_railway = {
+    #build railway when infrastructure is low
+    random_scope_state = {
+        limit = {
+            infrastructure < 0
+            can_construct_building = building_railway
+        }
+        start_privately_funded_building_construction = building_railway
+    }
+}
+
+et_ai_auto_build_port = {
+    #build port when infrastructure is low and coastal
+    random_scope_state = {
+        limit = {
+            infrastructure < 0
+            is_coastal = yes
+            can_construct_building = building_port
+        }
+        start_privately_funded_building_construction = building_port
+    }
+}
+
+et_manual_build_government_administration = {
+    #manual build button for the government administration
+    every_scope_state = {
+        limit = {
+            any_scope_building = {
+                is_building_type = building_government_administration
+                occupancy > 0.25
+            }
+            can_construct_building = building_government_administration
+        }
+        start_building_construction = building_government_administration
+    }
+}
+
+et_manual_build_railway = {
+    #manual build for railway, doesnt work
+    every_scope_state = {
+        limit = {
+            infrastructure_delta < 0
+            can_construct_building = building_port
+        }
+        start_building_construction = building_railway
+    }
+}
+
+et_manual_build_port = {
+    #manual build port in coastal state with low infrastructure
+    every_scope_state = {
+        limit = {
+            infrastructure_delta < 0
+            can_construct_building = building_port
+        }
+        start_building_construction = building_port
+    }
+}
+
+et_auto_build_all = {
+    #auto build all infrastructure when needed
+    et_ai_auto_build_government_administration = yes
+    et_ai_auto_build_railway = yes
+    et_ai_auto_build_port = yes
+}

@@ -1,0 +1,23 @@
+et_je_admin_center_framework = {
+	icon = "journal_entry_icon_government"
+	group = je_group_economy
+
+	is_shown_when_inactive = {
+		always = yes
+	}
+
+	possible = {
+		always = yes
+	}
+
+	# Manual build options using scripted buttons
+	scripted_button = et_scripted_button_build_admin_center
+	scripted_button = et_scripted_button_build_railway
+	scripted_button = et_scripted_button_build_port
+	scripted_button = et_scripted_button_auto_build_admin_toggle
+	scripted_button = et_scripted_button_auto_build_railway_toggle
+	scripted_button = et_scripted_button_auto_build_port_toggle
+
+	should_be_pinned_by_default = yes
+	weight = 100
+}

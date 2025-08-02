@@ -2,7 +2,7 @@
 
 et_reserve_floor = {
 	value = gold_reserves_limit
-	multiply = 0.2
+	multiply = 0.8
 }
 
 et_surplus_gold = {

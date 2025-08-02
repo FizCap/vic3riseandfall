@@ -1,48 +1,265 @@
-﻿ai_strategy_et_aggressive_ai = {
+﻿ai_strategy_et_liberator_ai = {
+    icon = "gfx/interface/icons/ai_strategy_icons/liberate_country.dds"
+
+    type = diplomatic
+
+    # More likely to intervene for liberation and regime change
+    undesirable_infamy_level = {
+        value = 60  # Lower than warmonger, more cautious
+    }
+
+    unacceptable_infamy_level = {
+        value = 90
+    }
+
+    aggression = {
+        value = 1.5
+        # Extra aggressive toward autocracies and non-republics
+        if = {
+            limit = {
+                has_strategic_adjacency = scope:target_country
+                scope:target_country = {
+                    NOT = {
+                        OR = {
+                            has_law = law_type:law_presidential_republic
+                            has_law = law_type:law_parliamentary_republic
+                        }
+                    }
+                }
+            }
+            add = 2.0
+        }
+        # Less aggressive toward republics
+        if = {
+            limit = {
+                scope:target_country = {
+                    OR = {
+                        has_law = law_type:law_presidential_republic
+                        has_law = law_type:law_parliamentary_republic
+                    }
+                }
+            }
+            multiply = 0.2
+        }
+    }
+
+    diplomatic_play_boldness = {
+        value = 18.0
+        # Bolder against autocracies
+        if = {
+            limit = {
+                has_strategic_adjacency = scope:target_country
+                scope:target_country = {
+                    NOT = {
+                        OR = {
+                            has_law = law_type:law_presidential_republic
+                            has_law = law_type:law_parliamentary_republic
+                        }
+                    }
+                }
+            }
+            add = 10.0
+        }
+        # Less bold against republics
+        if = {
+            limit = {
+                scope:target_country = {
+                    OR = {
+                        has_law = law_type:law_presidential_republic
+                        has_law = law_type:law_parliamentary_republic
+                    }
+                }
+            }
+            multiply = 0.5
+        }
+    }
+
+    diplomatic_play_neutrality = {
+        value = -5
+    }
+
+    recklessness = {
+        value = 0.3
+    }
+
+    wargoal_weights = {
+        liberate_subject = 3.0
+        liberate_country = 2.0
+        regime_change = 2.5
+        conquer_state = 0.5
+        return_state = 1.0
+        make_protectorate = 0.7
+        transfer_subject = 1.5
+        take_treaty_port = 0.3
+        force_nationalization = 0.1
+    }
+
+    secret_goal_weights = {
+        liberate = 3.0
+        regime_change = 2.5
+        conquer = 0.5
+        protect = 1.5
+    }
+
+    secret_goal_scores = {
+        liberate = {
+            # High score for liberating neighbors who are subjects
+            if = {
+                limit = {
+                    can_reach_target_country = yes
+                    has_strategic_adjacency = scope:target_country
+                    scope:target_country = { is_subject = yes }
+                }
+                add = 100
+            }
+            # Bonus for liberating non-republics
+            if = {
+                limit = {
+                    can_reach_target_country = yes
+                    has_strategic_adjacency = scope:target_country
+                    scope:target_country = {
+                        NOT = {
+                            OR = {
+                                has_law = law_type:law_presidential_republic
+                                has_law = law_type:law_parliamentary_republic
+                            }
+                        }
+                    }
+                }
+                add = 50
+            }
+            # Penalty for targeting republics
+            if = {
+                limit = {
+                    scope:target_country = {
+                        OR = {
+                            has_law = law_type:law_presidential_republic
+                            has_law = law_type:law_parliamentary_republic
+                        }
+                    }
+                }
+                add = -50
+            }
+        }
+        regime_change = {
+            # High score for regime change in autocracies
+            if = {
+                limit = {
+                    can_reach_target_country = yes
+                    has_strategic_adjacency = scope:target_country
+                    scope:target_country = {
+                        NOT = {
+                            OR = {
+                                has_law = law_type:law_presidential_republic
+                                has_law = law_type:law_parliamentary_republic
+                            }
+                        }
+                    }
+                }
+                add = 75
+            }
+            # Penalty for regime change in republics
+            if = {
+                limit = {
+                    scope:target_country = {
+                        OR = {
+                            has_law = law_type:law_presidential_republic
+                            has_law = law_type:law_parliamentary_republic
+                        }
+                    }
+                }
+                add = -75
+            }
+        }
+    }
+
+    possible = {
+        is_subject = no
+        is_at_war = no
+    }
+
+    weight = {
+        value = 25
+        # +50 if country is a presidential or parliamentary republic
+        if = {
+            limit = {
+                OR = {
+                    has_law = law_type:law_presidential_republic
+                    has_law = law_type:law_parliamentary_republic
+                }
+            }
+            add = 50
+        }
+        # +25 if country has protected speech
+        if = {
+            limit = { has_law = law_type:law_protected_speech }
+            add = 25
+        }
+    }
+}
+ai_strategy_et_warmonger_ai = {
     icon = "gfx/interface/icons/ai_strategy_icons/conquer_region.dds"
     
     type = diplomatic
     
     # Reduces infamy thresholds to make AI more willing to take aggressive actions
     undesirable_infamy_level = {
-        value = 35  # Down from default 50
+        value = 100  # Down from default 50
     }
     
     unacceptable_infamy_level = {
-        value = 75  # Down from default 100
+        value = 125  # Down from default 100
     }
     
     # Increase aggression towards neighboring countries
     aggression = {
-        value = 1.5  # Higher base aggression (vanilla default ~0.25)
-        
+        value = 3.0  # Much higher base aggression
+
         # Extra aggressive toward neighboring countries
         if = {
             limit = {
                 has_strategic_adjacency = scope:target_country
             }
-            add = 1.0
+            add = 2.0
         }
-        
+
+        # Strongly prefer attacking weaker neighbors
+        if = {
+            limit = {
+                has_strategic_adjacency = scope:target_country
+                scope:target_country = { army_power_projection < root.army_power_projection }
+            }
+            add = 3.0
+        }
+
         # Less aggressive toward distant countries
         if = {
             limit = {
                 NOT = { has_strategic_adjacency = scope:target_country }
             }
-            multiply = 0.3
+            multiply = 0.2
         }
     }
     
     # More willing to escalate diplomatic plays
     diplomatic_play_boldness = {
-        value = 15.0  # Higher than default -25 to 25 range
-        
+        value = 25.0  # Max boldness
+
         # Extra bold against neighbors
         if = {
             limit = {
                 has_strategic_adjacency = scope:target_country
             }
-            add = 10.0
+            add = 15.0
+        }
+
+        # Even bolder if neighbor is weaker
+        if = {
+            limit = {
+                has_strategic_adjacency = scope:target_country
+                scope:target_country = { army_power_projection < root.army_power_projection }
+            }
+            add = 20.0
         }
     }
     
@@ -53,7 +270,7 @@
     
     # More reckless in general
     recklessness = {
-        value = 0.5  # Higher than default 0
+        value = 1.0  # Higher than default 0
     }
     
     # Prefer conquest wargoals over diplomatic ones
@@ -81,15 +298,25 @@
                     can_reach_target_country = yes
                     has_strategic_adjacency = scope:target_country
                 }
-                add = 50
+                add = 75
             }
-            
+
+            # Strong bonus for targeting weaker neighbors
+            if = {
+                limit = {
+                    can_reach_target_country = yes
+                    has_strategic_adjacency = scope:target_country
+                    scope:target_country = { army_power_projection < root.army_power_projection }
+                }
+                add = 100
+            }
+
             # Penalty for distant countries
             if = {
                 limit = {
                     NOT = { has_strategic_adjacency = scope:target_country }
                 }
-                add = -50
+                add = -75
             }
         }
     }
@@ -99,21 +326,27 @@
         is_at_war = no
     }
     
-    weight = {
-        value = 100
-        
-        # Higher weight for countries with military tech
+weight = {
+        value = 25
+
+        # Higher weight for countries with monarchy or single party state law
         if = {
             limit = {
-                has_technology_researched = standing_army
+                OR = {
+                    has_law = law_type:law_monarchy
+                    has_law = law_type:law_single_party_state
+                }
             }
+            add = 50
+        }
+        # Additional weight for countries with professional army law
+        if = {
+            limit = { has_law = law_type:law_professional_army }
             add = 25
         }
-        
+        # Additional weight for countries with outlawed dissent law
         if = {
-            limit = {
-                has_technology_researched = military_drill
-            }
+            limit = { has_law = law_type:law_outlawed_dissent }
             add = 25
         }
     }

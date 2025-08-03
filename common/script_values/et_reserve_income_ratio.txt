@@ -9,3 +9,10 @@ et_reserve_income_ratio = {
         value = 1000
     }
 }
+
+
+et_autobuild_reserve_limit = {
+    # Reserve limit for autobuilding: 45% of gold_reserves_limit
+    value = gold_reserves_limit
+    multiply = 0.45
+}

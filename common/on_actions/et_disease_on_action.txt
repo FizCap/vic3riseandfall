@@ -1,0 +1,30 @@
+on_monthly_pulse = {
+    on_actions = {
+
+    }
+}
+
+et_yearly_disease = {
+    trigger = {
+        always = yes
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = { any_scope_state = { has_modifier = et_disease } }
+            }
+            random_state = {
+                limit = { et_can_get_disease = yes }
+                et_apply_disease = yes
+            }
+        }
+        
+        every_scope_state = {
+            limit = { has_modifier = et_disease }
+            random_neighbouring_state = {
+                limit = { et_can_get_disease = yes }
+                et_apply_disease = yes
+            }
+        }
+    }
+}

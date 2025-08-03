@@ -2,9 +2,10 @@
     #manual build button for the government administration
     every_scope_state = {
         limit = {
+            turmoil < 0.25
             any_scope_building = {
                 is_building_type = building_government_administration
-                occupancy > 0.25
+                occupancy > 0.50
             }
             can_construct_building = building_government_administration
         }
@@ -16,6 +17,7 @@ et_manual_build_railway = {
     #manual build for railway
     every_scope_state = {
         limit = {
+            turmoil < 0.50
             infrastructure_delta < 0
             can_construct_building = building_port
         }
@@ -27,6 +29,7 @@ et_manual_build_port = {
     #manual build port in coastal state with low infrastructure
     every_scope_state = {
         limit = {
+            turmoil < 0.50
             infrastructure_delta < 0
             can_construct_building = building_port
         }

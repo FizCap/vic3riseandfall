@@ -1,0 +1,6 @@
+et_apply_disease = {
+    add_modifier = {
+        name = et_disease
+        months = 24
+    }
+}

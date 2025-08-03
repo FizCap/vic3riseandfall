@@ -1,0 +1,6 @@
+et_disease = {
+    state_mortality_mult = 0.3
+    state_migration_pull_mult = -0.25
+    state_construction_mult = -0.2
+    state_infrastructure_add = -5
+}

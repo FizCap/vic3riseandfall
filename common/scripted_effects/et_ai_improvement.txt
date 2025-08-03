@@ -35,24 +35,6 @@
                 set_military_wage_level = very_high
             }
         }
-
-
-        # Subsidize or unsubsidize ports based on principal
-        if = {
-            limit = { gold_reserves < 0 }
-            every_scope_building = {
-                limit = { is_building_type = building_port }
-                set_subsidized = no
-            }
-        }
-        if = {
-            limit = { gold_reserves > 0 }
-            every_scope_building = {
-                limit = { is_building_type = building_port }
-                set_subsidized = yes
-            }
-        }
-
         set_variable = { name = et_budget_cooldown days = 90 }
 
         # Bureaucracy modifier logic always runs
@@ -84,7 +66,9 @@ et_ai_building_not_subsidized = {
         limit = {
             OR = {
                 is_building_type = building_trade_center
+                is_building_type = building_port
                 is_building_type = building_power_plant
+                is_building_type = building_railway
             }
             weekly_profit < -500
         }

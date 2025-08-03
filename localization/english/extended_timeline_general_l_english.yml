@@ -11,7 +11,7 @@
   et_treasury_investment_pool_transfer_reason: "Managing financial transfers between treasury and investment pool."
   et_auto_transfer_tt: "Automatic transfers from investment pool to treasury are now enabled when in debt."
   et_stop_auto_transfer_tt: "Automatic transfers from investment pool to treasury are now disabled."
-  rule_et_research_debuff_rule: "Research Debuff (1444-1820)"
+  rule_et_research_debuff_rule: "ET: Research Debuff (1444-1820)"
   setting_et_research_debuff_enabled: "Enabled"
   setting_et_research_debuff_enabled_desc: "All countries suffer a -70% research speed penalty between 1444 and 1820."
   setting_et_research_debuff_disabled: "Disabled"

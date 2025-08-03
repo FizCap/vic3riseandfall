@@ -467,7 +467,7 @@ ANK = {
 
 ANL = {
 	color = { 135 198 25 }
-	country_type = decentralized
+	country_type = kingdom
 	tier = empire
 	cultures = { bedouin visigothic }
 	capital = STATE_ANDALUSIA

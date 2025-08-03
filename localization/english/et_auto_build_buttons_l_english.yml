@@ -1,5 +1,5 @@
 ﻿l_english:
- et_scripted_button_auto_build_admin_activate: "Enable Auto-Build: Government Administration (Activate)"
+ et_scripted_button_auto_build_admin_activate: "Enable Auto-Build: Government Administration"
  et_scripted_button_auto_build_admin_activate_desc: "Automatically enable government administration construction when needed."
  et_scripted_button_build_port: "Construct Port"
  et_scripted_button_build_port_desc: "Manually construct a port in a coastal state with low infrastructure."
@@ -8,7 +8,7 @@
  et_scripted_button_build_admin_center: "Construct Government Administration"
  et_scripted_button_build_admin_center_desc: "Manually construct a government administration building in a state with high occupancy."
  et_je_admin_center_framework: "Extended Timeline Autobuilder"
- et_scripted_button_auto_build_railway_activate: "Enable Auto-Build: Railway (Activate)"
+ et_scripted_button_auto_build_railway_activate: "Enable Auto-Build: Railway"
  et_scripted_button_auto_build_railway_activate_desc: "Automatically enable railway construction when needed."
  et_je_admin_center_framework_reason: "I know you're lazy, enjoy this QOL feature."
  et_scripted_button_auto_build_admin_center: "Enable Auto-Build: Government Administration"

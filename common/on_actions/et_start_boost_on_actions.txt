@@ -1,4 +1,4 @@
-﻿on_monthly_pulse_country = {
+﻿on_yearly_pulse_country = {
   on_actions = {
     ai_improvement
     ai_improvement2

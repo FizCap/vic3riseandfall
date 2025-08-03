@@ -1,37 +1,42 @@
 ﻿et_ai_auto_build_government_administration = {
-    #auto build government administration when bureaucracy is low
-    every_scope_state = {
-        limit = {
-            any_scope_building = {
-                is_building_type = building_government_administration
-                occupancy > 0.25
-            }
-            can_construct_building = building_government_administration
-        }
-        start_building_construction = building_government_administration
+    #auto build government administration by running manual effect every 6 months
+    if = {
+        limit = { NOT = { has_variable = et_auto_build_gov_cooldown } }
+        et_manual_build_government_administration = yes
+        set_variable = { which = et_auto_build_gov_cooldown value = 6 }
+    }
+    change_variable = { which = et_auto_build_gov_cooldown value = -1 }
+    if = {
+        limit = { et_auto_build_gov_cooldown <= 0 }
+        remove_variable = et_auto_build_gov_cooldown
     }
 }
 
 et_ai_auto_build_railway = {
-    #build railway when infrastructure is low
-    random_scope_state = {
-        limit = {
-            infrastructure < 0
-            can_construct_building = building_railway
-        }
-        start_privately_funded_building_construction = building_railway
+    #auto build railway by running manual effect every 6 months
+    if = {
+        limit = { NOT = { has_variable = et_auto_build_rail_cooldown } }
+        et_manual_build_railway = yes
+        set_variable = { which = et_auto_build_rail_cooldown value = 6 }
+    }
+    change_variable = { which = et_auto_build_rail_cooldown value = -1 }
+    if = {
+        limit = { et_auto_build_rail_cooldown <= 0 }
+        remove_variable = et_auto_build_rail_cooldown
     }
 }
 
 et_ai_auto_build_port = {
-    #build port when infrastructure is low and coastal
-    random_scope_state = {
-        limit = {
-            infrastructure < 0
-            is_coastal = yes
-            can_construct_building = building_port
-        }
-        start_privately_funded_building_construction = building_port
+    #auto build port by running manual effect every 6 months
+    if = {
+        limit = { NOT = { has_variable = et_auto_build_port_cooldown } }
+        et_manual_build_port = yes
+        set_variable = { which = et_auto_build_port_cooldown value = 6 }
+    }
+    change_variable = { which = et_auto_build_port_cooldown value = -1 }
+    if = {
+        limit = { et_auto_build_port_cooldown <= 0 }
+        remove_variable = et_auto_build_port_cooldown
     }
 }
 

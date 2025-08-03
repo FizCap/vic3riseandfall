@@ -6,8 +6,6 @@
 		always = yes
 	}
 
-	cooldown = { days = 180 }
-
 	possible = {
 		investment_pool > 100000
 		OR = {
@@ -19,7 +17,12 @@
 	ai_chance = {
 		value = 0
 		if = {
+			limit = { has_game_rule = ai_improvement_enabled }
+			add = 0
+		}
+		if = {
 			limit = {
+				has_game_rule = ai_improvement_enabled
 				gold_reserves <= 0
 				investment_pool > 100000
 			}
@@ -48,7 +51,11 @@ et_auto_transfer_activate_button = {
 	}
 
 	ai_chance = {
-		value = 100
+		value = 0
+		if = {
+			limit = { has_game_rule = ai_improvement_enabled }
+			add = 100
+		}
 	}
 
 	effect = {

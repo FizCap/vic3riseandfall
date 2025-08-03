@@ -3,7 +3,6 @@
     ai_improvement
     ai_improvement2
     ai_improvement3
-    ai_improvement4
   }
 }
 
@@ -110,18 +109,6 @@ ai_improvement3 = {
         et_ai_building_not_subsidized = yes
     }
 }
-
-ai_improvement4 = {
-    trigger = {
-        has_game_rule = ai_improvement_enabled
-        is_ai = yes
-        has_modifier = et_negative_bureaucracy
-    }
-    effect = {
-        et_ai_auto_build = yes
-    }
-}
-
 
 et_homeland_cleanup = {
     effect = {

@@ -1,8 +1,0 @@
-et_add_admin_center_journal_entry = {
-    effect = {
-        if = {
-            limit = { NOT = { has_journal_entry = et_autobuild } }
-            add_journal_entry = { type = et_autobuild }
-        }
-    }
-}

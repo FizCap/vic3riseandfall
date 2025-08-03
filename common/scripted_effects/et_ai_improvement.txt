@@ -70,9 +70,7 @@ et_ai_building_subsidized = {
     every_scope_building = {
         limit = {
             OR = {
-                is_building_type = building_port
                 is_building_type = building_trade_center
-                is_building_type = building_railway
                 is_building_type = building_power_plant
             }
             weekly_profit > -500
@@ -85,23 +83,11 @@ et_ai_building_not_subsidized = {
     every_scope_building = {
         limit = {
             OR = {
-                is_building_type = building_port
                 is_building_type = building_trade_center
-                is_building_type = building_railway
                 is_building_type = building_power_plant
             }
             weekly_profit < -500
         }
         set_subsidized = no
-    }
-}
-
-et_ai_auto_build = {
-    #this is for ai auto build dont mess with it
-    random_scope_state = {
-        limit = {
-            any_scope_building = { is_building_type = building_government_administration occupancy > 0.25 }
-        }
-        start_privately_funded_building_construction = building_government_administration
     }
 }

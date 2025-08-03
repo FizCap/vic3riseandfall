@@ -1,6 +1,8 @@
 et_scripted_button_build_admin_center = {
     name = "et_scripted_button_build_admin_center"
     desc = "et_scripted_button_build_admin_center_desc"
+
+    cooldown = { days = 60 }
     
     effect = {
         et_manual_build_government_administration = yes
@@ -13,11 +15,36 @@ et_scripted_button_build_admin_center = {
     possible = {
             can_construct_building = building_government_administration
         }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = { has_game_rule = ai_improvement_disabled }
+            subtract = -1000
+        }
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                gold_reserves > 10000
+                bureaucracy < 0
+                NOT = {
+                    any_scope_state = {
+                        b:building_government_administration ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
     }
+}
 
 et_scripted_button_build_railway = {
     name = "et_scripted_button_build_railway"
     desc = "et_scripted_button_build_railway_desc"
+
+    cooldown = { days = 60 }
     
     effect = {
         et_manual_build_railway = yes
@@ -28,13 +55,38 @@ et_scripted_button_build_railway = {
     }
     
     possible = {
-            can_construct_building = building_railway
+            has_technology_researched = railways
         }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = { has_game_rule = ai_improvement_disabled }
+            subtract = -1000
+        }
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                gold_reserves > 10000
+                NOT = {
+                    any_scope_state = {
+                        b:building_railway ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
+    }
     }
 
 et_scripted_button_build_port = {
     name = "et_scripted_button_build_port"
     desc = "et_scripted_button_build_port_desc"
+
+
+    cooldown = { days = 60 }
     
     effect = {
         et_manual_build_port = yes
@@ -47,7 +99,29 @@ et_scripted_button_build_port = {
     possible = {
             can_construct_building = building_port
         }
+
+ai_chance = {
+  value = 0
+  if = {
+        limit = { has_game_rule = ai_improvement_disabled }
+        subtract = -1000
+  }
+  if = {
+    limit = {
+      has_game_rule = ai_improvement_enabled
+      gold_reserves > 10000
+      NOT = {
+        any_scope_state = {
+          b:building_port ?= {
+            is_under_construction = yes
+          }
+        }
+      }
     }
+    add = 100
+  }
+}
+}
 
 et_scripted_button_auto_build_admin_toggle = {
     name = "et_scripted_button_auto_build_admin_toggle"
@@ -55,11 +129,11 @@ et_scripted_button_auto_build_admin_toggle = {
     
     effect = {
         if = {
-            limit = { has_variable = et_auto_build_admin_enabled }
-            remove_variable = et_auto_build_admin_enabled
+            limit = { has_variable = et_auto_build_gov_cooldown }
+            remove_variable = et_auto_build_gov_cooldown
         }
         else = {
-            set_variable = et_auto_build_admin_enabled
+            set_variable = { which = et_auto_build_gov_cooldown value = 0 }
         }
     }
     
@@ -78,11 +152,11 @@ et_scripted_button_auto_build_railway_toggle = {
     
     effect = {
         if = {
-            limit = { has_variable = et_auto_build_railway_enabled }
-            remove_variable = et_auto_build_railway_enabled
+            limit = { has_variable = et_auto_build_rail_cooldown }
+            remove_variable = et_auto_build_rail_cooldown
         }
         else = {
-            set_variable = et_auto_build_railway_enabled
+            set_variable = { which = et_auto_build_rail_cooldown value = 0 }
         }
     }
     
@@ -91,8 +165,8 @@ et_scripted_button_auto_build_railway_toggle = {
     }
     
     possible = {
-        always = yes
-    }
+            has_technology_researched = railways
+        }
 }
 
 et_scripted_button_auto_build_port_toggle = {
@@ -101,11 +175,11 @@ et_scripted_button_auto_build_port_toggle = {
     
     effect = {
         if = {
-            limit = { has_variable = et_auto_build_port_enabled }
-            remove_variable = et_auto_build_port_enabled
+            limit = { has_variable = et_auto_build_port_cooldown }
+            remove_variable = et_auto_build_port_cooldown
         }
         else = {
-            set_variable = et_auto_build_port_enabled
+            set_variable = { which = et_auto_build_port_cooldown value = 0 }
         }
     }
     

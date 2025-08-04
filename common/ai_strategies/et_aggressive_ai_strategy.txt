@@ -83,8 +83,8 @@
     }
 
     wargoal_weights = {
-        liberate_subject = 3.0
-        liberate_country = 2.0
+        liberate_subject = 5.0
+        liberate_country = 5.0
         regime_change = 2.5
         conquer_state = 0.5
         return_state = 1.0
@@ -95,8 +95,8 @@
     }
 
     secret_goal_weights = {
-        liberate = 3.0
-        regime_change = 2.5
+        liberate = 5.0
+        regime_change = 5.5
         conquer = 0.5
         protect = 1.5
     }
@@ -275,10 +275,25 @@ ai_strategy_et_warmonger_ai = {
     
     # Prefer conquest wargoals over diplomatic ones
     wargoal_weights = {
-        conquer_state = 3.0  # Much higher than default 1.5
-        return_state = 2.5   # Higher than default 1.5
-        make_protectorate = 0.3  # Much lower to discourage distant puppeting
-        transfer_subject = 0.3   # Much lower
+        # Prefer conquer_state only if the target state is a homeland for the acting country
+        if = {
+            limit = {
+                scope:target_state = {
+                    is_homeland_of_country_cultures = root
+                }
+            }
+            conquer_state = 3.0  # Much higher than default 1.5
+            return_state = 1.0
+            make_protectorate = 0.3
+            transfer_subject = 0.3
+        }
+        else = {
+            # If not a homeland, prefer return_state, make_protectorate, or transfer_subject
+            conquer_state = 0.1
+            return_state = 2.5   # Higher than default 1.5
+            make_protectorate = 2.0  # Much higher to encourage protectorates
+            transfer_subject = 2.0   # Much higher
+        }
         take_treaty_port = 0.5   # Lower
         force_nationalization = 0.1  # Very low
     }

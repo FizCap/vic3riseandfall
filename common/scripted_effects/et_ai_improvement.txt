@@ -6,12 +6,12 @@
             if = {
                 limit = { et_reserve_income_ratio > 100 }
                 set_government_wage_level = very_low
-                set_military_wage_level = very_low
+                set_military_wage_level = medium
             }
             else_if = {
                 limit = { et_reserve_income_ratio > 50 }
                 set_government_wage_level = low
-                set_military_wage_level = low
+                set_military_wage_level = medium
             }
             else_if = {
                 limit = {
@@ -19,7 +19,7 @@
                     gold_reserves > 0
                 }
                 set_government_wage_level = medium
-                set_military_wage_level = medium
+                set_military_wage_level = very_high
             }
             else_if = {
                 limit = {
@@ -27,7 +27,7 @@
                     gold_reserves > 0
                 }
                 set_government_wage_level = high
-                set_military_wage_level = high
+                set_military_wage_level = very_high
             }
             else = {
                 limit = { gold_reserves > 0 }

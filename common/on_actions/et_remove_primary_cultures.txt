@@ -30,5 +30,14 @@ remove_primary_cultures = {
       remove_primary_culture = cu:romanian
       remove_primary_culture = cu:slovak
     }
+    c:CYP = {
+      remove_primary_culture = cu:french
+    }
+    c:E02 = {
+      remove_primary_culture = cu:south_italian
+    }
+    c:V77 = {
+      remove_primary_culture = cu:south_italian
+    }
   }
 }

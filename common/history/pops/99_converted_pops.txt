@@ -17160,12 +17160,12 @@
 		region_state:C15 = {
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				size = 18628
 			}
 			create_pop = {
 				culture = han
-				religion = catholic
+				religion = animist
 				size = 160
 			}
 			create_pop = {
@@ -17175,7 +17175,7 @@
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				pop_type = slaves
 				size = 500
 			}
@@ -17183,12 +17183,12 @@
 		region_state:I06 = {
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				size = 111768
 			}
 			create_pop = {
 				culture = han
-				religion = catholic
+				religion = animist
 				size = 960
 			}
 			create_pop = {
@@ -17198,7 +17198,7 @@
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				pop_type = slaves
 				size = 3000
 			}
@@ -17206,7 +17206,7 @@
 		region_state:SUL = {
 			create_pop = {
 				culture = bornean
-				religion = catholic
+				religion = animist
 				size = 22480
 			}
 			create_pop = {
@@ -17221,7 +17221,7 @@
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				pop_type = slaves
 				size = 1000
 			}
@@ -17249,12 +17249,12 @@
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				size = 37256
 			}
 			create_pop = {
 				culture = han
-				religion = catholic
+				religion = animist
 				size = 320
 			}
 			create_pop = {
@@ -17264,7 +17264,7 @@
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				size = 1000
 			}
 		}
@@ -18530,12 +18530,12 @@
 			}
 			create_pop = {
 				culture = bornean
-				religion = catholic
+				religion = animist
 				size = 501
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				size = 23580
 			}
 			create_pop = {
@@ -18562,7 +18562,7 @@
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				size = 4773
 			}
 			create_pop = {
@@ -30706,7 +30706,7 @@
 		region_state:M17 = {
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				size = 38212
 			}
 			create_pop = {
@@ -30721,7 +30721,7 @@
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				pop_type = slaves
 				size = 1320
 			}
@@ -30741,7 +30741,7 @@
 		region_state:W09 = {
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				size = 38212
 			}
 			create_pop = {
@@ -30756,7 +30756,7 @@
 			}
 			create_pop = {
 				culture = filipino
-				religion = catholic
+				religion = animist
 				pop_type = slaves
 				size = 1320
 			}

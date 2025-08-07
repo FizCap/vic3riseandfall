@@ -1,47 +1,60 @@
-﻿force_colonialism = {
-  trigger = { year = 1492 }
+﻿force_colonialism_british = {
+  trigger = {
+    year = 1607
+  }
   effect = {
     every_country = {
-      limit = { 
-        OR = {
-          country_has_primary_culture = cu:british
-          country_has_primary_culture = cu:spanish
-          country_has_primary_culture = cu:portuguese
-          country_has_primary_culture = cu:french
-          country_has_primary_culture = cu:dutch
-        }
-      }
-      activate_law = law_type:law_slave_trade
-      activate_law = law_type:law_colonial_exploitation
-      add_modifier = {
-        name = ageofcolonialism_modfier
-        years = 50
-      }
-      # Add declared interest in key colonial regions
-      add_declared_interest = region_canada
-      add_declared_interest = region_new_england
-      add_declared_interest = region_dixie
-      add_declared_interest = region_mexico
-      add_declared_interest = region_pacific_coast
-      add_declared_interest = region_central_america
-      add_declared_interest = region_caribbean
-      add_declared_interest = region_gran_colombia
-      add_declared_interest = region_brazil
-      add_declared_interest = region_andes
-      add_declared_interest = region_la_plata
-      add_declared_interest = region_north_africa
-      add_declared_interest = region_senegal
-      add_declared_interest = region_niger
-      add_declared_interest = region_ethiopia
-      add_declared_interest = region_congo
-      add_declared_interest = region_zanj
-      add_declared_interest = region_southern_africa
-      add_declared_interest = region_indonesia
-      add_declared_interest = region_oceania
+      limit = { country_has_primary_culture = cu:british }
+      et_force_colonialism_effect = yes
     }
+  }
+}
+
+force_colonialism_spanish = {
+  trigger = {
+    year = 1492
+  }
+  effect = {
     every_country = {
-      limit = { is_player = yes }
+      limit = { country_has_primary_culture = cu:spanish }
+      et_force_colonialism_effect = yes
       trigger_event = { id = et_force_colonialism.1 }
+    }
+}
+}
+
+force_colonialism_portuguese = {
+  trigger = {
+    year = 1500
+  }
+  effect = {
+    every_country = {
+      limit = { country_has_primary_culture = cu:portuguese }
+      et_force_colonialism_effect = yes
+    }
+  }
+}
+
+force_colonialism_french = {
+  trigger = {
+    year = 1534
+  }
+  effect = {
+    every_country = {
+      limit = { country_has_primary_culture = cu:french }
+      et_force_colonialism_effect = yes
+    }
+  }
+}
+
+force_colonialism_dutch = {
+  trigger = {
+    year = 1602
+  }
+  effect = {
+    every_country = {
+      limit = { country_has_primary_culture = cu:dutch }
+      et_force_colonialism_effect = yes
     }
   }
 }

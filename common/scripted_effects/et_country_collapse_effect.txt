@@ -1,0 +1,20 @@
+﻿et_country_collapse_effect = {
+    if = {
+        limit = {
+            any_scope_state = { turmoil > 0.3 }
+        }
+        every_scope_state = {
+            limit = { turmoil > 0.3 }
+            set_variable = state_to_seceded
+        }
+        create_dynamic_country = {
+            origin = root
+            cede_state_trigger = { has_variable = state_to_seceded }
+            on_created = {
+                every_scope_state = {
+                    remove_variable = state_to_seceded
+                }
+            }
+        }
+    }
+}

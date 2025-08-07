@@ -20,7 +20,6 @@ on_monthly_pulse_country = {
     on_actions = {
         et_research_Debuff
         et_remove_research_Debuff_trigger
-        country_collapse_time
     }
 }
 

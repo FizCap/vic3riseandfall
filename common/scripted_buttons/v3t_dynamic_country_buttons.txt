@@ -1,0 +1,136 @@
+﻿et_button_finalize_dynamic_country = {
+	name = "et_button_finalize_dynamic_country"
+	desc = "et_button_finalize_dynamic_country_desc"
+
+	visible = {
+		is_player = yes
+		has_variable = et_dyn_builder_enabled
+		any_scope_state = {
+			has_decree = decree_et_mark_state_for_dyn_country
+			owner = ROOT
+		}
+	}
+
+	possible = {
+		has_variable = et_dyn_builder_enabled
+		# At least one of the marked states must be owned by the player
+		any_scope_state = {
+			has_decree = decree_et_mark_state_for_dyn_country
+			owner = ROOT
+		}
+	}
+
+	effect = {
+		# Pick capital among marked states (prefer one with a decree to be deterministic)
+		if = {
+			limit = { any_scope_state = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT } }
+			random_scope_state = {
+				limit = {
+					has_decree = decree_et_mark_state_for_dyn_country
+					owner = ROOT
+				}
+				save_scope_as = et_dyn_country_capital
+			}
+		}
+		else = {
+			random_scope_state = {
+				limit = {
+					has_decree = decree_et_mark_state_for_dyn_country
+					owner = ROOT
+				}
+				save_scope_as = et_dyn_country_capital
+			}
+		}
+
+		# Mark all owned marked states to be ceded
+	every_scope_state = {
+			limit = {
+		has_decree = decree_et_mark_state_for_dyn_country
+				owner = ROOT
+			}
+			set_variable = state_to_cede
+		}
+
+		create_dynamic_country = {
+			origin = root
+			capital = scope:et_dyn_country_capital
+			cede_state_trigger = {
+				has_variable = state_to_cede
+			}
+			on_created = {
+				# Remember the new country so ROOT can puppet it next
+				save_scope_as = et_new_dyn_country
+				# Clean up temp variables and markers on states
+				every_scope_state = {
+					limit = { has_variable = state_to_cede }
+					remove_variable = state_to_cede
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { exists = scope:et_dyn_country_capital.owner }
+				create_diplomatic_pact = {
+					country = scope:et_dyn_country_capital.owner
+					type = puppet
+				}
+			}
+		}
+	}
+
+	ai_chance = { value = 0 }
+}
+
+et_button_enable_builder = {
+	name = "et_button_enable_builder"
+	desc = "et_button_enable_builder_desc"
+	visible = { is_player = yes }
+	possible = { NOT = { has_variable = et_dyn_builder_enabled } }
+	effect = { set_variable = et_dyn_builder_enabled }
+	ai_chance = { value = 0 }
+}
+
+et_button_disable_builder = {
+	name = "et_button_disable_builder"
+	desc = "et_button_disable_builder_desc"
+	visible = { is_player = yes }
+	possible = { has_variable = et_dyn_builder_enabled }
+	effect = {
+		remove_variable = et_dyn_builder_enabled
+	}
+	ai_chance = { value = 0 }
+}
+
+et_button_authority_cheat_enable = {
+	name = "et_button_authority_cheat_enable"
+	desc = "et_button_authority_cheat_enable_desc"
+	visible = {
+		is_player = yes
+		NOT = { has_variable = et_authority_cheat_enabled }
+	}
+	possible = {
+		NOT = { has_variable = et_authority_cheat_enabled }
+	}
+	effect = {
+		add_modifier = et_authority_cheat
+		set_variable = et_authority_cheat_enabled
+	}
+	ai_chance = { value = 0 }
+}
+
+et_button_authority_cheat_disable = {
+	name = "et_button_authority_cheat_disable"
+	desc = "et_button_authority_cheat_disable_desc"
+	visible = {
+		is_player = yes
+		has_variable = et_authority_cheat_enabled
+	}
+	possible = {
+		has_variable = et_authority_cheat_enabled
+	}
+	effect = {
+		remove_modifier = et_authority_cheat
+		remove_variable = et_authority_cheat_enabled
+	}
+	ai_chance = { value = 0 }
+}

@@ -1,0 +1,12 @@
+﻿et_country_collapse_eligible = {
+  OR = {
+    in_default = yes
+    has_modifier = declared_bankruptcy
+  }
+  is_subject = no
+}
+
+et_trigger_state_wants_independence = {
+        turmoil > 0.2
+        set_variable = { name = state_to_seceded value = yes }
+    }|

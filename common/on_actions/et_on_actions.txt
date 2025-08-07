@@ -20,6 +20,7 @@ on_monthly_pulse_country = {
     on_actions = {
         et_research_Debuff
         et_remove_research_Debuff_trigger
+        country_collapse_time
     }
 }
 
@@ -313,3 +314,12 @@ colony_grant_claim = {
         et_grant_colony_claim_effect = yes
     }
 }
+
+country_collapse_time = {
+    trigger = {
+        et_country_collapse_eligible = yes
+    }
+    effect = {
+        et_country_collapse_effect = yes
+        }
+    }

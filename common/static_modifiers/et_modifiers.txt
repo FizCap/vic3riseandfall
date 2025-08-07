@@ -40,3 +40,8 @@ rise_of_the_ottomans = {
     state_conscription_rate_mult = 3.0
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }
+
+et_authority_cheat = {
+    country_authority_add = 10000
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}

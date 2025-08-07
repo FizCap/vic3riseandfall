@@ -3,11 +3,11 @@ et_je_admin_center_framework = {
 	group = je_group_economy
 
 	is_shown_when_inactive = {
-		always = yes
+		is_player = yes
 	}
 
 	possible = {
-		always = yes
+		is_player = yes
 	}
 
 	# Manual build options using scripted buttons

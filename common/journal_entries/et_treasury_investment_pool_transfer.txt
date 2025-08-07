@@ -2,12 +2,12 @@
 	icon = "gfx/interface/icons/investment_pool.dds"
 	group = je_group_economy
 
-is_shown_when_inactive = {
-	always = yes
-}
+	is_shown_when_inactive = {
+		is_player = yes
+	}
 
 	possible = {
-		always = yes
+		is_player = yes
 	}
 
 	# Manual fund transfer options using scripted buttons

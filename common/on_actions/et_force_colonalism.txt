@@ -1,0 +1,76 @@
+﻿force_colonialism_british = {
+  trigger = {
+    year = 1607
+  }
+  effect = {
+    every_country = {
+      limit = { country_has_primary_culture = cu:british }
+      et_force_colonialism_effect = yes
+    }
+  }
+}
+
+force_colonialism_spanish = {
+  trigger = {
+    year = 1492
+  }
+  effect = {
+    every_country = {
+      limit = { country_has_primary_culture = cu:spanish }
+      et_force_colonialism_effect = yes
+      trigger_event = { id = et_force_colonialism.1 }
+    }
+}
+}
+
+force_colonialism_portuguese = {
+  trigger = {
+    year = 1500
+  }
+  effect = {
+    every_country = {
+      limit = { country_has_primary_culture = cu:portuguese }
+      et_force_colonialism_effect = yes
+    }
+  }
+}
+
+force_colonialism_french = {
+  trigger = {
+    year = 1534
+  }
+  effect = {
+    every_country = {
+      limit = { country_has_primary_culture = cu:french }
+      et_force_colonialism_effect = yes
+    }
+  }
+}
+
+force_colonialism_dutch = {
+  trigger = {
+    year = 1602
+  }
+  effect = {
+    every_country = {
+      limit = { country_has_primary_culture = cu:dutch }
+      et_force_colonialism_effect = yes
+    }
+  }
+}
+
+force_colonialism_russia = {
+  trigger = { year = 1581 }
+  effect = {
+    every_country = {
+      limit = {
+        country_has_primary_culture = cu:russian
+      }
+      activate_law = law_type:law_frontier_colonization
+    }
+    every_country = {
+      limit = { is_player = yes }
+      trigger_event = { id = et_force_colonialism.2 }
+    }
+  }
+}

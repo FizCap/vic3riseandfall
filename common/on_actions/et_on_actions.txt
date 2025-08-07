@@ -2,12 +2,17 @@
     on_actions = {
         protestant_reformation1
         protestant_reformation2
-        force_colonialism
+        force_colonialism_dutch
+        force_colonialism_british
+        force_colonialism_spanish
+        force_colonialism_portuguese
+        force_colonialism_french
         force_colonialism_russia
         et_ottomans_rise
         et_castille_aragon_union
     }
 }
+
 
 on_monthly_pulse_country = {
     on_actions = {
@@ -21,6 +26,7 @@ on_game_started_after_lobby = {
         japanese_shogunate_event1
         et_set_unification_strategy
         et_homeland_cleanup
+        et_research_Debuff
     }
 }
 

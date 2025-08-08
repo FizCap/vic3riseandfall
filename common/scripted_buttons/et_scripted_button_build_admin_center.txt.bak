@@ -67,7 +67,7 @@ et_scripted_button_build_railway = {
         if = {
             limit = {
                 has_game_rule = ai_improvement_enabled
-                gold_reserves > et_autobuild_reserve_limit
+                gold_reserves > 10000
                 bureaucracy > 0
                 NOT = {
                     any_scope_state = {
@@ -110,7 +110,7 @@ ai_chance = {
   if = {
     limit = {
       has_game_rule = ai_improvement_enabled
-      gold_reserves > et_autobuild_reserve_limit
+      gold_reserves > 10000
       bureaucracy > 0
       NOT = {
         any_scope_state = {

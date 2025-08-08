@@ -90,6 +90,7 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 		create_dynamic_country = {
 			origin = root
 			capital = scope:et_dyn_country_capital
+			tier = principality
 			cede_state_trigger = { has_variable = state_to_cede }
 			# Identity (culture/religion) normalized post creation
 			on_created = {
@@ -176,6 +177,7 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 		}
 		create_dynamic_country = {
 			origin = root
+			tier = principality
 			capital = scope:et_dyn_country_capital
 			cede_state_trigger = { has_variable = state_to_cede }
 			on_created = {

@@ -1,8 +1,0 @@
-﻿annexation_cooldown = {
-    # This modifier prevents decentralized countries from annexing/being annexed
-    # Small neutral effect to ensure the game recognizes the modifier
-    country_construction_add = 0
-    
-    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
-}
-

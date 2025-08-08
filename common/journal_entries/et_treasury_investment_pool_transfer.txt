@@ -1,6 +1,6 @@
 ﻿et_treasury_investment_pool_transfer = {
 	icon = "gfx/interface/icons/investment_pool.dds"
-	group = je_group_economy
+	group = je_group_foreign_affairs
 
 	is_shown_when_inactive = {
 		always = yes

@@ -1,8 +1,0 @@
-colonial_administration = {
-    icon = gfx/interface/icons/timed_modifier_icons/modifier_colonial.dds
-    country_contiguous_incorporation_speed_mult = 1.0   # +100%
-    country_noncontiguous_incorporation_speed_mult = -0.5 # -50%
-    ai_weight = {
-        base = 1
-    }
-}

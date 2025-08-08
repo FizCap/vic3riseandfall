@@ -8,6 +8,8 @@
 # Culture approach: descending national share thresholds, fallback to capital homeland, then any primary.
 
 et_assign_dominant_identity = {
+    set_variable = { name = newly_formed_country value = yes days = 90 }
+    set_variable = { name = newly_formed_country_cooldown value = yes days = 7 }
     # CULTURE SELECTION ----------------------------------------
     random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.60 } } } save_scope_as = et_new_primary_culture }
     if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.55 } } } save_scope_as = et_new_primary_culture } }

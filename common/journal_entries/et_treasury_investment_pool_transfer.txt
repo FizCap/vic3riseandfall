@@ -3,11 +3,11 @@
 	group = je_group_economy
 
 	is_shown_when_inactive = {
-		is_player = yes
+		always = yes
 	}
 
 	possible = {
-		is_player = yes
+		always = yes
 	}
 
 	# Manual fund transfer options using scripted buttons

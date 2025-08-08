@@ -6,8 +6,6 @@
 # et_assign_dominant_identity
 # Scope: country (new dynamic country just created) with transferred ceded states.
 # Culture approach: descending national share thresholds, fallback to capital homeland, then any primary.
-# Religion approach: descending national share thresholds, fallback to capital sample pop.
-# NOTE: Engine lacks a direct 'set_country_religion' effect; we only identify majority for potential future use.
 
 et_assign_dominant_identity = {
     # CULTURE SELECTION ----------------------------------------

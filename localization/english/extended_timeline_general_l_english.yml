@@ -89,6 +89,8 @@
   et_era_tech_penalty: "Era Technology Penalty"
   et_button_finalize_dynamic_country: "Form Dynamic Country"
   et_button_finalize_dynamic_country_desc: "Finalize the creation of a new dynamic country from all states you have marked with the 'Mark for Dynamic Country' decree. The marked states under your control will be ceded to the new country."
+  et_button_finalize_dynamic_country_unrecognized: "Form Dynamic Country (Unrecognized)"
+  et_button_finalize_dynamic_country_unrecognized_desc: "Create a new dynamic country from marked or auto-selected turbulent, poorly connected unincorporated states. As an unrecognized nation, the new country will become your vassal instead of a puppet."
   decree_et_mark_state_for_dyn_country: "Mark for Dynamic Country"
   decree_et_mark_state_for_dyn_country_desc: "Marks this state to be included when creating a custom dynamic country via the Dynamic Country Builder journal entry."
   et_dynamic_country_builder: "Dynamic Country Builder"

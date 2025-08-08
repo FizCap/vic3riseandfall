@@ -1,0 +1,393 @@
+# Hussite
+et_adopt_hussite_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:hussite
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:hussite }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:hussite
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:hussite }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:hussite
+    }
+    ai_chance = { value = 100 }
+}
+
+# Jewish
+et_adopt_jewish_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:jewish
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:jewish }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:jewish
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:jewish }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:jewish
+    }
+    ai_chance = { value = 100 }
+}
+# Orthodox
+et_adopt_orthodox_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:orthodox
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:orthodox }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:orthodox
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:orthodox }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:orthodox
+    }
+    ai_chance = { value = 100 }
+}
+# Hindu
+et_adopt_hindu_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:hindu
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:hindu }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:hindu
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:hindu }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:hindu
+    }
+    ai_chance = { value = 100 }
+}
+
+# Shiite
+et_adopt_shiite_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:shiite
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:shiite }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:shiite
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:shiite }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:shiite
+    }
+    ai_chance = { value = 100 }
+}
+
+# Animist
+et_adopt_animist_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:animist
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:animist }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:animist
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:animist }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:animist
+    }
+    ai_chance = { value = 100 }
+}
+
+# Ibadi
+et_adopt_ibadi_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:ibadi
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:ibadi }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:ibadi
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:ibadi }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:ibadi
+    }
+    ai_chance = { value = 100 }
+}
+
+# Atheist
+et_adopt_atheist_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:atheist
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:atheist }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:atheist
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:atheist }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:atheist
+    }
+    ai_chance = { value = 100 }
+}
+
+# Gelugpa
+et_adopt_gelugpa_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:gelugpa
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:gelugpa }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:gelugpa
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:gelugpa }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:gelugpa
+    }
+    ai_chance = { value = 100 }
+}
+
+# Theravada
+et_adopt_theravada_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:theravada
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:theravada }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:theravada
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:theravada }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:theravada
+    }
+    ai_chance = { value = 100 }
+}
+
+# Mahayana
+et_adopt_mahayana_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:mahayana
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:mahayana }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:mahayana
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:mahayana }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:mahayana
+    }
+    ai_chance = { value = 100 }
+}
+
+# Tengri
+et_adopt_tengri_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:tengri
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:tengri }
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:tengri
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:tengri }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+    when_taken = {
+        set_state_religion = rel:tengri
+    }
+    ai_chance = { value = 100 }
+}
+### Victoria3Timeline: Majority Religion Adoption Decisions
+### Each decision appears when a single religion reaches >= 51% of population
+### and the country does not already have that religion as its state religion.
+### AI will always take it once possible.
+
+et_adopt_sunni_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:sunni
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:sunni }
+    }
+
+    possible = {
+        religion_percent_country = {
+            target = rel:sunni
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:sunni }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+
+    when_taken = {
+        set_state_religion = rel:sunni
+    }
+
+    ai_chance = { value = 100 }
+}
+
+et_adopt_confucian_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:confucian
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:confucian }
+    }
+
+    possible = {
+        religion_percent_country = {
+            target = rel:confucian
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:confucian }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+
+    when_taken = {
+        set_state_religion = rel:confucian
+    }
+
+    ai_chance = { value = 100 }
+}
+
+et_adopt_catholic_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:catholic
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:catholic }
+    }
+
+    possible = {
+        religion_percent_country = {
+            target = rel:catholic
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:catholic }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+
+    when_taken = {
+        set_state_religion = rel:catholic
+    }
+
+    ai_chance = { value = 100 }
+}
+
+et_adopt_protestant_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:protestant
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:protestant }
+    }
+
+    possible = {
+        religion_percent_country = {
+            target = rel:protestant
+            value >= 0.51
+        }
+        NOT = { country_has_state_religion = rel:protestant }
+        has_variable = newly_formed_country
+        NOT = { has_variable = newly_formed_country_cooldown }
+    }
+
+    when_taken = {
+        set_state_religion = rel:protestant
+    }
+
+    ai_chance = { value = 100 }
+}

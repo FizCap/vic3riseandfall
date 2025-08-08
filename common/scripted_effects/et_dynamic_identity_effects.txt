@@ -33,4 +33,6 @@ et_assign_dominant_identity = {
         }
         add_primary_culture = scope:et_new_primary_culture
     }
+    # Kill the ruler of the country
+    ruler = { kill_character = yes }
 }

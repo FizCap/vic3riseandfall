@@ -16,6 +16,10 @@ on_yearly_pulse = {
   }
 }
 
+on_yearly_pulse = {
+  on_actions = { start_boost2 }
+}
+
 on_game_started_after_lobby = {
   on_actions = { start_boost3 }
 }
@@ -80,7 +84,9 @@ ai_improvement = {
         is_ai = yes
     }
     effect = {
-        et_ai_improvement_effect_dynamic = yes
+        et_ai_improvement_effect_great_power = yes
+        et_ai_improvement_effect_major_power = yes
+        et_ai_improvement_effect_minor_power = yes
     }
 }
 

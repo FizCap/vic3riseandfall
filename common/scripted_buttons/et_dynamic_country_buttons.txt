@@ -91,9 +91,11 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			origin = root
 			capital = scope:et_dyn_country_capital
 			cede_state_trigger = { has_variable = state_to_cede }
+			# Identity (culture/religion) normalized post creation
 			on_created = {
 				save_scope_as = et_new_dyn_country
 				every_scope_state = { limit = { has_variable = state_to_cede } remove_variable = state_to_cede }
+				et_assign_dominant_identity = yes
 			}
 		}
 		hidden_effect = {
@@ -179,6 +181,7 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			on_created = {
 				save_scope_as = et_new_dyn_country
 				every_scope_state = { limit = { has_variable = state_to_cede } remove_variable = state_to_cede }
+				et_assign_dominant_identity = yes
 			}
 		}
 		hidden_effect = {

@@ -67,9 +67,9 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			every_scope_state = { limit = { has_variable = state_to_cede } remove_variable = state_to_cede }
 			# Mark candidate states (allow single-state split)
 			every_scope_state = {
-				limit = { owner = ROOT is_incorporated = no NOT = { is_homeland_of_country_cultures = ROOT } OR = { turmoil > 0.50 market_access < 0.15 } }
-				set_variable = ai_potential_dyn_country_state
-			}
+							limit = { owner = ROOT NOT = { is_homeland_of_country_cultures = ROOT } OR = { turmoil > 0.50 market_access < 0.15 } }
+							set_variable = ai_potential_dyn_country_state
+						}
 			# Abort if none
 			if = { limit = { NOT = { any_scope_state = { has_variable = ai_potential_dyn_country_state } } } }
 			# Pick capital among candidates
@@ -164,7 +164,7 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state owner = ROOT } remove_variable = ai_potential_dyn_country_state }
 			every_scope_state = { limit = { has_variable = state_to_cede } remove_variable = state_to_cede }
 			# Mark candidates
-			every_scope_state = { limit = { owner = ROOT is_incorporated = no NOT = { is_homeland_of_country_cultures = ROOT } OR = { turmoil > 0.50 market_access < 0.15 } } set_variable = ai_potential_dyn_country_state }
+			every_scope_state = { limit = { owner = ROOT NOT = { is_homeland_of_country_cultures = ROOT } OR = { turmoil > 0.50 market_access < 0.15 } } set_variable = ai_potential_dyn_country_state }
 			if = { limit = { NOT = { any_scope_state = { has_variable = ai_potential_dyn_country_state } } } }
 			random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } save_scope_as = et_dyn_country_capital set_variable = state_to_cede }
 			# Expansion passes

@@ -2,14 +2,15 @@ et_reserve_income_ratio = {
     if = {
         limit = { income > expenses }
         value = gold_reserves_limit
-        subtract = expenses
-        divide = income
+        divide = {
+            value = income
+            subtract = expenses
+        }
     }
     else = {
         value = 1000
     }
 }
-
 
 et_autobuild_reserve_limit = {
     # Reserve limit for autobuilding: 45% of gold_reserves_limit

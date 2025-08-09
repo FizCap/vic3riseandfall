@@ -1,8 +1,6 @@
 et_scripted_button_build_admin_center = {
     name = "et_scripted_button_build_admin_center"
     desc = "et_scripted_button_build_admin_center_desc"
-
-    cooldown = { days = 60 }
     
     effect = {
         et_manual_build_government_administration = yes
@@ -44,7 +42,6 @@ et_scripted_button_build_railway = {
     name = "et_scripted_button_build_railway"
     desc = "et_scripted_button_build_railway_desc"
 
-    cooldown = { days = 60 }
     
     effect = {
         et_manual_build_railway = yes
@@ -85,9 +82,6 @@ et_scripted_button_build_railway = {
 et_scripted_button_build_port = {
     name = "et_scripted_button_build_port"
     desc = "et_scripted_button_build_port_desc"
-
-
-    cooldown = { days = 60 }
     
     effect = {
         et_manual_build_port = yes

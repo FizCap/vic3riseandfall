@@ -1,0 +1,10 @@
+﻿et_epidemic_outbreak_chance = {
+    # Base chance for an epidemic outbreak
+    value = 0.0012
+    multiply = {
+        every_scope_state = {
+                add = state_population
+                divide = 100000
+            }
+        }
+    }

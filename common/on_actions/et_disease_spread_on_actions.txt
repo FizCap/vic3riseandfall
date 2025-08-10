@@ -1,0 +1,15 @@
+﻿on_monthly_pulse_state = {
+}
+
+
+et_disease_spread = {
+    # Root scope is State (per vanilla). Check for epidemic and spread to a neighbour.
+    effect = {
+        if = {
+            limit = {
+                state_region = { has_harvest_condition = et_epidemic_outbreak }
+            }
+            et_epidemic_spread_effect = yes
+        }
+    }
+}

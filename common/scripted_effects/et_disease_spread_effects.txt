@@ -1,0 +1,18 @@
+﻿# Scripted effect: spreads epidemic to neighbouring states from infected states
+# Scope: state
+
+et_epidemic_spread_effect = {
+        state_region = {
+            random_neighbouring_state = {
+                limit = {
+                    state_region = {
+                        NOT = { has_harvest_condition = et_epidemic_outbreak }
+                    }
+                }
+                random_list = {
+                    99 = { state_region = { start_harvest_condition = et_epidemic_outbreak } }
+                    1 = { }
+                }
+            }
+        }
+    }

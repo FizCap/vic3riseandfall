@@ -1,4 +1,0 @@
-et_can_get_disease = {
-    NOT = { has_modifier = et_disease }
-    state_population > 75000
-}

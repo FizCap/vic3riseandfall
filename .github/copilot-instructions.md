@@ -7,6 +7,9 @@ This file merges all key lessons, best practices, and conventions for modding Vi
 
 ## 1. Lessons Learned & Common Pitfalls
 
+### Unsupported Syntax
+- Do **not** use `break = yes` in code. This is not supported or needed in Victoria 3 scripting.
+
 ### Research Debuff/Game Rule Implementation
 - Register on_actions with `effect = { ... }` blocks; never use `effect =` inside scripted effects.
 - Permanent/recurring country modifiers go in `static_modifiers`, not `scripted_modifiers`.

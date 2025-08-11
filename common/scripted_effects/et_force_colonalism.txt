@@ -1,6 +1,7 @@
 ﻿et_force_colonialism_effect = {
     activate_law = law_type:law_slave_trade
     activate_law = law_type:law_colonial_exploitation
+    add_technology_researched = colonization
     add_modifier = {
       name = ageofcolonialism_modfier
       years = 50

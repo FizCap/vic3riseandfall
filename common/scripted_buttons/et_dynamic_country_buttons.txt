@@ -21,20 +21,6 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			# AI Path: candidate states can be either homeland (very high turmoil or no access) or non-homeland (high turmoil or low access and unincorporated)
 			AND = {
 				is_player = no
-				any_scope_state = {
-					owner = ROOT
-					OR = {
-						AND = {
-							is_homeland_of_country_cultures = ROOT
-							OR = { turmoil > 0.70 market_access < 0.01 }
-						}
-						AND = {
-							NOT = { is_homeland_of_country_cultures = ROOT }
-							is_incorporated = no
-							OR = { turmoil > 0.50 market_access < 0.15 }
-						}
-					}
-				}
 			}
 		}
 	}
@@ -48,22 +34,8 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 				has_variable = et_dyn_builder_enabled
 				any_scope_state = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT }
 			}
-			AND = {
+			AND = {	
 				is_player = no
-				any_scope_state = {
-					owner = ROOT
-					OR = {
-						AND = {
-							is_homeland_of_country_cultures = ROOT
-							OR = { turmoil > 0.70 market_access < 0.01 }
-						}
-						AND = {
-							NOT = { is_homeland_of_country_cultures = ROOT }
-							is_incorporated = no
-							OR = { turmoil > 0.50 market_access < 0.15 }
-						}
-					}
-				}
 			}
 		}
 	}
@@ -184,48 +156,6 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			}
 			AND = {
 				is_player = no
-				any_scope_state = {
-					owner = ROOT
-					OR = {
-						AND = {
-							is_homeland_of_country_cultures = ROOT
-							OR = { turmoil > 0.70 market_access < 0.01 }
-						}
-						AND = {
-							NOT = { is_homeland_of_country_cultures = ROOT }
-							is_incorporated = no
-							OR = { turmoil > 0.50 market_access < 0.15 }
-						}
-					}
-				}
-			}
-		}
-	}
-
-	possible = {
-		is_country_type = unrecognized
-		OR = {
-			AND = {
-				is_player = yes
-				has_variable = et_dyn_builder_enabled
-				any_scope_state = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT }
-			}
-			AND = {
-				is_player = no
-				any_scope_state = {
-					owner = ROOT
-					OR = {
-						AND = {
-							is_homeland_of_country_cultures = ROOT
-							OR = { turmoil > 0.70 market_access < 0.01 }
-						}
-						AND = {
-							NOT = { is_homeland_of_country_cultures = ROOT }
-							is_incorporated = no
-							OR = { turmoil > 0.30 market_access < 0.15 }
-						}
-					}
-				}
 			}
 		}
 	}

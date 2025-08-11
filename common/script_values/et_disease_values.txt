@@ -4,7 +4,7 @@
     multiply = {
         every_scope_state = {
                 add = state_population
-                divide = 100000000
+                divide = 3000000
             }
         }
     }

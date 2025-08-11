@@ -4,7 +4,7 @@
 	}
 
 	range = {
-		integer_range = { min = 1 max = 20 }
+		integer_range = { min = 8 max = 52 }
 	}
 
 	duration = {

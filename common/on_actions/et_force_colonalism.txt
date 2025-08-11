@@ -65,6 +65,12 @@ force_colonialism_russia = {
     every_country = {
       limit = {
         country_has_primary_culture = cu:russian
+        NOT = {
+          OR = {
+            has_law = law_type:law_colonial_resettlement
+            has_law = law_type:law_colonial_exploitation
+          }
+        }
       }
       activate_law = law_type:law_frontier_colonization
     }

@@ -1,0 +1,8 @@
+﻿state_harvest_condition_et_epidemic_outbreak_impact_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

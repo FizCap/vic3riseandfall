@@ -531,6 +531,7 @@ pharmaceuticals = {
 	modifier = {
 		country_institution_health_system_max_investment_add = 1
 		state_harvest_condition_disease_outbreak_impact_mult = -0.2
+		state_harvest_condition_et_epidemic_outbreak_impact_mult = -0.2
 	}
 
 	unlocking_technologies = {

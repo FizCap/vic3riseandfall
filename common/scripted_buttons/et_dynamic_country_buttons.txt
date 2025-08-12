@@ -61,14 +61,14 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			# Mark to cede
 			every_scope_state = {
 				limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT }
-				set_variable = state_to_cede
+				set_variable = dynamic_state_cede
 			}
 		}
 		else = {
 			# AI PATH (auto select cluster contiguous by adjacency) ------------
 			# Clean stale selection variables
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state owner = ROOT } remove_variable = ai_potential_dyn_country_state }
-			every_scope_state = { limit = { has_variable = state_to_cede } remove_variable = state_to_cede }
+			every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
 			# Mark candidate states (allow single-state split)
 						every_scope_state = {
 							limit = {
@@ -95,16 +95,16 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			# Abort if none
 			if = { limit = { NOT = { any_scope_state = { has_variable = ai_potential_dyn_country_state } } } }
 			# Pick capital among candidates
-			random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } save_scope_as = et_dyn_country_capital set_variable = state_to_cede }
+			random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } save_scope_as = et_dyn_country_capital set_variable = dynamic_state_cede }
 			# Adjacency expansion passes (manual unrolled)
 			# Pass 1
-			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
+			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
 			# Pass 2
 			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
 			# Pass 3
 			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
 			# (Additional passes can be added if larger clusters desired)
-			# Cleanup candidate markers (keep state_to_cede for ceding)
+			# Cleanup candidate markers (keep dynamic_state_cede for ceding)
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } remove_variable = ai_potential_dyn_country_state }
 		}
 
@@ -113,11 +113,11 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			origin = root
 			capital = scope:et_dyn_country_capital
 			tier = principality
-			cede_state_trigger = { has_variable = state_to_cede }
+			cede_state_trigger = { has_variable = dynamic_state_cede }
 			# Identity (culture/religion) normalized post creation
 			on_created = {
 				save_scope_as = et_new_dyn_country
-				every_scope_state = { limit = { has_variable = state_to_cede } remove_variable = state_to_cede }
+				every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
 				et_assign_dominant_identity = yes
 			}
 		}
@@ -170,12 +170,12 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			else = {
 				random_scope_state = { limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT } save_scope_as = et_dyn_country_capital }
 			}
-			every_scope_state = { limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT } set_variable = state_to_cede }
+			every_scope_state = { limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT } set_variable = dynamic_state_cede }
 		}
 		else = { # AI auto path adjacency cluster (allow single state)
 			# Cleanup
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state owner = ROOT } remove_variable = ai_potential_dyn_country_state }
-			every_scope_state = { limit = { has_variable = state_to_cede } remove_variable = state_to_cede }
+			every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
 			# Mark candidates
 									every_scope_state = {
 										limit = {
@@ -200,9 +200,9 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 										set_variable = ai_potential_dyn_country_state
 									}
 			if = { limit = { NOT = { any_scope_state = { has_variable = ai_potential_dyn_country_state } } } }
-			random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } save_scope_as = et_dyn_country_capital set_variable = state_to_cede }
+			random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } save_scope_as = et_dyn_country_capital set_variable = dynamic_state_cede }
 			# Expansion passes
-			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
+			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
 			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
 			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
 			# Cleanup candidate markers
@@ -212,10 +212,10 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			origin = root
 			tier = principality
 			capital = scope:et_dyn_country_capital
-			cede_state_trigger = { has_variable = state_to_cede }
+			cede_state_trigger = { has_variable = dynamic_state_cede }
 			on_created = {
 				save_scope_as = et_new_dyn_country
-				every_scope_state = { limit = { has_variable = state_to_cede } remove_variable = state_to_cede }
+				every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
 				et_assign_dominant_identity = yes
 			}
 		}

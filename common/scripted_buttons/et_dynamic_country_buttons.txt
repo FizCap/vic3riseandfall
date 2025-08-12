@@ -70,23 +70,17 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state owner = ROOT } remove_variable = ai_potential_dyn_country_state }
 			every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
 			# Mark candidate states (allow single-state split)
-						every_scope_state = {
+						every_scope_state = { # Candidate marks (recognized)
 							limit = {
 								owner = ROOT
 								OR = {
-										AND = {
-											is_homeland_of_country_cultures = ROOT
-											OR = {
-												turmoil > 0.70
-												market_access < 0.01
-											}
-										}
+									AND = {
+										is_homeland_of_country_cultures = ROOT
+										OR = { turmoil > 0.70 market_access < 0.01 }
+									}
 									AND = {
 										NOT = { is_homeland_of_country_cultures = ROOT }
-										OR = {
-											turmoil > 0.50
-											market_access < 0.15
-										}
+										OR = { turmoil > 0.50 market_access < 0.15 }
 									}
 								}
 							}
@@ -96,14 +90,13 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			if = { limit = { NOT = { any_scope_state = { has_variable = ai_potential_dyn_country_state } } } }
 			# Pick capital among candidates
 			random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } save_scope_as = et_dyn_country_capital set_variable = dynamic_state_cede }
-			# Adjacency expansion passes (manual unrolled)
-			# Pass 1
-			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
-			# Pass 2
-			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
-			# Pass 3
-			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
-			# (Additional passes can be added if larger clusters desired)
+			# Culture-based clustering attempt
+			et_dyn_country_ai_select_culture_for_cluster = yes
+			if = {
+				limit = { scope:et_dyn_target_culture = { exists = yes } }
+				et_dynamic_country_ai_expand_recognized_culture = yes
+			}
+			else = { et_dynamic_country_ai_expand_recognized = yes }
 			# Cleanup candidate markers (keep dynamic_state_cede for ceding)
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } remove_variable = ai_potential_dyn_country_state }
 		}
@@ -177,23 +170,17 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state owner = ROOT } remove_variable = ai_potential_dyn_country_state }
 			every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
 			# Mark candidates
-									every_scope_state = {
+									every_scope_state = { # Candidate marks (unrecognized)
 										limit = {
 											owner = ROOT
 											OR = {
-													AND = {
-														is_homeland_of_country_cultures = ROOT
-														OR = {
-															turmoil > 0.70
-															market_access < 0.01
-														}
-													}
+												AND = {
+													is_homeland_of_country_cultures = ROOT
+													OR = { turmoil > 0.70 market_access < 0.01 }
+												}
 												AND = {
 													NOT = { is_homeland_of_country_cultures = ROOT }
-													OR = {
-														turmoil > 0.50
-														market_access < 0.15
-													}
+													OR = { turmoil > 0.50 market_access < 0.15 }
 												}
 											}
 										}
@@ -201,10 +188,13 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 									}
 			if = { limit = { NOT = { any_scope_state = { has_variable = ai_potential_dyn_country_state } } } }
 			random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } save_scope_as = et_dyn_country_capital set_variable = dynamic_state_cede }
-			# Expansion passes
-			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
-			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
-			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
+			# Culture-based clustering attempt
+			et_dyn_country_ai_select_culture_for_cluster = yes
+			if = {
+				limit = { scope:et_dyn_target_culture = { exists = yes } }
+				et_dynamic_country_ai_expand_unrecognized_culture = yes
+			}
+			else = { et_dynamic_country_ai_expand_unrecognized = yes }
 			# Cleanup candidate markers
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } remove_variable = ai_potential_dyn_country_state }
 		}

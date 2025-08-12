@@ -100,9 +100,9 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			# Pass 1
 			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
 			# Pass 2
-			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
+			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
 			# Pass 3
-			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
+			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
 			# (Additional passes can be added if larger clusters desired)
 			# Cleanup candidate markers (keep dynamic_state_cede for ceding)
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } remove_variable = ai_potential_dyn_country_state }
@@ -203,8 +203,8 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } save_scope_as = et_dyn_country_capital set_variable = dynamic_state_cede }
 			# Expansion passes
 			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
-			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
-			every_scope_state = { limit = { has_variable = state_to_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = state_to_cede } }
+			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
+			every_scope_state = { limit = { has_variable = dynamic_state_cede } every_neighbouring_state = { limit = { has_variable = ai_potential_dyn_country_state } set_variable = dynamic_state_cede } }
 			# Cleanup candidate markers
 			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } remove_variable = ai_potential_dyn_country_state }
 		}

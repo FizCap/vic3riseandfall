@@ -286,14 +286,14 @@ et_adopt_mahayana_state_religion_decision = {
 et_adopt_tengri_state_religion_decision = {
     is_shown = {
         religion_percent_country = {
-            target = rel:tengri
+            target = rel:tengri_pagan_reformed
             value >= 0.20
         }
 
     }
     possible = {
         religion_percent_country = {
-            target = rel:tengri
+            target = rel:tengri_pagan_reformed
             value >= 0.20
         }
 
@@ -302,7 +302,7 @@ et_adopt_tengri_state_religion_decision = {
     NOT = { has_variable = changed_religion }
     }
     when_taken = {
-        set_state_religion = rel:tengri
+        set_state_religion = rel:tengri_pagan_reformed
         set_variable = { name = changed_religion days = 90 }
     }
     ai_chance = { value = 100 }

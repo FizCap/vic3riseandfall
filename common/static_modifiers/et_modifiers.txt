@@ -1,8 +1,48 @@
-﻿et_negative_bureaucracy = {
+﻿start_boost_country_modifier = {
+    state_pop_qualifications_mult = 100
+    country_tax_income_add = 15000
+    building_training_rate_add = 1000
+    military_formation_organization_gain_add = 10
+    state_trade_capacity_add = 50
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+start_boost_country_modifier4 = {
+    state_tax_capacity_add = 25
+    state_infrastructure_add = 10
+    state_food_security_add = 0.30
+    state_migration_pull_add = 3.0
+    state_pop_qualifications_mult = 0.30
+    state_birth_rate_mult = 2.0
+    state_mortality_mult = -1.0
+    military_formation_organization_gain_add = 10
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+holy_roman_emperor = {
+    country_prestige_mult = 2
+    country_prestige_add = 100
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+et_negative_bureaucracy = {
     country_force_privatization_bool = yes
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }
 
+ageofcolonialism_modfier = {
+    country_max_declared_interests_add = 30
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+rise_of_the_ottomans = {
+    state_conscription_rate_mult = 3.0
+    icon = gfx/interface/icons/timed_modifier_icons/    modifier_fist_positive.dds
+}
+
+et_authority_cheat = {
+    country_authority_add = 10000
+}
 
 recent_state_owner_change  = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds

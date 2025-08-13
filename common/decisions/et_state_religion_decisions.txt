@@ -5,6 +5,7 @@ et_adopt_hussite_state_religion_decision = {
             target = rel:hussite
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -31,6 +32,7 @@ et_adopt_jewish_state_religion_decision = {
             target = rel:jewish
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -56,6 +58,7 @@ et_adopt_orthodox_state_religion_decision = {
             target = rel:orthodox
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -81,6 +84,7 @@ et_adopt_oriental_orthodox_state_religion_decision = {
             target = rel:oriental_orthodox
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -106,6 +110,7 @@ et_adopt_hindu_state_religion_decision = {
             target = rel:hindu
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -132,6 +137,7 @@ et_adopt_shiite_state_religion_decision = {
             target = rel:shiite
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -158,6 +164,7 @@ et_adopt_animist_state_religion_decision = {
             target = rel:animist
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -184,6 +191,7 @@ et_adopt_ibadi_state_religion_decision = {
             target = rel:ibadi
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -210,6 +218,7 @@ et_adopt_atheist_state_religion_decision = {
             target = rel:atheist
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -236,6 +245,7 @@ et_adopt_gelugpa_state_religion_decision = {
             target = rel:gelugpa
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -262,6 +272,7 @@ et_adopt_theravada_state_religion_decision = {
             target = rel:theravada
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -288,6 +299,7 @@ et_adopt_mahayana_state_religion_decision = {
             target = rel:mahayana
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -314,6 +326,7 @@ et_adopt_tengri_state_religion_decision = {
             target = rel:tengri_pagan_reformed
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
     possible = {
@@ -343,6 +356,7 @@ et_adopt_sunni_state_religion_decision = {
             target = rel:sunni
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
 
@@ -371,6 +385,7 @@ et_adopt_confucian_state_religion_decision = {
             target = rel:confucian
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
 
@@ -399,6 +414,7 @@ et_adopt_catholic_state_religion_decision = {
             target = rel:catholic
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
 
@@ -427,6 +443,7 @@ et_adopt_protestant_state_religion_decision = {
             target = rel:protestant
             value >= 0.20
         }
+        has_variable = newly_formed_country
 
     }
 

@@ -74,6 +74,31 @@ et_adopt_orthodox_state_religion_decision = {
     }
     ai_chance = { value = 100 }
 }
+# Oriental Orthodox
+et_adopt_oriental_orthodox_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:oriental_orthodox
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:oriental_orthodox
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:oriental_orthodox
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
 # Hindu
 et_adopt_hindu_state_religion_decision = {
     is_shown = {

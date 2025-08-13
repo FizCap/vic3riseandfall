@@ -1,0 +1,587 @@
+colonial_zanj = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { scale = { 0.75 0.75 } position = { 0.75 0.5 } }		
+	}
+
+	colored_emblem = {
+		texture = "ce_lion_rampant.dds"
+		color1 = "red"
+		color2 = "red"
+		color3 = "red"
+		instance = { scale = { 0.45 0.45 } position = { 0.75 0.5 } }
+	}
+}
+
+colonial_ethiopia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_rhombus.dds"
+		color1 = "white"
+		color2 = "white"
+		instance = { position = { 1 0.5 } }
+	}
+}
+
+colonial_southern_africa = {
+	pattern = "pattern_solid.tga"
+	color1 = "red"
+	color2 = "red"
+
+	colored_emblem = {
+		texture = "ce_shield_heater_border.dds"
+		color1 = "blue"
+		color2 = "white"
+		instance = { scale = { 0.75 0.75 } position = { 0.75 0.5 } }		
+	}
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "pearl"
+		color2 = "pearl"
+		instance = { scale = { 0.16 0.16 } position = { 0.75 0.35 } }		
+	}
+
+	colored_emblem = {
+		texture = "ce_bull_head_african.dds"
+		color1 = "pearl"
+		color2 = "pearl"
+		color3 = "pearl"
+		instance = { scale = { 0.35 0.35 } position = { 0.75 0.5 } }				
+	}
+}
+
+colonial_congo = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_star_05.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_north_africa = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_shield_african.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_nile_basin = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_rising_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_niger = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_circle.dds"
+		color1 = "red"
+		instance = { scale = { 0.75 0.75 } position = { 0.75 0.5 } }		
+	}
+
+	colored_emblem = {
+		texture = "ce_star_hexagram.dds"
+		color1 = "green"
+		color2 = "green"
+		color3 = "green"
+		instance = { scale = { 0.55 0.55 } position = { 0.75 0.5 } }				
+	}
+}
+
+colonial_senegal = {
+	pattern = "pattern_solid.tga"
+	color1 = "yellow"
+	color2 = "yellow"
+	
+	colored_emblem = {
+		texture = "ce_kanaga.dds"
+		color1 = "black"
+		color2 = "black"
+		color3 = "black"
+		instance = { scale = { 0.55 0.55 } position = { 0.75 0.5 } }				
+	}
+}
+
+colonial_indochina = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_crossed_scimitars.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_indonesia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_golden_fishes.dds"
+		color1 = "red"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_china = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_dragon_china.dds.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_manchuria = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_dharmachakra.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_japan = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_endless_knot.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_siberia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_buddha.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_oceania = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_golden_fishes.dds"
+		color1 = "orange"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_canada = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_maple_leaf.dds"
+		color1 = "red"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_new_england = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_buffalo.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_pacific_coast = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_infinity.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_great_plains = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_inuksuk.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_the_midwest = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun_xia.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_dixie = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sacred_heart.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_mexico = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_star_14.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_central_america = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_trident.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_caribbean = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_conch_shell.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_brazil = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_morning_star.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_andes = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_star_07.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_la_plata = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_star_gunelve.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_gran_colombia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_thunderbird.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_arabic = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_lion_singa.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_persia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_central_asia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_horse_tribal.dds"
+		color1 = "white"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_caucasus = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_falcon.dds"
+		color1 = "black"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_india = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun_face.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_himalayas = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_moon_face.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_british_isles = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_iberia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_france = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_germany = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_italy = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_balkans = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_nordic_states = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_russia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_danubia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_poland = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_anatolia = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}
+
+colonial_baltic_states = {
+	pattern = "pattern_solid.tga"
+	color1 = "blue"
+	color2 = "blue"
+
+	colored_emblem = {
+		texture = "ce_sun.dds"
+		color1 = "yellow"
+		instance = { scale = { 0.5 0.5 } position = { 0.70 0.5 } }
+	}
+}

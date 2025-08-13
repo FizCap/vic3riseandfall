@@ -50,6 +50,12 @@ on_colony_created = {
     }
 }
 
+on_state_owner_change = {
+    on_actions = {
+        et_state_owner_change
+    }
+}
+
 # --- Event Definitions ---
 
 et_austria_burgundy_union = {
@@ -314,11 +320,9 @@ colony_grant_claim = {
     }
 }
 
-country_collapse_time = {
-    trigger = {
-        et_country_collapse_eligible = yes
-    }
-    effect = {
-        et_country_collapse_effect = yes
-        }
-    }
+
+et_state_owner_change = {
+  effect = {
+    et_state_owner_change_effect = yes
+  }
+}

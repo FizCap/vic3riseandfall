@@ -30,6 +30,19 @@ et_negative_bureaucracy = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }
 
+ageofcolonialism_modfier = {
+    country_max_declared_interests_add = 30
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+rise_of_the_ottomans = {
+    state_conscription_rate_mult = 3.0
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+et_authority_cheat = {
+    country_authority_add = 10000
+}
 
 recent_state_owner_change  = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds

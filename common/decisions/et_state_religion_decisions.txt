@@ -1,0 +1,450 @@
+# Hussite
+et_adopt_hussite_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:hussite
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:hussite
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:hussite
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Jewish
+et_adopt_jewish_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:jewish
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:jewish
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:jewish
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+# Orthodox
+et_adopt_orthodox_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:orthodox
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:orthodox
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:orthodox
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+# Oriental Orthodox
+et_adopt_oriental_orthodox_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:oriental_orthodox
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:oriental_orthodox
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:oriental_orthodox
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+# Hindu
+et_adopt_hindu_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:hindu
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:hindu
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:hindu
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Shiite
+et_adopt_shiite_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:shiite
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:shiite
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:shiite
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Animist
+et_adopt_animist_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:animist
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:animist
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:animist
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Ibadi
+et_adopt_ibadi_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:ibadi
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:ibadi
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:ibadi
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Atheist
+et_adopt_atheist_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:atheist
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:atheist
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:atheist
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Gelugpa
+et_adopt_gelugpa_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:gelugpa
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:gelugpa
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:gelugpa
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Theravada
+et_adopt_theravada_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:theravada
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:theravada
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:theravada
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Mahayana
+et_adopt_mahayana_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:mahayana
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:mahayana
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:mahayana
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+
+# Tengri
+et_adopt_tengri_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:tengri_pagan_reformed
+            value >= 0.20
+        }
+
+    }
+    possible = {
+        religion_percent_country = {
+            target = rel:tengri_pagan_reformed
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+    when_taken = {
+        set_state_religion = rel:tengri_pagan_reformed
+        set_variable = { name = changed_religion days = 90 }
+    }
+    ai_chance = { value = 100 }
+}
+### Victoria3Timeline: Majority Religion Adoption Decisions
+### Each decision appears when a single religion reaches >= 51% of population
+### and the country does not already have that religion as its state religion.
+### AI will always take it once possible.
+
+et_adopt_sunni_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:sunni
+            value >= 0.20
+        }
+
+    }
+
+    possible = {
+        religion_percent_country = {
+            target = rel:sunni
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+
+    when_taken = {
+        set_state_religion = rel:sunni
+        set_variable = { name = changed_religion days = 90 }
+    }
+
+    ai_chance = { value = 100 }
+}
+
+et_adopt_confucian_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:confucian
+            value >= 0.20
+        }
+
+    }
+
+    possible = {
+        religion_percent_country = {
+            target = rel:confucian
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+
+    when_taken = {
+        set_state_religion = rel:confucian
+        set_variable = { name = changed_religion days = 90 }
+    }
+
+    ai_chance = { value = 100 }
+}
+
+et_adopt_catholic_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:catholic
+            value >= 0.20
+        }
+
+    }
+
+    possible = {
+        religion_percent_country = {
+            target = rel:catholic
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+
+    when_taken = {
+        set_state_religion = rel:catholic
+        set_variable = { name = changed_religion days = 90 }
+    }
+
+    ai_chance = { value = 100 }
+}
+
+et_adopt_protestant_state_religion_decision = {
+    is_shown = {
+        religion_percent_country = {
+            target = rel:protestant
+            value >= 0.20
+        }
+
+    }
+
+    possible = {
+        religion_percent_country = {
+            target = rel:protestant
+            value >= 0.20
+        }
+
+    has_variable = newly_formed_country
+    NOT = { has_variable = newly_formed_country_cooldown }
+    NOT = { has_variable = changed_religion }
+    }
+
+    when_taken = {
+        set_state_religion = rel:protestant
+        set_variable = { name = changed_religion days = 90 }
+    }
+
+    ai_chance = { value = 100 }
+}

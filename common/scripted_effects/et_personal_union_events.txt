@@ -1,0 +1,50 @@
+﻿et_austria_burgundy_union_effect = {
+    c:AUS = {
+        create_diplomatic_pact = {
+            country = c:X59
+            type = personal_union
+        }
+        trigger_event = { id = et_austria_burgundy.1 }
+    }
+    c:X59 = {
+        trigger_event = { id = et_austria_burgundy.1 }
+    }
+    every_country = {
+        limit = { AND = { NOT = { this = c:AUS } NOT = { this = c:X59 } } }
+        trigger_event = { id = et_austria_burgundy.1 }
+    }
+}
+
+et_castille_aragon_union_effect = {
+    c:CAS = {
+        create_diplomatic_pact = {
+            country = c:X22
+            type = personal_union
+        }
+        trigger_event = { id = et_castille_aragon.1 }
+    }
+    c:X22 = {
+        trigger_event = { id = et_castille_aragon.1 }
+    }
+    every_country = {
+        limit = { AND = { NOT = { this = c:CAS } NOT = { this = c:X22 } } }
+        trigger_event = { id = et_castille_aragon.1 }
+    }
+}
+
+et_hungary_boh_pu_effect = {
+    c:HUN = {
+        create_diplomatic_pact = {
+            country = c:BOH
+            type = personal_union
+        }
+        trigger_event = { id = et_hungary_boh_pu.1 }
+    }
+    c:BOH = {
+        trigger_event = { id = et_hungary_boh_pu.1 }
+    }
+    every_country = {
+        limit = { AND = { NOT = { this = c:HUN } NOT = { this = c:BOH } } }
+        trigger_event = { id = et_hungary_boh_pu.1 }
+    }
+}

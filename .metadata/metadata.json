@@ -1,8 +1,8 @@
 {
-  "name" : "Start Boost",
+  "name" : "Vanilla Enhanced (Extended Timeline Standalone)",
 	"id" : "",
   "version" : "",
-  "supported_game_version" : "",
+  "supported_game_version" : "1.9*",
   "short_description" : "",
   "tags" : [],
   "relationships" : [],

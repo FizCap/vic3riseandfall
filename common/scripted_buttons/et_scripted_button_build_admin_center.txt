@@ -1,0 +1,204 @@
+et_scripted_button_build_admin_center = {
+    name = "et_scripted_button_build_admin_center"
+    desc = "et_scripted_button_build_admin_center_desc"
+    
+    effect = {
+        et_manual_build_government_administration = yes
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+            can_construct_building = building_government_administration
+        }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = { has_game_rule = ai_improvement_disabled }
+            subtract = -1000
+        }
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                gold_reserves > 10000
+                bureaucracy < 0
+                NOT = {
+                    any_scope_state = {
+                        b:building_government_administration ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
+    }
+}
+
+et_scripted_button_build_railway = {
+    name = "et_scripted_button_build_railway"
+    desc = "et_scripted_button_build_railway_desc"
+
+    
+    effect = {
+        et_manual_build_railway = yes
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+            has_technology_researched = railways
+        }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = { has_game_rule = ai_improvement_disabled }
+            subtract = -1000
+        }
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                gold_reserves > et_autobuild_reserve_limit
+                bureaucracy > 0
+                NOT = {
+                    any_scope_state = {
+                        b:building_railway ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
+    }
+    }
+
+et_scripted_button_build_port = {
+    name = "et_scripted_button_build_port"
+    desc = "et_scripted_button_build_port_desc"
+    
+    effect = {
+        et_manual_build_port = yes
+    }
+    
+    visible = {
+        always = yes
+    }
+    
+    possible = {
+            can_construct_building = building_port
+        }
+
+ai_chance = {
+  value = 0
+  if = {
+        limit = { has_game_rule = ai_improvement_disabled }
+        subtract = -1000
+  }
+  if = {
+    limit = {
+      has_game_rule = ai_improvement_enabled
+      gold_reserves > et_autobuild_reserve_limit
+      bureaucracy > 0
+      NOT = {
+        any_scope_state = {
+          b:building_port ?= {
+            is_under_construction = yes
+          }
+        }
+      }
+    }
+    add = 100
+  }
+}
+}
+
+et_scripted_button_auto_build_admin_activate = {
+    name = "et_scripted_button_auto_build_admin_activate"
+    desc = "et_scripted_button_auto_build_admin_activate_desc"
+    visible = {
+        NOT = { has_variable = et_auto_build_gov_cooldown }
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = et_auto_build_gov_cooldown
+        custom_tooltip = et_auto_build_admin_on_tt
+    }
+}
+
+et_scripted_button_auto_build_admin_deactivate = {
+    name = "et_scripted_button_auto_build_admin_deactivate"
+    desc = "et_scripted_button_auto_build_admin_deactivate_desc"
+    visible = {
+        has_variable = et_auto_build_gov_cooldown
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = et_auto_build_gov_cooldown
+        custom_tooltip = et_auto_build_admin_off_tt
+    }
+}
+
+et_scripted_button_auto_build_railway_activate = {
+    name = "et_scripted_button_auto_build_railway_activate"
+    desc = "et_scripted_button_auto_build_railway_activate_desc"
+    visible = {
+        NOT = { has_variable = et_auto_build_rail_cooldown }
+    }
+    possible = { has_technology_researched = railways }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = et_auto_build_rail_cooldown
+        custom_tooltip = et_auto_build_railway_on_tt
+    }
+}
+
+et_scripted_button_auto_build_railway_deactivate = {
+    name = "et_scripted_button_auto_build_railway_deactivate"
+    desc = "et_scripted_button_auto_build_railway_deactivate_desc"
+    visible = {
+        has_variable = et_auto_build_rail_cooldown
+    }
+    possible = { has_technology_researched = railways }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = et_auto_build_rail_cooldown
+        custom_tooltip = et_auto_build_railway_off_tt
+    }
+}
+
+et_scripted_button_auto_build_port_activate = {
+    name = "et_scripted_button_auto_build_port_activate"
+    desc = "et_scripted_button_auto_build_port_activate_desc"
+    visible = {
+        NOT = { has_variable = et_auto_build_port_cooldown }
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = et_auto_build_port_cooldown
+        custom_tooltip = et_auto_build_port_on_tt
+    }
+}
+
+et_scripted_button_auto_build_port_deactivate = {
+    name = "et_scripted_button_auto_build_port_deactivate"
+    desc = "et_scripted_button_auto_build_port_deactivate_desc"
+    visible = {
+        has_variable = et_auto_build_port_cooldown
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = et_auto_build_port_cooldown
+        custom_tooltip = et_auto_build_port_off_tt
+    }
+}

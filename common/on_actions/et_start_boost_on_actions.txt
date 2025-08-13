@@ -1,0 +1,97 @@
+﻿on_yearly_pulse_country = {
+  on_actions = {
+    ai_improvement
+    ai_improvement2
+    ai_improvement3
+  }
+}
+
+# Economic Boost Game Rule Effects
+start_boost = {
+  trigger = { has_game_rule = economic_boost_enabled }
+  effect = {
+    every_country = {
+      add_modifier = {
+        name = start_boost_country_modifier
+        years = 5
+        is_decaying = yes
+      }
+    }
+  }
+}
+
+start_boost3 = {
+  trigger = {
+    has_game_rule = economic_boost_enabled
+  }
+  effect = {
+    every_state = {
+      et_add_random_resource_buildings_15x = yes
+      et_add_random_naval_buildings = yes
+      et_add_random_buildings = yes
+    }
+  }
+}
+
+start_boost4 = {
+  trigger = {
+    has_game_rule = economic_boost_enabled
+  }
+  effect = {
+    every_state = {
+      if = {
+        limit = { 
+          state_population < 10000 
+          NOT = { has_modifier = start_boost_country_modifier4 }
+        }
+        add_modifier = {
+          name = start_boost_country_modifier4
+          duration = 0
+        }
+      }
+      if = {
+        limit = {
+          state_population > 30000
+          has_modifier = start_boost_country_modifier4
+        }
+        remove_modifier = start_boost_country_modifier4
+      }
+    }
+  }
+}
+
+ai_improvement = {
+    trigger = {
+        has_game_rule = ai_improvement_enabled
+        is_ai = yes
+    }
+    effect = {
+        et_ai_improvement_effect_dynamic = yes
+    }
+}
+
+ai_improvement2 = {
+    trigger = {
+        has_game_rule = ai_improvement_enabled
+        is_ai = yes
+    }
+    effect = {
+        et_ai_building_subsidized = yes
+    }
+}
+
+ai_improvement3 = {
+    trigger = {
+        has_game_rule = ai_improvement_enabled
+        is_ai = yes
+    }
+    effect = {
+        et_ai_building_not_subsidized = yes
+    }
+}
+
+et_homeland_cleanup = {
+    effect = {
+        et_homeland_cleanup_script = yes
+    }
+}

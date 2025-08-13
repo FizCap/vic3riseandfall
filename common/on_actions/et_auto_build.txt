@@ -1,0 +1,57 @@
+on_monthly_pulse_country = {
+    on_actions = {
+        et_auto_build_monthly
+    }
+}
+
+
+et_auto_build_monthly = {
+    trigger = {
+        OR = {
+            has_variable = et_auto_build_gov_cooldown
+            has_variable = et_auto_build_rail_cooldown
+            has_variable = et_auto_build_port_cooldown
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                has_variable = et_auto_build_gov_cooldown
+                NOT = {
+                    any_scope_state = {
+                        b:building_government_administration ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            et_manual_build_government_administration = yes
+        }
+        if = {
+            limit = {
+                has_variable = et_auto_build_rail_cooldown
+                NOT = {
+                    any_scope_state = {
+                        b:building_railway ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            et_manual_build_railway = yes
+        }
+        if = {
+            limit = {
+                has_variable = et_auto_build_port_cooldown
+                NOT = {
+                    any_scope_state = {
+                        b:building_port ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            et_manual_build_port = yes
+        }
+    }
+}

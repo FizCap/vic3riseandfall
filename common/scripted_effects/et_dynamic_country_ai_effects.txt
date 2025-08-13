@@ -1,0 +1,124 @@
+#############################################
+# Dynamic Country AI Expansion (Randomized) #
+# et_dynamic_country_ai_effects.txt         #
+#
+# Purpose: Provide randomized adjacency expansion passes
+# so AI-created dynamic countries don't routinely become
+# very large. Recognized & unrecognized variants use
+# different weightings (recognized tends to be smaller).
+#
+# Safe to extend further by adding more weight tiers or
+# additional pruning logic after expansion.
+#############################################
+
+# Generic expansion pass (one hop)
+et_dyn_country_ai_single_pass = {
+    every_scope_state = {
+        limit = { has_variable = dynamic_state_cede }
+        every_neighbouring_state = {
+            limit = { has_variable = ai_potential_dyn_country_state }
+            set_variable = dynamic_state_cede
+        }
+    }
+}
+
+# Recognized variant: bias to fewer passes (puppets should be compact)
+et_dynamic_country_ai_expand_recognized = {
+    random_list = {
+        40 = { # Small (1 pass)
+            et_dyn_country_ai_single_pass = yes
+        }
+        35 = { # Medium (2 passes)
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+        }
+        20 = { # Large (3 passes) – previous default
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+        }
+        5 = { # Rare very large (4 passes)
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+        }
+    }
+}
+
+# Unrecognized variant: slightly higher chance of medium/large splits
+et_dynamic_country_ai_expand_unrecognized = {
+    random_list = {
+        30 = { # Small (1 pass)
+            et_dyn_country_ai_single_pass = yes
+        }
+        40 = { # Medium (2 passes)
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+        }
+        25 = { # Large (3 passes)
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+        }
+        5 = { # Rare very large (4 passes)
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+            et_dyn_country_ai_single_pass = yes
+        }
+    }
+}
+
+#############################################
+# Culture-Based Clustering (Optional Path)  #
+#############################################
+
+# Pick a dominant culture from the chosen capital state using descending thresholds.
+# Saves scope as et_dyn_target_culture if any culture meets thresholds.
+et_dyn_country_ai_select_culture_for_cluster = {
+    random_scope_culture = { limit = { scope:et_dyn_country_capital = { culture_percent_state = { target = PREV value >= 0.40 } } } save_scope_as = et_dyn_target_culture }
+    if = { limit = { NOT = { scope:et_dyn_target_culture = { exists = yes } } } random_scope_culture = { limit = { scope:et_dyn_country_capital = { culture_percent_state = { target = PREV value >= 0.35 } } } save_scope_as = et_dyn_target_culture } }
+    if = { limit = { NOT = { scope:et_dyn_target_culture = { exists = yes } } } random_scope_culture = { limit = { scope:et_dyn_country_capital = { culture_percent_state = { target = PREV value >= 0.30 } } } save_scope_as = et_dyn_target_culture } }
+    if = { limit = { NOT = { scope:et_dyn_target_culture = { exists = yes } } } random_scope_culture = { limit = { scope:et_dyn_country_capital = { culture_percent_state = { target = PREV value >= 0.25 } } } save_scope_as = et_dyn_target_culture } }
+    if = { limit = { NOT = { scope:et_dyn_target_culture = { exists = yes } } } random_scope_culture = { limit = { scope:et_dyn_country_capital = { culture_percent_state = { target = PREV value >= 0.20 } } } save_scope_as = et_dyn_target_culture } }
+}
+
+# Single adjacency expansion pass restricted by selected culture share >= 20% in neighbor state.
+et_dyn_country_ai_single_pass_culture = {
+    every_scope_state = {
+        limit = { has_variable = dynamic_state_cede }
+        every_neighbouring_state = {
+            limit = {
+                has_variable = ai_potential_dyn_country_state
+                culture_percent_state = { target = scope:et_dyn_target_culture value >= 0.20 }
+            }
+            set_variable = dynamic_state_cede
+        }
+    }
+}
+
+# Recognized variant with cultural filter
+et_dynamic_country_ai_expand_recognized_culture = {
+    random_list = {
+        45 = { et_dyn_country_ai_single_pass_culture = yes } # Small
+        35 = { et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes } # Medium
+        15 = { et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes } # Large
+        5  = { et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes } # Very large (rare)
+    }
+}
+
+# Unrecognized variant with cultural filter (slightly larger bias)
+et_dynamic_country_ai_expand_unrecognized_culture = {
+    random_list = {
+        30 = { et_dyn_country_ai_single_pass_culture = yes }
+        40 = { et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes }
+        25 = { et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes }
+        5  = { et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes et_dyn_country_ai_single_pass_culture = yes }
+    }
+}
+
+# OPTIONAL future improvement hook (currently unused):
+# After expansion, we could randomly prune peripheral states
+# to enforce a soft size cap. Left as stub for future logic.
+# et_dynamic_country_ai_prune_overflow = { }

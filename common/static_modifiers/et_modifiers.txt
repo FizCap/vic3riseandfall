@@ -2,3 +2,8 @@
     country_force_privatization_bool = yes
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }
+
+
+recent_state_owner_change  = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}

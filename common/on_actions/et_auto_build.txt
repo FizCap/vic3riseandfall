@@ -11,6 +11,7 @@ et_auto_build_monthly = {
             has_variable = et_auto_build_gov_cooldown
             has_variable = et_auto_build_rail_cooldown
             has_variable = et_auto_build_port_cooldown
+            has_variable = et_auto_build_power_cooldown
         }
     }
     effect = {
@@ -52,6 +53,19 @@ et_auto_build_monthly = {
                 }
             }
             et_manual_build_port = yes
+        }
+        if = {
+            limit = {
+                has_variable = et_auto_build_power_cooldown
+                NOT = {
+                    any_scope_state = {
+                        b:building_power_plant ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            et_manual_build_power_plant = yes
         }
     }
 }

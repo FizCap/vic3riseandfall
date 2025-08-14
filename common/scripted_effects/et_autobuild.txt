@@ -43,7 +43,7 @@ et_manual_build_railway = {
     every_scope_state = {
         limit = {
             turmoil < 0.50
-            infrastructure_delta < 0
+            infrastructure_delta > 0
             can_construct_building = building_port
         }
         start_building_construction = building_railway
@@ -103,5 +103,62 @@ et_manual_build_power_plant = {
             }
         }
         start_building_construction = building_power_plant
+    }
+}
+
+et_manual_build_construction_sector = {
+    # Manual / Auto build for construction sector (prioritised: coastal first, then inland)
+
+    # 1) Preferred pick: choose a coastal state that is improving (infrastructure_delta > 0).
+    #    Country cap prevents runaway building (allow up to 2 total construction sector levels).
+    # Try coastal candidates first. If any coastal state meets the criteria, pick one and stop.
+    if = {
+        limit = {
+            any_scope_state = {
+                limit = {
+                    turmoil < 0.50
+                    is_coastal = yes
+                    infrastructure_delta > 0
+                    can_construct_building = building_construction_sector
+                    owner = ROOT
+                }
+            }
+        }
+        random_state = {
+            limit = {
+                turmoil < 0.50
+                is_coastal = yes
+                infrastructure_delta > 0
+                can_construct_building = building_construction_sector
+                owner = ROOT
+            }
+            start_building_construction = building_construction_sector
+        }
+    }
+    else = {
+        # No suitable coastal candidate: try non-coastal states, but only if the country currently has 0 construction sectors
+        if = {
+            limit = {
+                any_scope_state = {
+                    limit = {
+                        turmoil < 0.50
+                        is_coastal = no
+                        infrastructure_delta > 0
+                        can_construct_building = building_construction_sector
+                        owner = ROOT
+                    }
+                }
+            }
+            random_state = {
+                limit = {
+                    turmoil < 0.50
+                    is_coastal = no
+                    infrastructure_delta > 0
+                    can_construct_building = building_construction_sector
+                    owner = ROOT
+                }
+                start_building_construction = building_construction_sector
+            }
+        }
     }
 }

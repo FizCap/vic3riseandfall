@@ -72,7 +72,6 @@ colony_grant_claim = {
     }
 }
 
-
 et_state_owner_change = {
   effect = {
     et_state_owner_change_effect = yes

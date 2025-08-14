@@ -5,7 +5,7 @@
   "version" : "1.0.0",
   "supported_game_version" : "1.9*",
   "short_description" : "Expands the timeline, adds new nations, and improves balance and gameplay for Victoria 3.",
-  "tags" : ["fixes", "balance", "gameplay", "new nations"],
+  "tags" : ["Balance", "Fixes", "Gameplay" ],
   "relationships" : [],
   "game_custom_data" : {
     "multiplayer_synchronized" : true

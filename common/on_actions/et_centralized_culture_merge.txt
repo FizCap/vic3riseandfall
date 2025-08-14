@@ -11,6 +11,7 @@ et_centralized_culture_merge_action_effect = {
                 has_game_rule = culture_merging_enabled
             }
             et_centralized_culture_merge_effect = yes
+            et_centralized_culture_merge_cleanup = yes
         }
     }
 }

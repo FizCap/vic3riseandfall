@@ -4,6 +4,12 @@
     }
 }
 
+on_monthly_pulse = {
+    on_actions = {
+        et_centralized_culture_new_country
+    }
+}
+
 et_centralized_culture_merge_action_effect = {
     effect = {
         if = {
@@ -11,6 +17,17 @@ et_centralized_culture_merge_action_effect = {
                 has_game_rule = culture_merging_enabled
             }
             et_centralized_culture_merge_effect = yes
+            et_centralized_culture_merge_cleanup = yes
+        }
+    }
+}
+
+et_centralized_culture_new_country = {
+        effect = {
+        if = {
+            limit = {
+                has_game_rule = culture_merging_enabled
+            }
             et_centralized_culture_merge_cleanup = yes
         }
     }

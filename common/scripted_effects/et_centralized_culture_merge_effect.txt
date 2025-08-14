@@ -20,8 +20,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:catalan
-                    add_primary_culture = cu:spanish
                 }
                 if = {
                     limit = {
@@ -42,8 +40,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:galician
-                    add_primary_culture = cu:spanish
                 }
                 if = {
                     limit = {
@@ -64,8 +60,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:basque
-                    add_primary_culture = cu:spanish
                 }
                 if = {
                     limit = {
@@ -86,8 +80,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:mirandese
-                    add_primary_culture = cu:portuguese
                 }
                 
                 # French regional cultures merge into French
@@ -110,8 +102,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:occitan
-                    add_primary_culture = cu:french
                 }
                 if = {
                     limit = {
@@ -132,8 +122,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:breton
-                    add_primary_culture = cu:french
                 }
                 
                 # Benelux cultures merge into Dutch
@@ -156,8 +144,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:flemish
-                    add_primary_culture = cu:dutch
                 }
                 if = {
                     limit = {
@@ -178,8 +164,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:wallonian
-                    add_primary_culture = cu:dutch
                 }
                 
                 # Swiss culture merges into appropriate German culture
@@ -202,8 +186,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:alemannic
-                    add_primary_culture = cu:south_german
                 }
                 
                 # South Slavic cultures merge into common South Slavic
@@ -226,8 +208,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:croat
-                    add_primary_culture = cu:serb
                 }
                 if = {
                     limit = {
@@ -248,8 +228,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:slovene
-                    add_primary_culture = cu:serb
                 }
                 if = {
                     limit = {
@@ -270,8 +248,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:bosniak
-                    add_primary_culture = cu:serb
                 }
                 if = {
                     limit = {
@@ -292,8 +268,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:bulgarian
-                    add_primary_culture = cu:serb
                 }   
                 
                 # West Slavic cultures merge appropriately
@@ -316,8 +290,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:slovak
-                    add_primary_culture = cu:czech
                 }
                 if = {
                     limit = {
@@ -338,8 +310,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:sorb
-                    add_primary_culture = cu:czech
                 }
                 
                 # Baltic cultures merge
@@ -362,8 +332,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:latvian
-                    add_primary_culture = cu:lithuanian
                 }
                 if = {
                     limit = {
@@ -384,8 +352,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:estonian
-                    add_primary_culture = cu:finnish
                 }
                 
                 # Finno-Ugric cultures merge
@@ -408,8 +374,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:sami
-                    add_primary_culture = cu:finnish
                 }
                 if = {
                     limit = {
@@ -430,8 +394,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:ugrian
-                    add_primary_culture = cu:hungarian
                 }
                 
                 # Maltese merges into South Italian
@@ -454,8 +416,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:maltese
-                    add_primary_culture = cu:south_italian
                 }
                 
                 # Celtic cultures merge into Irish
@@ -481,8 +441,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:breton
-                    add_primary_culture = cu:irish
                 }
                 
                 # Turkic cultures merge
@@ -505,8 +463,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:azerbaijani
-                    add_primary_culture = cu:turkish
                 }
                 if = {
                     limit = {
@@ -527,8 +483,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:tatar
-                    add_primary_culture = cu:turkish
                 }
                 
                 # Central Asian Turkic cultures merge
@@ -551,8 +505,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:kazak
-                    add_primary_culture = cu:uzbek
                 }
                 if = {
                     limit = {
@@ -573,8 +525,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:kirgiz
-                    add_primary_culture = cu:uzbek
                 }
                 if = {
                     limit = {
@@ -595,8 +545,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:turkmen
-                    add_primary_culture = cu:uzbek
                 }
                 if = {
                     limit = {
@@ -617,8 +565,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:uighur
-                    add_primary_culture = cu:uzbek
                 }
                 
                 # Iranian cultures merge
@@ -641,8 +587,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:tajik
-                    add_primary_culture = cu:persian
                 }
                 if = {
                     limit = {
@@ -663,8 +607,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:kurdish
-                    add_primary_culture = cu:persian
                 }
                 if = {
                     limit = {
@@ -685,8 +627,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:pashtun
-                    add_primary_culture = cu:persian
                 }
                 if = {
                     limit = {
@@ -707,8 +647,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:baluchi
-                    add_primary_culture = cu:persian
                 }
                 if = {
                     limit = {
@@ -729,8 +667,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:hazara
-                    add_primary_culture = cu:persian
                 }
                 
                 # Mongolic cultures merge
@@ -753,8 +689,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:kalmyk
-                    add_primary_culture = cu:mongol
                 }
                 if = {
                     limit = {
@@ -775,8 +709,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:tuvan
-                    add_primary_culture = cu:mongol
                 }
                 
                 # Siberian cultures merge
@@ -799,8 +731,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:yakut
-                    add_primary_culture = cu:siberian
                 }
                 
                 # Corsican merges into South Italian
@@ -823,8 +753,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:corsican
-                    add_primary_culture = cu:south_italian
                 }
                 
                 # Szekely merges into Hungarian
@@ -847,8 +775,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:szekely
-                    add_primary_culture = cu:hungarian
                 }
                 
                 # West African cultures merge
@@ -871,8 +797,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:bambara
-                    add_primary_culture = cu:mande
                 }
                 if = {
                     limit = {
@@ -893,8 +817,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:dyula
-                    add_primary_culture = cu:mande
                 }
                 if = {
                     limit = {
@@ -915,8 +837,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:kissi
-                    add_primary_culture = cu:mande
                 }
                 if = {
                     limit = {
@@ -937,8 +857,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:senufo
-                    add_primary_culture = cu:mande
                 }
                 if = {
                     limit = {
@@ -959,8 +877,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:mossi
-                    add_primary_culture = cu:mande
                 }
                 if = {
                     limit = {
@@ -981,8 +897,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:songhai
-                    add_primary_culture = cu:mande
                 }
                 
                 # Akan group cultures merge
@@ -1005,8 +919,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:bassa
-                    add_primary_culture = cu:akan
                 }
                 if = {
                     limit = {
@@ -1027,8 +939,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:kru
-                    add_primary_culture = cu:akan
                 }
                 if = {
                     limit = {
@@ -1049,8 +959,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:ewe
-                    add_primary_culture = cu:akan
                 }
                 if = {
                     limit = {
@@ -1071,8 +979,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:fon
-                    add_primary_culture = cu:akan
                 }
                 
                 # Nigerian cultures merge
@@ -1095,8 +1001,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:ibibio
-                    add_primary_culture = cu:ibo
                 }
                 if = {
                     limit = {
@@ -1117,8 +1021,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:edo
-                    add_primary_culture = cu:ibo
                 }
                 if = {
                     limit = {
@@ -1139,8 +1041,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:tiv
-                    add_primary_culture = cu:hausa
                 }
                 if = {
                     limit = {
@@ -1161,8 +1061,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:fulbe
-                    add_primary_culture = cu:hausa
                 }
                 
                 # Central African cultures merge
@@ -1185,8 +1083,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:baguirmi
-                    add_primary_culture = cu:sara
                 }
                 if = {
                     limit = {
@@ -1207,8 +1103,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:kanuri
-                    add_primary_culture = cu:sara
                 }
                 if = {
                     limit = {
@@ -1229,8 +1123,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:teda
-                    add_primary_culture = cu:sara
                 }
                 if = {
                     limit = {
@@ -1251,8 +1143,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:fang
-                    add_primary_culture = cu:equatorial_bantu
                 }
                 if = {
                     limit = {
@@ -1273,8 +1163,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:bakongo
-                    add_primary_culture = cu:fluvian_bantu
                 }
                 if = {
                     limit = {
@@ -1295,8 +1183,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:luba
-                    add_primary_culture = cu:fluvian_bantu
                 }
                 if = {
                     limit = {
@@ -1317,8 +1203,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:lunda
-                    add_primary_culture = cu:fluvian_bantu
                 }
                 if = {
                     limit = {
@@ -1339,8 +1223,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:mongo
-                    add_primary_culture = cu:fluvian_bantu
                 }
                 
                 # East African cultures merge
@@ -1363,8 +1245,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:baganda
-                    add_primary_culture = cu:lacustrine_bantu
                 }
                 if = {
                     limit = {
@@ -1385,8 +1265,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:ruanda
-                    add_primary_culture = cu:lacustrine_bantu
                 }
                 if = {
                     limit = {
@@ -1407,8 +1285,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:rundi
-                    add_primary_culture = cu:lacustrine_bantu
                 }
                 if = {
                     limit = {
@@ -1429,8 +1305,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:kikuyu
-                    add_primary_culture = cu:lacustrine_bantu
                 }
                 if = {
                     limit = {
@@ -1451,8 +1325,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:sukuma
-                    add_primary_culture = cu:swahili
                 }
                 if = {
                     limit = {
@@ -1473,8 +1345,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:unyamwezi
-                    add_primary_culture = cu:swahili
                 }
                 
                 # Nilotic cultures merge
@@ -1497,8 +1367,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:dinka
-                    add_primary_culture = cu:nilotic
                 }
                 if = {
                     limit = {
@@ -1519,8 +1387,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:nuer
-                    add_primary_culture = cu:nilotic
                 }
                 if = {
                     limit = {
@@ -1541,8 +1407,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:luo
-                    add_primary_culture = cu:nilotic
                 }
                 if = {
                     limit = {
@@ -1563,8 +1427,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:maasai
-                    add_primary_culture = cu:nilotic
                 }
                 
                 # Horn of Africa cultures merge
@@ -1587,8 +1449,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:tigray
-                    add_primary_culture = cu:amhara
                 }
                 if = {
                     limit = {
@@ -1609,8 +1469,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:sidama
-                    add_primary_culture = cu:oromo
                 }
                 if = {
                     limit = {
@@ -1631,8 +1489,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:afar
-                    add_primary_culture = cu:somali
                 }
                 if = {
                     limit = {
@@ -1653,8 +1509,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:beja
-                    add_primary_culture = cu:sudanese
                 }
                 if = {
                     limit = {
@@ -1675,8 +1529,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:fur
-                    add_primary_culture = cu:sudanese
                 }
                 if = {
                     limit = {
@@ -1697,8 +1549,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:masalit
-                    add_primary_culture = cu:sudanese
                 }
                 
                 # Chinese cultures merge into Han
@@ -1721,8 +1571,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:manchu
-                    add_primary_culture = cu:han
                 }
                 if = {
                     limit = {
@@ -1743,8 +1591,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:miao
-                    add_primary_culture = cu:han
                 }
                 if = {
                     limit = {
@@ -1765,8 +1611,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:yi
-                    add_primary_culture = cu:han
                 }
                 if = {
                     limit = {
@@ -1787,8 +1631,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:zhuang
-                    add_primary_culture = cu:han
                 }
                 if = {
                     limit = {
@@ -1809,8 +1651,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:tibetan
-                    add_primary_culture = cu:han
                 }
                 
                 # Indian cultures merge into Hindustani
@@ -1833,8 +1673,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:bengali
-                    add_primary_culture = cu:hindustani
                 }
                 if = {
                     limit = {
@@ -1855,8 +1693,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:gujarati
-                    add_primary_culture = cu:hindustani
                 }
                 if = {
                     limit = {
@@ -1877,8 +1713,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:marathi
-                    add_primary_culture = cu:hindustani
                 }
                 if = {
                     limit = {
@@ -1899,8 +1733,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:tamil
-                    add_primary_culture = cu:hindustani
                 }
                 if = {
                     limit = {
@@ -1921,8 +1753,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:assamese
-                    add_primary_culture = cu:hindustani
                 }
                 if = {
                     limit = {
@@ -1943,8 +1773,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:avadhi
-                    add_primary_culture = cu:hindustani
                 }
                 
                 # Chinese dialects merge into Han
@@ -1967,8 +1795,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:min
-                    add_primary_culture = cu:han
                 }
                 if = {
                     limit = {
@@ -1989,8 +1815,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:hakka
-                    add_primary_culture = cu:han
                 }
                 if = {
                     limit = {
@@ -2011,8 +1835,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:yue
-                    add_primary_culture = cu:han
                 }
                 
                 # Southeast Asian/Indochina cultures merge into Vietnamese
@@ -2035,8 +1857,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:khmer
-                    add_primary_culture = cu:vietnamese
                 }
                 if = {
                     limit = {
@@ -2057,8 +1877,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:lao
-                    add_primary_culture = cu:vietnamese
                 }
                 if = {
                     limit = {
@@ -2079,8 +1897,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:thai
-                    add_primary_culture = cu:vietnamese
                 }
                 
                 # Indonesian/Malay cultures merge into Javan
@@ -2103,8 +1919,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:batak
-                    add_primary_culture = cu:javan
                 }
                 if = {
                     limit = {
@@ -2125,8 +1939,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:dayak
-                    add_primary_culture = cu:javan
                 }
                 if = {
                     limit = {
@@ -2147,8 +1959,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:moro
-                    add_primary_culture = cu:javan
                 }
                 if = {
                     limit = {
@@ -2169,8 +1979,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:moluccan
-                    add_primary_culture = cu:javan
                 }
                 if = {
                     limit = {
@@ -2191,8 +1999,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:filipino
-                    add_primary_culture = cu:javan
                 }
                 
                 # German cultures merge
@@ -2215,8 +2021,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:south_german
-                    add_primary_culture = cu:north_german
                 }
                 
                 # Italian cultures merge
@@ -2239,8 +2043,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:south_italian
-                    add_primary_culture = cu:north_italian
                 }
                 
                 # East Slavic cultures merge into Russian
@@ -2263,8 +2065,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:byelorussian
-                    add_primary_culture = cu:russian
                 }
                 if = {
                     limit = {
@@ -2285,8 +2085,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:ukrainian
-                    add_primary_culture = cu:russian
                 }
                 
                 # Scandinavian cultures merge into Swedish
@@ -2309,8 +2107,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:danish
-                    add_primary_culture = cu:swedish
                 }
                 if = {
                     limit = {
@@ -2331,8 +2127,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:norwegian
-                    add_primary_culture = cu:swedish
                 }
                 if = {
                     limit = {
@@ -2353,8 +2147,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:finnish
-                    add_primary_culture = cu:swedish
                 }
                 if = {
                     limit = {
@@ -2375,8 +2167,6 @@
                             }
                         }
                     }
-                    remove_primary_culture = cu:icelandic
-                    add_primary_culture = cu:swedish
                 }
 				
 				# Arab cultures merge into Bedouin
@@ -2399,8 +2189,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:levantine
-					add_primary_culture = cu:bedouin
 				}
 				if = {
 					limit = {
@@ -2415,14 +2203,12 @@
 							limit = {
 								any_scope_pop = { culture = cu:bedouin }
 							}
-							state_region = {
+						 state_region = {
 								remove_homeland = cu:maghrebi
 								add_homeland = cu:bedouin
 							}
 						}
 					}
-					remove_primary_culture = cu:maghrebi
-					add_primary_culture = cu:bedouin
 				}
 				if = {
 					limit = {
@@ -2443,8 +2229,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:mashriqi
-					add_primary_culture = cu:bedouin
 				}
 				if = {
 					limit = {
@@ -2465,8 +2249,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:misri
-					add_primary_culture = cu:bedouin
 				}
 				if = {
 					limit = {
@@ -2487,8 +2269,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:berber
-					add_primary_culture = cu:bedouin
 				}
 				if = {
 					limit = {
@@ -2509,8 +2289,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:yemenite
-					add_primary_culture = cu:bedouin
 				}
 				
 				# North American cultures merge into Anglo-American
@@ -2533,30 +2311,26 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:french_canadian
-					add_primary_culture = cu:anglo_american
 				}
 				if = {
-					limit = {
-						any_scope_pop = { culture = cu:anglo_canadian }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:anglo_canadian }
-							change_pop_culture = { target = cu:anglo_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:anglo_american }
-							}
-							state_region = {
-								remove_homeland = cu:anglo_canadian
-								add_homeland = cu:anglo_american
-							}
-						}
-					}
-					remove_primary_culture = cu:anglo_canadian
-					add_primary_culture = cu:anglo_american
+				 limit = {
+					 any_scope_pop = { culture = cu:anglo_canadian }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:anglo_canadian }
+						 change_pop_culture = { target = cu:anglo_american value = 1.0 }
+					 }
+					 if = {
+						 limit = {
+							 any_scope_pop = { culture = cu:anglo_american }
+						 }
+						 state_region = {
+							 remove_homeland = cu:anglo_canadian
+							 add_homeland = cu:anglo_american
+						 }
+					 }
+				 }
 				}
 				if = {
 					limit = {
@@ -2565,20 +2339,18 @@
 					every_scope_state = {
 						every_scope_pop = {
 							limit = { culture = cu:dixie }
-							change_pop_culture = { target = cu:anglo_american value = 1.0 }
+						 change_pop_culture = { target = cu:anglo_american value = 1.0 }
 						}
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:anglo_american }
 							}
-							state_region = {
+						 state_region = {
 								remove_homeland = cu:dixie
 								add_homeland = cu:anglo_american
 							}
 						}
 					}
-					remove_primary_culture = cu:dixie
-					add_primary_culture = cu:anglo_american
 				}
 				if = {
 					limit = {
@@ -2593,149 +2365,135 @@
 							limit = {
 								any_scope_pop = { culture = cu:anglo_american }
 							}
-							state_region = {
+						 state_region = {
 								remove_homeland = cu:tejano
 								add_homeland = cu:anglo_american
 							}
 						}
 					}
-					remove_primary_culture = cu:tejano
-					add_primary_culture = cu:anglo_american
 				}
 				
 				# South American cultures merge into Spanish Latin American
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:platinean }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:platinean }
-							change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:spanish_latin_american }
-							}
-							state_region = {
-								remove_homeland = cu:platinean
-								add_homeland = cu:spanish_latin_american
-							}
-						}
-					}
-					remove_primary_culture = cu:platinean
-					add_primary_culture = cu:spanish_latin_american
-				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:north_andean }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:north_andean }
-							change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:spanish_latin_american }
-							}
-							state_region = {
-								remove_homeland = cu:north_andean
-								add_homeland = cu:spanish_latin_american
-							}
-						}
-					}
-					remove_primary_culture = cu:north_andean
-					add_primary_culture = cu:spanish_latin_american
-				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:south_andean }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:south_andean }
-							change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-						}
+			 if = {
+				 limit = {
+					 any_scope_pop = { culture = cu:platinean }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:platinean }
+						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
+					 }
 					 if = {
-							limit = {
-								any_scope_pop = { culture = cu:spanish_latin_american }
-							}
-							state_region = {
-								remove_homeland = cu:south_andean
-								add_homeland = cu:spanish_latin_american
-							}
-						}
-					}
-					remove_primary_culture = cu:south_andean
-					add_primary_culture = cu:spanish_latin_american
-				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:central_american }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:central_american }
-							change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:spanish_latin_american }
-							}
-							state_region = {
-								remove_homeland = cu:central_american
-								add_homeland = cu:spanish_latin_american
-							}
-						}
-					}
-					remove_primary_culture = cu:central_american
-					add_primary_culture = cu:spanish_latin_american
-				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:mexican }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:mexican }
-							change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:spanish_latin_american }
-							}
-							state_region = {
-								remove_homeland = cu:mexican
-								add_homeland = cu:spanish_latin_american
-							}
-						}
-					}
-					remove_primary_culture = cu:mexican
-					add_primary_culture = cu:spanish_latin_american
-				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:caribeno }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:caribeno }
-							change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:spanish_latin_american }
-							}
-							state_region = {
-								remove_homeland = cu:caribeno
-								add_homeland = cu:spanish_latin_american
-							}
-						}
-					}
-					remove_primary_culture = cu:caribeno
-					add_primary_culture = cu:spanish_latin_american
-				}
+						 limit = {
+							 any_scope_pop = { culture = cu:spanish_latin_american }
+						 }
+						 state_region = {
+							 remove_homeland = cu:platinean
+							 add_homeland = cu:spanish_latin_american
+						 }
+					 }
+				 }
+			 }
+			 if = {
+				 limit = {
+					 any_scope_pop = { culture = cu:north_andean }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:north_andean }
+						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
+					 }
+					 if = {
+						 limit = {
+							 any_scope_pop = { culture = cu:spanish_latin_american }
+						 }
+						 state_region = {
+							 remove_homeland = cu:north_andean
+							 add_homeland = cu:spanish_latin_american
+						 }
+					 }
+				 }
+			 }
+			 if = {
+				 limit = {
+					 any_scope_pop = { culture = cu:south_andean }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:south_andean }
+						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
+					 }
+					 if = {
+						 limit = {
+							 any_scope_pop = { culture = cu:spanish_latin_american }
+						 }
+						 state_region = {
+							 remove_homeland = cu:south_andean
+							 add_homeland = cu:spanish_latin_american
+						 }
+					 }
+				 }
+			 }
+			 if = {
+				 limit = {
+					 any_scope_pop = { culture = cu:central_american }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:central_american }
+						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
+					 }
+					 if = {
+						 limit = {
+							 any_scope_pop = { culture = cu:spanish_latin_american }
+						 }
+						 state_region = {
+							 remove_homeland = cu:central_american
+							 add_homeland = cu:spanish_latin_american
+						 }
+					 }
+				 }
+			 }
+			 if = {
+				 limit = {
+					 any_scope_pop = { culture = cu:mexican }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:mexican }
+						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
+					 }
+					 if = {
+						 limit = {
+							 any_scope_pop = { culture = cu:spanish_latin_american }
+						 }
+						 state_region = {
+							 remove_homeland = cu:mexican
+							 add_homeland = cu:spanish_latin_american
+						 }
+					 }
+				 }
+			 }
+			 if = {
+				 limit = {
+					 any_scope_pop = { culture = cu:caribeno }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:caribeno }
+						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
+					 }
+					 if = {
+						 limit = {
+							 any_scope_pop = { culture = cu:spanish_latin_american }
+						 }
+						 state_region = {
+							 remove_homeland = cu:caribeno
+							 add_homeland = cu:spanish_latin_american
+						 }
+					 }
+				 }
+			 }
 				
 				# Portuguese Latin American cultures merge into Brazilian
 				if = {
@@ -2751,14 +2509,12 @@
 							limit = {
 								any_scope_pop = { culture = cu:brazilian }
 							}
-							state_region = {
+						 state_region = {
 								remove_homeland = cu:brazilian
 								add_homeland = cu:brazilian
 							}
 						}
 					}
-					remove_primary_culture = cu:brazilian
-					add_primary_culture = cu:brazilian
 				}
 				
 				# North American Native cultures merge into Iroquoian
@@ -2775,45 +2531,41 @@
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
 							}
-							state_region = {
+						 state_region = {
 								remove_homeland = cu:metis
 								add_homeland = cu:iroquoian
 							}
 						}
 					}
-					remove_primary_culture = cu:metis
-					add_primary_culture = cu:iroquoian
 				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:dakota }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:dakota }
-							change_pop_culture = { target = cu:iroquoian value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:iroquoian }
-							}
-							state_region = {
-								remove_homeland = cu:dakota
-								add_homeland = cu:iroquoian
-							}
-						}
-					}
-					remove_primary_culture = cu:dakota
-					add_primary_culture = cu:iroquoian
-				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:cherokee }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:cherokee }
-							change_pop_culture = { target = cu:iroquoian value = 1.0 }
+			 if = {
+				 limit = {
+					 any_scope_pop = { culture = cu:dakota }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:dakota }
+						 change_pop_culture = { target = cu:iroquoian value = 1.0 }
+					 }
+					 if = {
+						 limit = {
+							 any_scope_pop = { culture = cu:iroquoian }
+						 }
+						 state_region = {
+							 remove_homeland = cu:dakota
+							 add_homeland = cu:iroquoian
+						 }
+					 }
+				 }
+			 }
+			 if = {
+				 limit = {
+					 any_scope_pop = { culture = cu:cherokee }
+				 }
+				 every_scope_state = {
+					 every_scope_pop = {
+						 limit = { culture = cu:cherokee }
+						 change_pop_culture = { target = cu:iroquoian value = 1.0 }
 						}
 						if = {
 							limit = {
@@ -2825,8 +2577,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:cherokee
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -2847,8 +2597,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:muskogean
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -2869,8 +2617,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:navajo
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -2891,8 +2637,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:athabaskan
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -2913,8 +2657,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:salish
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -2935,8 +2677,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:nez_perce
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -2957,8 +2697,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:siouan
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -2979,8 +2717,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:comanche
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -3001,8 +2737,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:algonquian
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -3023,8 +2757,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:caddoan
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -3045,8 +2777,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:paiute
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -3067,8 +2797,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:hokan
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -3089,8 +2817,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:apache
-					add_primary_culture = cu:iroquoian
 				}
 				if = {
 					limit = {
@@ -3111,8 +2837,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:oodham
-					add_primary_culture = cu:iroquoian
 				}
 				
 				# South American Native cultures merge into Quechua
@@ -3135,8 +2859,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:aymara
-					add_primary_culture = cu:quechua
 				}
 				if = {
 					limit = {
@@ -3157,8 +2879,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:amazonian
-					add_primary_culture = cu:quechua
 				}
 				if = {
 					limit = {
@@ -3179,8 +2899,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:patagonian
-					add_primary_culture = cu:quechua
 				}
 				if = {
 					limit = {
@@ -3201,8 +2919,6 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:guajiro
-					add_primary_culture = cu:quechua
 				}
 				if = {
 					limit = {
@@ -3223,10 +2939,7 @@
 							}
 						}
 					}
-					remove_primary_culture = cu:tupinamba
-					add_primary_culture = cu:quechua
 				}
 			}
 		}
 
-        

@@ -77,7 +77,7 @@ et_scripted_button_build_railway = {
             add = 100
         }
     }
-    }
+}
 
 et_scripted_button_build_port = {
     name = "et_scripted_button_build_port"
@@ -95,28 +95,47 @@ et_scripted_button_build_port = {
             can_construct_building = building_port
         }
 
-ai_chance = {
-  value = 0
-  if = {
-        limit = { has_game_rule = ai_improvement_disabled }
-        subtract = -1000
-  }
-  if = {
-    limit = {
-      has_game_rule = ai_improvement_enabled
-      gold_reserves > et_autobuild_reserve_limit
-      bureaucracy > 0
-      NOT = {
-        any_scope_state = {
-          b:building_port ?= {
-            is_under_construction = yes
-          }
+    ai_chance = {
+        value = 0
+        if = {
+            limit = { has_game_rule = ai_improvement_disabled }
+            subtract = -1000
         }
-      }
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                gold_reserves > et_autobuild_reserve_limit
+                bureaucracy > 0
+                NOT = {
+                    any_scope_state = {
+                        b:building_port ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
     }
-    add = 100
-  }
 }
+
+et_scripted_button_build_power_plant = {
+    name = "et_scripted_button_build_power_plant"
+    desc = "et_scripted_button_build_power_plant_desc"
+
+    effect = {
+        et_manual_build_power_plant = yes
+    }
+
+    visible = {
+        always = yes
+    }
+
+    possible = {
+            has_technology_researched = electrical_generation
+        }
+
+    ai_chance = { value = 0 }
 }
 
 et_scripted_button_auto_build_admin_activate = {
@@ -132,6 +151,7 @@ et_scripted_button_auto_build_admin_activate = {
         custom_tooltip = et_auto_build_admin_on_tt
     }
 }
+
 
 et_scripted_button_auto_build_admin_deactivate = {
     name = "et_scripted_button_auto_build_admin_deactivate"
@@ -200,5 +220,37 @@ et_scripted_button_auto_build_port_deactivate = {
     effect = {
         remove_variable = et_auto_build_port_cooldown
         custom_tooltip = et_auto_build_port_off_tt
+    }
+}
+
+et_scripted_button_auto_build_power_activate = {
+    name = "et_scripted_button_auto_build_power_activate"
+    desc = "et_scripted_button_auto_build_power_activate_desc"
+    visible = {
+        NOT = { has_variable = et_auto_build_power_cooldown }
+    }
+    possible = {
+    has_technology_researched = electrical_generation
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = et_auto_build_power_cooldown
+        custom_tooltip = et_auto_build_power_on_tt
+    }
+}
+
+et_scripted_button_auto_build_power_deactivate = {
+    name = "et_scripted_button_auto_build_power_deactivate"
+    desc = "et_scripted_button_auto_build_power_deactivate_desc"
+    visible = {
+        has_variable = et_auto_build_power_cooldown
+    }
+    possible = {
+    has_technology_researched = electrical_generation
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = et_auto_build_power_cooldown
+        custom_tooltip = et_auto_build_power_off_tt
     }
 }

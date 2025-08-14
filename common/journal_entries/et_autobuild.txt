@@ -15,6 +15,7 @@ et_je_admin_center_framework = {
 	scripted_button = et_scripted_button_build_admin_center
 	scripted_button = et_scripted_button_build_railway
 	scripted_button = et_scripted_button_build_port
+	scripted_button = et_scripted_button_build_power_plant
 	# Auto-build toggles (activate/deactivate)
 	scripted_button = et_scripted_button_auto_build_admin_activate
 	scripted_button = et_scripted_button_auto_build_admin_deactivate
@@ -22,6 +23,8 @@ et_je_admin_center_framework = {
 	scripted_button = et_scripted_button_auto_build_railway_deactivate
 	scripted_button = et_scripted_button_auto_build_port_activate
 	scripted_button = et_scripted_button_auto_build_port_deactivate
+	scripted_button = et_scripted_button_auto_build_power_activate
+	scripted_button = et_scripted_button_auto_build_power_deactivate
 
 	should_be_pinned_by_default = yes
 	weight = 100

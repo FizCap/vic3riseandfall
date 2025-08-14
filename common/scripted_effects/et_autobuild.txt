@@ -39,6 +39,7 @@
 
 et_manual_build_railway = {
     #manual build for railway
+
     every_scope_state = {
         limit = {
             turmoil < 0.50
@@ -51,6 +52,7 @@ et_manual_build_railway = {
 
 et_manual_build_port = {
     #manual build port in coastal state with low infrastructure
+
     every_scope_state = {
         limit = {
             turmoil < 0.50
@@ -58,5 +60,48 @@ et_manual_build_port = {
             can_construct_building = building_port
         }
         start_building_construction = building_port
+    }
+}
+
+et_manual_build_power_plant = {
+    #manual build button for power plant (QoL)
+    # Build one power plant in every state that does not already have one.
+
+    every_scope_state = {
+        limit = {
+            turmoil < 0.50
+            NOT = {
+                any_scope_building = {
+                    is_building_type = building_power_plant
+                }
+            }
+            # Only build in this state if there's already at least one profitable power plant here
+            any_scope_building = {
+                is_building_type = building_power_plant
+                weekly_profit > 500
+            }
+            can_construct_building = building_power_plant
+            owner = ROOT
+        }
+        start_building_construction = building_power_plant
+    }
+
+    # Fallback: if the country has no power plants at all, pick a single eligible state and build one there.
+    every_scope_state = {
+        limit = {
+            turmoil < 0.50
+            NOT = {
+                any_scope_building = {
+                    is_building_type = building_power_plant
+                }
+            }
+            can_construct_building = building_power_plant
+            owner = ROOT
+            country_has_building_type_levels = {
+                building = building_power_plant
+                value < 1
+            }
+        }
+        start_building_construction = building_power_plant
     }
 }

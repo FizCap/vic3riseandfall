@@ -254,3 +254,64 @@ et_scripted_button_auto_build_power_deactivate = {
         custom_tooltip = et_auto_build_power_off_tt
     }
 }
+
+et_scripted_button_build_construction_sector = {
+    name = "et_scripted_button_build_construction_sector"
+    desc = "et_scripted_button_build_construction_sector_desc"
+
+    effect = {
+        et_manual_build_construction_sector = yes
+    }
+
+    visible = { always = yes }
+
+    possible = {
+        can_construct_building = building_construction_sector
+    }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = { has_game_rule = ai_improvement_disabled }
+            subtract = -1000
+        }
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                NOT = {
+                    any_scope_state = {
+                        b:building_construction_sector ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+                has_wasted_construction = no
+            }
+            add = 100
+        }
+    }
+}
+
+et_scripted_button_auto_build_construction_activate = {
+    name = "et_scripted_button_auto_build_construction_activate"
+    desc = "et_scripted_button_auto_build_construction_activate_desc"
+    visible = { NOT = { has_variable = et_auto_build_construction_cooldown } }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = et_auto_build_construction_cooldown
+        custom_tooltip = et_auto_build_construction_on_tt
+    }
+}
+
+et_scripted_button_auto_build_construction_deactivate = {
+    name = "et_scripted_button_auto_build_construction_deactivate"
+    desc = "et_scripted_button_auto_build_construction_deactivate_desc"
+    visible = { has_variable = et_auto_build_construction_cooldown }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = et_auto_build_construction_cooldown
+        custom_tooltip = et_auto_build_construction_off_tt
+    }
+}

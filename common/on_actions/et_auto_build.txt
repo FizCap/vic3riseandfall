@@ -1,6 +1,10 @@
 on_monthly_pulse_country = {
     on_actions = {
-        et_auto_build_monthly
+        et_auto_build_monthly_gov
+        et_auto_build_monthly_rail
+        et_auto_build_monthly_port
+        et_auto_build_monthly_power
+        et_auto_build_monthly_construction
     }
 }
 
@@ -66,6 +70,26 @@ et_auto_build_monthly = {
                 }
             }
             et_manual_build_power_plant = yes
+        }
+    }
+}
+
+et_auto_build_monthly_construction = {
+    trigger = {
+        has_variable = et_auto_build_construction_cooldown
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    any_scope_state = {
+                        b:building_construction_sector ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            et_manual_build_construction_sector = yes
         }
     }
 }

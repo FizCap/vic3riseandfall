@@ -1,0 +1,27 @@
+﻿et_centralized_culture_merge_cleanup = {
+    every_country = {
+        save_scope_as = et_country
+
+        every_primary_culture = {
+            save_scope_as = et_old_primary
+            scope:et_country = {
+                remove_primary_culture = scope:et_old_primary
+                set_variable = { name = et_removed_primary value = yes days = 1 }
+            }
+        }
+
+        capital = { save_scope_as = et_country_capital }
+
+        scope:et_country_capital = {
+            every_scope_culture = {
+                save_scope_as = et_capital_culture
+                if = {
+                    limit = {
+                        scope:et_country_capital = { culture_percent_state = { target = scope:et_capital_culture value >= 0.10 } }
+                    }
+                    scope:et_country = { add_primary_culture = scope:et_capital_culture }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+﻿on_game_started_after_lobby = {
+	on_actions = { et_create_csl }
+}
+
+et_create_csl = {
+	effect = {
+		if = {
+			limit = { NOT = { exists = c:CAT } }
+			create_country = {
+				tag = CAT
+				origin = c:TUR
+				state = s:STATE_EASTERN_THRACE.region_state:TUR
+			}
+		}
+	}
+}

@@ -43,8 +43,8 @@ et_manual_build_railway = {
     every_scope_state = {
         limit = {
             turmoil < 0.50
-            infrastructure_delta > 0
-            can_construct_building = building_port
+            infrastructure_delta < 0
+            can_construct_building = building_railway
         }
         start_building_construction = building_railway
     }
@@ -136,14 +136,12 @@ et_manual_build_construction_sector = {
         }
     }
     else = {
-        # No suitable coastal candidate: try non-coastal states, but only if the country currently has 0 construction sectors
+        # Fall back script if none are met
         if = {
             limit = {
                 any_scope_state = {
                     limit = {
                         turmoil < 0.50
-                        is_coastal = no
-                        infrastructure_delta > 0
                         can_construct_building = building_construction_sector
                         owner = ROOT
                     }
@@ -152,8 +150,6 @@ et_manual_build_construction_sector = {
             random_state = {
                 limit = {
                     turmoil < 0.50
-                    is_coastal = no
-                    infrastructure_delta > 0
                     can_construct_building = building_construction_sector
                     owner = ROOT
                 }

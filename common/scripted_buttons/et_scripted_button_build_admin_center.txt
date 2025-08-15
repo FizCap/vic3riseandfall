@@ -285,7 +285,10 @@ et_scripted_button_build_construction_sector = {
                         }
                     }
                 }
-                has_wasted_construction = no
+                AND = {
+                    has_wasted_construction = no
+                    investment_pool_net_income > 1
+                }
             }
             add = 100
         }

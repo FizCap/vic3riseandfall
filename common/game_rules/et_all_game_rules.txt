@@ -1,14 +1,4 @@
-﻿et_research_debuff_rule = {
-    default = et_research_debuff_disabled
-
-    et_research_debuff_disabled = { }
-
-    et_research_debuff_enabled = {
-        flag = et_research_debuff_rule_enabled
-    }
-}
-
-culture_merging = {
+﻿culture_merging = {
     default = culture_merging_disabled
 
     culture_merging_disabled = {    }
@@ -16,16 +6,6 @@ culture_merging = {
     culture_merging_enabled = {
         flag = culture_merging_enabled
     }
-}
-
-economic_boost = {
-    default = economic_boost_enabled
-
-    economic_boost_enabled = {
-        flag = economic_boost_enabled
-    }
-
-    economic_boost_disabled = { }
 }
 
 et_annex_decentralized_annexation = {

@@ -13,11 +13,17 @@
 
 # Generic expansion pass (one hop)
 et_dyn_country_ai_single_pass = {
+    # Save the current country scope for reference
+    ROOT = { save_scope_as = original_country }
+    
     every_scope_state = {
         limit = { has_variable = dynamic_state_cede }
 
         every_neighbouring_state = {
-            limit = { has_variable = ai_potential_dyn_country_state }
+            limit = { 
+                has_variable = ai_potential_dyn_country_state
+                owner = scope:original_country
+            }
             set_variable = dynamic_state_cede
         }
     }
@@ -153,12 +159,16 @@ et_dyn_country_ai_select_culture_for_cluster = {
 
 # Single adjacency expansion pass restricted by selected culture share >= 20% in neighbor state.
 et_dyn_country_ai_single_pass_culture = {
+    # Save the current country scope for reference
+    ROOT = { save_scope_as = original_country }
+    
     every_scope_state = {
         limit = { has_variable = dynamic_state_cede }
 
         every_neighbouring_state = {
             limit = {
                 has_variable = ai_potential_dyn_country_state
+                owner = scope:original_country
                 culture_percent_state = { target = scope:et_dyn_target_culture value >= 0.20 }
             }
 

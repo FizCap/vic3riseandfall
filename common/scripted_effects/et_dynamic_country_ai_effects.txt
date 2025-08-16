@@ -14,32 +14,11 @@
 # Generic expansion pass (one hop)
 et_dyn_country_ai_single_pass = {
     every_scope_state = {
-        limit = { owner = ROOT has_variable = dynamic_state_cede }
+        limit = { has_variable = dynamic_state_cede }
 
         every_neighbouring_state = {
-            limit = {
-                owner = ROOT
-                is_capital = no
-
-                OR = {
-                    NOT = { has_modifier = recent_state_owner_change }
-                    market_access < 0.01
-                }
-
-                OR = {
-                    AND = {
-                        is_homeland_of_country_cultures = ROOT
-                        OR = { turmoil > 0.70 market_access < 0.01 }
-                    }
-
-                    AND = {
-                        NOT = { is_homeland_of_country_cultures = ROOT }
-                        OR = { turmoil > 0.50 market_access < 0.15 }
-                    }
-                }
-            }
-
-            et_mark_state_for_dyn_country_effect = yes
+            limit = { has_variable = ai_potential_dyn_country_state }
+            set_variable = dynamic_state_cede
         }
     }
 }
@@ -175,33 +154,15 @@ et_dyn_country_ai_select_culture_for_cluster = {
 # Single adjacency expansion pass restricted by selected culture share >= 20% in neighbor state.
 et_dyn_country_ai_single_pass_culture = {
     every_scope_state = {
-        limit = { owner = ROOT has_variable = dynamic_state_cede }
+        limit = { has_variable = dynamic_state_cede }
 
         every_neighbouring_state = {
             limit = {
-                owner = ROOT
-                is_capital = no
+                has_variable = ai_potential_dyn_country_state
                 culture_percent_state = { target = scope:et_dyn_target_culture value >= 0.20 }
-
-                OR = {
-                    NOT = { has_modifier = recent_state_owner_change }
-                    market_access < 0.01
-                }
-
-                OR = {
-                    AND = {
-                        is_homeland_of_country_cultures = ROOT
-                        OR = { turmoil > 0.70 market_access < 0.01 }
-                    }
-
-                    AND = {
-                        NOT = { is_homeland_of_country_cultures = ROOT }
-                        OR = { turmoil > 0.50 market_access < 0.15 }
-                    }
-                }
             }
 
-            et_mark_state_for_dyn_country_effect = yes
+            set_variable = dynamic_state_cede
         }
     }
 }

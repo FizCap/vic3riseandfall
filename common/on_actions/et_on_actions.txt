@@ -326,3 +326,10 @@ et_state_owner_change = {
     et_state_owner_change_effect = yes
   }
 }
+
+# Register monthly state pulse actions
+on_monthly_pulse_state = {
+  on_actions = {
+    et_monthly_dynamic_country_candidate_check
+  }
+}

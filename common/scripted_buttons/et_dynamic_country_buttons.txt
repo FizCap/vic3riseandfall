@@ -1,7 +1,8 @@
 ﻿#############################################
 # DYNAMIC COUNTRY FINALIZATION (RECOGNIZED) #
 #############################################
-et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
+et_button_finalize_dynamic_country = {
+	# Recognized variant (Puppet)
 	name = "et_button_finalize_dynamic_country"
 	desc = "et_button_finalize_dynamic_country_desc"
 
@@ -14,11 +15,12 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 				is_player = yes
 				has_variable = et_dyn_builder_enabled
 				any_scope_state = {
-						has_decree = decree_et_mark_state_for_dyn_country
-						owner = ROOT
-					}
+					has_decree = decree_et_mark_state_for_dyn_country
+					owner = ROOT
+				}
 			}
-			# AI Path: candidate states can be either homeland (very high turmoil or no access) or non-homeland (high turmoil or low access and unincorporated)
+
+			# AI path: allowed when not the player
 			AND = {
 				is_player = no
 			}
@@ -32,12 +34,13 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			AND = {
 				is_player = yes
 				has_variable = et_dyn_builder_enabled
-				any_scope_state = { 
+				any_scope_state = {
 					has_decree = decree_et_mark_state_for_dyn_country
 					owner = ROOT
 				}
 			}
-			AND = {	
+
+			AND = {
 				is_player = no
 			}
 		}
@@ -47,14 +50,18 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 		# PLAYER PATH (manual marking via decree)
 		if = {
 			limit = { is_player = yes }
-			# Capital among marked states
-				if = {
-				limit = { any_scope_state = { 
-					has_decree = decree_et_mark_state_for_dyn_country
-					owner = ROOT
-				} }
+
+			# Pick a capital among marked states (if any)
+			if = {
+				limit = {
+					any_scope_state = {
+						has_decree = decree_et_mark_state_for_dyn_country
+						owner = ROOT
+					}
+				}
+
 				random_scope_state = {
-					limit = { 
+					limit = {
 						has_decree = decree_et_mark_state_for_dyn_country
 						owner = ROOT
 					}
@@ -63,16 +70,17 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			}
 			else = {
 				random_scope_state = {
-					limit = { 
+					limit = {
 						has_decree = decree_et_mark_state_for_dyn_country
 						owner = ROOT
 					}
 					save_scope_as = et_dyn_country_capital
 				}
 			}
-			# Mark to cede
+
+			# Mark the decree-selected states for ceding
 			every_scope_state = {
-				limit = { 
+				limit = {
 					has_decree = decree_et_mark_state_for_dyn_country
 					owner = ROOT
 				}
@@ -80,69 +88,114 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 			}
 		}
 		else = {
-			# Only run AI logic when AI improvement is enabled and country is not at war
-			if = { limit = { has_game_rule = ai_improvement_enabled is_at_war = no } 
-			# AI PATH (auto select cluster contiguous by adjacency) ------------
-			# Clean stale selection variables
-				every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state owner = ROOT } remove_variable = ai_potential_dyn_country_state }
-				every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
-			# Mark candidate states (allow single-state split)
-						every_scope_state = { # Candidate marks (recognized)
-							limit = {
-								owner = ROOT
-								OR = {
-									NOT = { has_modifier = recent_state_owner_change }
-									market_access < 0.01
-								}
-								OR = {
-									AND = {
-										is_homeland_of_country_cultures = ROOT
-										OR = { turmoil > 0.70 market_access < 0.01 }
-									}
-									AND = {
-										NOT = { is_homeland_of_country_cultures = ROOT }
-										OR = { turmoil > 0.50 market_access < 0.15 }
-									}
-								}
-							}
-							set_variable = ai_potential_dyn_country_state
-						}
-			# Proceed only if there are candidate states
+			# AI PATH — only when AI improvements are enabled and the country is not at war
 			if = {
-				limit = { any_scope_state = { has_variable = ai_potential_dyn_country_state } }
-				# Pick capital among candidates
-				random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state OR = { NOT = { has_modifier = recent_state_owner_change } market_access < 1 } } save_scope_as = et_dyn_country_capital set_variable = dynamic_state_cede }
-				# Culture-based clustering attempt
-				et_dyn_country_ai_select_culture_for_cluster = yes
-				if = {
-					limit = { scope:et_dyn_target_culture = { exists = yes } }
-					et_dynamic_country_ai_expand_recognized_culture = yes
+				limit = { has_game_rule = ai_improvement_enabled is_at_war = no }
+
+				# Clean stale selection variables (only touch states owned by this country)
+				every_scope_state = {
+					limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+					remove_variable = ai_potential_dyn_country_state
 				}
-				else = { et_dynamic_country_ai_expand_recognized = yes }
-				# Cleanup candidate markers (keep dynamic_state_cede for ceding)
-				every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } remove_variable = ai_potential_dyn_country_state }
-			}
+
+				every_scope_state = {
+					limit = { has_variable = dynamic_state_cede owner = ROOT }
+					remove_variable = dynamic_state_cede
+				}
+
+				# Mark candidate states (allow single-state splits)
+				every_scope_state = {
+					# Candidate marks (recognized)
+					limit = {
+						owner = ROOT
+
+						OR = {
+							NOT = { has_modifier = recent_state_owner_change }
+							market_access < 0.01
+						}
+
+						OR = {
+							AND = {
+								is_homeland_of_country_cultures = ROOT
+								OR = { turmoil > 0.70 market_access < 0.01 }
+							}
+
+							AND = {
+								NOT = { is_homeland_of_country_cultures = ROOT }
+								OR = { turmoil > 0.50 market_access < 0.15 }
+							}
+						}
+					}
+
+					set_variable = ai_potential_dyn_country_state
+				}
+
+				# Proceed only if there are candidate states
+				if = {
+					limit = { any_scope_state = { has_variable = ai_potential_dyn_country_state } }
+
+					# Pick capital among candidates owned by this country
+					random_scope_state = {
+						limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+						save_scope_as = et_dyn_country_capital
+						set_variable = dynamic_state_cede
+					}
+
+					# Try culture-based clustering; fallback to adjacency expansion
+					et_dyn_country_ai_select_culture_for_cluster = yes
+
+					if = {
+						limit = { scope:et_dyn_target_culture = { exists = yes } }
+						et_dynamic_country_ai_expand_recognized_culture = yes
+					}
+					else = {
+						et_dynamic_country_ai_expand_recognized = yes
+					}
+
+					# Cleanup candidate markers (keep dynamic_state_cede for ceding)
+					every_scope_state = {
+						limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+						remove_variable = ai_potential_dyn_country_state
+					}
+				}
 			}
 		}
 
-		# Create dynamic country (recognized -> puppet) - only if at least one state was marked for cede and capital exists
+		# Create dynamic country (recognized -> puppet)
+		# Only if at least one state marked for cede and a capital exists
 		if = {
-			limit = { any_scope_state = { has_variable = dynamic_state_cede } scope:et_dyn_country_capital = { exists = yes } }
+			limit = {
+				any_scope_state = { has_variable = dynamic_state_cede }
+				scope:et_dyn_country_capital = { exists = yes }
+			}
+
 			create_dynamic_country = {
 				origin = root
 				capital = scope:et_dyn_country_capital
 				tier = principality
 				cede_state_trigger = { has_variable = dynamic_state_cede }
-				# Identity (culture/religion) normalized post creation
+
+				# Normalize identity after creation
 				on_created = {
 					save_scope_as = et_new_dyn_country
-					every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
+					every_scope_state = {
+						limit = { has_variable = dynamic_state_cede owner = ROOT }
+						remove_variable = dynamic_state_cede
+					}
+
 					et_assign_dominant_identity = yes
 				}
 			}
 		}
+
 		hidden_effect = {
-			if = { limit = { exists = scope:et_dyn_country_capital.owner } create_diplomatic_pact = { country = scope:et_dyn_country_capital.owner type = puppet } }
+			if = {
+				limit = { exists = scope:et_dyn_country_capital.owner }
+				create_diplomatic_pact = {
+					country = scope:et_dyn_country_capital.owner
+					type = puppet
+				}
+			}
 		}
 
 		ai_chance = {
@@ -161,7 +214,8 @@ et_button_finalize_dynamic_country = { # Recognized variant (Puppet)
 ###############################################
 # DYNAMIC COUNTRY FINALIZATION (UNRECOGNIZED) #
 ###############################################
-et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vassal)
+et_button_finalize_dynamic_country_unrecognized = {
+	# Unrecognized variant (Vassal)
 	name = "et_button_finalize_dynamic_country_unrecognized"
 	desc = "et_button_finalize_dynamic_country_unrecognized_desc"
 
@@ -172,8 +226,12 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			AND = {
 				is_player = yes
 				has_variable = et_dyn_builder_enabled
-				any_scope_state = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT }
+				any_scope_state = {
+					has_decree = decree_et_mark_state_for_dyn_country
+					owner = ROOT
+				}
 			}
+
 			AND = {
 				is_player = no
 			}
@@ -181,78 +239,140 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 	}
 
 	effect = {
-			if = { # Player manual path
+		# Player manual path
+		if = {
 			limit = { is_player = yes }
+
 			if = {
-				limit = { any_scope_state = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT } }
-				random_scope_state = { limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT } save_scope_as = et_dyn_country_capital }
+				limit = {
+					any_scope_state = {
+						has_decree = decree_et_mark_state_for_dyn_country
+						owner = ROOT
+					}
+				}
+
+				random_scope_state = {
+					limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT }
+					save_scope_as = et_dyn_country_capital
+				}
 			}
 			else = {
-				random_scope_state = { limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT } save_scope_as = et_dyn_country_capital }
+				random_scope_state = {
+					limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT }
+					save_scope_as = et_dyn_country_capital
+				}
 			}
-			every_scope_state = { limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT } set_variable = dynamic_state_cede }
+
+			every_scope_state = {
+				limit = { has_decree = decree_et_mark_state_for_dyn_country owner = ROOT }
+				set_variable = dynamic_state_cede
+			}
 		}
-		else = { # AI auto path adjacency cluster (allow single state)
-			# Only run AI logic when AI improvement is enabled and country is not at war
-			if = { limit = { has_game_rule = ai_improvement_enabled is_at_war = no }
-			# Cleanup
-			every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state owner = ROOT } remove_variable = ai_potential_dyn_country_state }
-			every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
-			# Mark candidates
-									every_scope_state = { # Candidate marks (unrecognized)
-										limit = {
-												owner = ROOT
-												OR = {
-													NOT = { has_modifier = recent_state_owner_change }
-													market_access < 0.01
-												}
-												OR = {
-												AND = {
-													is_homeland_of_country_cultures = ROOT
-													OR = { turmoil > 0.70 market_access < 0.01 }
-												}
-												AND = {
-													NOT = { is_homeland_of_country_cultures = ROOT }
-													OR = { turmoil > 0.50 market_access < 0.15 }
-												}
-											}
-										}
-										set_variable = ai_potential_dyn_country_state
-									}
-			# Proceed only if there are candidate states
+		else = {
+			# AI auto path adjacency cluster (allow single state)
 			if = {
-				limit = { any_scope_state = { has_variable = ai_potential_dyn_country_state } }
-				random_scope_state = { limit = { has_variable = ai_potential_dyn_country_state OR = { NOT = { has_modifier = recent_state_owner_change } market_access < 1 } } save_scope_as = et_dyn_country_capital set_variable = dynamic_state_cede }
-				# Culture-based clustering attempt
-				et_dyn_country_ai_select_culture_for_cluster = yes
+				limit = { has_game_rule = ai_improvement_enabled is_at_war = no }
+
+				# Cleanup (only touch states owned by this country)
+				every_scope_state = {
+					limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+					remove_variable = ai_potential_dyn_country_state
+				}
+
+				every_scope_state = {
+					limit = { has_variable = dynamic_state_cede owner = ROOT }
+					remove_variable = dynamic_state_cede
+				}
+
+				# Mark candidates (unrecognized)
+				every_scope_state = {
+					limit = {
+						owner = ROOT
+
+						OR = {
+							NOT = { has_modifier = recent_state_owner_change }
+							market_access < 0.01
+						}
+
+						OR = {
+							AND = {
+								is_homeland_of_country_cultures = ROOT
+								OR = { turmoil > 0.70 market_access < 0.01 }
+							}
+
+							AND = {
+								NOT = { is_homeland_of_country_cultures = ROOT }
+								OR = { turmoil > 0.50 market_access < 0.15 }
+							}
+						}
+					}
+
+					set_variable = ai_potential_dyn_country_state
+				}
+
+				# Proceed only if there are candidate states
 				if = {
-					limit = { scope:et_dyn_target_culture = { exists = yes } }
-					et_dynamic_country_ai_expand_unrecognized_culture = yes
+					limit = { any_scope_state = { has_variable = ai_potential_dyn_country_state } }
+
+					random_scope_state = {
+						limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+						save_scope_as = et_dyn_country_capital
+						set_variable = dynamic_state_cede
+					}
+
+					# Culture-based clustering attempt
+					et_dyn_country_ai_select_culture_for_cluster = yes
+
+					if = {
+						limit = { scope:et_dyn_target_culture = { exists = yes } }
+						et_dynamic_country_ai_expand_unrecognized_culture = yes
+					}
+					else = {
+						et_dynamic_country_ai_expand_unrecognized = yes
+					}
+
+					# Cleanup candidate markers
+					every_scope_state = {
+						limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+						remove_variable = ai_potential_dyn_country_state
+					}
 				}
-				else = { et_dynamic_country_ai_expand_unrecognized = yes }
-				# Cleanup candidate markers
-				every_scope_state = { limit = { has_variable = ai_potential_dyn_country_state } remove_variable = ai_potential_dyn_country_state }
-				}
-			}
 			}
 		}
-		# Create dynamic country (unrecognized -> vassal) - only if at least one state was marked for cede and capital exists
+
+		# Create dynamic country (unrecognized -> vassal)
 		if = {
-			limit = { any_scope_state = { has_variable = dynamic_state_cede } scope:et_dyn_country_capital = { exists = yes } }
+			limit = {
+				any_scope_state = { has_variable = dynamic_state_cede }
+				scope:et_dyn_country_capital = { exists = yes }
+			}
+
 			create_dynamic_country = {
 				origin = root
 				tier = principality
 				capital = scope:et_dyn_country_capital
 				cede_state_trigger = { has_variable = dynamic_state_cede }
+
 				on_created = {
 					save_scope_as = et_new_dyn_country
-					every_scope_state = { limit = { has_variable = dynamic_state_cede } remove_variable = dynamic_state_cede }
+					every_scope_state = {
+						limit = { has_variable = dynamic_state_cede owner = ROOT }
+						remove_variable = dynamic_state_cede
+					}
+
 					et_assign_dominant_identity = yes
 				}
 			}
 		}
+
 		hidden_effect = {
-			if = { limit = { exists = scope:et_dyn_country_capital.owner } create_diplomatic_pact = { country = scope:et_dyn_country_capital.owner type = vassal } }
+			if = {
+				limit = { exists = scope:et_dyn_country_capital.owner }
+				create_diplomatic_pact = {
+					country = scope:et_dyn_country_capital.owner
+					type = vassal
+				}
+			}
 		}
 
 		ai_chance = {
@@ -266,7 +386,7 @@ et_button_finalize_dynamic_country_unrecognized = { # Unrecognized variant (Vass
 			}
 		}
 	}
-
+}
 et_button_enable_builder = {
 	name = "et_button_enable_builder"
 	desc = "et_button_enable_builder_desc"

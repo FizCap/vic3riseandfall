@@ -1,5 +1,5 @@
 ﻿on_game_started_after_lobby = {
-	on_actions = { et_create_csl }
+	on_actions = {  }
 }
 
 et_create_csl = {

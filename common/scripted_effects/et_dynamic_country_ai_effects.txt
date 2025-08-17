@@ -32,25 +32,20 @@ et_dyn_country_ai_single_pass = {
 # Recognized variant: bias to fewer passes (puppets should be compact)
 et_dynamic_country_ai_expand_recognized = {
     random_list = {
-        40 = {
-            # Small (1 pass)
-            et_dyn_country_ai_single_pass = yes
-        }
-
-        35 = {
+        60 = {
             # Medium (2 passes)
             et_dyn_country_ai_single_pass = yes
             et_dyn_country_ai_single_pass = yes
         }
 
-        20 = {
-            # Large (3 passes) — previous default
+        30 = {
+            # Large (3 passes)
             et_dyn_country_ai_single_pass = yes
             et_dyn_country_ai_single_pass = yes
             et_dyn_country_ai_single_pass = yes
         }
 
-        5 = {
+        10 = {
             # Rare very large (4 passes)
             et_dyn_country_ai_single_pass = yes
             et_dyn_country_ai_single_pass = yes
@@ -63,25 +58,20 @@ et_dynamic_country_ai_expand_recognized = {
 # Unrecognized variant: slightly higher chance of medium/large splits
 et_dynamic_country_ai_expand_unrecognized = {
     random_list = {
-        30 = {
-            # Small (1 pass)
-            et_dyn_country_ai_single_pass = yes
-        }
-
-        40 = {
+        50 = {
             # Medium (2 passes)
             et_dyn_country_ai_single_pass = yes
             et_dyn_country_ai_single_pass = yes
         }
 
-        25 = {
+        35 = {
             # Large (3 passes)
             et_dyn_country_ai_single_pass = yes
             et_dyn_country_ai_single_pass = yes
             et_dyn_country_ai_single_pass = yes
         }
 
-        5 = {
+        15 = {
             # Rare very large (4 passes)
             et_dyn_country_ai_single_pass = yes
             et_dyn_country_ai_single_pass = yes
@@ -180,22 +170,18 @@ et_dyn_country_ai_single_pass_culture = {
 # Recognized variant with cultural filter
 et_dynamic_country_ai_expand_recognized_culture = {
     random_list = {
-        45 = {
-            et_dyn_country_ai_single_pass_culture = yes
-        }
-
-        35 = {
+        60 = {
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
         }
 
-        15 = {
+        30 = {
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
         }
 
-        5 = {
+        10 = {
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
@@ -207,22 +193,18 @@ et_dynamic_country_ai_expand_recognized_culture = {
 # Unrecognized variant with cultural filter (slightly larger bias)
 et_dynamic_country_ai_expand_unrecognized_culture = {
     random_list = {
-        30 = {
-            et_dyn_country_ai_single_pass_culture = yes
-        }
-
-        40 = {
+        50 = {
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
         }
 
-        25 = {
+        35 = {
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
         }
 
-        5 = {
+        15 = {
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes
             et_dyn_country_ai_single_pass_culture = yes

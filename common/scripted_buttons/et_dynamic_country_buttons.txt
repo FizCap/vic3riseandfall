@@ -142,15 +142,24 @@ et_button_finalize_dynamic_country = {
 						set_variable = dynamic_state_cede
 					}
 
-					# Try culture-based clustering; fallback to adjacency expansion
-					et_dyn_country_ai_select_culture_for_cluster = yes
+					# Randomly decide: single-state (keep only the capital) or run the multi-state expansion
+					random_list = {
+						50 = {
+							# Single-state: capital already marked via set_variable above
+						}
 
-					if = {
-						limit = { scope:et_dyn_target_culture = { exists = yes } }
-						et_dynamic_country_ai_expand_recognized_culture = yes
-					}
-					else = {
-						et_dynamic_country_ai_expand_recognized = yes
+						50 = {
+							# Try culture-based clustering; fallback to adjacency expansion
+							et_dyn_country_ai_select_culture_for_cluster = yes
+
+							if = {
+								limit = { scope:et_dyn_target_culture = { exists = yes } }
+								et_dynamic_country_ai_expand_recognized_culture = yes
+							}
+							else = {
+								et_dynamic_country_ai_expand_recognized = yes
+							}
+						}
 					}
 
 					# Cleanup candidate markers (keep dynamic_state_cede for ceding)
@@ -348,15 +357,24 @@ et_button_finalize_dynamic_country_unrecognized = {
 						set_variable = dynamic_state_cede
 					}
 
-					# Culture-based clustering attempt
-					et_dyn_country_ai_select_culture_for_cluster = yes
+					# Randomly decide: single-state (keep only the capital) or run the multi-state expansion
+					random_list = {
+						50 = {
+							# Single-state: capital already marked via set_variable above
+						}
 
-					if = {
-						limit = { scope:et_dyn_target_culture = { exists = yes } }
-						et_dynamic_country_ai_expand_unrecognized_culture = yes
-					}
-					else = {
-						et_dynamic_country_ai_expand_unrecognized = yes
+						50 = {
+							# Culture-based clustering attempt
+							et_dyn_country_ai_select_culture_for_cluster = yes
+
+							if = {
+								limit = { scope:et_dyn_target_culture = { exists = yes } }
+								et_dynamic_country_ai_expand_unrecognized_culture = yes
+							}
+							else = {
+								et_dynamic_country_ai_expand_unrecognized = yes
+							}
+						}
 					}
 
 					# Cleanup candidate markers

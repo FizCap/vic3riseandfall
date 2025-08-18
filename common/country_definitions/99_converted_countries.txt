@@ -469,7 +469,7 @@ ANL = {
 	color = { 135 198 25 }
 	country_type = kingdom
 	tier = empire
-	cultures = { bedouin visigothic }
+	cultures = { andalucian }
 	capital = STATE_ANDALUSIA
 }
 

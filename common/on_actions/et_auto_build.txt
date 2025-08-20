@@ -9,19 +9,13 @@ on_monthly_pulse_country = {
 }
 
 
-et_auto_build_monthly = {
+et_auto_build_monthly_gov = {
     trigger = {
-        OR = {
-            has_variable = et_auto_build_gov_cooldown
-            has_variable = et_auto_build_rail_cooldown
-            has_variable = et_auto_build_port_cooldown
-            has_variable = et_auto_build_power_cooldown
-        }
+        has_variable = et_auto_build_gov_cooldown
     }
     effect = {
         if = {
             limit = {
-                has_variable = et_auto_build_gov_cooldown
                 NOT = {
                     any_scope_state = {
                         b:building_government_administration ?= {
@@ -32,9 +26,16 @@ et_auto_build_monthly = {
             }
             et_manual_build_government_administration = yes
         }
+    }
+}
+
+et_auto_build_monthly_rail = {
+    trigger = {
+        has_variable = et_auto_build_rail_cooldown
+    }
+    effect = {
         if = {
             limit = {
-                has_variable = et_auto_build_rail_cooldown
                 NOT = {
                     any_scope_state = {
                         b:building_railway ?= {
@@ -45,9 +46,16 @@ et_auto_build_monthly = {
             }
             et_manual_build_railway = yes
         }
+    }
+}
+
+et_auto_build_monthly_port = {
+    trigger = {
+        has_variable = et_auto_build_port_cooldown
+    }
+    effect = {
         if = {
             limit = {
-                has_variable = et_auto_build_port_cooldown
                 NOT = {
                     any_scope_state = {
                         b:building_port ?= {
@@ -58,9 +66,16 @@ et_auto_build_monthly = {
             }
             et_manual_build_port = yes
         }
+    }
+}
+
+et_auto_build_monthly_power = {
+    trigger = {
+        has_variable = et_auto_build_power_cooldown
+    }
+    effect = {
         if = {
             limit = {
-                has_variable = et_auto_build_power_cooldown
                 NOT = {
                     any_scope_state = {
                         b:building_power_plant ?= {

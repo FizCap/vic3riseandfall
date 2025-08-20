@@ -18,6 +18,7 @@ et_centralized_culture_merge_action_effect = {
             }
             et_centralized_culture_merge_effect = yes
             et_decentralized_culture_merge_effect = yes
+            et_decentralized_culture_merge_cleanup = yes
             et_centralized_culture_merge_cleanup = yes
         }
     }

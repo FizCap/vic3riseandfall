@@ -17,10 +17,6 @@ et_scripted_button_build_admin_center = {
     ai_chance = {
         value = 0
         if = {
-            limit = { has_game_rule = ai_improvement_disabled }
-            subtract = -1000
-        }
-        if = {
             limit = {
                 has_game_rule = ai_improvement_enabled
                 gold_reserves > 10000
@@ -58,10 +54,6 @@ et_scripted_button_build_railway = {
     ai_chance = {
         value = 0
         if = {
-            limit = { has_game_rule = ai_improvement_disabled }
-            subtract = -1000
-        }
-        if = {
             limit = {
                 has_game_rule = ai_improvement_enabled
                 gold_reserves > et_autobuild_reserve_limit
@@ -97,10 +89,6 @@ et_scripted_button_build_port = {
 
     ai_chance = {
         value = 0
-        if = {
-            limit = { has_game_rule = ai_improvement_disabled }
-            subtract = -1000
-        }
         if = {
             limit = {
                 has_game_rule = ai_improvement_enabled
@@ -271,10 +259,6 @@ et_scripted_button_build_construction_sector = {
 
     ai_chance = {
         value = 0
-        if = {
-            limit = { has_game_rule = ai_improvement_disabled }
-            subtract = -1000
-        }
         if = {
             limit = {
                 has_game_rule = ai_improvement_enabled

@@ -393,9 +393,24 @@ et_add_random_buildings = {
     # Arts Academy: 0-3 (Renaissance was underway)
     random_list = {
         50 = { } # 0
-        25 = { create_building = { building = building_arts_academy level = 1 } }
-        20 = { create_building = { building = building_arts_academy level = 2 } }
-        5 = { create_building = { building = building_arts_academy level = 3 } }
+        25 = {
+            if = {
+                limit = { can_construct_building = building_arts_academy }
+                create_building = { building = building_arts_academy level = 1 }
+            }
+        }
+        20 = {
+            if = {
+                limit = { can_construct_building = building_arts_academy }
+                create_building = { building = building_arts_academy level = 2 }
+            }
+        }
+        5 = {
+            if = {
+                limit = { can_construct_building = building_arts_academy }
+                create_building = { building = building_arts_academy level = 3 }
+            }
+        }
     }
     # Government Administration: 0-8 (large empires had extensive bureaucracy)
 random_list = {

@@ -2,6 +2,12 @@
 	on_actions = {  }
 }
 
+on_game_started_after_lobby = {
+    on_actions = {
+    }
+}
+
+
 et_create_csl = {
 	effect = {
 		if = {
@@ -11,6 +17,25 @@ et_create_csl = {
 				origin = c:TUR
 				state = s:STATE_EASTERN_THRACE.region_state:TUR
 			}
+		}
+	}
+}
+
+et_debug_mark_all_states_new_world = {
+	effect = {
+		# For debugging: mark New World states as `new_world` after the lobby so create/expand flows can target them
+		every_state = {
+			set_variable = new_world
+		}
+	}
+}
+
+et_debug_grant_colonization_tech = {
+	effect = {
+		# Grant colonization technology to the player country for debugging
+		every_country = {
+			limit = { is_player = yes }
+			add_technology_researched = colonization
 		}
 	}
 }

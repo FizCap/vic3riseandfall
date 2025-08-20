@@ -26,6 +26,7 @@ start_boost3 = {
   }
   effect = {
     every_state = {
+      limit = { owner = { NOT = { is_country_type = decentralized } } }
       et_add_random_resource_buildings_15x = yes
       et_add_random_naval_buildings = yes
       et_add_random_buildings = yes

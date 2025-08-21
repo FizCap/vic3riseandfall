@@ -57,6 +57,7 @@ et_scripted_button_build_railway = {
             limit = {
                 has_game_rule = ai_improvement_enabled
                 gold_reserves > et_autobuild_reserve_limit
+                any_scope_state = { delta_infrastructure < 0 }
                 bureaucracy > 0
                 NOT = {
                     any_scope_state = {
@@ -93,6 +94,7 @@ et_scripted_button_build_port = {
             limit = {
                 has_game_rule = ai_improvement_enabled
                 gold_reserves > et_autobuild_reserve_limit
+                any_scope_state = { delta_infrastructure < 0 }
                 bureaucracy > 0
                 NOT = {
                     any_scope_state = {

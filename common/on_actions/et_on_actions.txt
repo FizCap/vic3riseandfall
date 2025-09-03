@@ -144,7 +144,7 @@ force_slavery_startup = {
 et_random_character_death = {
   trigger = {
     is_character_alive = yes
-    year >= 1454
+    year >= 1711
     NOT = { owner = { has_technology_researched = pharmaceuticals } }
   }
   effect = {

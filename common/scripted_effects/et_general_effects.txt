@@ -1,0 +1,50 @@
+﻿et_random_character_death_effect = {
+    if = {
+      limit = { age < -1 } #kill immortal characters that should not exist
+      kill_character = yes
+    }
+    else_if = {
+      limit = { age < 3 }
+      random_list = {
+        7 = { kill_character = yes }   # 3.5% chance per year for all under 3
+        193 = { }
+      }
+    }
+    else_if = {
+      limit = { age < 30 }
+      random_list = {
+        1 = { kill_character = yes }   # 0.5% chance per year for ages 3-29
+        199 = { }
+      }
+    }
+    else_if = {
+      limit = { age < 50 }
+      random_list = {
+        2 = { kill_character = yes }   # 1% chance per year (middle age)
+        198 = { }
+      }
+    }
+    else_if = {
+      limit = { age < 65 }
+      random_list = {
+        7 = { kill_character = yes }  # 3.5% chance per year (older adult)
+        193 = { }
+      }
+    }
+    else = {
+      random_list = {
+        20 = { kill_character = yes }  # 10% chance per year (elderly)
+        180 = { }
+      }
+    }
+}
+
+et_holy_roman_emperor_effect = {
+    c:AUS = {
+        add_modifier = {
+            name = holy_roman_emperor
+            days = 17520
+            is_decaying = yes
+        }
+    }
+}

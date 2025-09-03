@@ -1,0 +1,133 @@
+﻿et_ottomans_rise_effect = {
+    s:STATE_EASTERN_THRACE = {
+        add_claim = c:TUR
+    }
+    s:STATE_NORTHERN_THRACE = {
+        add_claim = c:TUR
+    }
+    s:STATE_ATTICA = {
+        add_claim = c:TUR
+    }
+    s:STATE_PELOPONNESE = {
+        add_claim = c:TUR
+    }
+    s:STATE_KONYA = {
+        add_claim = c:TUR
+    }
+    s:STATE_ADANA = {
+        add_claim = c:TUR
+    }
+    s:STATE_ANKARA = {
+        add_claim = c:TUR
+    }
+    s:STATE_KASTAMONU = {
+        add_claim = c:TUR
+    }
+    s:STATE_TRABZON = {
+        add_claim = c:TUR
+    }
+    s:STATE_DIYARBAKIR = {
+        add_claim = c:TUR
+    }
+    s:STATE_ALEPPO = {
+        add_claim = c:TUR
+    }
+    s:STATE_SYRIA = {
+        add_claim = c:TUR
+    }
+    s:STATE_LEBANON = {
+        add_claim = c:TUR
+    }
+    s:STATE_CYPRUS = {
+        add_claim = c:TUR
+    }
+    s:STATE_CRETE = {
+        add_claim = c:TUR
+    }
+    s:STATE_EAST_AEGEAN_ISLANDS = {
+        add_claim = c:TUR
+    }
+    c:TUR = {
+        set_strategy = ai_strategy_et_warmonger_ai
+        add_modifier = {
+            name = rise_of_the_ottomans
+            years = 5
+        }
+        trigger_event = { id = et_ottomans.1 }
+    }
+    every_country = {
+        limit = { NOT = { this = c:TUR } }
+        trigger_event = { id = et_ottomans.1 }
+    }
+}
+
+et_protestant_reformation1_effect = {
+    every_country = {
+        limit = {
+            OR = {
+                country_has_primary_culture = cu:british
+                country_has_primary_culture = cu:scottish
+                country_has_primary_culture = cu:norwegian
+                country_has_primary_culture = cu:swedish
+                country_has_primary_culture = cu:dutch
+                country_has_primary_culture = cu:danish
+            }
+        }
+        add_modifier = {
+            name = protestant_reformation_conversion_modifier
+            days = 10950
+        }
+        set_state_religion = rel:protestant
+        every_scope_state = {
+            if = {
+                limit = { is_incorporated = yes }
+                convert_population = {
+                    target = rel:protestant
+                    value = 0.1
+                }
+            }
+        }
+    }
+    every_country = {
+        limit = { is_player = yes }
+        trigger_event = { id = et_protestant_reformation.1 }
+    }
+}
+
+et_protestant_reformation2_effect = {
+    every_country = {
+        limit = {
+            OR = {
+                country_has_primary_culture = cu:south_german
+                country_has_primary_culture = cu:north_german
+            }
+            NOT = { this = c:U78 }
+            NOT = { this = c:AUS }
+        }
+        custom_tooltip = protestant_reformation2_tt
+        trigger_event = { id = et_protestant_reformation.2 }
+    }
+}
+
+et_force_slavery_startup_effect = {
+    every_country = {
+        limit = {
+            OR = {
+                country_has_state_religion = rel:ibadi
+                country_has_state_religion = rel:mutazila
+                country_has_state_religion = rel:quranist
+                country_has_state_religion = rel:alawite
+                country_has_state_religion = rel:zikri
+                country_has_state_religion = rel:kharijite
+                country_has_state_religion = rel:druze
+                country_has_state_religion = rel:qarmatian
+                country_has_state_religion = rel:masmudi
+                country_has_state_religion = rel:sunni
+                country_has_state_religion = rel:shiite
+                any_scope_state = { is_capital = yes region = sr:region_indonesia }
+                any_scope_state = { is_capital = yes region = sr:region_indochina }
+            }
+        }
+        activate_law = law_type:law_slave_trade
+    }
+}

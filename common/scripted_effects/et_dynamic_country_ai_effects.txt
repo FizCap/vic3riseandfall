@@ -213,6 +213,257 @@ et_dynamic_country_ai_expand_unrecognized_culture = {
     }
 }
 
+# Main AI logic for dynamic country creation (Recognized)
+et_dynamic_country_ai_recognized = {
+    # Only proceed if AI improvements enabled and not at war
+    if = {
+        limit = { has_game_rule = ai_improvement_enabled is_at_war = no }
+
+        # Clean stale selection variables (only touch states owned by this country)
+        every_scope_state = {
+            limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+            remove_variable = ai_potential_dyn_country_state
+        }
+
+        every_scope_state = {
+            limit = { has_variable = dynamic_state_cede owner = ROOT }
+            remove_variable = dynamic_state_cede
+        }
+
+        # Mark candidate states (recognized)
+        every_scope_state = {
+            # Candidate marks (recognized)
+            limit = {
+                owner = ROOT
+                is_capital = no
+
+                OR = {
+                    NOT = { has_modifier = recent_state_owner_change }
+                    market_access < 0.01
+                }
+
+                OR = {
+                    AND = {
+                        is_homeland_of_country_cultures = ROOT
+                        OR = { turmoil > 0.70 market_access < 0.01 }
+                    }
+
+                    AND = {
+                        NOT = { is_homeland_of_country_cultures = ROOT }
+                        OR = { turmoil > 0.50 market_access < 0.15 }
+                    }
+                }
+            }
+
+            set_variable = ai_potential_dyn_country_state
+        }
+
+        # Proceed only if there are candidate states
+        if = {
+            limit = { any_scope_state = { has_variable = ai_potential_dyn_country_state } }
+
+            # Pick capital among candidates owned by this country
+            random_scope_state = {
+                limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+                save_scope_as = et_dyn_country_capital
+                set_variable = dynamic_state_cede
+            }
+
+            # Randomly decide: single-state (keep only the capital) or run the multi-state expansion
+            random_list = {
+                20 = {
+                    # Single-state: capital already marked via set_variable above
+                }
+
+                80 = {
+                    # Try culture-based clustering; fallback to adjacency expansion
+                    et_dyn_country_ai_select_culture_for_cluster = yes
+
+                    if = {
+                        limit = { scope:et_dyn_target_culture = { exists = yes } }
+                        et_dynamic_country_ai_expand_recognized_culture = yes
+                    }
+                    else = {
+                        et_dynamic_country_ai_expand_recognized = yes
+                    }
+                }
+            }
+
+            # Cleanup candidate markers (keep dynamic_state_cede for ceding)
+            every_scope_state = {
+                limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+                remove_variable = ai_potential_dyn_country_state
+            }
+        }
+    }
+
+    # Create the dynamic country
+    et_dynamic_country_create = yes
+}
+
+# Main AI logic for dynamic country creation (Unrecognized)
+et_dynamic_country_ai_unrecognized = {
+    # Only proceed if AI improvements enabled and not at war
+    if = {
+        limit = { has_game_rule = ai_improvement_enabled is_at_war = no }
+
+        # Cleanup (only touch states owned by this country)
+        every_scope_state = {
+            limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+            remove_variable = ai_potential_dyn_country_state
+        }
+
+        every_scope_state = {
+            limit = { has_variable = dynamic_state_cede owner = ROOT }
+            remove_variable = dynamic_state_cede
+        }
+
+        # Mark candidates (unrecognized)
+        every_scope_state = {
+            limit = {
+                owner = ROOT
+                is_capital = no
+
+                OR = {
+                    NOT = { has_modifier = recent_state_owner_change }
+                    market_access < 0.01
+                }
+
+                OR = {
+                    AND = {
+                        is_homeland_of_country_cultures = ROOT
+                        OR = { turmoil > 0.70 market_access < 0.01 }
+                    }
+
+                    AND = {
+                        NOT = { is_homeland_of_country_cultures = ROOT }
+                        OR = { turmoil > 0.50 market_access < 0.15 }
+                    }
+                }
+            }
+
+            set_variable = ai_potential_dyn_country_state
+        }
+
+        # Proceed only if there are candidate states
+        if = {
+            limit = { any_scope_state = { has_variable = ai_potential_dyn_country_state } }
+
+            random_scope_state = {
+                limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+                save_scope_as = et_dyn_country_capital
+                set_variable = dynamic_state_cede
+            }
+
+            # Randomly decide: single-state (keep only the capital) or run the multi-state expansion
+            random_list = {
+                20 = {
+                    # Single-state: capital already marked via set_variable above
+                }
+
+                80 = {
+                    # Culture-based clustering attempt
+                    et_dyn_country_ai_select_culture_for_cluster = yes
+
+                    if = {
+                        limit = { scope:et_dyn_target_culture = { exists = yes } }
+                        et_dynamic_country_ai_expand_unrecognized_culture = yes
+                    }
+                    else = {
+                        et_dynamic_country_ai_expand_unrecognized = yes
+                    }
+                }
+            }
+
+            # Cleanup candidate markers
+            every_scope_state = {
+                limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+                remove_variable = ai_potential_dyn_country_state
+            }
+        }
+    }
+
+    # Create the dynamic country
+    et_dynamic_country_create_unrecognized = yes
+}
+
+# Effect to create the dynamic country (shared between player and AI)
+et_dynamic_country_create = {
+    # Create dynamic country
+    if = {
+        limit = {
+            any_scope_state = { has_variable = dynamic_state_cede }
+            scope:et_dyn_country_capital = { exists = yes }
+        }
+
+        create_dynamic_country = {
+            origin = root
+            capital = scope:et_dyn_country_capital
+            tier = principality
+            cede_state_trigger = { has_variable = dynamic_state_cede }
+
+            # Normalize identity after creation
+            on_created = {
+                save_scope_as = et_new_dyn_country
+                every_scope_state = {
+                    limit = { has_variable = dynamic_state_cede owner = ROOT }
+                    remove_variable = dynamic_state_cede
+                }
+
+                et_assign_dominant_identity = yes
+            }
+        }
+    }
+
+    hidden_effect = {
+        if = {
+            limit = { exists = scope:et_dyn_country_capital.owner }
+            create_diplomatic_pact = {
+                country = scope:et_dyn_country_capital.owner
+                type = puppet
+            }
+        }
+    }
+}
+
+# Effect to create the dynamic country (unrecognized variant)
+et_dynamic_country_create_unrecognized = {
+    # Create dynamic country
+    if = {
+        limit = {
+            any_scope_state = { has_variable = dynamic_state_cede }
+            scope:et_dyn_country_capital = { exists = yes }
+        }
+
+        create_dynamic_country = {
+            origin = root
+            tier = principality
+            capital = scope:et_dyn_country_capital
+            cede_state_trigger = { has_variable = dynamic_state_cede }
+
+            on_created = {
+                save_scope_as = et_new_dyn_country
+                every_scope_state = {
+                    limit = { has_variable = dynamic_state_cede owner = ROOT }
+                    remove_variable = dynamic_state_cede
+                }
+
+                et_assign_dominant_identity = yes
+            }
+        }
+    }
+
+    hidden_effect = {
+        if = {
+            limit = { exists = scope:et_dyn_country_capital.owner }
+            create_diplomatic_pact = {
+                country = scope:et_dyn_country_capital.owner
+                type = vassal
+            }
+        }
+    }
+}
+
 # OPTIONAL future improvement hook (currently unused):
 # After expansion, we could randomly prune peripheral states
 # to enforce a soft size cap. Left as stub for future logic.

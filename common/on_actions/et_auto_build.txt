@@ -5,8 +5,6 @@ on_monthly_pulse_country = {
         et_auto_build_monthly_port
         et_auto_build_monthly_power
         et_auto_build_monthly_construction
-        et_dynamic_country_ai_monthly
-        et_dynamic_country_ai_monthly_unrecognized
     }
 }
 
@@ -108,31 +106,5 @@ et_auto_build_monthly_construction = {
             }
             et_manual_build_construction_sector = yes
         }
-    }
-}
-
-et_dynamic_country_ai_monthly = {
-    trigger = {
-        is_player = no
-        has_game_rule = ai_improvement_enabled
-        is_at_war = no
-        is_subject = no
-        is_country_type = recognized
-    }
-    effect = {
-        et_dynamic_country_ai_recognized = yes
-    }
-}
-
-et_dynamic_country_ai_monthly_unrecognized = {
-    trigger = {
-        is_player = no
-        has_game_rule = ai_improvement_enabled
-        is_at_war = no
-        is_subject = no
-        is_country_type = unrecognized
-    }
-    effect = {
-        et_dynamic_country_ai_unrecognized = yes
     }
 }

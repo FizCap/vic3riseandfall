@@ -100,120 +100,21 @@ et_ottomans_rise = {
         popup = yes
     }
     effect = {
-        s:STATE_EASTERN_THRACE = {
-            add_claim = c:TUR
-        }
-        s:STATE_NORTHERN_THRACE = {
-            add_claim = c:TUR
-        }
-        s:STATE_ATTICA = {
-            add_claim = c:TUR
-        }
-        s:STATE_PELOPONNESE = {
-            add_claim = c:TUR
-        }
-        s:STATE_KONYA = {
-            add_claim = c:TUR
-        }
-        s:STATE_ADANA = {
-            add_claim = c:TUR
-        }
-        s:STATE_ANKARA = {
-            add_claim = c:TUR
-        }
-        s:STATE_KASTAMONU = {
-            add_claim = c:TUR
-        }
-        s:STATE_TRABZON = {
-            add_claim = c:TUR
-        }
-        s:STATE_DIYARBAKIR = {
-            add_claim = c:TUR
-        }
-        s:STATE_ALEPPO = {
-            add_claim = c:TUR
-        }
-        s:STATE_SYRIA = {
-            add_claim = c:TUR
-        }
-        s:STATE_LEBANON = {
-            add_claim = c:TUR
-        }
-        s:STATE_CYPRUS = {
-            add_claim = c:TUR
-        }
-        s:STATE_CRETE = {
-            add_claim = c:TUR
-        }
-        s:STATE_EAST_AEGEAN_ISLANDS = {
-            add_claim = c:TUR
-        }
-        c:TUR = {
-            set_strategy = ai_strategy_et_warmonger_ai
-            add_modifier = {
-                name = rise_of_the_ottomans
-                years = 5
-            }
-            trigger_event = { id = et_ottomans.1 }
-        }
-        every_country = {
-            limit = { NOT = { this = c:TUR } }
-            trigger_event = { id = et_ottomans.1 }
-        }
+        et_ottomans_rise_effect = yes
     }
 }
 
 protestant_reformation1 = {
     trigger = { year = 1518 }
     effect = {
-        every_country = {
-            limit = {
-                OR = {
-                    country_has_primary_culture = cu:british
-                    country_has_primary_culture = cu:scottish
-                    country_has_primary_culture = cu:norwegian
-                    country_has_primary_culture = cu:swedish
-                    country_has_primary_culture = cu:dutch
-                    country_has_primary_culture = cu:danish
-                }
-            }
-            add_modifier = {
-                name = protestant_reformation_conversion_modifier
-                days = 10950
-            }
-            set_state_religion = rel:protestant
-            every_scope_state = {
-                if = {
-                    limit = { is_incorporated = yes }
-                    convert_population = {
-                        target = rel:protestant
-                        value = 0.1
-                    }
-                }
-            }
-        }
-        every_country = {
-            limit = { is_player = yes }
-            trigger_event = { id = et_protestant_reformation.1 }
-        }
+        et_protestant_reformation1_effect = yes
     }
 }
 
 protestant_reformation2 = {
     trigger = { year = 1518 }
     effect = {
-        every_country = {
-            limit = {
-                OR = {
-                    country_has_primary_culture = cu:south_german
-                    country_has_primary_culture = cu:north_german
-                }
-                NOT = { this = c:U78 }
-                NOT = { this = c:AUS }
-            }
-            custom_tooltip = protestant_reformation2_tt
-            trigger_event = { id = et_protestant_reformation.2 }
-        }
+        et_protestant_reformation2_effect = yes
     }
 }
 
@@ -228,38 +129,13 @@ japanese_shogunate_event1 = {
 
 holy_roman_emperor = {
     effect = {
-        c:AUS = {
-            add_modifier = {
-                name = holy_roman_emperor
-                days = 17520
-                is_decaying = yes
-            }
-        }
+        et_holy_roman_emperor_effect = yes
     }
 }
 
 force_slavery_startup = {
     effect = {
-        every_country = {
-            limit = {
-                OR = {
-                    country_has_state_religion = rel:ibadi
-                    country_has_state_religion = rel:mutazila
-                    country_has_state_religion = rel:quranist
-                    country_has_state_religion = rel:alawite
-                    country_has_state_religion = rel:zikri
-                    country_has_state_religion = rel:kharijite
-                    country_has_state_religion = rel:druze
-                    country_has_state_religion = rel:qarmatian
-                    country_has_state_religion = rel:masmudi
-                    country_has_state_religion = rel:sunni
-                    country_has_state_religion = rel:shiite
-                    any_scope_state = { is_capital = yes region = sr:region_indonesia }
-                    any_scope_state = { is_capital = yes region = sr:region_indochina }
-                }
-            }
-            activate_law = law_type:law_slave_trade
-        }
+        et_force_slavery_startup_effect = yes
     }
 }
 
@@ -272,44 +148,7 @@ et_random_character_death = {
     NOT = { owner = { has_technology_researched = pharmaceuticals } }
   }
   effect = {
-    if = {
-      limit = { age < -1 } #kill immortal characters that should not exist
-      kill_character = yes
-    }
-    else_if = {
-      limit = { age < 3 }
-      random_list = {
-        7 = { kill_character = yes }   # 3.5% chance per year for all under 3
-        193 = { }
-      }
-    }
-    else_if = {
-      limit = { age < 30 }
-      random_list = {
-        1 = { kill_character = yes }   # 0.5% chance per year for ages 3-29
-        199 = { }
-      }
-    }
-    else_if = {
-      limit = { age < 50 }
-      random_list = {
-        2 = { kill_character = yes }   # 1% chance per year (middle age)
-        198 = { }
-      }
-    }
-    else_if = {
-      limit = { age < 65 }
-      random_list = {
-        7 = { kill_character = yes }  # 3.5% chance per year (older adult)
-        193 = { }
-      }
-    }
-    else = {
-      random_list = {
-        20 = { kill_character = yes }  # 10% chance per year (elderly)
-        180 = { }
-      }
-    }
+    et_random_character_death_effect = yes
   }
 }
 

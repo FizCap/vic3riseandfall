@@ -1,9 +1,9 @@
 {
-  "name" : "Extended Timeline: Vanilla Enhancements",
+  "name" : "Rise and Fall",
   "id" : "3548354778",
   "picture" : "thumbnail.png",
   "version" : "1.0.0",
-  "supported_game_version" : "1.9*",
+  "supported_game_version" : "1.11*",
   "short_description" : "Expands the timeline, adds new nations, and improves balance and gameplay for Victoria 3.",
   "tags" : ["Balance", "Fixes", "Gameplay" ],
   "relationships" : [],

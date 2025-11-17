@@ -12,6 +12,7 @@ rf_dynamic_country_ai_monthly = {
         is_at_war = no
         is_subject = no
         is_country_type = recognized
+        num_states > 1
     }
     effect = {
         rf_dynamic_country_ai_recognized = yes
@@ -25,6 +26,7 @@ rf_dynamic_country_ai_monthly_unrecognized = {
         is_at_war = no
         is_subject = no
         is_country_type = unrecognized
+        num_states > 1
     }
     effect = {
         rf_dynamic_country_ai_unrecognized = yes

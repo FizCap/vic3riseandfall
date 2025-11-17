@@ -1,0 +1,923 @@
+﻿#
+# Note: the triggers are checked at certain key points in the code, not all the time
+# color_key = {
+#    color = "black"      # the map color
+#    possible = { ... }   # the trigger to enable this color
+# }
+#
+
+# Example
+#dynamic_map_color_swedish_junta = {
+#    color = "black"
+#
+#	possible = {
+#		exists = c:SWE # you /must/ check that a tag exists before doing anything else
+#		this = c:SWE
+#
+#        exists = ig:ig_armed_forces
+#        ig:ig_armed_forces ?= {
+#            is_in_government = yes
+#        }
+#	}
+#}
+
+
+dynamic_color1 = {
+	color = "bulgaria_purple"
+
+	possible = {
+		has_variable = dynamic_color1_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color2 = {
+	color = "rf_bright_red"
+
+	possible = {
+		has_variable = dynamic_color2_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color3 = {
+	color = "rf_bright_green"
+
+	possible = {
+		has_variable = dynamic_color3_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color4 = {
+	color = "rf_bright_blue"
+
+	possible = {
+		has_variable = dynamic_color4_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color5 = {
+	color = "rf_bright_yellow"
+
+	possible = {
+		has_variable = dynamic_color5_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color6 = {
+	color = "rf_bright_magenta"
+
+	possible = {
+		has_variable = dynamic_color6_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color7 = {
+	color = "rf_bright_cyan"
+
+	possible = {
+		has_variable = dynamic_color7_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color8 = {
+	color = "rf_dark_red"
+
+	possible = {
+		has_variable = dynamic_color8_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color9 = {
+	color = "rf_dark_green"
+
+	possible = {
+		has_variable = dynamic_color9_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color10 = {
+	color = "rf_dark_blue"
+
+	possible = {
+		has_variable = dynamic_color10_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color11 = {
+	color = "rf_olive"
+
+	possible = {
+		has_variable = dynamic_color11_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color12 = {
+	color = "rf_purple"
+
+	possible = {
+		has_variable = dynamic_color12_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color13 = {
+	color = "rf_teal"
+
+	possible = {
+		has_variable = dynamic_color13_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color14 = {
+	color = "rf_orange"
+
+	possible = {
+		has_variable = dynamic_color14_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color15 = {
+	color = "rf_pink"
+
+	possible = {
+		has_variable = dynamic_color15_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color16 = {
+	color = "rf_lime"
+
+	possible = {
+		has_variable = dynamic_color16_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color17 = {
+	color = "rf_spring_green"
+
+	possible = {
+		has_variable = dynamic_color17_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color18 = {
+	color = "rf_violet"
+
+	possible = {
+		has_variable = dynamic_color18_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color19 = {
+	color = "rf_sky_blue"
+
+	possible = {
+		has_variable = dynamic_color19_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color20 = {
+	color = "rf_dark_gray"
+
+	possible = {
+		has_variable = dynamic_color20_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color21 = {
+	color = "rf_light_gray"
+
+	possible = {
+		has_variable = dynamic_color21_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color22 = {
+	color = "rf_light_red"
+
+	possible = {
+		has_variable = dynamic_color22_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color23 = {
+	color = "rf_light_green"
+
+	possible = {
+		has_variable = dynamic_color23_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color24 = {
+	color = "rf_light_blue"
+
+	possible = {
+		has_variable = dynamic_color24_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color25 = {
+	color = "rf_light_yellow"
+
+	possible = {
+		has_variable = dynamic_color25_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color26 = {
+	color = "rf_light_magenta"
+
+	possible = {
+		has_variable = dynamic_color26_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color27 = {
+	color = "rf_light_cyan"
+
+	possible = {
+		has_variable = dynamic_color27_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color28 = {
+	color = "rf_medium_red"
+
+	possible = {
+		has_variable = dynamic_color28_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color29 = {
+	color = "rf_medium_green"
+
+	possible = {
+		has_variable = dynamic_color29_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color30 = {
+	color = "rf_medium_blue"
+
+	possible = {
+		has_variable = dynamic_color30_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color31 = {
+	color = "rf_medium_yellow"
+
+	possible = {
+		has_variable = dynamic_color31_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color32 = {
+	color = "rf_medium_magenta"
+
+	possible = {
+		has_variable = dynamic_color32_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color33 = {
+	color = "rf_medium_cyan"
+
+	possible = {
+		has_variable = dynamic_color33_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color34 = {
+	color = "rf_salmon"
+
+	possible = {
+		has_variable = dynamic_color34_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color35 = {
+	color = "rf_pale_green"
+
+	possible = {
+		has_variable = dynamic_color35_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color36 = {
+	color = "rf_pale_blue"
+
+	possible = {
+		has_variable = dynamic_color36_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color37 = {
+	color = "rf_pale_yellow"
+
+	possible = {
+		has_variable = dynamic_color37_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color38 = {
+	color = "rf_pale_magenta"
+
+	possible = {
+		has_variable = dynamic_color38_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color39 = {
+	color = "rf_pale_cyan"
+
+	possible = {
+		has_variable = dynamic_color39_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color40 = {
+	color = "rf_light_coral"
+
+	possible = {
+		has_variable = dynamic_color40_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color41 = {
+	color = "rf_pale_green_alt"
+
+	possible = {
+		has_variable = dynamic_color41_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color42 = {
+	color = "rf_light_steel_blue"
+
+	possible = {
+		has_variable = dynamic_color42_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color43 = {
+	color = "rf_light_yellow_alt"
+
+	possible = {
+		has_variable = dynamic_color43_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color44 = {
+	color = "rf_light_pink"
+
+	possible = {
+		has_variable = dynamic_color44_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color45 = {
+	color = "rf_light_cyan_alt"
+
+	possible = {
+		has_variable = dynamic_color45_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color46 = {
+	color = "rf_gray"
+
+	possible = {
+		has_variable = dynamic_color46_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color47 = {
+	color = "rf_silver"
+
+	possible = {
+		has_variable = dynamic_color47_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color48 = {
+	color = "rf_gainsboro"
+
+	possible = {
+		has_variable = dynamic_color48_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color49 = {
+	color = "rf_very_dark_gray"
+
+	possible = {
+		has_variable = dynamic_color49_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color50 = {
+	color = "rf_dim_gray"
+
+	possible = {
+		has_variable = dynamic_color50_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color51 = {
+	color = "rf_dark_gray_alt"
+
+	possible = {
+		has_variable = dynamic_color51_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color52 = {
+	color = "rf_maroon"
+
+	possible = {
+		has_variable = dynamic_color52_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color53 = {
+	color = "rf_beige"
+
+	possible = {
+		has_variable = dynamic_color53_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color54 = {
+	color = "rf_peach"
+
+	possible = {
+		has_variable = dynamic_color54_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color55 = {
+	color = "rf_coral"
+
+	possible = {
+		has_variable = dynamic_color55_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color56 = {
+	color = "rf_amber"
+
+	possible = {
+		has_variable = dynamic_color56_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color57 = {
+	color = "rf_gold"
+
+	possible = {
+		has_variable = dynamic_color57_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color58 = {
+	color = "rf_peru"
+
+	possible = {
+		has_variable = dynamic_color58_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color59 = {
+	color = "rf_plum"
+
+	possible = {
+		has_variable = dynamic_color59_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color60 = {
+	color = "rf_indigo"
+
+	possible = {
+		has_variable = dynamic_color60_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color61 = {
+	color = "rf_navy"
+
+	possible = {
+		has_variable = dynamic_color61_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color62 = {
+	color = "rf_sea_green"
+
+	possible = {
+		has_variable = dynamic_color62_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color63 = {
+	color = "rf_mint"
+
+	possible = {
+		has_variable = dynamic_color63_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color64 = {
+	color = "rf_cerulean"
+
+	possible = {
+		has_variable = dynamic_color64_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color65 = {
+	color = "rf_turquoise"
+
+	possible = {
+		has_variable = dynamic_color65_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color66 = {
+	color = "rf_cobalt"
+
+	possible = {
+		has_variable = dynamic_color66_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color67 = {
+	color = "rf_aqua"
+
+	possible = {
+		has_variable = dynamic_color67_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color68 = {
+	color = "rf_lavender"
+
+	possible = {
+		has_variable = dynamic_color68_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color69 = {
+	color = "rf_mauve"
+
+	possible = {
+		has_variable = dynamic_color69_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color70 = {
+	color = "rf_lilac"
+
+	possible = {
+		has_variable = dynamic_color70_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color71 = {
+	color = "rf_tan"
+
+	possible = {
+		has_variable = dynamic_color71_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color72 = {
+	color = "rf_beet"
+
+	possible = {
+		has_variable = dynamic_color72_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color73 = {
+	color = "rf_silver_pale"
+
+	possible = {
+		has_variable = dynamic_color73_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color74 = {
+	color = "rf_bronze"
+
+	possible = {
+		has_variable = dynamic_color74_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color75 = {
+	color = "rf_umber"
+
+	possible = {
+		has_variable = dynamic_color75_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color76 = {
+	color = "rf_ochre"
+
+	possible = {
+		has_variable = dynamic_color76_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color77 = {
+	color = "rf_pastel_blue"
+
+	possible = {
+		has_variable = dynamic_color77_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color78 = {
+	color = "rf_pastel_green"
+
+	possible = {
+		has_variable = dynamic_color78_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color79 = {
+	color = "rf_sienna"
+
+	possible = {
+		has_variable = dynamic_color79_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color80 = {
+	color = "rf_chocolate"
+
+	possible = {
+		has_variable = dynamic_color80_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color81 = {
+	color = "rf_terracotta"
+
+	possible = {
+		has_variable = dynamic_color81_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color82 = {
+	color = "rf_papaya"
+
+	possible = {
+		has_variable = dynamic_color82_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color83 = {
+	color = "rf_saffron"
+
+	possible = {
+		has_variable = dynamic_color83_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color84 = {
+	color = "rf_carmine"
+
+	possible = {
+		has_variable = dynamic_color84_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color85 = {
+	color = "rf_peacock"
+
+	possible = {
+		has_variable = dynamic_color85_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color86 = {
+	color = "rf_midnight"
+
+	possible = {
+		has_variable = dynamic_color86_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color87 = {
+	color = "rf_moss"
+
+	possible = {
+		has_variable = dynamic_color87_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color88 = {
+	color = "rf_sepia"
+
+	possible = {
+		has_variable = dynamic_color88_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color89 = {
+	color = "rf_charcoal"
+
+	possible = {
+		has_variable = dynamic_color89_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color90 = {
+	color = "rf_bubblegum"
+
+	possible = {
+		has_variable = dynamic_color90_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color91 = {
+	color = "rf_sky_blue_alt"
+
+	possible = {
+		has_variable = dynamic_color91_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color92 = {
+	color = "rf_lime_alt"
+
+	possible = {
+		has_variable = dynamic_color92_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color93 = {
+	color = "rf_olive_alt"
+
+	possible = {
+		has_variable = dynamic_color93_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color94 = {
+	color = "rf_khaki"
+
+	possible = {
+		has_variable = dynamic_color94_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color95 = {
+	color = "rf_melon"
+
+	possible = {
+		has_variable = dynamic_color95_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color96 = {
+	color = "rf_slategrey"
+
+	possible = {
+		has_variable = dynamic_color96_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color97 = {
+	color = "rf_cadetblue"
+
+	possible = {
+		has_variable = dynamic_color97_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color98 = {
+	color = "rf_rosewood"
+
+	possible = {
+		has_variable = dynamic_color98_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color99 = {
+	color = "rf_jade"
+
+	possible = {
+		has_variable = dynamic_color99_variable
+		country_tier = city_state
+	}
+}
+
+dynamic_color100 = {
+	color = "rf_glass_blue"
+
+	possible = {
+		has_variable = dynamic_color100_variable
+		country_tier = city_state
+	}
+}

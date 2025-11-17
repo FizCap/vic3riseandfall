@@ -1,0 +1,1999 @@
+﻿D00 = {
+	dynamic_country_definition = yes
+}
+
+D01 = {
+	dynamic_country_definition = yes
+}
+
+D02 = {
+	dynamic_country_definition = yes
+}
+
+D03 = {
+	dynamic_country_definition = yes
+}
+
+D04 = {
+	dynamic_country_definition = yes
+}
+
+D05 = {
+	dynamic_country_definition = yes
+}
+
+D06 = {
+	dynamic_country_definition = yes
+}
+
+D07 = {
+	dynamic_country_definition = yes
+}
+
+D08 = {
+	dynamic_country_definition = yes
+}
+
+D09 = {
+	dynamic_country_definition = yes
+}
+
+D10 = {
+	dynamic_country_definition = yes
+}
+
+D11 = {
+	dynamic_country_definition = yes
+}
+
+D12 = {
+	dynamic_country_definition = yes
+}
+
+D13 = {
+	dynamic_country_definition = yes
+}
+
+D14 = {
+	dynamic_country_definition = yes
+}
+
+D15 = {
+	dynamic_country_definition = yes
+}
+
+D16 = {
+	dynamic_country_definition = yes
+}
+
+D17 = {
+	dynamic_country_definition = yes
+}
+
+D18 = {
+	dynamic_country_definition = yes
+}
+
+D19 = {
+	dynamic_country_definition = yes
+}
+
+D20 = {
+	dynamic_country_definition = yes
+}
+
+D21 = {
+	dynamic_country_definition = yes
+}
+
+D22 = {
+	dynamic_country_definition = yes
+}
+
+D23 = {
+	dynamic_country_definition = yes
+}
+
+D24 = {
+	dynamic_country_definition = yes
+}
+
+D25 = {
+	dynamic_country_definition = yes
+}
+
+D26 = {
+	dynamic_country_definition = yes
+}
+
+D27 = {
+	dynamic_country_definition = yes
+}
+
+D28 = {
+	dynamic_country_definition = yes
+}
+
+D29 = {
+	dynamic_country_definition = yes
+}
+
+D30 = {
+	dynamic_country_definition = yes
+}
+
+D31 = {
+	dynamic_country_definition = yes
+}
+
+D32 = {
+	dynamic_country_definition = yes
+}
+
+D33 = {
+	dynamic_country_definition = yes
+}
+
+D34 = {
+	dynamic_country_definition = yes
+}
+
+D35 = {
+	dynamic_country_definition = yes
+}
+
+D36 = {
+	dynamic_country_definition = yes
+}
+
+D37 = {
+	dynamic_country_definition = yes
+}
+
+D38 = {
+	dynamic_country_definition = yes
+}
+
+D39 = {
+	dynamic_country_definition = yes
+}
+
+D40 = {
+	dynamic_country_definition = yes
+}
+
+D41 = {
+	dynamic_country_definition = yes
+}
+
+D42 = {
+	dynamic_country_definition = yes
+}
+
+D43 = {
+	dynamic_country_definition = yes
+}
+
+D44 = {
+	dynamic_country_definition = yes
+}
+
+D45 = {
+	dynamic_country_definition = yes
+}
+
+D46 = {
+	dynamic_country_definition = yes
+}
+
+D47 = {
+	dynamic_country_definition = yes
+}
+
+D48 = {
+	dynamic_country_definition = yes
+}
+
+D49 = {
+	dynamic_country_definition = yes
+}
+
+D50 = {
+	dynamic_country_definition = yes
+}
+
+D51 = {
+	dynamic_country_definition = yes
+}
+
+D52 = {
+	dynamic_country_definition = yes
+}
+
+D53 = {
+	dynamic_country_definition = yes
+}
+
+D54 = {
+	dynamic_country_definition = yes
+}
+
+D55 = {
+	dynamic_country_definition = yes
+}
+
+D56 = {
+	dynamic_country_definition = yes
+}
+
+D57 = {
+	dynamic_country_definition = yes
+}
+
+D58 = {
+	dynamic_country_definition = yes
+}
+
+D59 = {
+	dynamic_country_definition = yes
+}
+
+D60 = {
+	dynamic_country_definition = yes
+}
+
+D61 = {
+	dynamic_country_definition = yes
+}
+
+D62 = {
+	dynamic_country_definition = yes
+}
+
+D63 = {
+	dynamic_country_definition = yes
+}
+
+D64 = {
+	dynamic_country_definition = yes
+}
+
+D65 = {
+	dynamic_country_definition = yes
+}
+
+D66 = {
+	dynamic_country_definition = yes
+}
+
+D67 = {
+	dynamic_country_definition = yes
+}
+
+D68 = {
+	dynamic_country_definition = yes
+}
+
+D69 = {
+	dynamic_country_definition = yes
+}
+
+D70 = {
+	dynamic_country_definition = yes
+}
+
+D71 = {
+	dynamic_country_definition = yes
+}
+
+D72 = {
+	dynamic_country_definition = yes
+}
+
+D73 = {
+	dynamic_country_definition = yes
+}
+
+D74 = {
+	dynamic_country_definition = yes
+}
+
+D75 = {
+	dynamic_country_definition = yes
+}
+
+D76 = {
+	dynamic_country_definition = yes
+}
+
+D77 = {
+	dynamic_country_definition = yes
+}
+
+D78 = {
+	dynamic_country_definition = yes
+}
+
+D79 = {
+	dynamic_country_definition = yes
+}
+
+D80 = {
+	dynamic_country_definition = yes
+}
+
+D81 = {
+	dynamic_country_definition = yes
+}
+
+D82 = {
+	dynamic_country_definition = yes
+}
+
+D83 = {
+	dynamic_country_definition = yes
+}
+
+D84 = {
+	dynamic_country_definition = yes
+}
+
+D85 = {
+	dynamic_country_definition = yes
+}
+
+D86 = {
+	dynamic_country_definition = yes
+}
+
+D87 = {
+	dynamic_country_definition = yes
+}
+
+D88 = {
+	dynamic_country_definition = yes
+}
+
+D89 = {
+	dynamic_country_definition = yes
+}
+
+D90 = {
+	dynamic_country_definition = yes
+}
+
+D91 = {
+	dynamic_country_definition = yes
+}
+
+D92 = {
+	dynamic_country_definition = yes
+}
+
+D93 = {
+	dynamic_country_definition = yes
+}
+
+D94 = {
+	dynamic_country_definition = yes
+}
+
+D95 = {
+	dynamic_country_definition = yes
+}
+
+D96 = {
+	dynamic_country_definition = yes
+}
+
+D97 = {
+	dynamic_country_definition = yes
+}
+
+D98 = {
+	dynamic_country_definition = yes
+}
+
+D99 = {
+	dynamic_country_definition = yes
+}
+
+D100 = {
+	dynamic_country_definition = yes
+}
+
+D101 = {
+	dynamic_country_definition = yes
+}
+
+D102 = {
+	dynamic_country_definition = yes
+}
+
+D103 = {
+	dynamic_country_definition = yes
+}
+
+D104 = {
+	dynamic_country_definition = yes
+}
+
+D105 = {
+	dynamic_country_definition = yes
+}
+
+D106 = {
+	dynamic_country_definition = yes
+}
+
+D107 = {
+	dynamic_country_definition = yes
+}
+
+D108 = {
+	dynamic_country_definition = yes
+}
+
+D109 = {
+	dynamic_country_definition = yes
+}
+
+D110 = {
+	dynamic_country_definition = yes
+}
+
+D111 = {
+	dynamic_country_definition = yes
+}
+
+D112 = {
+	dynamic_country_definition = yes
+}
+
+D113 = {
+	dynamic_country_definition = yes
+}
+
+D114 = {
+	dynamic_country_definition = yes
+}
+
+D115 = {
+	dynamic_country_definition = yes
+}
+
+D116 = {
+	dynamic_country_definition = yes
+}
+
+D117 = {
+	dynamic_country_definition = yes
+}
+
+D118 = {
+	dynamic_country_definition = yes
+}
+
+D119 = {
+	dynamic_country_definition = yes
+}
+
+D120 = {
+	dynamic_country_definition = yes
+}
+
+D121 = {
+	dynamic_country_definition = yes
+}
+
+D122 = {
+	dynamic_country_definition = yes
+}
+
+D123 = {
+	dynamic_country_definition = yes
+}
+
+D124 = {
+	dynamic_country_definition = yes
+}
+
+D125 = {
+	dynamic_country_definition = yes
+}
+
+D126 = {
+	dynamic_country_definition = yes
+}
+
+D127 = {
+	dynamic_country_definition = yes
+}
+
+D128 = {
+	dynamic_country_definition = yes
+}
+
+D129 = {
+	dynamic_country_definition = yes
+}
+
+D130 = {
+	dynamic_country_definition = yes
+}
+
+D131 = {
+	dynamic_country_definition = yes
+}
+
+D132 = {
+	dynamic_country_definition = yes
+}
+
+D133 = {
+	dynamic_country_definition = yes
+}
+
+D134 = {
+	dynamic_country_definition = yes
+}
+
+D135 = {
+	dynamic_country_definition = yes
+}
+
+D136 = {
+	dynamic_country_definition = yes
+}
+
+D137 = {
+	dynamic_country_definition = yes
+}
+
+D138 = {
+	dynamic_country_definition = yes
+}
+
+D139 = {
+	dynamic_country_definition = yes
+}
+
+D140 = {
+	dynamic_country_definition = yes
+}
+
+D141 = {
+	dynamic_country_definition = yes
+}
+
+D142 = {
+	dynamic_country_definition = yes
+}
+
+D143 = {
+	dynamic_country_definition = yes
+}
+
+D144 = {
+	dynamic_country_definition = yes
+}
+
+D145 = {
+	dynamic_country_definition = yes
+}
+
+D146 = {
+	dynamic_country_definition = yes
+}
+
+D147 = {
+	dynamic_country_definition = yes
+}
+
+D148 = {
+	dynamic_country_definition = yes
+}
+
+D149 = {
+	dynamic_country_definition = yes
+}
+
+D150 = {
+	dynamic_country_definition = yes
+}
+
+D151 = {
+	dynamic_country_definition = yes
+}
+
+D152 = {
+	dynamic_country_definition = yes
+}
+
+D153 = {
+	dynamic_country_definition = yes
+}
+
+D154 = {
+	dynamic_country_definition = yes
+}
+
+D155 = {
+	dynamic_country_definition = yes
+}
+
+D156 = {
+	dynamic_country_definition = yes
+}
+
+D157 = {
+	dynamic_country_definition = yes
+}
+
+D158 = {
+	dynamic_country_definition = yes
+}
+
+D159 = {
+	dynamic_country_definition = yes
+}
+
+D160 = {
+	dynamic_country_definition = yes
+}
+
+D161 = {
+	dynamic_country_definition = yes
+}
+
+D162 = {
+	dynamic_country_definition = yes
+}
+
+D163 = {
+	dynamic_country_definition = yes
+}
+
+D164 = {
+	dynamic_country_definition = yes
+}
+
+D165 = {
+	dynamic_country_definition = yes
+}
+
+D166 = {
+	dynamic_country_definition = yes
+}
+
+D167 = {
+	dynamic_country_definition = yes
+}
+
+D168 = {
+	dynamic_country_definition = yes
+}
+
+D169 = {
+	dynamic_country_definition = yes
+}
+
+D170 = {
+	dynamic_country_definition = yes
+}
+
+D171 = {
+	dynamic_country_definition = yes
+}
+
+D172 = {
+	dynamic_country_definition = yes
+}
+
+D173 = {
+	dynamic_country_definition = yes
+}
+
+D174 = {
+	dynamic_country_definition = yes
+}
+
+D175 = {
+	dynamic_country_definition = yes
+}
+
+D176 = {
+	dynamic_country_definition = yes
+}
+
+D177 = {
+	dynamic_country_definition = yes
+}
+
+D178 = {
+	dynamic_country_definition = yes
+}
+
+D179 = {
+	dynamic_country_definition = yes
+}
+
+D180 = {
+	dynamic_country_definition = yes
+}
+
+D181 = {
+	dynamic_country_definition = yes
+}
+
+D182 = {
+	dynamic_country_definition = yes
+}
+
+D183 = {
+	dynamic_country_definition = yes
+}
+
+D184 = {
+	dynamic_country_definition = yes
+}
+
+D185 = {
+	dynamic_country_definition = yes
+}
+
+D186 = {
+	dynamic_country_definition = yes
+}
+
+D187 = {
+	dynamic_country_definition = yes
+}
+
+D188 = {
+	dynamic_country_definition = yes
+}
+
+D189 = {
+	dynamic_country_definition = yes
+}
+
+D190 = {
+	dynamic_country_definition = yes
+}
+
+D191 = {
+	dynamic_country_definition = yes
+}
+
+D192 = {
+	dynamic_country_definition = yes
+}
+
+D193 = {
+	dynamic_country_definition = yes
+}
+
+D194 = {
+	dynamic_country_definition = yes
+}
+
+D195 = {
+	dynamic_country_definition = yes
+}
+
+D196 = {
+	dynamic_country_definition = yes
+}
+
+D197 = {
+	dynamic_country_definition = yes
+}
+
+D198 = {
+	dynamic_country_definition = yes
+}
+
+D199 = {
+	dynamic_country_definition = yes
+}
+
+D200 = {
+	dynamic_country_definition = yes
+}
+
+D201 = {
+	dynamic_country_definition = yes
+}
+
+D202 = {
+	dynamic_country_definition = yes
+}
+
+D203 = {
+	dynamic_country_definition = yes
+}
+
+D204 = {
+	dynamic_country_definition = yes
+}
+
+D205 = {
+	dynamic_country_definition = yes
+}
+
+D206 = {
+	dynamic_country_definition = yes
+}
+
+D207 = {
+	dynamic_country_definition = yes
+}
+
+D208 = {
+	dynamic_country_definition = yes
+}
+
+D209 = {
+	dynamic_country_definition = yes
+}
+
+D210 = {
+	dynamic_country_definition = yes
+}
+
+D211 = {
+	dynamic_country_definition = yes
+}
+
+D212 = {
+	dynamic_country_definition = yes
+}
+
+D213 = {
+	dynamic_country_definition = yes
+}
+
+D214 = {
+	dynamic_country_definition = yes
+}
+
+D215 = {
+	dynamic_country_definition = yes
+}
+
+D216 = {
+	dynamic_country_definition = yes
+}
+
+D217 = {
+	dynamic_country_definition = yes
+}
+
+D218 = {
+	dynamic_country_definition = yes
+}
+
+D219 = {
+	dynamic_country_definition = yes
+}
+
+D220 = {
+	dynamic_country_definition = yes
+}
+
+D221 = {
+	dynamic_country_definition = yes
+}
+
+D222 = {
+	dynamic_country_definition = yes
+}
+
+D223 = {
+	dynamic_country_definition = yes
+}
+
+D224 = {
+	dynamic_country_definition = yes
+}
+
+D225 = {
+	dynamic_country_definition = yes
+}
+
+D226 = {
+	dynamic_country_definition = yes
+}
+
+D227 = {
+	dynamic_country_definition = yes
+}
+
+D228 = {
+	dynamic_country_definition = yes
+}
+
+D229 = {
+	dynamic_country_definition = yes
+}
+
+D230 = {
+	dynamic_country_definition = yes
+}
+
+D231 = {
+	dynamic_country_definition = yes
+}
+
+D232 = {
+	dynamic_country_definition = yes
+}
+
+D233 = {
+	dynamic_country_definition = yes
+}
+
+D234 = {
+	dynamic_country_definition = yes
+}
+
+D235 = {
+	dynamic_country_definition = yes
+}
+
+D236 = {
+	dynamic_country_definition = yes
+}
+
+D237 = {
+	dynamic_country_definition = yes
+}
+
+D238 = {
+	dynamic_country_definition = yes
+}
+
+D239 = {
+	dynamic_country_definition = yes
+}
+
+D240 = {
+	dynamic_country_definition = yes
+}
+
+D241 = {
+	dynamic_country_definition = yes
+}
+
+D242 = {
+	dynamic_country_definition = yes
+}
+
+D243 = {
+	dynamic_country_definition = yes
+}
+
+D244 = {
+	dynamic_country_definition = yes
+}
+
+D245 = {
+	dynamic_country_definition = yes
+}
+
+D246 = {
+	dynamic_country_definition = yes
+}
+
+D247 = {
+	dynamic_country_definition = yes
+}
+
+D248 = {
+	dynamic_country_definition = yes
+}
+
+D249 = {
+	dynamic_country_definition = yes
+}
+
+D250 = {
+	dynamic_country_definition = yes
+}
+
+D251 = {
+	dynamic_country_definition = yes
+}
+
+D252 = {
+	dynamic_country_definition = yes
+}
+
+D253 = {
+	dynamic_country_definition = yes
+}
+
+D254 = {
+	dynamic_country_definition = yes
+}
+
+D255 = {
+	dynamic_country_definition = yes
+}
+
+D256 = {
+	dynamic_country_definition = yes
+}
+
+D257 = {
+	dynamic_country_definition = yes
+}
+
+D258 = {
+	dynamic_country_definition = yes
+}
+
+D259 = {
+	dynamic_country_definition = yes
+}
+
+D260 = {
+	dynamic_country_definition = yes
+}
+
+D261 = {
+	dynamic_country_definition = yes
+}
+
+D262 = {
+	dynamic_country_definition = yes
+}
+
+D263 = {
+	dynamic_country_definition = yes
+}
+
+D264 = {
+	dynamic_country_definition = yes
+}
+
+D265 = {
+	dynamic_country_definition = yes
+}
+
+D266 = {
+	dynamic_country_definition = yes
+}
+
+D267 = {
+	dynamic_country_definition = yes
+}
+
+D268 = {
+	dynamic_country_definition = yes
+}
+
+D269 = {
+	dynamic_country_definition = yes
+}
+
+D270 = {
+	dynamic_country_definition = yes
+}
+
+D271 = {
+	dynamic_country_definition = yes
+}
+
+D272 = {
+	dynamic_country_definition = yes
+}
+
+D273 = {
+	dynamic_country_definition = yes
+}
+
+D274 = {
+	dynamic_country_definition = yes
+}
+
+D275 = {
+	dynamic_country_definition = yes
+}
+
+D276 = {
+	dynamic_country_definition = yes
+}
+
+D277 = {
+	dynamic_country_definition = yes
+}
+
+D278 = {
+	dynamic_country_definition = yes
+}
+
+D279 = {
+	dynamic_country_definition = yes
+}
+
+D280 = {
+	dynamic_country_definition = yes
+}
+
+D281 = {
+	dynamic_country_definition = yes
+}
+
+D282 = {
+	dynamic_country_definition = yes
+}
+
+D283 = {
+	dynamic_country_definition = yes
+}
+
+D284 = {
+	dynamic_country_definition = yes
+}
+
+D285 = {
+	dynamic_country_definition = yes
+}
+
+D286 = {
+	dynamic_country_definition = yes
+}
+
+D287 = {
+	dynamic_country_definition = yes
+}
+
+D288 = {
+	dynamic_country_definition = yes
+}
+
+D289 = {
+	dynamic_country_definition = yes
+}
+
+D290 = {
+	dynamic_country_definition = yes
+}
+
+D291 = {
+	dynamic_country_definition = yes
+}
+
+D292 = {
+	dynamic_country_definition = yes
+}
+
+D293 = {
+	dynamic_country_definition = yes
+}
+
+D294 = {
+	dynamic_country_definition = yes
+}
+
+D295 = {
+	dynamic_country_definition = yes
+}
+
+D296 = {
+	dynamic_country_definition = yes
+}
+
+D297 = {
+	dynamic_country_definition = yes
+}
+
+D298 = {
+	dynamic_country_definition = yes
+}
+
+D299 = {
+	dynamic_country_definition = yes
+}
+
+D300 = {
+	dynamic_country_definition = yes
+}
+
+D301 = {
+	dynamic_country_definition = yes
+}
+
+D302 = {
+	dynamic_country_definition = yes
+}
+
+D303 = {
+	dynamic_country_definition = yes
+}
+
+D304 = {
+	dynamic_country_definition = yes
+}
+
+D305 = {
+	dynamic_country_definition = yes
+}
+
+D306 = {
+	dynamic_country_definition = yes
+}
+
+D307 = {
+	dynamic_country_definition = yes
+}
+
+D308 = {
+	dynamic_country_definition = yes
+}
+
+D309 = {
+	dynamic_country_definition = yes
+}
+
+D310 = {
+	dynamic_country_definition = yes
+}
+
+D311 = {
+	dynamic_country_definition = yes
+}
+
+D312 = {
+	dynamic_country_definition = yes
+}
+
+D313 = {
+	dynamic_country_definition = yes
+}
+
+D314 = {
+	dynamic_country_definition = yes
+}
+
+D315 = {
+	dynamic_country_definition = yes
+}
+
+D316 = {
+	dynamic_country_definition = yes
+}
+
+D317 = {
+	dynamic_country_definition = yes
+}
+
+D318 = {
+	dynamic_country_definition = yes
+}
+
+D319 = {
+	dynamic_country_definition = yes
+}
+
+D320 = {
+	dynamic_country_definition = yes
+}
+
+D321 = {
+	dynamic_country_definition = yes
+}
+
+D322 = {
+	dynamic_country_definition = yes
+}
+
+D323 = {
+	dynamic_country_definition = yes
+}
+
+D324 = {
+	dynamic_country_definition = yes
+}
+
+D325 = {
+	dynamic_country_definition = yes
+}
+
+D326 = {
+	dynamic_country_definition = yes
+}
+
+D327 = {
+	dynamic_country_definition = yes
+}
+
+D328 = {
+	dynamic_country_definition = yes
+}
+
+D329 = {
+	dynamic_country_definition = yes
+}
+
+D330 = {
+	dynamic_country_definition = yes
+}
+
+D331 = {
+	dynamic_country_definition = yes
+}
+
+D332 = {
+	dynamic_country_definition = yes
+}
+
+D333 = {
+	dynamic_country_definition = yes
+}
+
+D334 = {
+	dynamic_country_definition = yes
+}
+
+D335 = {
+	dynamic_country_definition = yes
+}
+
+D336 = {
+	dynamic_country_definition = yes
+}
+
+D337 = {
+	dynamic_country_definition = yes
+}
+
+D338 = {
+	dynamic_country_definition = yes
+}
+
+D339 = {
+	dynamic_country_definition = yes
+}
+
+D340 = {
+	dynamic_country_definition = yes
+}
+
+D341 = {
+	dynamic_country_definition = yes
+}
+
+D342 = {
+	dynamic_country_definition = yes
+}
+
+D343 = {
+	dynamic_country_definition = yes
+}
+
+D344 = {
+	dynamic_country_definition = yes
+}
+
+D345 = {
+	dynamic_country_definition = yes
+}
+
+D346 = {
+	dynamic_country_definition = yes
+}
+
+D347 = {
+	dynamic_country_definition = yes
+}
+
+D348 = {
+	dynamic_country_definition = yes
+}
+
+D349 = {
+	dynamic_country_definition = yes
+}
+
+D350 = {
+	dynamic_country_definition = yes
+}
+
+D351 = {
+	dynamic_country_definition = yes
+}
+
+D352 = {
+	dynamic_country_definition = yes
+}
+
+D353 = {
+	dynamic_country_definition = yes
+}
+
+D354 = {
+	dynamic_country_definition = yes
+}
+
+D355 = {
+	dynamic_country_definition = yes
+}
+
+D356 = {
+	dynamic_country_definition = yes
+}
+
+D357 = {
+	dynamic_country_definition = yes
+}
+
+D358 = {
+	dynamic_country_definition = yes
+}
+
+D359 = {
+	dynamic_country_definition = yes
+}
+
+D360 = {
+	dynamic_country_definition = yes
+}
+
+D361 = {
+	dynamic_country_definition = yes
+}
+
+D362 = {
+	dynamic_country_definition = yes
+}
+
+D363 = {
+	dynamic_country_definition = yes
+}
+
+D364 = {
+	dynamic_country_definition = yes
+}
+
+D365 = {
+	dynamic_country_definition = yes
+}
+
+D366 = {
+	dynamic_country_definition = yes
+}
+
+D367 = {
+	dynamic_country_definition = yes
+}
+
+D368 = {
+	dynamic_country_definition = yes
+}
+
+D369 = {
+	dynamic_country_definition = yes
+}
+
+D370 = {
+	dynamic_country_definition = yes
+}
+
+D371 = {
+	dynamic_country_definition = yes
+}
+
+D372 = {
+	dynamic_country_definition = yes
+}
+
+D373 = {
+	dynamic_country_definition = yes
+}
+
+D374 = {
+	dynamic_country_definition = yes
+}
+
+D375 = {
+	dynamic_country_definition = yes
+}
+
+D376 = {
+	dynamic_country_definition = yes
+}
+
+D377 = {
+	dynamic_country_definition = yes
+}
+
+D378 = {
+	dynamic_country_definition = yes
+}
+
+D379 = {
+	dynamic_country_definition = yes
+}
+
+D380 = {
+	dynamic_country_definition = yes
+}
+
+D381 = {
+	dynamic_country_definition = yes
+}
+
+D382 = {
+	dynamic_country_definition = yes
+}
+
+D383 = {
+	dynamic_country_definition = yes
+}
+
+D384 = {
+	dynamic_country_definition = yes
+}
+
+D385 = {
+	dynamic_country_definition = yes
+}
+
+D386 = {
+	dynamic_country_definition = yes
+}
+
+D387 = {
+	dynamic_country_definition = yes
+}
+
+D388 = {
+	dynamic_country_definition = yes
+}
+
+D389 = {
+	dynamic_country_definition = yes
+}
+
+D390 = {
+	dynamic_country_definition = yes
+}
+
+D391 = {
+	dynamic_country_definition = yes
+}
+
+D392 = {
+	dynamic_country_definition = yes
+}
+
+D393 = {
+	dynamic_country_definition = yes
+}
+
+D394 = {
+	dynamic_country_definition = yes
+}
+
+D395 = {
+	dynamic_country_definition = yes
+}
+
+D396 = {
+	dynamic_country_definition = yes
+}
+
+D397 = {
+	dynamic_country_definition = yes
+}
+
+D398 = {
+	dynamic_country_definition = yes
+}
+
+D399 = {
+	dynamic_country_definition = yes
+}
+
+D400 = {
+	dynamic_country_definition = yes
+}
+
+D401 = {
+	dynamic_country_definition = yes
+}
+
+D402 = {
+	dynamic_country_definition = yes
+}
+
+D403 = {
+	dynamic_country_definition = yes
+}
+
+D404 = {
+	dynamic_country_definition = yes
+}
+
+D405 = {
+	dynamic_country_definition = yes
+}
+
+D406 = {
+	dynamic_country_definition = yes
+}
+
+D407 = {
+	dynamic_country_definition = yes
+}
+
+D408 = {
+	dynamic_country_definition = yes
+}
+
+D409 = {
+	dynamic_country_definition = yes
+}
+
+D410 = {
+	dynamic_country_definition = yes
+}
+
+D411 = {
+	dynamic_country_definition = yes
+}
+
+D412 = {
+	dynamic_country_definition = yes
+}
+
+D413 = {
+	dynamic_country_definition = yes
+}
+
+D414 = {
+	dynamic_country_definition = yes
+}
+
+D415 = {
+	dynamic_country_definition = yes
+}
+
+D416 = {
+	dynamic_country_definition = yes
+}
+
+D417 = {
+	dynamic_country_definition = yes
+}
+
+D418 = {
+	dynamic_country_definition = yes
+}
+
+D419 = {
+	dynamic_country_definition = yes
+}
+
+D420 = {
+	dynamic_country_definition = yes
+}
+
+D421 = {
+	dynamic_country_definition = yes
+}
+
+D422 = {
+	dynamic_country_definition = yes
+}
+
+D423 = {
+	dynamic_country_definition = yes
+}
+
+D424 = {
+	dynamic_country_definition = yes
+}
+
+D425 = {
+	dynamic_country_definition = yes
+}
+
+D426 = {
+	dynamic_country_definition = yes
+}
+
+D427 = {
+	dynamic_country_definition = yes
+}
+
+D428 = {
+	dynamic_country_definition = yes
+}
+
+D429 = {
+	dynamic_country_definition = yes
+}
+
+D430 = {
+	dynamic_country_definition = yes
+}
+
+D431 = {
+	dynamic_country_definition = yes
+}
+
+D432 = {
+	dynamic_country_definition = yes
+}
+
+D433 = {
+	dynamic_country_definition = yes
+}
+
+D434 = {
+	dynamic_country_definition = yes
+}
+
+D435 = {
+	dynamic_country_definition = yes
+}
+
+D436 = {
+	dynamic_country_definition = yes
+}
+
+D437 = {
+	dynamic_country_definition = yes
+}
+
+D438 = {
+	dynamic_country_definition = yes
+}
+
+D439 = {
+	dynamic_country_definition = yes
+}
+
+D440 = {
+	dynamic_country_definition = yes
+}
+
+D441 = {
+	dynamic_country_definition = yes
+}
+
+D442 = {
+	dynamic_country_definition = yes
+}
+
+D443 = {
+	dynamic_country_definition = yes
+}
+
+D444 = {
+	dynamic_country_definition = yes
+}
+
+D445 = {
+	dynamic_country_definition = yes
+}
+
+D446 = {
+	dynamic_country_definition = yes
+}
+
+D447 = {
+	dynamic_country_definition = yes
+}
+
+D448 = {
+	dynamic_country_definition = yes
+}
+
+D449 = {
+	dynamic_country_definition = yes
+}
+
+D450 = {
+	dynamic_country_definition = yes
+}
+
+D451 = {
+	dynamic_country_definition = yes
+}
+
+D452 = {
+	dynamic_country_definition = yes
+}
+
+D453 = {
+	dynamic_country_definition = yes
+}
+
+D454 = {
+	dynamic_country_definition = yes
+}
+
+D455 = {
+	dynamic_country_definition = yes
+}
+
+D456 = {
+	dynamic_country_definition = yes
+}
+
+D457 = {
+	dynamic_country_definition = yes
+}
+
+D458 = {
+	dynamic_country_definition = yes
+}
+
+D459 = {
+	dynamic_country_definition = yes
+}
+
+D460 = {
+	dynamic_country_definition = yes
+}
+
+D461 = {
+	dynamic_country_definition = yes
+}
+
+D462 = {
+	dynamic_country_definition = yes
+}
+
+D463 = {
+	dynamic_country_definition = yes
+}
+
+D464 = {
+	dynamic_country_definition = yes
+}
+
+D465 = {
+	dynamic_country_definition = yes
+}
+
+D466 = {
+	dynamic_country_definition = yes
+}
+
+D467 = {
+	dynamic_country_definition = yes
+}
+
+D468 = {
+	dynamic_country_definition = yes
+}
+
+D469 = {
+	dynamic_country_definition = yes
+}
+
+D470 = {
+	dynamic_country_definition = yes
+}
+
+D471 = {
+	dynamic_country_definition = yes
+}
+
+D472 = {
+	dynamic_country_definition = yes
+}
+
+D473 = {
+	dynamic_country_definition = yes
+}
+
+D474 = {
+	dynamic_country_definition = yes
+}
+
+D475 = {
+	dynamic_country_definition = yes
+}
+
+D476 = {
+	dynamic_country_definition = yes
+}
+
+D477 = {
+	dynamic_country_definition = yes
+}
+
+D478 = {
+	dynamic_country_definition = yes
+}
+
+D479 = {
+	dynamic_country_definition = yes
+}
+
+D480 = {
+	dynamic_country_definition = yes
+}
+
+D481 = {
+	dynamic_country_definition = yes
+}
+
+D482 = {
+	dynamic_country_definition = yes
+}
+
+D483 = {
+	dynamic_country_definition = yes
+}
+
+D484 = {
+	dynamic_country_definition = yes
+}
+
+D485 = {
+	dynamic_country_definition = yes
+}
+
+D486 = {
+	dynamic_country_definition = yes
+}
+
+D487 = {
+	dynamic_country_definition = yes
+}
+
+D488 = {
+	dynamic_country_definition = yes
+}
+
+D489 = {
+	dynamic_country_definition = yes
+}
+
+D490 = {
+	dynamic_country_definition = yes
+}
+
+D491 = {
+	dynamic_country_definition = yes
+}
+
+D492 = {
+	dynamic_country_definition = yes
+}
+
+D493 = {
+	dynamic_country_definition = yes
+}
+
+D494 = {
+	dynamic_country_definition = yes
+}
+
+D495 = {
+	dynamic_country_definition = yes
+}
+
+D496 = {
+	dynamic_country_definition = yes
+}
+
+D497 = {
+	dynamic_country_definition = yes
+}
+
+D498 = {
+	dynamic_country_definition = yes
+}
+
+D499 = {
+	dynamic_country_definition = yes
+}

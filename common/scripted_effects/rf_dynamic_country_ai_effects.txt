@@ -12,18 +12,26 @@
 #############################################
 
 # Generic expansion pass (one hop)
+# Dynamically expands candidate pool: newly-found neighbors are added to ai_potential_dyn_country_state
+# and marked for ceding, allowing multi-hop expansion even from limited initial pools
 rf_dyn_country_ai_single_pass = {
     # Save the current country scope for reference
     ROOT = { save_scope_as = original_country }
 
     every_scope_state = {
-        limit = { has_variable = dynamic_state_cede }
+        limit = { has_variable = dynamic_state_cede owner = scope:original_country }
 
         every_neighbouring_state = {
             limit = {
-                has_variable = ai_potential_dyn_country_state
                 owner = scope:original_country
+                NOT = { has_variable = dynamic_state_cede }
+                NOT = { is_capital = yes }
+                OR = {
+                    NOT = { is_homeland_of_country_cultures = scope:original_country }
+                    market_access < 0.01
+                }
             }
+            set_variable = ai_potential_dyn_country_state
             set_variable = dynamic_state_cede
         }
     }
@@ -153,20 +161,26 @@ rf_dyn_country_ai_select_culture_for_cluster = {
 }
 
 # Single adjacency expansion pass restricted by selected culture share >= 20% in neighbor state.
+# Also dynamically expands candidate pool with culture filter
 rf_dyn_country_ai_single_pass_culture = {
     # Save the current country scope for reference
     ROOT = { save_scope_as = original_country }
 
     every_scope_state = {
-        limit = { has_variable = dynamic_state_cede }
+        limit = { has_variable = dynamic_state_cede owner = scope:original_country }
 
         every_neighbouring_state = {
             limit = {
-                has_variable = ai_potential_dyn_country_state
                 owner = scope:original_country
+                NOT = { has_variable = dynamic_state_cede }
                 culture_percent_state = { target = scope:rf_dyn_target_culture value >= 0.20 }
+                NOT = { is_capital = yes }
+                OR = {
+                    NOT = { is_homeland_of_country_cultures = scope:original_country }
+                    market_access < 0.01
+                }
             }
-
+            set_variable = ai_potential_dyn_country_state
             set_variable = dynamic_state_cede
         }
     }
@@ -241,6 +255,10 @@ rf_dynamic_country_ai_recognized = {
             limit = {
                 owner = ROOT
                 is_capital = no
+                OR = {
+                    NOT = { is_homeland_of_country_cultures = ROOT }
+                    market_access < 0.01
+                }
 
                 OR = {
                     NOT = { has_modifier = recent_state_owner_change }
@@ -249,12 +267,10 @@ rf_dynamic_country_ai_recognized = {
 
                 OR = {
                     AND = {
-                        is_homeland_of_country_cultures = ROOT
-                        OR = { turmoil > 0.70 market_access < 0.01 }
-                    }
-
-                    AND = {
-                        NOT = { is_homeland_of_country_cultures = ROOT }
+                        OR = {
+                            NOT = { is_homeland_of_country_cultures = ROOT }
+                            market_access < 0.01
+                        }
                         OR = { turmoil > 0.50 market_access < 0.15 }
                     }
                 }
@@ -269,7 +285,11 @@ rf_dynamic_country_ai_recognized = {
 
             # Pick capital among candidates owned by this country
             random_scope_state = {
-                limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+                limit = {
+                    has_variable = ai_potential_dyn_country_state
+                    owner = ROOT
+                    NOT = { is_capital = yes }
+                }
                 save_scope_as = rf_dyn_country_capital
                 set_variable = dynamic_state_cede
                 ROOT = { set_variable = { name = rf_dyn_country_capital_found value = yes } }
@@ -300,6 +320,12 @@ rf_dynamic_country_ai_recognized = {
                 limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
                 remove_variable = ai_potential_dyn_country_state
             }
+
+            # Ensure capital never has dynamic_state_cede
+            every_scope_state = {
+                limit = { is_capital = yes owner = ROOT }
+                remove_variable = dynamic_state_cede
+            }
         }
     }
 
@@ -329,6 +355,10 @@ rf_dynamic_country_ai_unrecognized = {
             limit = {
                 owner = ROOT
                 is_capital = no
+                OR = {
+                    NOT = { is_homeland_of_country_cultures = ROOT }
+                    market_access < 0.01
+                }
 
                 OR = {
                     NOT = { has_modifier = recent_state_owner_change }
@@ -337,12 +367,10 @@ rf_dynamic_country_ai_unrecognized = {
 
                 OR = {
                     AND = {
-                        is_homeland_of_country_cultures = ROOT
-                        OR = { turmoil > 0.70 market_access < 0.01 }
-                    }
-
-                    AND = {
-                        NOT = { is_homeland_of_country_cultures = ROOT }
+                        OR = {
+                            NOT = { is_homeland_of_country_cultures = ROOT }
+                            market_access < 0.01
+                        }
                         OR = { turmoil > 0.50 market_access < 0.15 }
                     }
                 }
@@ -356,9 +384,14 @@ rf_dynamic_country_ai_unrecognized = {
             limit = { any_scope_state = { has_variable = ai_potential_dyn_country_state } }
 
             random_scope_state = {
-                limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
+                limit = {
+                    has_variable = ai_potential_dyn_country_state
+                    owner = ROOT
+                    NOT = { is_capital = yes }
+                }
                 save_scope_as = rf_dyn_country_capital
                 set_variable = dynamic_state_cede
+                ROOT = { set_variable = { name = rf_dyn_country_capital_found value = yes } }
             }
 
             # Randomly decide: single-state (keep only the capital) or run the multi-state expansion
@@ -386,31 +419,46 @@ rf_dynamic_country_ai_unrecognized = {
                 limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
                 remove_variable = ai_potential_dyn_country_state
             }
+
+            # Ensure capital never has dynamic_state_cede
+            every_scope_state = {
+                limit = { is_capital = yes owner = ROOT }
+                remove_variable = dynamic_state_cede
+            }
         }
     }
 
     # Create the dynamic country
-    rf_dynamic_country_create_unrecognized = yes
+    rf_dynamic_country_create = yes
 }
 
-# Effect to create the dynamic country (shared between player and AI)
+# Effect to create the dynamic country (merged for recognized and unrecognized)
 rf_dynamic_country_create = {
+    # Before attempting creation, ensure no 'dynamic_state_cede' marks remain on states not owned by this country
+    every_scope_state = {
+        limit = { has_variable = dynamic_state_cede NOT = { owner = ROOT } }
+        remove_variable = dynamic_state_cede
+    }
+
     # Create dynamic country
     if = {
-            limit = {
-            any_scope_state = { has_variable = dynamic_state_cede }
+        limit = {
+            any_scope_state = { has_variable = dynamic_state_cede owner = ROOT }
             has_variable = rf_dyn_country_capital_found
+            scope:rf_dyn_country_capital = { is_capital = no }
         }
 
         create_dynamic_country = {
             origin = root
+            tier = city_state
             capital = scope:rf_dyn_country_capital
-            tier = principality
             cede_state_trigger = { has_variable = dynamic_state_cede }
 
-            # Normalize identity after creation
             on_created = {
-                save_scope_as = rf_new_dyn_country
+                # Randomly assign one of 51 possible dynamic colors to the new country
+                # This uses the dynamic_country_map_colors entries to set the map color
+                # Save the new country as a named scope, then assign the variable inside that scope
+                rf_assign_dynamic_color = yes
                 every_scope_state = {
                     limit = { has_variable = dynamic_state_cede owner = ROOT }
                     remove_variable = dynamic_state_cede
@@ -424,47 +472,18 @@ rf_dynamic_country_create = {
     hidden_effect = {
         if = {
             limit = { exists = scope:rf_dyn_country_capital.owner }
-            create_diplomatic_pact = {
-                country = scope:rf_dyn_country_capital.owner
-                type = puppet
-            }
-        }
-    }
-}
-
-# Effect to create the dynamic country (unrecognized variant)
-rf_dynamic_country_create_unrecognized = {
-    # Create dynamic country
-    if = {
-            limit = {
-            any_scope_state = { has_variable = dynamic_state_cede }
-            has_variable = rf_dyn_country_capital_found
-        }
-
-        create_dynamic_country = {
-            origin = root
-            tier = principality
-            capital = scope:rf_dyn_country_capital
-            cede_state_trigger = { has_variable = dynamic_state_cede }
-
-            on_created = {
-                save_scope_as = rf_new_dyn_country
-                every_scope_state = {
-                    limit = { has_variable = dynamic_state_cede owner = ROOT }
-                    remove_variable = dynamic_state_cede
+            if = {
+                limit = { is_country_type = recognized }
+                create_diplomatic_pact = {
+                    country = scope:rf_dyn_country_capital.owner
+                    type = puppet
                 }
-
-                rf_assign_dominant_identity = yes
             }
-        }
-    }
-
-    hidden_effect = {
-        if = {
-            limit = { exists = scope:rf_dyn_country_capital.owner }
-            create_diplomatic_pact = {
-                country = scope:rf_dyn_country_capital.owner
-                type = vassal
+            else = {
+                create_diplomatic_pact = {
+                    country = scope:rf_dyn_country_capital.owner
+                    type = vassal
+                }
             }
         }
     }

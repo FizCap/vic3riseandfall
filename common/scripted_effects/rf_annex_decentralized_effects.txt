@@ -5,18 +5,8 @@
             any_scope_state = {
                 any_neighbouring_state = {
                     owner = {
-                        country_type = decentralized
-                        trigger_if = {
-                            limit = { ROOT.num_states = 1 }
-                            num_states = 1
-                        }
-                        trigger_else_if = {
-                            limit = { ROOT.num_states = 2 }
-                            num_states <= 2
-                        }
-                        trigger_else = {
-                            num_states <= 3
-                        }
+                        is_country_type = decentralized
+                        num_states <= 3
                     }
                 }
             }
@@ -29,19 +19,28 @@
                         any_scope_state = {
                             any_neighbouring_state = { owner = scope:annexing_country }
                         }
+                    }
+                    # Check annexing country's state count to determine target
+                    if = {
+                        limit = { scope:annexing_country.num_states = 1 }
                         if = {
-                            limit = { scope:annexing_country.num_states = 1 }
-                            num_states = 1
-                        }
-                        else_if = {
-                            limit = { scope:annexing_country.num_states = 2 }
-                            num_states <= 2
-                        }
-                        else = {
-                            num_states <= 3
+                            limit = { num_states = 1 }
+                            scope:annexing_country = { annex = PREV }
                         }
                     }
-                    scope:annexing_country = { annex = PREV }
+                    else_if = {
+                        limit = { scope:annexing_country.num_states = 2 }
+                        if = {
+                            limit = { num_states <= 2 }
+                            scope:annexing_country = { annex = PREV }
+                        }
+                    }
+                    else = {
+                        if = {
+                            limit = { num_states <= 3 }
+                            scope:annexing_country = { annex = PREV }
+                        }
+                    }
                 }
             }
             80 = {

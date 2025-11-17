@@ -16,24 +16,22 @@
 
     # 2) Fallback: if there are states that do NOT have any admin centre and exceed an employment/unemployment threshold,
     #    pick a single eligible state and build one admin centre there. This ensures we only build one new admin centre in
-    random_state = {
-        limit = {
-            turmoil < 0.25
-            NOT = {
-                any_scope_building = {
-                    is_building_type = building_government_administration
+    # Fallback: pick a single eligible state only if country-wide building levels are low
+    if = {
+        limit = { country_has_building_type_levels = { target = bt:building_government_administration value < 1 } }
+        random_state = {
+            limit = {
+                turmoil < 0.25
+                NOT = {
+                    any_scope_building = {
+                        is_building_type = building_government_administration
+                    }
                 }
+                can_construct_building = building_government_administration
+                owner = ROOT
             }
-            can_construct_building = building_government_administration
-            owner = ROOT
-            # Only trigger fallback if the country has fewer than 1 total levels of government administration
-            # across all states (sum of building levels). Adjust `value` if you want a different threshold.
-            country_has_building_type_levels = {
-                building = building_government_administration
-                value < 1
-            }
+            start_building_construction = building_government_administration
         }
-        start_building_construction = building_government_administration
     }
 }
 
@@ -87,22 +85,21 @@ rf_manual_build_power_plant = {
     }
 
     # Fallback: if the country has no power plants at all, pick a single eligible state and build one there.
-    every_scope_state = {
-        limit = {
-            turmoil < 0.50
-            NOT = {
-                any_scope_building = {
-                    is_building_type = building_power_plant
+    if = {
+        limit = { country_has_building_type_levels = { target = bt:building_power_plant value < 1 } }
+        random_state = {
+            limit = {
+                turmoil < 0.50
+                NOT = {
+                    any_scope_building = {
+                        is_building_type = building_power_plant
+                    }
                 }
+                can_construct_building = building_power_plant
+                owner = ROOT
             }
-            can_construct_building = building_power_plant
-            owner = ROOT
-            country_has_building_type_levels = {
-                building = building_power_plant
-                value < 1
-            }
+            start_building_construction = building_power_plant
         }
-        start_building_construction = building_power_plant
     }
 }
 
@@ -115,13 +112,11 @@ rf_manual_build_construction_sector = {
     if = {
         limit = {
             any_scope_state = {
-                limit = {
-                    turmoil < 0.50
-                    is_coastal = yes
-                    infrastructure_delta > 0
-                    can_construct_building = building_construction_sector
-                    owner = ROOT
-                }
+                turmoil < 0.50
+                is_coastal = yes
+                infrastructure_delta > 0
+                can_construct_building = building_construction_sector
+                owner = ROOT
             }
         }
         random_state = {
@@ -140,11 +135,9 @@ rf_manual_build_construction_sector = {
         if = {
             limit = {
                 any_scope_state = {
-                    limit = {
-                        turmoil < 0.50
-                        can_construct_building = building_construction_sector
-                        owner = ROOT
-                    }
+                    turmoil < 0.50
+                    can_construct_building = building_construction_sector
+                    owner = ROOT
                 }
             }
             random_state = {

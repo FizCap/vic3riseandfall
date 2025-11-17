@@ -37,9 +37,3 @@ ai_improvement3 = {
         rf_ai_building_not_subsidized = yes
     }
 }
-
-rf_homeland_cleanup = {
-    effect = {
-        rf_homeland_cleanup_script = yes
-    }
-}

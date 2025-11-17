@@ -1,4 +1,4 @@
-namespace = personal_union
+﻿namespace = personal_union
 
 personal_union.1 = {
     type = country_event

@@ -46,10 +46,10 @@ rf_button_finalize_dynamic_country = {
 		}
 	}
 
-	effect = {
+		effect = {
 		# PLAYER PATH (manual marking via decree)
-		if = {
-			limit = { is_player = yes }
+			if = {
+				limit = { is_player = yes }
 
 			# Pick a capital among marked states (if any)
 			if = {
@@ -96,42 +96,41 @@ rf_button_finalize_dynamic_country = {
 		rf_dynamic_country_create = yes
 	}
 
-	ai_chance = {
-		value = 0
-		if = {
-			limit = {
-				has_game_rule = ai_improvement_enabled
-				is_at_war = no
-				is_subject = no
-				# (cooldown removed)
-				# Only if there are significant candidate states
-				any_scope_state = {
+			ai_chance = {
+				value = 0
+				if = {
 					limit = {
-						owner = ROOT
-						is_capital = no
-
-						OR = {
-							NOT = { has_modifier = recent_state_owner_change }
-							market_access < 0.01
-						}
-
-						OR = {
-							AND = {
-								is_homeland_of_country_cultures = ROOT
-								OR = { turmoil > 0.70 market_access < 0.01 }
+						has_game_rule = ai_improvement_enabled
+						is_at_war = no
+						is_subject = no
+						any_scope_state = {
+							owner = ROOT
+							is_capital = no
+							OR = {
+								NOT = { has_modifier = recent_state_owner_change }
+								market_access < 0.01
 							}
-
-							AND = {
-								NOT = { is_homeland_of_country_cultures = ROOT }
-								OR = { turmoil > 0.50 market_access < 0.15 }
+							OR = {
+								AND = {
+									is_homeland_of_country_cultures = ROOT
+									OR = {
+										turmoil > 0.70
+										market_access < 0.01
+									}
+								}
+								AND = {
+									NOT = { is_homeland_of_country_cultures = ROOT }
+									OR = {
+										turmoil > 0.50
+										market_access < 0.15
+									}
+								}
 							}
 						}
 					}
+					add = 100
 				}
 			}
-			add = 100
-		}
-	}
 }
 
 ###############################################
@@ -200,42 +199,41 @@ rf_button_finalize_dynamic_country_unrecognized = {
 		rf_dynamic_country_create_unrecognized = yes
 	}
 
-	ai_chance = {
-		value = 0
-		if = {
-			limit = {
-				has_game_rule = ai_improvement_enabled
-				is_at_war = no
-				is_subject = no
-				# (cooldown removed)
-				# Only if there are significant candidate states
-				any_scope_state = {
-					limit = {
+		ai_chance = {
+			value = 0
+			if = {
+				limit = {
+					has_game_rule = ai_improvement_enabled
+					is_at_war = no
+					is_subject = no
+					any_scope_state = {
 						owner = ROOT
 						is_capital = no
-
 						OR = {
 							NOT = { has_modifier = recent_state_owner_change }
 							market_access < 0.01
 						}
-
 						OR = {
 							AND = {
 								is_homeland_of_country_cultures = ROOT
-								OR = { turmoil > 0.70 market_access < 0.01 }
+								OR = {
+									turmoil > 0.70
+									market_access < 0.01
+								}
 							}
-
 							AND = {
 								NOT = { is_homeland_of_country_cultures = ROOT }
-								OR = { turmoil > 0.50 market_access < 0.15 }
+								OR = {
+									turmoil > 0.50
+									market_access < 0.15
+								}
 							}
 						}
 					}
 				}
+				add = 100
 			}
-			add = 100
 		}
-	}
 }
 rf_button_enable_builder = {
 	name = "rf_button_enable_builder"

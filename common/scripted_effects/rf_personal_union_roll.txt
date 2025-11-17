@@ -17,7 +17,6 @@
                     save_scope_as = pu_inheritor_country
                     trigger_event = {
                         id = personal_union.1
-                        country_to_make_subject = scope:pu_target_country
                     }
                 }
             }

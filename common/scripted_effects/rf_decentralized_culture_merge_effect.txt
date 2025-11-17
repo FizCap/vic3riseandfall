@@ -61,26 +61,7 @@
                         }
                     }
                 }
-                if = {
-                    limit = {
-                        any_scope_pop = { culture = cu:mirandese }
-                    }
-                    every_scope_state = {
-                        every_scope_pop = {
-                            limit = { culture = cu:mirandese }
-                            change_pop_culture = { target = cu:portuguese value = 1.0 }
-                        }
-                        if = {
-                            limit = {
-                                any_scope_pop = { culture = cu:portuguese }
-                            }
-                            state_region = {
-                                remove_homeland = cu:mirandese
-                                add_homeland = cu:portuguese
-                            }
-                        }
-                    }
-                }
+                
 
                 # French regional cultures merge into French
                 if = {
@@ -421,10 +402,10 @@
                 # Celtic cultures merge into Irish
                 if = {
                     limit = {
-                        any_scope_pop = { culture = cu:irish }
-                    }
-                    OR = {
-                        any_scope_pop = { culture = cu:breton }
+                        OR = {
+                            any_scope_pop = { culture = cu:irish }
+                            any_scope_pop = { culture = cu:breton }
+                        }
                     }
                     every_scope_state = {
                         every_scope_pop = {
@@ -1326,26 +1307,7 @@
                         }
                     }
                 }
-                if = {
-                    limit = {
-                        any_scope_pop = { culture = cu:unyamwezi }
-                    }
-                    every_scope_state = {
-                        every_scope_pop = {
-                            limit = { culture = cu:unyamwezi }
-                            change_pop_culture = { target = cu:swahili value = 1.0 }
-                        }
-                        if = {
-                            limit = {
-                                any_scope_pop = { culture = cu:swahili }
-                            }
-                            state_region = {
-                                remove_homeland = cu:unyamwezi
-                                add_homeland = cu:swahili
-                            }
-                        }
-                    }
-                }
+                
 
                 # Nilotic cultures merge
                 if = {
@@ -1530,26 +1492,7 @@
                         }
                     }
                 }
-                if = {
-                    limit = {
-                        any_scope_pop = { culture = cu:masalit }
-                    }
-                    every_scope_state = {
-                        every_scope_pop = {
-                            limit = { culture = cu:masalit }
-                            change_pop_culture = { target = cu:sudanese value = 1.0 }
-                        }
-                        if = {
-                            limit = {
-                                any_scope_pop = { culture = cu:sudanese }
-                            }
-                            state_region = {
-                                remove_homeland = cu:masalit
-                                add_homeland = cu:sudanese
-                            }
-                        }
-                    }
-                }
+                
 
                 # Chinese cultures merge into Han
                 if = {
@@ -2169,27 +2112,7 @@
                     }
                 }
 
-				# Arab cultures merge into Bedouin
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:levantine }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:levantine }
-							change_pop_culture = { target = cu:bedouin value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:bedouin }
-							}
-							state_region = {
-								remove_homeland = cu:levantine
-								add_homeland = cu:bedouin
-							}
-						}
-					}
-				}
+                
 				if = {
 					limit = {
 						any_scope_pop = { culture = cu:maghrebi }
@@ -2291,209 +2214,9 @@
 					}
 				}
 
-				# North American cultures merge into Anglo-American
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:french_canadian }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:french_canadian }
-							change_pop_culture = { target = cu:anglo_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:anglo_american }
-							}
-							state_region = {
-								remove_homeland = cu:french_canadian
-								add_homeland = cu:anglo_american
-							}
-						}
-					}
-				}
-				if = {
-				 limit = {
-					 any_scope_pop = { culture = cu:anglo_canadian }
-				 }
-				 every_scope_state = {
-					 every_scope_pop = {
-						 limit = { culture = cu:anglo_canadian }
-						 change_pop_culture = { target = cu:anglo_american value = 1.0 }
-					 }
-					 if = {
-						 limit = {
-							 any_scope_pop = { culture = cu:anglo_american }
-						 }
-						 state_region = {
-							 remove_homeland = cu:anglo_canadian
-							 add_homeland = cu:anglo_american
-						 }
-					 }
-				 }
-				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:dixie }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:dixie }
-						 change_pop_culture = { target = cu:anglo_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:anglo_american }
-							}
-						 state_region = {
-								remove_homeland = cu:dixie
-								add_homeland = cu:anglo_american
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:tejano }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:tejano }
-							change_pop_culture = { target = cu:anglo_american value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:anglo_american }
-							}
-						 state_region = {
-								remove_homeland = cu:tejano
-								add_homeland = cu:anglo_american
-							}
-						}
-					}
-				}
+                
 
-				# South American cultures merge into Spanish Latin American
-			 if = {
-				 limit = {
-					 any_scope_pop = { culture = cu:platinean }
-				 }
-				 every_scope_state = {
-					 every_scope_pop = {
-						 limit = { culture = cu:platinean }
-						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-					 }
-					 if = {
-						 limit = {
-							 any_scope_pop = { culture = cu:spanish_latin_american }
-						 }
-						 state_region = {
-							 remove_homeland = cu:platinean
-							 add_homeland = cu:spanish_latin_american
-						 }
-					 }
-				 }
-			 }
-			 if = {
-				 limit = {
-					 any_scope_pop = { culture = cu:north_andean }
-				 }
-				 every_scope_state = {
-					 every_scope_pop = {
-						 limit = { culture = cu:north_andean }
-						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-					 }
-					 if = {
-						 limit = {
-							 any_scope_pop = { culture = cu:spanish_latin_american }
-						 }
-						 state_region = {
-							 remove_homeland = cu:north_andean
-							 add_homeland = cu:spanish_latin_american
-						 }
-					 }
-				 }
-			 }
-			 if = {
-				 limit = {
-					 any_scope_pop = { culture = cu:south_andean }
-				 }
-				 every_scope_state = {
-					 every_scope_pop = {
-						 limit = { culture = cu:south_andean }
-						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-					 }
-					 if = {
-						 limit = {
-							 any_scope_pop = { culture = cu:spanish_latin_american }
-						 }
-						 state_region = {
-							 remove_homeland = cu:south_andean
-							 add_homeland = cu:spanish_latin_american
-						 }
-					 }
-				 }
-			 }
-			 if = {
-				 limit = {
-					 any_scope_pop = { culture = cu:central_american }
-				 }
-				 every_scope_state = {
-					 every_scope_pop = {
-						 limit = { culture = cu:central_american }
-						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-					 }
-					 if = {
-						 limit = {
-							 any_scope_pop = { culture = cu:spanish_latin_american }
-						 }
-						 state_region = {
-							 remove_homeland = cu:central_american
-							 add_homeland = cu:spanish_latin_american
-						 }
-					 }
-				 }
-			 }
-			 if = {
-				 limit = {
-					 any_scope_pop = { culture = cu:mexican }
-				 }
-				 every_scope_state = {
-					 every_scope_pop = {
-						 limit = { culture = cu:mexican }
-						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-					 }
-					 if = {
-						 limit = {
-							 any_scope_pop = { culture = cu:spanish_latin_american }
-						 }
-						 state_region = {
-							 remove_homeland = cu:mexican
-							 add_homeland = cu:spanish_latin_american
-						 }
-					 }
-				 }
-			 }
-			 if = {
-				 limit = {
-					 any_scope_pop = { culture = cu:caribeno }
-				 }
-				 every_scope_state = {
-					 every_scope_pop = {
-						 limit = { culture = cu:caribeno }
-						 change_pop_culture = { target = cu:spanish_latin_american value = 1.0 }
-					 }
-					 if = {
-						 limit = {
-							 any_scope_pop = { culture = cu:spanish_latin_american }
-						 }
-						 state_region = {
-							 remove_homeland = cu:caribeno
-							 add_homeland = cu:spanish_latin_american
-						 }
-					 }
-				 }
-			 }
+            
 
 				# Portuguese Latin American cultures merge into Brazilian
 				if = {
@@ -2839,27 +2562,7 @@
 					}
 				}
 
-				# South American Native cultures merge into Quechua
-				if = {
-					limit = {
-						any_scope_pop = { culture = cu:aymara }
-					}
-					every_scope_state = {
-						every_scope_pop = {
-							limit = { culture = cu:aymara }
-							change_pop_culture = { target = cu:quechua value = 1.0 }
-						}
-						if = {
-							limit = {
-								any_scope_pop = { culture = cu:quechua }
-							}
-							state_region = {
-								remove_homeland = cu:aymara
-								add_homeland = cu:quechua
-							}
-						}
-					}
-				}
+                
 				if = {
 					limit = {
 						any_scope_pop = { culture = cu:amazonian }

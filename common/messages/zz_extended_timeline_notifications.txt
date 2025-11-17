@@ -1,0 +1,6 @@
+﻿personal_union_notification = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/diplomatic_play.dds"
+
+	notification_type = feed
+}

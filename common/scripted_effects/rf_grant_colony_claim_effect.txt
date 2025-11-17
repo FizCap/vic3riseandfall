@@ -5,11 +5,14 @@
             is_under_colonization = yes
         }
         owner = { save_scope_as = colonizer }
-        state_region = {
-            if = {
-                limit = {
-                    NOT = { has_claim_by = scope:colonizer }
+        state_region = { save_scope_as = target_region }
+        if = {
+            limit = {
+                scope:colonizer = {
+                    NOT = { has_claim = scope:target_region }
                 }
+            }
+            scope:target_region = {
                 add_claim = scope:colonizer
             }
         }

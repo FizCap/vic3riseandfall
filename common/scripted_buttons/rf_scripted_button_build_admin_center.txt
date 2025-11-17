@@ -11,8 +11,10 @@
     }
 
     possible = {
+        any_scope_state = {
             can_construct_building = building_government_administration
         }
+    }
 
     ai_chance = {
         value = 0
@@ -21,13 +23,7 @@
                 has_game_rule = ai_improvement_enabled
                 gold_reserves > 10000
                 bureaucracy < 0
-                NOT = {
-                    any_scope_state = {
-                        b:building_government_administration ?= {
-                            is_under_construction = yes
-                        }
-                    }
-                }
+                NOT = { any_scope_state = { any_scope_building = { is_building_type = building_government_administration is_under_construction = yes } } }
             }
             add = 100
         }
@@ -57,15 +53,8 @@ rf_scripted_button_build_railway = {
             limit = {
                 has_game_rule = ai_improvement_enabled
                 gold_reserves > rf_autobuild_reserve_limit
-                any_scope_state = { delta_infrastructure < 0 }
                 bureaucracy > 0
-                NOT = {
-                    any_scope_state = {
-                        b:building_railway ?= {
-                            is_under_construction = yes
-                        }
-                    }
-                }
+                NOT = { any_scope_state = { any_scope_building = { is_building_type = building_railway is_under_construction = yes } } }
             }
             add = 100
         }
@@ -85,7 +74,9 @@ rf_scripted_button_build_port = {
     }
 
     possible = {
-            can_construct_building = building_port
+            any_scope_state = {
+                can_construct_building = building_port
+            }
         }
 
     ai_chance = {
@@ -94,15 +85,11 @@ rf_scripted_button_build_port = {
             limit = {
                 has_game_rule = ai_improvement_enabled
                 gold_reserves > rf_autobuild_reserve_limit
-                any_scope_state = { delta_infrastructure < 0 }
                 bureaucracy > 0
-                NOT = {
-                    any_scope_state = {
-                        b:building_port ?= {
-                            is_under_construction = yes
-                        }
-                    }
-                }
+                NOT = { any_scope_state = { any_scope_building = {
+                    is_building_type = building_port
+                    is_under_construction = yes
+                } } }
             }
             add = 100
         }
@@ -256,7 +243,9 @@ rf_scripted_button_build_construction_sector = {
     visible = { always = yes }
 
     possible = {
-        can_construct_building = building_construction_sector
+        any_scope_state = {
+            can_construct_building = building_construction_sector
+        }
     }
 
     ai_chance = {
@@ -264,17 +253,12 @@ rf_scripted_button_build_construction_sector = {
         if = {
             limit = {
                 has_game_rule = ai_improvement_enabled
-                NOT = {
-                    any_scope_state = {
-                        b:building_construction_sector ?= {
-                            is_under_construction = yes
-                        }
-                    }
-                }
-                AND = {
-                    has_wasted_construction = no
-                    investment_pool_net_income > 1
-                }
+                NOT = { any_scope_state = { any_scope_building = {
+                    is_building_type = building_construction_sector
+                    is_under_construction = yes
+                } } }
+                has_wasted_construction = no
+                investment_pool_net_income > 1
             }
             add = 100
         }

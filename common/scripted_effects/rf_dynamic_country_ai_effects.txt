@@ -96,10 +96,11 @@ rf_dyn_country_ai_select_culture_for_cluster = {
             }
         }
         save_scope_as = rf_dyn_target_culture
+        ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
     }
 
     if = {
-        limit = { NOT = { scope:rf_dyn_target_culture = { exists = yes } } }
+        limit = { NOT = { has_variable = rf_dyn_target_culture_found } }
         random_scope_culture = {
             limit = {
                 scope:rf_dyn_country_capital = {
@@ -107,11 +108,12 @@ rf_dyn_country_ai_select_culture_for_cluster = {
                 }
             }
             save_scope_as = rf_dyn_target_culture
+                ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
         }
     }
 
     if = {
-        limit = { NOT = { scope:rf_dyn_target_culture = { exists = yes } } }
+        limit = { NOT = { has_variable = rf_dyn_target_culture_found } }
         random_scope_culture = {
             limit = {
                 scope:rf_dyn_country_capital = {
@@ -119,11 +121,12 @@ rf_dyn_country_ai_select_culture_for_cluster = {
                 }
             }
             save_scope_as = rf_dyn_target_culture
+                ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
         }
     }
 
     if = {
-        limit = { NOT = { scope:rf_dyn_target_culture = { exists = yes } } }
+        limit = { NOT = { has_variable = rf_dyn_target_culture_found } }
         random_scope_culture = {
             limit = {
                 scope:rf_dyn_country_capital = {
@@ -131,11 +134,12 @@ rf_dyn_country_ai_select_culture_for_cluster = {
                 }
             }
             save_scope_as = rf_dyn_target_culture
+                ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
         }
     }
 
     if = {
-        limit = { NOT = { scope:rf_dyn_target_culture = { exists = yes } } }
+        limit = { NOT = { has_variable = rf_dyn_target_culture_found } }
         random_scope_culture = {
             limit = {
                 scope:rf_dyn_country_capital = {
@@ -143,6 +147,7 @@ rf_dyn_country_ai_select_culture_for_cluster = {
                 }
             }
             save_scope_as = rf_dyn_target_culture
+                ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
         }
     }
 }
@@ -267,6 +272,7 @@ rf_dynamic_country_ai_recognized = {
                 limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
                 save_scope_as = rf_dyn_country_capital
                 set_variable = dynamic_state_cede
+                ROOT = { set_variable = { name = rf_dyn_country_capital_found value = yes } }
             }
 
             # Randomly decide: single-state (keep only the capital) or run the multi-state expansion
@@ -280,7 +286,7 @@ rf_dynamic_country_ai_recognized = {
                     rf_dyn_country_ai_select_culture_for_cluster = yes
 
                     if = {
-                        limit = { scope:rf_dyn_target_culture = { exists = yes } }
+                        limit = { has_variable = rf_dyn_target_culture_found }
                         rf_dynamic_country_ai_expand_recognized_culture = yes
                     }
                     else = {
@@ -366,7 +372,7 @@ rf_dynamic_country_ai_unrecognized = {
                     rf_dyn_country_ai_select_culture_for_cluster = yes
 
                     if = {
-                        limit = { scope:rf_dyn_target_culture = { exists = yes } }
+                        limit = { has_variable = rf_dyn_target_culture_found }
                         rf_dynamic_country_ai_expand_unrecognized_culture = yes
                     }
                     else = {
@@ -391,9 +397,9 @@ rf_dynamic_country_ai_unrecognized = {
 rf_dynamic_country_create = {
     # Create dynamic country
     if = {
-        limit = {
+            limit = {
             any_scope_state = { has_variable = dynamic_state_cede }
-            scope:rf_dyn_country_capital = { exists = yes }
+            has_variable = rf_dyn_country_capital_found
         }
 
         create_dynamic_country = {
@@ -430,9 +436,9 @@ rf_dynamic_country_create = {
 rf_dynamic_country_create_unrecognized = {
     # Create dynamic country
     if = {
-        limit = {
+            limit = {
             any_scope_state = { has_variable = dynamic_state_cede }
-            scope:rf_dyn_country_capital = { exists = yes }
+            has_variable = rf_dyn_country_capital_found
         }
 
         create_dynamic_country = {

@@ -2,7 +2,7 @@
     if = {
         # Use reserve/income ratio for dynamic scaling
         if = {
-            limit = { NOT = { has_modifier = rf_budget_cooldown } }
+            limit = { NOT = { has_variable = rf_budget_cooldown } }
             if = {
                 limit = { rf_reserve_income_ratio > 100 }
                 set_government_wage_level = very_low
@@ -43,7 +43,7 @@
                 bureaucracy < -10
                 NOT = { has_modifier = rf_negative_bureaucracy }
             }
-            add_modifier = { name = rf_negative_bureaucracy days = 365 hidden = yes }
+            add_modifier = { name = rf_negative_bureaucracy days = 365 }
         }
     }
 }

@@ -1,0 +1,57 @@
+culture_merging = {
+    default = culture_merging_disabled
+
+    culture_merging_disabled = {    }
+
+    culture_merging_enabled = {
+        flag = culture_merging_enabled
+    }
+}
+
+rf_annex_decentralized_annexation = {
+    default = annexation_disabled
+
+    annexation_unlimited = {
+        flag = rf_annex_decentralized_unlimited
+    }
+
+    annexation_limited = {
+        flag = rf_annex_decentralized_limited
+    }
+
+    annexation_disabled = {
+    }
+}
+
+ai_improvement = {
+    default = ai_improvement_enabled
+
+    ai_improvement_enabled = {
+        flag = ai_improvement_enabled
+    }
+
+    ai_improvement_disabled = {
+    }
+}
+
+rf_random_character_death = {
+    default = death_enabled
+
+    death_enabled = {
+        flag = rf_random_character_death_enabled
+    }
+
+    death_disabled = {
+    }
+}
+
+rf_colony_grant_claim = {
+    default = colony_grant_claim_enabled
+
+    colony_grant_claim_enabled = {
+        flag = rf_colony_grant_claim_enabled
+    }
+
+    colony_grant_claim_disabled = {
+    }
+}

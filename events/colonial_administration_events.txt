@@ -1,4 +1,4 @@
-﻿namespace = colonial_administration_events
+namespace = colonial_administration_events
 
 colonial_administration_events.1 = {
 	type = country_event
@@ -17,7 +17,7 @@ colonial_administration_events.1 = {
 	icon = "gfx/interface/icons/event_icons/event_map.dds"
 
 	duration = 3
-	
+
 	cooldown = { months = 3 }
 
 	trigger = {
@@ -321,7 +321,7 @@ colonial_administration_events.2 = {
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 
 	duration = 3
-	
+
 	cooldown = { days = long_modifier_time }
 
 	trigger = {
@@ -403,4 +403,3 @@ colonial_administration_events.2 = {
 		}
 	}
 }
-

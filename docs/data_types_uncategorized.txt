@@ -69961,7 +69961,7 @@ Return type: [unregistered]
 -----------------------
 
 WarPanel.GetAttackersAvailableBattalionsRaw
-Description: Gets the total number of Battalions currently available on the Attacker's (Initiator's) side 
+Description: Gets the total number of Battalions currently available on the Attacker's (Initiator's) side
 Definition type: Function
 Return type: int32
 
@@ -69975,7 +69975,7 @@ Return type: int64
 -----------------------
 
 WarPanel.GetAttackersFlotillasRaw
-Description: Gets the total number of Flotillas on the Attacker's (Initiator's) side 
+Description: Gets the total number of Flotillas on the Attacker's (Initiator's) side
 Definition type: Function
 Return type: int32
 
@@ -69989,7 +69989,7 @@ Return type: CFixedPoint
 -----------------------
 
 WarPanel.GetAttackersMobilizedBattalionsRaw
-Description: Gets the total number of (Fully) Mobilized Battalions on the Attacker's (Initiator's) side 
+Description: Gets the total number of (Fully) Mobilized Battalions on the Attacker's (Initiator's) side
 Definition type: Function
 Return type: int32
 
@@ -70017,7 +70017,7 @@ Return type: int64
 -----------------------
 
 WarPanel.GetDefendersAvailableBattalionsRaw
-Description: Gets the total number of Battalions currently available on the Defender's (Target's) side 
+Description: Gets the total number of Battalions currently available on the Defender's (Target's) side
 Definition type: Function
 Return type: int32
 
@@ -70031,7 +70031,7 @@ Return type: int64
 -----------------------
 
 WarPanel.GetDefendersFlotillasRaw
-Description: Gets the total number of Flotillas on the Defender's (Target's) side 
+Description: Gets the total number of Flotillas on the Defender's (Target's) side
 Definition type: Function
 Return type: int32
 
@@ -70045,7 +70045,7 @@ Return type: CFixedPoint
 -----------------------
 
 WarPanel.GetDefendersMobilizedBattalionsRaw
-Description: Gets the total number of (Fully) Mobilized Battalions on the Defender's (Target's) side 
+Description: Gets the total number of (Fully) Mobilized Battalions on the Defender's (Target's) side
 Definition type: Function
 Return type: int32
 
@@ -70073,7 +70073,7 @@ Return type: int64
 -----------------------
 
 WarPanel.GetLeftAvailableBattalionsRaw
-Description: Gets the total number of Battalions currently available on the Left panel side 
+Description: Gets the total number of Battalions currently available on the Left panel side
 Definition type: Function
 Return type: int32
 
@@ -70120,7 +70120,7 @@ Return type: CString
 -----------------------
 
 WarPanel.GetLeftFlotillasRaw
-Description: Gets the total number of Flotillas on the Left panel side 
+Description: Gets the total number of Flotillas on the Left panel side
 Definition type: Function
 Return type: int32
 
@@ -70140,7 +70140,7 @@ Return type: CFixedPoint
 -----------------------
 
 WarPanel.GetLeftMobilizedBattalionsRaw
-Description: Gets the total number of (Fully) Mobilized Battalions on the Left panel side 
+Description: Gets the total number of (Fully) Mobilized Battalions on the Left panel side
 Definition type: Function
 Return type: int32
 
@@ -70174,7 +70174,7 @@ Return type: int64
 -----------------------
 
 WarPanel.GetRightAvailableBattalionsRaw
-Description: Gets the total number of Battalions currently available on the Right panel side 
+Description: Gets the total number of Battalions currently available on the Right panel side
 Definition type: Function
 Return type: int32
 
@@ -70221,7 +70221,7 @@ Return type: CString
 -----------------------
 
 WarPanel.GetRightFlotillasRaw
-Description: Gets the total number of Flotillas on the Right panel side 
+Description: Gets the total number of Flotillas on the Right panel side
 Definition type: Function
 Return type: int32
 
@@ -70241,7 +70241,7 @@ Return type: CFixedPoint
 -----------------------
 
 WarPanel.GetRightMobilizedBattalionsRaw
-Description: Gets the total number of (Fully) Mobilized Battalions on the Right panel side 
+Description: Gets the total number of (Fully) Mobilized Battalions on the Right panel side
 Definition type: Function
 Return type: int32
 
@@ -70548,4 +70548,3 @@ Definition type: Function
 Return type: void
 
 -----------------------
-

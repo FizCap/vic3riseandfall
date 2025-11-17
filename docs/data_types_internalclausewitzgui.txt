@@ -8456,7 +8456,7 @@ Return type: void
 -----------------------
 
 NudgerMapObjectPropertyListDockable
-Description: Map Editor - Map Object 
+Description: Map Editor - Map Object
 Definition type: Type
 
 -----------------------
@@ -8696,7 +8696,7 @@ Return type: void
 -----------------------
 
 ObjectBrowserView
-Description: Object Explorer - View 
+Description: Object Explorer - View
 Definition type: Type
 
 -----------------------
@@ -17301,4 +17301,3 @@ Definition type: Function
 Return type: [unregistered]
 
 -----------------------
-

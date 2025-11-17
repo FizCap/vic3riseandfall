@@ -1,0 +1,23 @@
+on_character_death = {
+    on_actions = {
+        rf_personal_union_on_character_death
+    }
+}
+
+rf_personal_union_on_character_death = {
+    trigger = {
+        is_ruler = yes #order of triggers helps a bit with performance; if this is first, it won't check the owner's laws for non-ruler character deaths
+        owner = {
+            NOT = { is_country_type = decentralized }
+            NOT = { has_variable = newly_formed_country }
+            has_law = law_type:law_monarchy
+            NOT = { is_subject_type = subject_type_personal_union }
+            NOT = { any_scope_character = { is_heir = yes is_character_alive = yes } }
+        }
+    }
+    effect = {
+        owner = {
+            rf_personal_union_roll = yes
+        }
+    }
+}

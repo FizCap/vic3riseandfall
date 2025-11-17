@@ -1,0 +1,20 @@
+# Maintain and expire colony claims after a trial period.
+# - If a country has a claim on a state and the state is not being colonized or
+#   the country is not at war with the owner, then the claim should expire
+#   after 10 years.
+# - While the country is actively colonizing the state or at war with the owner
+#   we refresh a 10-year variable to keep the claim.
+
+on_yearly_pulse_country = {
+  on_actions = {
+    rf_manage_claims
+  }
+}
+
+on_claim_added = {
+  on_actions = {
+    rf_claim_added
+  }
+}
+
+# --- Event Definitions ---

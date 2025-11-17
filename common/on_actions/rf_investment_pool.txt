@@ -1,0 +1,60 @@
+on_monthly_pulse_country = {
+	on_actions = {
+		rf_investment_pool_monthly
+		rf_admin_center_framework_monthly
+	}
+}
+
+rf_investment_pool_monthly = {
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_journal_entry = rf_treasury_investment_pool_transfer }
+				OR = {
+					investment_pool > 0
+					gold_reserves > 0
+				}
+			}
+			add_journal_entry = { type = rf_treasury_investment_pool_transfer }
+		}
+
+		# Unique auto-transfer logic: keep 20% of gold reserves, move rest to investment pool
+		if = {
+			limit = {
+				has_variable = rf_auto_transfer_var
+				gold_reserves > 0
+			}
+			# If above reserve, move surplus using script values
+			if = {
+				limit = { rf_surplus_gold > 0 }
+				add_investment_pool = rf_surplus_gold
+				add_treasury = rf_surplus_gold_neg
+			}
+		}
+	}
+}
+
+rf_admin_center_framework_monthly = {
+	effect = {
+		if = {
+			limit = {
+				NOT = { has_journal_entry = rf_autobuild }
+			}
+			add_journal_entry = { type = rf_autobuild }
+		}
+
+		# Auto build logic if enabled
+		if = {
+			limit = { has_variable = rf_auto_build_admin_enabled }
+			rf_ai_auto_build_government_administration = yes
+		}
+		if = {
+			limit = { has_variable = rf_auto_build_railway_enabled }
+			rf_ai_auto_build_railway = yes
+		}
+		if = {
+			limit = { has_variable = rf_auto_build_port_enabled }
+			rf_ai_auto_build_port = yes
+		}
+	}
+}

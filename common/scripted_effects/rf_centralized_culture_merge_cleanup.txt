@@ -1,0 +1,59 @@
+rf_centralized_culture_merge_cleanup = {
+    every_country = {
+        save_scope_as = rf_country
+
+        every_primary_culture = {
+            save_scope_as = rf_old_primary
+            scope:rf_country = {
+            remove_primary_culture = scope:rf_old_primary
+                set_variable = { name = rf_removed_primary value = yes days = 1 }
+            }
+        }
+
+        capital = { save_scope_as = rf_country_capital }
+
+        scope:rf_country_capital = {
+            every_scope_culture = {
+                save_scope_as = rf_capital_culture
+                if = {
+                    limit = {
+                        scope:rf_country_capital = { culture_percent_state = { target = scope:rf_capital_culture value >= 0.10 } }
+                    }
+                    scope:rf_country = { add_primary_culture = scope:rf_capital_culture }
+                }
+            }
+        }
+        limit = { NOT = { has_variable = primary_culture_changed } }
+        scope:rf_country = { set_variable = { name = primary_culture_changed value = yes } }
+    }
+}
+
+rf_decentralized_culture_merge_cleanup = {
+    every_decentralized_country = {
+        save_scope_as = rf_country
+
+        every_primary_culture = {
+            save_scope_as = rf_old_primary
+            scope:rf_country = {
+            remove_primary_culture = scope:rf_old_primary
+                set_variable = { name = rf_removed_primary value = yes days = 1 }
+            }
+        }
+
+        capital = { save_scope_as = rf_country_capital }
+
+        scope:rf_country_capital = {
+            every_scope_culture = {
+                save_scope_as = rf_capital_culture
+                if = {
+                    limit = {
+                        scope:rf_country_capital = { culture_percent_state = { target = scope:rf_capital_culture value >= 0.10 } }
+                    }
+                    scope:rf_country = { add_primary_culture = scope:rf_capital_culture }
+                }
+            }
+        }
+        limit = { NOT = { has_variable = primary_culture_changed } }
+        scope:rf_country = { set_variable = { name = primary_culture_changed value = yes } }
+    }
+}

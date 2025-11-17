@@ -1,0 +1,19 @@
+rf_reserve_income_ratio = {
+    if = {
+        limit = { income > expenses }
+        value = gold_reserves_limit
+        divide = {
+            value = income
+            subtract = expenses
+        }
+    }
+    else = {
+        value = 1000
+    }
+}
+
+rf_autobuild_reserve_limit = {
+    # Reserve limit for autobuilding: 45% of gold_reserves_limit
+    value = gold_reserves_limit
+    multiply = 0.45
+}

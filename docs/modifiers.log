@@ -205,7 +205,7 @@ character_health_add:
 character_interception_add:
   Mask: character
   Name: Admiral Interception Chance
-  Description: The chance the Admiral’s Fleet has at intercepting Fleets every quarter of a day
+  Description: The chance the Admiralâ€™s Fleet has at intercepting Fleets every quarter of a day
 character_popularity_add:
   Mask: character
   Name: Popularity
@@ -221,19 +221,19 @@ country_acceptance_homeland_add:
 country_acceptance_no_shared_heritage_trait_add:
   Mask: country
   Name: Acceptance from no shared Heritage Traits
-  Description: The amount of Acceptance a Pop is subject to if their Culture does not share a Heritage Trait with (one of) their Country’s Primary Cultures
+  Description: The amount of Acceptance a Pop is subject to if their Culture does not share a Heritage Trait with (one of) their Countryâ€™s Primary Cultures
 country_acceptance_no_shared_language_trait_add:
   Mask: country
   Name: Acceptance from no shared Language Traits
-  Description: The amount of Acceptance a Pop is subject to if their Culture does not share a Language Trait with (one of) their Country’s Primary Cultures
+  Description: The amount of Acceptance a Pop is subject to if their Culture does not share a Language Trait with (one of) their Countryâ€™s Primary Cultures
 country_acceptance_no_shared_religious_trait_add:
   Mask: country
   Name: Acceptance from no shared Religious Traits
-  Description: The amount of Acceptance a Pop is subject to if their Religion does not share a Trait Group with their Country’s State Religion
+  Description: The amount of Acceptance a Pop is subject to if their Religion does not share a Trait Group with their Countryâ€™s State Religion
 country_acceptance_no_shared_tradition_trait_add:
   Mask: country
   Name: Acceptance from no shared Tradition Traits
-  Description: The amount of Acceptance a Pop is subject to if their Culture does not share a Tradition Trait with (one of) their Country’s Primary Cultures
+  Description: The amount of Acceptance a Pop is subject to if their Culture does not share a Tradition Trait with (one of) their Countryâ€™s Primary Cultures
 country_acceptance_not_homeland_add:
   Mask: country
   Name: Acceptance from not Homeland
@@ -245,31 +245,31 @@ country_acceptance_primary_culture_add:
 country_acceptance_shared_heritage_trait_add:
   Mask: country
   Name: Acceptance from Heritage Trait
-  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Heritage Trait with (one of) their Country’s Primary Cultures
+  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Heritage Trait with (one of) their Countryâ€™s Primary Cultures
 country_acceptance_shared_heritage_trait_group_add:
   Mask: country
   Name: Acceptance from Heritage Trait Group
-  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Heritage Trait Group with (one of) their Country’s Primary Cultures
+  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Heritage Trait Group with (one of) their Countryâ€™s Primary Cultures
 country_acceptance_shared_language_trait_add:
   Mask: country
   Name: Acceptance from Language Trait
-  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Language Trait with (one of) their Country’s Primary Cultures
+  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Language Trait with (one of) their Countryâ€™s Primary Cultures
 country_acceptance_shared_language_trait_group_add:
   Mask: country
   Name: Acceptance from Language Trait Group
-  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Language Trait Group with (one of) their Country’s Primary Cultures
+  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Language Trait Group with (one of) their Countryâ€™s Primary Cultures
 country_acceptance_shared_religious_trait_add:
   Mask: country
   Name: Acceptance from Religious Traits
-  Description: The amount of Acceptance a Pop is subject to if their Religion shares a Religious Trait with their Country’s State Religion
+  Description: The amount of Acceptance a Pop is subject to if their Religion shares a Religious Trait with their Countryâ€™s State Religion
 country_acceptance_shared_religious_trait_group_add:
   Mask: country
   Name: Acceptance from Religious Trait Groups
-  Description: The amount of Acceptance a Pop is subject to if their Religion shares a Trait Group with their Country’s State Religion
+  Description: The amount of Acceptance a Pop is subject to if their Religion shares a Trait Group with their Countryâ€™s State Religion
 country_acceptance_shared_tradition_trait_add:
   Mask: country
   Name: Acceptance from Tradition Trait
-  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Tradition Trait with (one of) their Country’s Primary Cultures
+  Description: The amount of Acceptance a Pop is subject to if their Culture shares a Tradition Trait with (one of) their Countryâ€™s Primary Cultures
 country_acceptance_state_religion_add:
   Mask: country
   Name: Acceptance from State Religion
@@ -300,16 +300,16 @@ country_assimilation_delta_threshold_add:
   Description: A bonus or penalty to the threshold for Assimilation in this Country
 country_authority_add:
   Mask: country
-  Name: aut! Authority
-  Description: How much aut! Authority is gained or the country has
+  Name: aut!Â Authority
+  Description: How much aut!Â Authority is gained or the country has
 country_authority_mult:
   Mask: country
-  Name: aut! Authority
-  Description: The amount of aut! Authority is modified up or down
+  Name: aut!Â Authority
+  Description: The amount of aut!Â Authority is modified up or down
 country_authority_per_subject_add:
   Mask: country
-  Name: aut! Authority per Subject
-  Description: The amount of aut! Authority which is scaled by the number of Subjects
+  Name: aut!Â Authority per Subject
+  Description: The amount of aut!Â Authority which is scaled by the number of Subjects
 country_base_law_enactment_support_add:
   Mask: country
   Name: country_base_law_enactment_support_add
@@ -332,16 +332,16 @@ country_bpm_can_not_promise_laws_bool:
   Description: country_bpm_can_not_promise_laws_bool_desc
 country_bureaucracy_add:
   Mask: country
-  Name: bur! Bureaucracy
-  Description: How much bur! Bureaucracy the country has
+  Name: bur!Â Bureaucracy
+  Description: How much bur!Â Bureaucracy the country has
 country_bureaucracy_investment_cost_factor_mult:
   Mask: country
-  Name: bur! Bureaucracy Institution Cost Multiplier
+  Name: bur!Â Bureaucracy Institution Cost Multiplier
   Description: An increase or reduction to the Bureaucracy cost of bringing a Institution Investment to the citizens
 country_bureaucracy_mult:
   Mask: country
-  Name: bur! Bureaucracy
-  Description: The amount of bur! Bureaucracy is modified up or down
+  Name: bur!Â Bureaucracy
+  Description: The amount of bur!Â Bureaucracy is modified up or down
 country_can_form_construction_company_bool:
   Mask: country
   Name: Can form Construction type Companies
@@ -376,7 +376,7 @@ country_company_throughput_bonus_add:
   Description: An increase or decrease to the Throughput added by Companies to their associated Buildings
 country_construction_add:
   Mask: country
-  Name: construction! Construction
+  Name: construction!Â Construction
   Description: The amount of construction! Construction produced by a Construction Sector
 country_construction_goods_cost_mult:
   Mask: country
@@ -392,22 +392,22 @@ country_conversion_delta_threshold_add:
   Description: A bonus or penalty to the threshold for Conversion in this Country
 country_convoy_contribution_to_market_owner_add:
   Mask: country
-  Name: convoys! Convoys Contribution to Market Owner
-  Description: The percentage of convoys! Convoys a member of a Customs Union must contribute to the Market Owner
+  Name: convoys!Â Convoys Contribution to Market Owner
+  Description: The percentage of convoys!Â Convoys a member of a Customs Union must contribute to the Market Owner
 country_convoy_damage_taken_mult:
   Mask: country
   Name: Damage to Convoys
-  Description: A bonus or penalty to how much damage the Country’s Convoys suffer from Convoy Raiding
+  Description: A bonus or penalty to how much damage the Countryâ€™s Convoys suffer from Convoy Raiding
 country_convoys_capacity_add:
   Mask: country
   Name: convoys! Convoys
-  Description: Convoys are produced by Port Buildings and are required to operate a Countries’ Shipping Lanes.
+  Description: Convoys are produced by Port Buildings and are required to operate a Countriesâ€™ Shipping Lanes.
 
 Convoy Cost is incurred by the Country unlike Merchant Marine which is utilized by Trade Center Buildings to conduct Trade on the World Market.
 country_convoys_capacity_mult:
   Mask: country
   Name: convoys! Convoys
-  Description: Convoys are produced by Port Buildings and are required to operate a Countries’ Shipping Lanes.
+  Description: Convoys are produced by Port Buildings and are required to operate a Countriesâ€™ Shipping Lanes.
 
 Convoy Cost is incurred by the Country unlike Merchant Marine which is utilized by Trade Center Buildings to conduct Trade on the World Market.
 country_damage_relations_speed_mult:
@@ -481,7 +481,7 @@ country_foreign_collectivization_bool:
 country_frankenstein_company_bool:
   Mask: country
   Name: Experimental Modules Operational
-  Description: Strange tidings have been reported from the Ingolstadt Electrical Factories. Large, humming machines – whose purpose no-one seem willing to elaborate on – work at full capacity late into the night.
+  Description: Strange tidings have been reported from the Ingolstadt Electrical Factories. Large, humming machines â€“ whose purpose no-one seem willing to elaborate on â€“ work at full capacity late into the night.
 country_free_charters_add:
   Mask: country
   Name: Free Company Charters
@@ -540,12 +540,12 @@ country_infamy_generation_mult:
   Description: An increase or decrease in the amount of Infamy generated by  Diplomatic Incidents.
 country_influence_add:
   Mask: country
-  Name: inf! Influence
-  Description: How much inf! Influence the country has
+  Name: inf!Â Influence
+  Description: How much inf!Â Influence the country has
 country_influence_mult:
   Mask: country
-  Name: inf! Influence
-  Description: The amount of inf! Influence is modified up or down
+  Name: inf!Â Influence
+  Description: The amount of inf!Â Influence is modified up or down
 country_initiator_war_goal_maneuver_cost_mult:
   Mask: country
   Name: War Goal Maneuver cost for the Diplomatic Play Initiator
@@ -625,11 +625,11 @@ country_legitimacy_min_add:
 country_leverage_generation_add:
   Mask: country
   Name: Leverage Generation
-  Description: An increase or decrease to the amount of Leverage the Country’s Power Bloc generates in other Countries while they are the Power Bloc Leader
+  Description: An increase or decrease to the amount of Leverage the Countryâ€™s Power Bloc generates in other Countries while they are the Power Bloc Leader
 country_leverage_generation_mult:
   Mask: country
   Name: Leverage Generation
-  Description: An increase or decrease to the amount of Leverage the Country’s Power Bloc generates in other Countries while they are the Power Bloc Leader
+  Description: An increase or decrease to the amount of Leverage the Countryâ€™s Power Bloc generates in other Countries while they are the Power Bloc Leader
 country_leverage_resistance_add:
   Mask: country
   Name: Leverage Resistance
@@ -689,7 +689,7 @@ country_max_declared_interests_mult:
 country_max_weekly_construction_progress_add:
   Mask: country
   Name: Max Weekly Construction Progress
-  Description: The maximum amount of construction! Construction that a project can progress in a single week.
+  Description: The maximum amount of construction!Â Construction that a project can progress in a single week.
 country_migration_restrictiveness_add:
   Mask: country
   Name: Migration Restrictiveness
@@ -748,8 +748,8 @@ country_party_whip_impact_add:
   Description: A bonus or penalty to the effect that Party Whip has on the Ideological opinion of the rest of the Party members
 country_port_connection_cost_mult:
   Mask: country
-  Name: convoys! Convoys Cost of Port Connections
-  Description: An increase or decrease to the number of convoys! Convoys required to maintain Port Connections
+  Name: convoys!Â Convoys Cost of Port Connections
+  Description: An increase or decrease to the number of convoys!Â Convoys required to maintain Port Connections
 country_prestige_add:
   Mask: country
   Name: Prestige
@@ -832,8 +832,8 @@ country_subject_income_transfer_mult:
   Description: An increase or decrease to the amount of Money the subject must give to their overlord
 country_support_independence_weekly_liberty_desire_add:
   Mask: country
-  Name: support_independence_text_icon! Support Independence weekly Liberty Desire
-  Description: An increase or reduction to the weekly Liberty Desire of Countries that this country supports the independence of through support_independence_text_icon! Support Independence
+  Name: support_independence_text_icon!Â Support Independence weekly Liberty Desire
+  Description: An increase or reduction to the weekly Liberty Desire of Countries that this country supports the independence of through support_independence_text_icon!Â Support Independence
 country_support_separatism_resistance_mult:
   Mask: country
   Name: Support Separatism Resistance
@@ -905,17 +905,17 @@ country_war_exhaustion_casualties_mult:
 country_weekly_innovation_add:
   Mask: country
   Name: Innovation
-  Description: The amount of innovation! Innovation gained or lost each week
+  Description: The amount of innovation!Â Innovation gained or lost each week
 country_weekly_innovation_max_add:
   Mask: country
   Name: Maximum Innovation Investment
-  Description: The maximum amount of innovation! Innovation that can be invested into a Technology each week
+  Description: The maximum amount of innovation!Â Innovation that can be invested into a Technology each week
 country_weekly_innovation_mult:
   Mask: country
   Name: Innovation
-  Description: The amount of innovation! Innovation gained or lost each week
+  Description: The amount of innovation!Â Innovation gained or lost each week
 dummy_modifier_type:
-  Mask: 
+  Mask:
   Name: warning! This modifier type should never be used
   Description: modifier_dummy_modifier_type
 goods_output_radio_mult:
@@ -1051,7 +1051,7 @@ power_bloc_allow_foreign_investment_lower_rank_bool:
 power_bloc_allow_wider_migration_area_bool:
   Mask: power_bloc
   Name: Allow Migration within a Power Bloc
-  Description: Allows Migration to potentially also happen between members of a Power Bloc that don't share a Market, rather than only within a Country’s Market
+  Description: Allows Migration to potentially also happen between members of a Power Bloc that don't share a Market, rather than only within a Countryâ€™s Market
 power_bloc_cohesion_add:
   Mask: power_bloc
   Name: Power Bloc Cohesion
@@ -1130,7 +1130,7 @@ state_birth_rate_mult:
   Description: How many children are born each year
 state_bureaucracy_population_base_cost_factor_mult:
   Mask: state
-  Name: bur! Bureaucracy Population Cost Multiplier
+  Name: bur!Â Bureaucracy Population Cost Multiplier
   Description: An increase or reduction to the base administrative cost incurred by your incorporated Population
 state_colony_growth_creation_factor:
   Mask: state
@@ -1215,7 +1215,7 @@ state_incorporation_speed_mult:
 state_infrastructure_add:
   Mask: state
   Name: Infrastructure
-  Description: A bonus or penalty to the State’s Infrastructure
+  Description: A bonus or penalty to the Stateâ€™s Infrastructure
 state_infrastructure_from_population_add:
   Mask: state
   Name: Infrastructure per 100K Population
@@ -1235,7 +1235,7 @@ state_infrastructure_from_population_mult:
 state_infrastructure_mult:
   Mask: state
   Name: Infrastructure
-  Description: A bonus or penalty to the State’s Infrastructure
+  Description: A bonus or penalty to the Stateâ€™s Infrastructure
 state_institution_impact_add:
   Mask: state
   Name: Impact of Institutions
@@ -1483,11 +1483,11 @@ unit_advancement_speed_mult:
 unit_army_defense_add:
   Mask: unit
   Name: Army Defense
-  Description: A Military Unit’s Defense (Army only)
+  Description: A Military Unitâ€™s Defense (Army only)
 unit_army_defense_mult:
   Mask: unit
   Name: Army Defense
-  Description: A Military Unit’s Defense (Army only)
+  Description: A Military Unitâ€™s Defense (Army only)
 unit_army_experience_gain_add:
   Mask: unit
   Name: Weekly Unit Experience Gain for Armies
@@ -1499,19 +1499,19 @@ unit_army_experience_gain_mult:
 unit_army_offense_add:
   Mask: unit
   Name: Army Offense
-  Description: A Military Unit’s Offense (Army only)
+  Description: A Military Unitâ€™s Offense (Army only)
 unit_army_offense_mult:
   Mask: unit
   Name: Army Offense
-  Description: A Military Unit’s Offense (Army only)
+  Description: A Military Unitâ€™s Offense (Army only)
 unit_blockade_add:
   Mask: unit
   Name: Blockade Strength
-  Description: A Military Unit’s ability to Blockade enemy ports
+  Description: A Military Unitâ€™s ability to Blockade enemy ports
 unit_blockade_mult:
   Mask: unit
   Name: Blockade Strength
-  Description: A Military Unit’s ability to Blockade enemy ports
+  Description: A Military Unitâ€™s ability to Blockade enemy ports
 unit_convoy_defense_mult:
   Mask: unit
   Name: Convoy Escort Defense
@@ -1531,11 +1531,11 @@ unit_convoy_requirements_mult:
 unit_defense_add:
   Mask: unit
   Name: Defense
-  Description: A Military Unit’s Defense
+  Description: A Military Unitâ€™s Defense
 unit_defense_mult:
   Mask: unit
   Name: Defense
-  Description: A Military Unit’s Defense
+  Description: A Military Unitâ€™s Defense
 unit_devastation_mult:
   Mask: unit
   Name: Devastation
@@ -1571,11 +1571,11 @@ unit_morale_recovery_mult:
 unit_navy_defense_add:
   Mask: unit
   Name: Navy Defense
-  Description: A Military Unit’s Defense (Navy only)
+  Description: A Military Unitâ€™s Defense (Navy only)
 unit_navy_defense_mult:
   Mask: unit
   Name: Navy Defense
-  Description: A Military Unit’s Defense (Navy only)
+  Description: A Military Unitâ€™s Defense (Navy only)
 unit_navy_experience_gain_add:
   Mask: unit
   Name: Weekly Unit Experience Gain for Navies
@@ -1587,11 +1587,11 @@ unit_navy_experience_gain_mult:
 unit_navy_offense_add:
   Mask: unit
   Name: Navy Offense
-  Description: A Military Unit’s Offense (Navy only)
+  Description: A Military Unitâ€™s Offense (Navy only)
 unit_navy_offense_mult:
   Mask: unit
   Name: Navy Offense
-  Description: A Military Unit’s Offense (Navy only)
+  Description: A Military Unitâ€™s Offense (Navy only)
 unit_occupation_mult:
   Mask: unit
   Name: Battle Occupation
@@ -1599,11 +1599,11 @@ unit_occupation_mult:
 unit_offense_add:
   Mask: unit
   Name: Offense
-  Description: A Military Unit’s Offense
+  Description: A Military Unitâ€™s Offense
 unit_offense_mult:
   Mask: unit
   Name: Offense
-  Description: A Military Unit’s Offense
+  Description: A Military Unitâ€™s Offense
 unit_provinces_captured_mult:
   Mask: unit
   Name: Provinces Captured
@@ -2632,7 +2632,7 @@ country_afro_caribbean_cultural_acceptance_add:
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_afro_caribeno_cultural_acceptance_add:
   Mask: country
-  Name: Acceptance of Afro-Caribeño Culture
+  Name: Acceptance of Afro-CaribeÃ±o Culture
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_aimara_cultural_acceptance_add:
   Mask: country
@@ -2765,23 +2765,23 @@ country_assamese_cultural_acceptance_add:
 country_assimilation_cultural_erasure_mult:
   Mask: country
   Name: Assimilation for the acceptance_status_2! Cultural Erasure Status
-  Description: A bonus or penalty to Assimilation for the acceptance_status_2! Cultural Erasure Status 
+  Description: A bonus or penalty to Assimilation for the acceptance_status_2! Cultural Erasure Status
 country_assimilation_full_acceptance_mult:
   Mask: country
   Name: Assimilation for the acceptance_status_5! Full Acceptance Status
-  Description: A bonus or penalty to Assimilation for the acceptance_status_5! Full Acceptance Status 
+  Description: A bonus or penalty to Assimilation for the acceptance_status_5! Full Acceptance Status
 country_assimilation_open_prejudice_mult:
   Mask: country
   Name: Assimilation for the acceptance_status_3! Open Prejudice Status
-  Description: A bonus or penalty to Assimilation for the acceptance_status_3! Open Prejudice Status 
+  Description: A bonus or penalty to Assimilation for the acceptance_status_3! Open Prejudice Status
 country_assimilation_second_rate_citizen_mult:
   Mask: country
   Name: Assimilation for the acceptance_status_4! Second-class Citizen Status
-  Description: A bonus or penalty to Assimilation for the acceptance_status_4! Second-class Citizen Status 
+  Description: A bonus or penalty to Assimilation for the acceptance_status_4! Second-class Citizen Status
 country_assimilation_violent_hostility_mult:
   Mask: country
   Name: Assimilation for the acceptance_status_1! Violent Hostility Status
-  Description: A bonus or penalty to Assimilation for the acceptance_status_1! Violent Hostility Status 
+  Description: A bonus or penalty to Assimilation for the acceptance_status_1! Violent Hostility Status
 country_assyrian_cultural_acceptance_add:
   Mask: country
   Name: Acceptance of Assyrian Culture
@@ -2992,7 +2992,7 @@ country_cariban_cultural_acceptance_add:
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_caribeno_cultural_acceptance_add:
   Mask: country
-  Name: Acceptance of Caribeño Culture
+  Name: Acceptance of CaribeÃ±o Culture
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_catalan_cultural_acceptance_add:
   Mask: country
@@ -3280,7 +3280,7 @@ country_fervor_target_afro_caribbean_add:
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_afro_caribeno_add:
   Mask: country
-  Name: Proportional Fervor for the Afro-Caribeño Culture
+  Name: Proportional Fervor for the Afro-CaribeÃ±o Culture
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_aimara_add:
   Mask: country
@@ -3496,7 +3496,7 @@ country_fervor_target_cariban_add:
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_caribeno_add:
   Mask: country
-  Name: Proportional Fervor for the Caribeño Culture
+  Name: Proportional Fervor for the CaribeÃ±o Culture
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_catalan_add:
   Mask: country
@@ -3648,7 +3648,7 @@ country_fervor_target_franco_canadian_add:
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_francoprovencal_add:
   Mask: country
-  Name: Proportional Fervor for the Franco-Provençal Culture
+  Name: Proportional Fervor for the Franco-ProvenÃ§al Culture
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_french_add:
   Mask: country
@@ -3920,7 +3920,7 @@ country_fervor_target_manipuri_add:
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_maori_add:
   Mask: country
-  Name: Proportional Fervor for the Māori Culture
+  Name: Proportional Fervor for the MÄori Culture
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_marathi_add:
   Mask: country
@@ -3948,7 +3948,7 @@ country_fervor_target_melanesian_add:
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_metis_add:
   Mask: country
-  Name: Proportional Fervor for the Métis Culture
+  Name: Proportional Fervor for the MÃ©tis Culture
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_mexican_add:
   Mask: country
@@ -4084,7 +4084,7 @@ country_fervor_target_occitan_add:
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_oodham_add:
   Mask: country
-  Name: Proportional Fervor for the O’odham Culture
+  Name: Proportional Fervor for the Oâ€™odham Culture
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_oriya_add:
   Mask: country
@@ -4192,7 +4192,7 @@ country_fervor_target_salish_add:
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_sami_add:
   Mask: country
-  Name: Proportional Fervor for the Sámi Culture
+  Name: Proportional Fervor for the SÃ¡mi Culture
   Description: A bonus or penalty to a specific culture's [concept_fervor], to be proportioned according the percentage of the culture's [Concept('concept_pop', 'Pops')] that reside in the affected [concept_country].
 country_fervor_target_sara_add:
   Mask: country
@@ -4500,7 +4500,7 @@ country_franco_canadian_cultural_acceptance_add:
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_francoprovencal_cultural_acceptance_add:
   Mask: country
-  Name: Acceptance of Franco-Provençal Culture
+  Name: Acceptance of Franco-ProvenÃ§al Culture
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_french_cultural_acceptance_add:
   Mask: country
@@ -4600,20 +4600,20 @@ country_institution_colonial_affairs_max_investment_add:
   Description: A bonus or penalty to the maximum investment level of the Colonial Affairs Institution
 country_institution_cost_institution_colonial_affairs_mult:
   Mask: country
-  Name: bur! Bureaucracy Cost of Colonial Affairs
-  Description: An increase or reduction to the bur! Bureaucracy cost of bringing Colonial Affairs to the citizens
+  Name: bur!Â Bureaucracy Cost of Colonial Affairs
+  Description: An increase or reduction to the bur!Â Bureaucracy cost of bringing Colonial Affairs to the citizens
 country_institution_cost_institution_health_system_mult:
   Mask: country
-  Name: bur! Bureaucracy Cost of Health System
-  Description: An increase or reduction to the bur! Bureaucracy cost of bringing Health System to the citizens
+  Name: bur!Â Bureaucracy Cost of Health System
+  Description: An increase or reduction to the bur!Â Bureaucracy cost of bringing Health System to the citizens
 country_institution_cost_institution_police_mult:
   Mask: country
-  Name: bur! Bureaucracy Cost of Law Enforcement
-  Description: An increase or reduction to the bur! Bureaucracy cost of bringing Law Enforcement to the citizens
+  Name: bur!Â Bureaucracy Cost of Law Enforcement
+  Description: An increase or reduction to the bur!Â Bureaucracy cost of bringing Law Enforcement to the citizens
 country_institution_cost_institution_schools_mult:
   Mask: country
-  Name: bur! Bureaucracy Cost of Education
-  Description: An increase or reduction to the bur! Bureaucracy cost of bringing Education to the citizens
+  Name: bur!Â Bureaucracy Cost of Education
+  Description: An increase or reduction to the bur!Â Bureaucracy cost of bringing Education to the citizens
 country_institution_health_system_max_investment_add:
   Mask: country
   Name: Max Health System Institution Investment
@@ -4908,7 +4908,7 @@ country_manipuri_cultural_acceptance_add:
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_maori_cultural_acceptance_add:
   Mask: country
-  Name: Acceptance of Māori Culture
+  Name: Acceptance of MÄori Culture
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_marathi_cultural_acceptance_add:
   Mask: country
@@ -4936,7 +4936,7 @@ country_melanesian_cultural_acceptance_add:
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_metis_cultural_acceptance_add:
   Mask: country
-  Name: Acceptance of Métis Culture
+  Name: Acceptance of MÃ©tis Culture
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_mexican_cultural_acceptance_add:
   Mask: country
@@ -5088,7 +5088,7 @@ country_officers_voting_power_add:
   Description: An increase or decrease to amount of Political Strength gained from the Votes of officers! Officers in Elections
 country_oodham_cultural_acceptance_add:
   Mask: country
-  Name: Acceptance of O’odham Culture
+  Name: Acceptance of Oâ€™odham Culture
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_oriya_cultural_acceptance_add:
   Mask: country
@@ -5193,7 +5193,7 @@ country_production_tech_research_speed_mult:
 country_production_tech_spread_mult:
   Mask: country
   Name: Technology Spread for Production
-  Description: The speed at which Production technologies spread from other countries 
+  Description: The speed at which Production technologies spread from other countries
 country_promethean_cultural_acceptance_add:
   Mask: country
   Name: Acceptance of Promethean Culture
@@ -5272,7 +5272,7 @@ country_salish_cultural_acceptance_add:
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_sami_cultural_acceptance_add:
   Mask: country
-  Name: Acceptance of Sámi Culture
+  Name: Acceptance of SÃ¡mi Culture
   Description: A bonus or penalty to a specific culture's [concept_acceptance]
 country_sara_cultural_acceptance_add:
   Mask: country
@@ -5728,16 +5728,16 @@ goods_input_ammunition_add:
   Description: The amount of ammunition! Ammunition consumed by buildings
 goods_input_ammunition_mult:
   Mask: goods
-  Name: ammunition! Ammunition input
-  Description: The amount of ammunition! Ammunition consumed by buildings
+  Name: ammunition!Â Ammunition input
+  Description: The amount of ammunition!Â Ammunition consumed by buildings
 goods_input_artillery_add:
   Mask: goods
   Name: artillery! Artillery input
   Description: The amount of artillery! Artillery consumed by buildings
 goods_input_artillery_mult:
   Mask: goods
-  Name: artillery! Artillery input
-  Description: The amount of artillery! Artillery consumed by buildings
+  Name: artillery!Â Artillery input
+  Description: The amount of artillery!Â Artillery consumed by buildings
 goods_input_automobiles_add:
   Mask: goods
   Name: automobiles! Automobiles input
@@ -5836,8 +5836,8 @@ goods_input_oil_add:
   Description: The amount of oil! Oil consumed by buildings
 goods_input_oil_mult:
   Mask: goods
-  Name: oil! Oil input
-  Description: The amount of oil! Oil consumed by buildings
+  Name: oil!Â Oil input
+  Description: The amount of oil!Â Oil consumed by buildings
 goods_input_opium_add:
   Mask: goods
   Name: opium! Opium input
@@ -5852,8 +5852,8 @@ goods_input_radios_add:
   Description: The amount of radios! Radios consumed by buildings
 goods_input_radios_mult:
   Mask: goods
-  Name: radios! Radios input
-  Description: The amount of radios! Radios consumed by buildings
+  Name: radios!Â Radios input
+  Description: The amount of radios!Â Radios consumed by buildings
 goods_input_rubber_add:
   Mask: goods
   Name: rubber! Rubber input
@@ -5868,8 +5868,8 @@ goods_input_small_arms_add:
   Description: The amount of small_arms! Small Arms consumed by buildings
 goods_input_small_arms_mult:
   Mask: goods
-  Name: small_arms! Small Arms input
-  Description: The amount of small_arms! Small Arms consumed by buildings
+  Name: small_arms!Â Small Arms input
+  Description: The amount of small_arms!Â Small Arms consumed by buildings
 goods_input_steamers_add:
   Mask: goods
   Name: steamers! Steamers input
@@ -5892,8 +5892,8 @@ goods_input_tanks_add:
   Description: The amount of tanks! Tanks consumed by buildings
 goods_input_tanks_mult:
   Mask: goods
-  Name: tanks! Tanks input
-  Description: The amount of tanks! Tanks consumed by buildings
+  Name: tanks!Â Tanks input
+  Description: The amount of tanks!Â Tanks consumed by buildings
 goods_input_telephones_add:
   Mask: goods
   Name: telephones! Telephone input
@@ -6104,7 +6104,7 @@ goods_output_oil_add:
   Description: The amount of oil! Oil produced by buildings
 goods_output_oil_mult:
   Mask: goods
-  Name: Building oil! Oil output 
+  Name: Building oil! Oil output
   Description: A bonus or penalty to the amount of oil! Oil produced by buildings
 goods_output_opium_add:
   Mask: goods
@@ -6424,7 +6424,7 @@ state_afro_caribbean_standard_of_living_add:
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_afro_caribeno_standard_of_living_add:
   Mask: state
-  Name: [concept_sol] Modifier for Afro-Caribeño
+  Name: [concept_sol] Modifier for Afro-CaribeÃ±o
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_aimara_standard_of_living_add:
   Mask: state
@@ -6692,7 +6692,7 @@ state_cariban_standard_of_living_add:
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_caribeno_standard_of_living_add:
   Mask: state
-  Name: [concept_sol] Modifier for Caribeño
+  Name: [concept_sol] Modifier for CaribeÃ±o
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_catalan_standard_of_living_add:
   Mask: state
@@ -6888,7 +6888,7 @@ state_franco_canadian_standard_of_living_add:
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_francoprovencal_standard_of_living_add:
   Mask: state
-  Name: [concept_sol] Modifier for Franco-Provençal
+  Name: [concept_sol] Modifier for Franco-ProvenÃ§al
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_french_standard_of_living_add:
   Mask: state
@@ -6948,35 +6948,35 @@ state_haratin_standard_of_living_add:
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_harvest_condition_disease_outbreak_duration_mult:
   Mask: state
-  Name: disease_outbreak! Disease Outbreak Harvest Condition Duration
+  Name: disease_outbreak!Â Disease Outbreak Harvest Condition Duration
   Description: An increase or decrease to the duration of Disease Outbreaks.
 state_harvest_condition_disease_outbreak_impact_mult:
   Mask: state
-  Name: disease_outbreak! Disease Outbreak Harvest Condition Impact
+  Name: disease_outbreak!Â Disease Outbreak Harvest Condition Impact
   Description: An increase or decrease to the impact of Disease Outbreaks.
 state_harvest_condition_drought_duration_mult:
   Mask: state
-  Name: drought! Drought Harvest Condition Duration
+  Name: drought!Â Drought Harvest Condition Duration
   Description: An increase or decrease to the duration of Droughts
 state_harvest_condition_drought_impact_mult:
   Mask: state
-  Name: drought! Drought Harvest Condition Impact
+  Name: drought!Â Drought Harvest Condition Impact
   Description: An increase or decrease to the impact of Droughts.
 state_harvest_condition_extreme_winds_duration_mult:
   Mask: state
-  Name: extreme_winds! Extreme Winds Harvest Condition Duration
+  Name: extreme_winds!Â Extreme Winds Harvest Condition Duration
   Description: An increase or decrease to the duration of Extreme Winds.
 state_harvest_condition_extreme_winds_impact_mult:
   Mask: state
-  Name: extreme_winds! Extreme Winds Harvest Condition Impact
+  Name: extreme_winds!Â Extreme Winds Harvest Condition Impact
   Description: An increase or decrease to the impact of Extreme Winds.
 state_harvest_condition_flood_duration_mult:
   Mask: state
-  Name: flood! Flood Harvest Condition Duration
+  Name: flood!Â Flood Harvest Condition Duration
   Description: An increase or decrease to the duration of Floods.
 state_harvest_condition_flood_impact_mult:
   Mask: state
-  Name: flood! Flood Harvest Condition Impact
+  Name: flood!Â Flood Harvest Condition Impact
   Description: An increase or decrease to the impact of Floods.
 state_harvest_condition_hailstorm_duration_mult:
   Mask: state
@@ -6988,11 +6988,11 @@ state_harvest_condition_hailstorm_impact_mult:
   Description: state_harvest_condition_hailstorm_impact_mult_desc
 state_harvest_condition_heatwave_duration_mult:
   Mask: state
-  Name: heatwave! Heatwave Harvest Condition Duration
+  Name: heatwave!Â Heatwave Harvest Condition Duration
   Description: An increase or decrease to the duration of Heatwaves.
 state_harvest_condition_heatwave_impact_mult:
   Mask: state
-  Name: heatwave! Heatwave Harvest Condition Impact
+  Name: heatwave!Â Heatwave Harvest Condition Impact
   Description: An increase or decrease to the impact of Heatwaves.
 state_harvest_condition_torrential_rains_duration_mult:
   Mask: state
@@ -7004,11 +7004,11 @@ state_harvest_condition_torrential_rains_impact_mult:
   Description: state_harvest_condition_torrential_rains_impact_mult_desc
 state_harvest_condition_wildfire_duration_mult:
   Mask: state
-  Name: wildfire! Wildfire Harvest Condition Duration
+  Name: wildfire!Â Wildfire Harvest Condition Duration
   Description: An increase or decrease to the duration of Wildfires.
 state_harvest_condition_wildfire_impact_mult:
   Mask: state
-  Name: wildfire! Wildfire Harvest Condition Impact
+  Name: wildfire!Â Wildfire Harvest Condition Impact
   Description: An increase or decrease to the impact of Wildfires.
 state_hausa_standard_of_living_add:
   Mask: state
@@ -7292,7 +7292,7 @@ state_manipuri_standard_of_living_add:
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_maori_standard_of_living_add:
   Mask: state
-  Name: [concept_sol] Modifier for Māori
+  Name: [concept_sol] Modifier for MÄori
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_marathi_standard_of_living_add:
   Mask: state
@@ -7320,7 +7320,7 @@ state_melanesian_standard_of_living_add:
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_metis_standard_of_living_add:
   Mask: state
-  Name: [concept_sol] Modifier for Métis
+  Name: [concept_sol] Modifier for MÃ©tis
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_mexican_standard_of_living_add:
   Mask: state
@@ -7464,7 +7464,7 @@ state_officers_investment_pool_efficiency_mult:
   Description: An increase or decrease to how much the invested profits from officers! Officers will contribute to the Investment Pool
 state_oodham_standard_of_living_add:
   Mask: state
-  Name: [concept_sol] Modifier for O’odham
+  Name: [concept_sol] Modifier for Oâ€™odham
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_oriental_orthodox_standard_of_living_add:
   Mask: state
@@ -7864,7 +7864,7 @@ state_salish_standard_of_living_add:
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_sami_standard_of_living_add:
   Mask: state
-  Name: [concept_sol] Modifier for Sámi
+  Name: [concept_sol] Modifier for SÃ¡mi
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_sara_standard_of_living_add:
   Mask: state
@@ -7876,16 +7876,16 @@ state_scottish_standard_of_living_add:
   Description: A bonus or penalty to a specific culture's [concept_sol]
 state_sell_orders_ammunition_add:
   Mask: state
-  Name: ammunition! Ammunition Sell Orders
-  Description: An increase or decrease to Sell Orders for ammunition! Ammunition in a State
+  Name: ammunition!Â Ammunition Sell Orders
+  Description: An increase or decrease to Sell Orders for ammunition!Â Ammunition in a State
 state_sell_orders_artillery_add:
   Mask: state
-  Name: artillery! Artillery Sell Orders
-  Description: An increase or decrease to Sell Orders for artillery! Artillery in a State
+  Name: artillery!Â Artillery Sell Orders
+  Description: An increase or decrease to Sell Orders for artillery!Â Artillery in a State
 state_sell_orders_small_arms_add:
   Mask: state
-  Name: small_arms! Small Arms Sell Orders
-  Description: An increase or decrease to Sell Orders for small_arms! Small Arms in a State
+  Name: small_arms!Â Small Arms Sell Orders
+  Description: An increase or decrease to Sell Orders for small_arms!Â Small Arms in a State
 state_sena_standard_of_living_add:
   Mask: state
   Name: [concept_sol] Modifier for Sena
@@ -8245,99 +8245,99 @@ unit_combat_unit_type_trench_infantry_offense_add:
 unit_defense_developed_add:
   Mask: unit
   Name: Defense in Flat Terrain
-  Description: A Military Unit’s Defense in Flat Terrain
+  Description: A Military Unitâ€™s Defense in Flat Terrain
 unit_defense_developed_mult:
   Mask: unit
   Name: Defense in Flat Terrain
-  Description: A Military Unit’s Defense in Flat Terrain
+  Description: A Military Unitâ€™s Defense in Flat Terrain
 unit_defense_elevated_add:
   Mask: unit
   Name: Defense in Elevated Terrain
-  Description: A Military Unit’s Defense in Elevated Terrain
+  Description: A Military Unitâ€™s Defense in Elevated Terrain
 unit_defense_elevated_mult:
   Mask: unit
   Name: Defense in Elevated Terrain
-  Description: A Military Unit’s Defense in Elevated Terrain
+  Description: A Military Unitâ€™s Defense in Elevated Terrain
 unit_defense_flat_add:
   Mask: unit
   Name: Defense in Flat Terrain
-  Description: A Military Unit’s Defense in Flat Terrain
+  Description: A Military Unitâ€™s Defense in Flat Terrain
 unit_defense_flat_mult:
   Mask: unit
   Name: Defense in Flat Terrain
-  Description: A Military Unit’s Defense in Flat Terrain
+  Description: A Military Unitâ€™s Defense in Flat Terrain
 unit_defense_forested_add:
   Mask: unit
   Name: Defense in Forested Terrain
-  Description: A Military Unit’s Defense in Forested Terrain
+  Description: A Military Unitâ€™s Defense in Forested Terrain
 unit_defense_forested_mult:
   Mask: unit
   Name: Defense in Forested Terrain
-  Description: A Military Unit’s Defense in Forested Terrain
+  Description: A Military Unitâ€™s Defense in Forested Terrain
 unit_defense_hazardous_add:
   Mask: unit
   Name: Defense in Hazardous Terrain
-  Description: A Military Unit’s Defense in Hazardous Terrain
+  Description: A Military Unitâ€™s Defense in Hazardous Terrain
 unit_defense_hazardous_mult:
   Mask: unit
   Name: Defense in Hazardous Terrain
-  Description: A Military Unit’s Defense in Hazardous Terrain
+  Description: A Military Unitâ€™s Defense in Hazardous Terrain
 unit_defense_water_add:
   Mask: unit
   Name: Defense in Flat Terrain
-  Description: A Military Unit’s Defense in Flat Terrain
+  Description: A Military Unitâ€™s Defense in Flat Terrain
 unit_defense_water_mult:
   Mask: unit
   Name: Defense in Flat Terrain
-  Description: A Military Unit’s Defense in Flat Terrain
+  Description: A Military Unitâ€™s Defense in Flat Terrain
 unit_offense_developed_add:
   Mask: unit
   Name: Offense in Flat Terrain
-  Description: A Military Unit’s Offense in Flat Terrain
+  Description: A Military Unitâ€™s Offense in Flat Terrain
 unit_offense_developed_mult:
   Mask: unit
   Name: Offense in Flat Terrain
-  Description: A Military Unit’s Offense in Flat Terrain
+  Description: A Military Unitâ€™s Offense in Flat Terrain
 unit_offense_elevated_add:
   Mask: unit
   Name: Offense in Elevated Terrain
-  Description: A Military Unit’s Offense in Elevated Terrain
+  Description: A Military Unitâ€™s Offense in Elevated Terrain
 unit_offense_elevated_mult:
   Mask: unit
   Name: Offense in Elevated Terrain
-  Description: A Military Unit’s Offense in Elevated Terrain
+  Description: A Military Unitâ€™s Offense in Elevated Terrain
 unit_offense_flat_add:
   Mask: unit
   Name: Offense in Flat Terrain
-  Description: A Military Unit’s Offense in Flat Terrain
+  Description: A Military Unitâ€™s Offense in Flat Terrain
 unit_offense_flat_mult:
   Mask: unit
   Name: Offense in Flat Terrain
-  Description: A Military Unit’s Offense in Flat Terrain
+  Description: A Military Unitâ€™s Offense in Flat Terrain
 unit_offense_forested_add:
   Mask: unit
   Name: Offense in Forested Terrain
-  Description: A Military Unit’s Offense in Forested Terrain
+  Description: A Military Unitâ€™s Offense in Forested Terrain
 unit_offense_forested_mult:
   Mask: unit
   Name: Offense in Forested Terrain
-  Description: A Military Unit’s Offense in Forested Terrain
+  Description: A Military Unitâ€™s Offense in Forested Terrain
 unit_offense_hazardous_add:
   Mask: unit
   Name: Offense in Hazardous Terrain
-  Description: A Military Unit’s Offense in Hazardous Terrain
+  Description: A Military Unitâ€™s Offense in Hazardous Terrain
 unit_offense_hazardous_mult:
   Mask: unit
   Name: Offense in Hazardous Terrain
-  Description: A Military Unit’s Offense in Hazardous Terrain
+  Description: A Military Unitâ€™s Offense in Hazardous Terrain
 unit_offense_water_add:
   Mask: unit
   Name: Offense in Flat Terrain
-  Description: A Military Unit’s Offense in Flat Terrain
+  Description: A Military Unitâ€™s Offense in Flat Terrain
 unit_offense_water_mult:
   Mask: unit
   Name: Offense in Flat Terrain
-  Description: A Military Unit’s Offense in Flat Terrain
+  Description: A Military Unitâ€™s Offense in Flat Terrain
 
 --- Potential dynamic modifier types ---
 building_academics_fertility_mult:

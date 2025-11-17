@@ -111,13 +111,13 @@ et_heir_storage = {
   trigger = {
     is_monarch = yes                           # Base requirement
     NOT = { has_modifier = et_has_an_heir }    # Prevent duplicates
-    owner = { 
-      NOT = { 
-        any_scope_character = { 
-          is_heir = yes 
-          is_character_alive = yes 
-        } 
-      } 
+    owner = {
+      NOT = {
+        any_scope_character = {
+          is_heir = yes
+          is_character_alive = yes
+        }
+      }
     }                                          # Only if no existing heir
   }
   effect = {
@@ -139,7 +139,7 @@ create_character = {
 
 ### Probability Balancing
 - Monthly percentages should be low (1-10%)
-- Consider yearly probability: 5% monthly ≈ 50% yearly
+- Consider yearly probability: 5% monthly â‰ˆ 50% yearly
 - Test different values for game balance
 
 ## Tools Used for Debugging

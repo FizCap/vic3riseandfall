@@ -1,6 +1,0 @@
-﻿et_state_owner_change_effect = {
-    add_modifier = {
-        name = recent_state_owner_change
-        years = 2
-    }
-}

@@ -1,0 +1,21 @@
+# This will do investment pool calculations based on the gold reserves.
+
+rf_reserve_floor = {
+	value = gold_reserves_limit
+	multiply = 0.8
+}
+
+rf_surplus_gold = {
+	value = gold_reserves
+	subtract = rf_reserve_floor
+}
+
+rf_surplus_gold_neg = {
+	value = 0
+	subtract = rf_surplus_gold
+}
+
+# Weight for admin building construction: state_population * (1 + surplus_gold/10000)
+rf_admin_build_weight = {
+	value = state_population
+}

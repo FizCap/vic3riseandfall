@@ -1,0 +1,29 @@
+rf_personal_union_roll = {
+    save_scope_as = pu_target_country
+    random_list = {
+        10 = {
+            random_neighbouring_state = {
+                limit = {
+                    owner = {
+                        NOT = { this = scope:pu_target_country }
+                        NOT = { is_subject_type = subject_type_personal_union }
+                        has_law = law_type:law_monarchy
+                        religion = {
+                            shares_heritage_trait_with_state_religion = scope:pu_target_country
+                        }
+                    }
+                }
+                owner = {
+                    save_scope_as = pu_inheritor_country
+                    trigger_event = {
+                        id = personal_union.1
+                        country_to_make_subject = scope:pu_target_country
+                    }
+                }
+            }
+        }
+        90 = {
+            # No effect, just do nothing
+        }
+    }
+}

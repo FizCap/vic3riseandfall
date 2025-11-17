@@ -1,0 +1,77 @@
+rf_ai_improvement_effect_dynamic = {
+    if = {
+        # Use reserve/income ratio for dynamic scaling
+        if = {
+            limit = { NOT = { has_modifier = rf_budget_cooldown } }
+            if = {
+                limit = { rf_reserve_income_ratio > 100 }
+                set_government_wage_level = very_low
+                set_military_wage_level = medium
+            }
+            else_if = {
+                limit = { rf_reserve_income_ratio > 50 }
+                set_government_wage_level = low
+                set_military_wage_level = medium
+            }
+            else_if = {
+                limit = {
+                    rf_reserve_income_ratio > 10
+                    gold_reserves > 0
+                }
+                set_government_wage_level = medium
+                set_military_wage_level = very_high
+            }
+            else_if = {
+                limit = {
+                    rf_reserve_income_ratio > 5
+                    gold_reserves > 0
+                }
+                set_government_wage_level = high
+                set_military_wage_level = very_high
+            }
+            else = {
+                limit = { gold_reserves > 0 }
+                set_government_wage_level = very_high
+                set_military_wage_level = very_high
+            }
+        }
+        set_variable = { name = rf_budget_cooldown days = 90 }
+
+        # Bureaucracy modifier logic always runs
+        if = {
+            limit = {
+                bureaucracy < -10
+                NOT = { has_modifier = rf_negative_bureaucracy }
+            }
+            add_modifier = { name = rf_negative_bureaucracy days = 365 hidden = yes }
+        }
+    }
+}
+
+rf_ai_building_subsidized = {
+    every_scope_building = {
+        limit = {
+            OR = {
+                is_building_type = building_trade_center
+                is_building_type = building_power_plant
+            }
+            weekly_profit > -500
+        }
+        set_subsidized = yes
+    }
+}
+
+rf_ai_building_not_subsidized = {
+    every_scope_building = {
+        limit = {
+            OR = {
+                is_building_type = building_trade_center
+                is_building_type = building_port
+                is_building_type = building_power_plant
+                is_building_type = building_railway
+            }
+            weekly_profit < -500
+        }
+        set_subsidized = no
+    }
+}

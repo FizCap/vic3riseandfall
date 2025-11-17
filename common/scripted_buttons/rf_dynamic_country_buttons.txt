@@ -1,0 +1,292 @@
+#############################################
+# DYNAMIC COUNTRY FINALIZATION (RECOGNIZED) #
+#############################################
+rf_button_finalize_dynamic_country = {
+	# Recognized variant (Puppet)
+	name = "rf_button_finalize_dynamic_country"
+	desc = "rf_button_finalize_dynamic_country_desc"
+
+	# Visible either for player (manual builder) or AI (automatic criteria)
+	visible = {
+		is_country_type = recognized
+		OR = {
+			# Player path requires builder enabled & at least one marked state they own
+			AND = {
+				is_player = yes
+				has_variable = rf_dyn_builder_enabled
+				any_scope_state = {
+					has_decree = decree_rf_mark_state_for_dyn_country
+					owner = ROOT
+				}
+			}
+
+			# AI path: allowed when not the player
+			AND = {
+				is_player = no
+			}
+		}
+	}
+
+	possible = {
+		is_country_type = recognized
+		NOT = { is_subject = yes }
+		OR = {
+			AND = {
+				is_player = yes
+				has_variable = rf_dyn_builder_enabled
+				any_scope_state = {
+					has_decree = decree_rf_mark_state_for_dyn_country
+					owner = ROOT
+				}
+			}
+
+			AND = {
+				is_player = no
+			}
+		}
+	}
+
+	effect = {
+		# PLAYER PATH (manual marking via decree)
+		if = {
+			limit = { is_player = yes }
+
+			# Pick a capital among marked states (if any)
+			if = {
+				limit = {
+					any_scope_state = {
+						has_decree = decree_rf_mark_state_for_dyn_country
+						owner = ROOT
+					}
+				}
+
+				random_scope_state = {
+					limit = {
+						has_decree = decree_rf_mark_state_for_dyn_country
+						owner = ROOT
+					}
+					save_scope_as = rf_dyn_country_capital
+				}
+			}
+			else = {
+				random_scope_state = {
+					limit = {
+						has_decree = decree_rf_mark_state_for_dyn_country
+						owner = ROOT
+					}
+					save_scope_as = rf_dyn_country_capital
+				}
+			}
+
+			# Mark the decree-selected states for ceding
+			every_scope_state = {
+				limit = {
+					has_decree = decree_rf_mark_state_for_dyn_country
+					owner = ROOT
+				}
+				set_variable = dynamic_state_cede
+			}
+		}
+		else = {
+			# AI PATH â€” call the main AI effect
+			rf_dynamic_country_ai_recognized = yes
+		}
+
+		# Create the dynamic country
+		rf_dynamic_country_create = yes
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = {
+				has_game_rule = ai_improvement_enabled
+				is_at_war = no
+				is_subject = no
+				# (cooldown removed)
+				# Only if there are significant candidate states
+				any_scope_state = {
+					limit = {
+						owner = ROOT
+						is_capital = no
+
+						OR = {
+							NOT = { has_modifier = recent_state_owner_change }
+							market_access < 0.01
+						}
+
+						OR = {
+							AND = {
+								is_homeland_of_country_cultures = ROOT
+								OR = { turmoil > 0.70 market_access < 0.01 }
+							}
+
+							AND = {
+								NOT = { is_homeland_of_country_cultures = ROOT }
+								OR = { turmoil > 0.50 market_access < 0.15 }
+							}
+						}
+					}
+				}
+			}
+			add = 100
+		}
+	}
+}
+
+###############################################
+# DYNAMIC COUNTRY FINALIZATION (UNRECOGNIZED) #
+###############################################
+rf_button_finalize_dynamic_country_unrecognized = {
+	# Unrecognized variant (Vassal)
+	name = "rf_button_finalize_dynamic_country_unrecognized"
+	desc = "rf_button_finalize_dynamic_country_unrecognized_desc"
+
+	possible = {
+		is_country_type = unrecognized
+		NOT = { is_subject = yes }
+		OR = {
+			AND = {
+				is_player = yes
+				has_variable = rf_dyn_builder_enabled
+				any_scope_state = {
+					has_decree = decree_rf_mark_state_for_dyn_country
+					owner = ROOT
+				}
+			}
+
+			AND = {
+				is_player = no
+			}
+		}
+	}
+
+	effect = {
+		# Player manual path
+		if = {
+			limit = { is_player = yes }
+
+			if = {
+				limit = {
+					any_scope_state = {
+						has_decree = decree_rf_mark_state_for_dyn_country
+						owner = ROOT
+					}
+				}
+
+				random_scope_state = {
+					limit = { has_decree = decree_rf_mark_state_for_dyn_country owner = ROOT }
+					save_scope_as = rf_dyn_country_capital
+				}
+			}
+			else = {
+				random_scope_state = {
+					limit = { has_decree = decree_rf_mark_state_for_dyn_country owner = ROOT }
+					save_scope_as = rf_dyn_country_capital
+				}
+			}
+
+			every_scope_state = {
+				limit = { has_decree = decree_rf_mark_state_for_dyn_country owner = ROOT }
+				set_variable = dynamic_state_cede
+			}
+		}
+		else = {
+			# AI auto path â€” call the main AI effect
+			rf_dynamic_country_ai_unrecognized = yes
+		}
+
+		# Create the dynamic country
+		rf_dynamic_country_create_unrecognized = yes
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = {
+				has_game_rule = ai_improvement_enabled
+				is_at_war = no
+				is_subject = no
+				# (cooldown removed)
+				# Only if there are significant candidate states
+				any_scope_state = {
+					limit = {
+						owner = ROOT
+						is_capital = no
+
+						OR = {
+							NOT = { has_modifier = recent_state_owner_change }
+							market_access < 0.01
+						}
+
+						OR = {
+							AND = {
+								is_homeland_of_country_cultures = ROOT
+								OR = { turmoil > 0.70 market_access < 0.01 }
+							}
+
+							AND = {
+								NOT = { is_homeland_of_country_cultures = ROOT }
+								OR = { turmoil > 0.50 market_access < 0.15 }
+							}
+						}
+					}
+				}
+			}
+			add = 100
+		}
+	}
+}
+rf_button_enable_builder = {
+	name = "rf_button_enable_builder"
+	desc = "rf_button_enable_builder_desc"
+	visible = { is_player = yes }
+	possible = { NOT = { has_variable = rf_dyn_builder_enabled } }
+	effect = { set_variable = rf_dyn_builder_enabled }
+	ai_chance = { value = 0 }
+}
+
+rf_button_disable_builder = {
+	name = "rf_button_disable_builder"
+	desc = "rf_button_disable_builder_desc"
+	visible = { is_player = yes }
+	possible = { has_variable = rf_dyn_builder_enabled }
+	effect = {
+		remove_variable = rf_dyn_builder_enabled
+	}
+	ai_chance = { value = 0 }
+}
+
+rf_button_authority_cheat_enable = {
+	name = "rf_button_authority_cheat_enable"
+	desc = "rf_button_authority_cheat_enable_desc"
+	visible = {
+		is_player = yes
+		NOT = { has_variable = rf_authority_cheat_enabled }
+	}
+	possible = {
+		NOT = { has_variable = rf_authority_cheat_enabled }
+	}
+	effect = {
+		add_modifier = rf_authority_cheat
+		set_variable = rf_authority_cheat_enabled
+	}
+	ai_chance = { value = 0 }
+}
+
+rf_button_authority_cheat_disable = {
+	name = "rf_button_authority_cheat_disable"
+	desc = "rf_button_authority_cheat_disable_desc"
+	visible = {
+		is_player = yes
+		has_variable = rf_authority_cheat_enabled
+	}
+	possible = {
+		has_variable = rf_authority_cheat_enabled
+	}
+	effect = {
+		remove_modifier = rf_authority_cheat
+		remove_variable = rf_authority_cheat_enabled
+	}
+	ai_chance = { value = 0 }
+}

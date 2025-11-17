@@ -1,0 +1,12 @@
+rf_negative_bureaucracy = {
+    country_force_privatization_bool = yes
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+rf_authority_cheat = {
+    country_authority_add = 10000
+}
+
+recent_state_owner_change = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}

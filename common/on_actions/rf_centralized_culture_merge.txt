@@ -1,0 +1,36 @@
+on_game_started_after_lobby = {
+    on_actions = {
+        rf_centralized_culture_merge_action_effect
+    }
+}
+
+on_monthly_pulse = {
+    on_actions = {
+        rf_centralized_culture_new_country
+    }
+}
+
+rf_centralized_culture_merge_action_effect = {
+    effect = {
+        if = {
+            limit = {
+                has_game_rule = culture_merging_enabled
+            }
+            rf_centralized_culture_merge_effect = yes
+            rf_decentralized_culture_merge_effect = yes
+            rf_decentralized_culture_merge_cleanup = yes
+            rf_centralized_culture_merge_cleanup = yes
+        }
+    }
+}
+
+rf_centralized_culture_new_country = {
+        effect = {
+        if = {
+            limit = {
+                has_game_rule = culture_merging_enabled
+            }
+            rf_centralized_culture_merge_cleanup = yes
+        }
+    }
+}

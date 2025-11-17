@@ -124,7 +124,7 @@ Vanilla GUI files to inspect (Victoria 3 workspace findings  representative lis
 - Complex windows and examples:
   - game/gui/tech_tree.gui
   - game/gui/treaty_panel.gui
-  ## GUI Modding — quick reference (optimized for LLM use)
+  ## GUI Modding â€” quick reference (optimized for LLM use)
 
   Purpose
 
@@ -153,7 +153,7 @@ Vanilla GUI files to inspect (Victoria 3 workspace findings  representative lis
 
   Performance & safety rules
 
-  - Don't nest multiple 100% sized boxes — crashes and layout issues.
+  - Don't nest multiple 100% sized boxes â€” crashes and layout issues.
   - Avoid `resizeparent = yes` on several siblings.
   - Cache expensive logic in script variables (player vars) rather than svalues evaluated every frame.
 
@@ -198,19 +198,19 @@ Vanilla GUI files to inspect (Victoria 3 workspace findings  representative lis
 
   Notes for LLM usage
 
-  - When prompting an LLM, include: file path, target template/type name, desired change (visual/behavior), and exact scope (e.g., replace frame texture only). Example: "Edit `game/gui/shared/buttons.gui` — change `default_button` frame texture using a 00_ override."
+  - When prompting an LLM, include: file path, target template/type name, desired change (visual/behavior), and exact scope (e.g., replace frame texture only). Example: "Edit `game/gui/shared/buttons.gui` â€” change `default_button` frame texture using a 00_ override."
   - For validation ask for: brace/quote balance, missing `blockoverride` names, and `datamodel` presence for list items.
 
   Next steps (options you can ask the assistant to run)
 
-  1) Create safe `gui/00_*` overrides for a specific template (I can generate and lightly validate) — already created examples in `gui/00_techtree_override.gui` and `gui/00_event_overrides.gui`.
-  2) Append short summaries for additional vanilla files (e.g., `topbar.gui`, `notifications.gui`) to this prompt — I can add concise notes and short snippets.
+  1) Create safe `gui/00_*` overrides for a specific template (I can generate and lightly validate) â€” already created examples in `gui/00_techtree_override.gui` and `gui/00_event_overrides.gui`.
+  2) Append short summaries for additional vanilla files (e.g., `topbar.gui`, `notifications.gui`) to this prompt â€” I can add concise notes and short snippets.
 
   If you want me to re-run formatting tweaks (shorter, longer, or targeted for human readers), tell me the style and I'll patch it.
 
 ---
 
-### `game/gui/eventwindow.gui` — key takeaways
+### `game/gui/eventwindow.gui` â€” key takeaways
 
 - Purpose: master example of a reusable popup window with heavy datamodel usage (Event:GetEvent, EventWindow.GetOptions).
 - Structure:
@@ -224,7 +224,7 @@ Vanilla GUI files to inspect (Victoria 3 workspace findings  representative lis
   - When creating your own modal with options, follow the `datamodel` -> `item` pattern and provide both highlighted and normal item UIs so you can show focused choices.
   - Use `blockoverride` to keep header/close/minimize behaviour identical while swapping only `event_content`.
 
-Example snippet — lightweight event-style option list (safe override):
+Example snippet â€” lightweight event-style option list (safe override):
 
 ```text
 # In mod gui override file (00_my_event_overrides.gui)
@@ -241,13 +241,13 @@ blockoverride "event_content" {
 
 ---
 
-### `game/gui/tech_tree.gui` — key takeaways
+### `game/gui/tech_tree.gui` â€” key takeaways
 
 - Purpose: complex zoomable graph example (nodes + splines). Excellent reference for pan/zoom widgets, large datamodel-driven graphs, and performance-conscious patterns.
 - Important concepts shown:
   - `zoomarea`/`zoomwidget` pattern: `zoom`, `zoom_step`, `zoom_min`/`zoom_max`, and `draggable_by` show how to build interactive pan/zoom graphs.
   - Separation of concerns: datamodels for `datamodel_lines` and `datamodel_items` feed the `line_area` and `node_area` respectively.
-  - Node & edge naming constraints: certain child widget names are fixed (e.g., `margin_top_left`, `margin_bottom_right`, `line_area`, `node_area`) — do not rename those if you replicate the pattern.
+  - Node & edge naming constraints: certain child widget names are fixed (e.g., `margin_top_left`, `margin_bottom_right`, `line_area`, `node_area`) â€” do not rename those if you replicate the pattern.
   - Visual states for edges (researching, researched, locked) are implemented by alternative `techtree_spline` blocks with `visible` expressions and `blockoverride` to swap textures.
   - Use of `widgetid = "[TechTreeItem.GetKey]"` to assign stable IDs to items (useful for preserving selection/hover across reloads).
 - Performance cautions:
@@ -257,7 +257,7 @@ blockoverride "event_content" {
   - Build a mod panel with a small `tech_tree_graph`-style `zoomarea` if you need panning content; mirror the `zoomwidget` setup and reuse `line_area`/`node_area` names.
   - To change line visuals, use `blockoverride` on the `techtree_spline` block to swap `tech_line_texture`/`tech_line_texture_border` safely.
 
-Example snippet — override tech line textures via a safe 00_ file:
+Example snippet â€” override tech line textures via a safe 00_ file:
 
 ```text
 types my_techtree_overrides {
@@ -285,12 +285,12 @@ blockoverride "extra_lines" {
 
 ## Requirements checklist (delta)
 
-- Extract and summarize `ingame_hud.gui` — Done
-- Extract and summarize `eventwindow.gui` — Done
-- Extract and summarize `tech_tree.gui` — Done
-- Append examples/snippets to prompt file — Done
+- Extract and summarize `ingame_hud.gui` â€” Done
+- Extract and summarize `eventwindow.gui` â€” Done
+- Extract and summarize `tech_tree.gui` â€” Done
+- Append examples/snippets to prompt file â€” Done
 
 ## Next steps (optional)
 
 - I can create example `gui/00_*` override files inside your mod (small, safe changes) and run a quick validation check for syntax consistency.
-- Or I can extract 2–3 more heavy windows (e.g., `topbar.gui`, `notification.gui`) and append their summaries.
+- Or I can extract 2â€“3 more heavy windows (e.g., `topbar.gui`, `notification.gui`) and append their summaries.

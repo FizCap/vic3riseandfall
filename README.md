@@ -1,4 +1,4 @@
-# Victoria 3 Timeline Mod  
+# Victoria 3 Timeline Mod
 *Alternate history start dates & economic fixes*
 
 ## Overview
@@ -25,8 +25,8 @@ Contribute through:
 > *Note: Still learning modding - simple suggestions preferred!*
 
 ## Frequently Asked Questions
-- [📚 Mod Wiki & FAQ](https://github.com/FizCap/Victoria3Timeline/wiki)
-- [⚠️ Known Issues List](https://github.com/FizCap/Victoria3Timeline/issues)
+- [Ã°Å¸â€œÅ¡ Mod Wiki & FAQ](https://github.com/FizCap/Victoria3Timeline/wiki)
+- [Ã¢Å¡Â Ã¯Â¸Â Known Issues List](https://github.com/FizCap/Victoria3Timeline/issues)
 
 ## Credits
 Special thanks to:
@@ -34,7 +34,7 @@ Special thanks to:
 - [Victoria 3 Modding Co-Op (Discord)](https://discord.gg/HNvyZJQxEV)
 - [EU4 Converter (GitHub)](https://github.com/ParadoxGameConverters/EU4ToVic3)
 
-## ⚠️ Load Order Warning
+## Ã¢Å¡Â Ã¯Â¸Â Load Order Warning
 **CRITICAL:** Place this mod at the **BOTTOM** of your load order to prevent compatibility issues with other mods!
 
 ---

@@ -1,0 +1,30 @@
+namespace = personal_union
+
+personal_union.1 = {
+    type = country_event
+    title = personal_union.1.t
+    desc = personal_union.1.d
+    event_image = {
+        texture = "gfx/event_pictures/personal_union_generic.dds"
+    }
+    duration = 3
+
+    option = {
+        name = personal_union.1.a
+        default_option = yes
+        ai_chance = { factor = 1 }
+        # Accept personal union
+        create_diplomatic_pact = {
+            country = scope:pu_target_country
+            type = personal_union
+        }
+        every_country = {
+        post_notification = personal_union_notification
+            }
+    }
+    option = {
+        name = personal_union.1.b
+        ai_chance = { factor = 0 }
+        #Decline personal union
+    }
+}

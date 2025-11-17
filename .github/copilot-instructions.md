@@ -134,10 +134,10 @@ et_heir_storage = {
 - `docs/event_targets.log`: List of event targets and their input/output scopes.
 
 ### Victoria 3 vanilla docs & GUI notes (added)
-- `game/common/on_actions/` — Many useful built-in on-actions exist in vanilla, including `on_monthly_pulse`, `on_game_started`, `on_game_started_after_lobby` and other scheduled pulses. Read these to reuse logic and naming patterns.
-- `gui/window_component_library.gui` and `gui/frontend/` — Victoria 3 keeps many GUI template names identical to CK3 (button_standard, Background_Area etc.) to enable copy/paste GUI work across games. When porting CK3 GUI snippets into V3 search these files for the exact template names and verify they show the assets you expect.
-- `common/scripted_effects/`, `common/scripted_triggers/`, `common/scripted_modifiers/` — V3 uses the same scripted_* organization as CK3; reuse vanilla code patterns where feasible.
-- `localization/english/*` — Check `journal_entries` and `alerts` localization; V3 uses `concept_journal_entry` and `je_*` keys extensively — search `game/localization` for `je_` to learn how journal entries and their tooltips are structured.
+- `game/common/on_actions/` â€” Many useful built-in on-actions exist in vanilla, including `on_monthly_pulse`, `on_game_started`, `on_game_started_after_lobby` and other scheduled pulses. Read these to reuse logic and naming patterns.
+- `gui/window_component_library.gui` and `gui/frontend/` â€” Victoria 3 keeps many GUI template names identical to CK3 (button_standard, Background_Area etc.) to enable copy/paste GUI work across games. When porting CK3 GUI snippets into V3 search these files for the exact template names and verify they show the assets you expect.
+- `common/scripted_effects/`, `common/scripted_triggers/`, `common/scripted_modifiers/` â€” V3 uses the same scripted_* organization as CK3; reuse vanilla code patterns where feasible.
+- `localization/english/*` â€” Check `journal_entries` and `alerts` localization; V3 uses `concept_journal_entry` and `je_*` keys extensively â€” search `game/localization` for `je_` to learn how journal entries and their tooltips are structured.
 
 ---
 
@@ -150,7 +150,7 @@ et_heir_storage = {
 ### CK3 cross-checks & porting tips (added)
 - When bringing CK3 patterns into Victoria 3: always search the V3 `game/common/` and `gui/` folders to ensure the CK3 token exists in V3. Many tokens are shared but names can differ.
 - GUI: check `game/gui/window_component_library.gui` to find CK3 template names that were copied to V3. The file contains a note explaining some types are reused for compatibility.
-- Events & on_actions: consult `game/common/on_actions/*` in vanilla V3. Some on_action names and scheduling semantics differ between CK3 and V3 — prefer vanilla V3 examples.
+- Events & on_actions: consult `game/common/on_actions/*` in vanilla V3. Some on_action names and scheduling semantics differ between CK3 and V3 â€” prefer vanilla V3 examples.
 - Localization and messages: V3 uses `journal_entries` and `journal_entry_groups` for long-form journal text, and `je_*` keys are common . Match the pattern of `je_*` keys in vanilla V3 for in-game journal content.
 - Tokens & docs: if docs logs are missing for your local build, regenerate engine docs (or use the `docs/` folder in this repository) and search `docs/triggers.log`, `docs/effects.log` for the tokens you plan to use. This prevents silent failures due to unsupported tokens.
 

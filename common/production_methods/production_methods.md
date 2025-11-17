@@ -1,4 +1,4 @@
-﻿    pm_key = {									# a pm's key must be unique for its building
+    pm_key = {									# a pm's key must be unique for its building
         texture = "path/to/texture"				# pm icon
         is_default = yes/no						# is this the default pm for its group? if no pm in a group is designated as the default, the first pm is considered the default.
 
@@ -47,9 +47,9 @@
         unlocking_principles = {				# optional list of Power Bloc principles required for a country to activate this pm
             # list of principle keys
         }
-	
+
         unlocking_identity = key				# optional key for Power Bloc identity required for a country to activate this pm (repeateable)
-	
+
         ai_weight = fixed_point					# base AI weight, default 1.0
         pollution_generation = fixed_point		# how much visual pollution does this building add to its state region while this pm is active (total pollution in state region is scaled by arable land), default 0.0
     }

@@ -1,0 +1,87 @@
+rf_transfer_to_treasury_button = {
+	name = "rf_transfer_to_treasury_button"
+	desc = "rf_transfer_to_treasury_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		investment_pool > 100000
+		OR = {
+			is_ai = yes
+			is_player = yes
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { has_game_rule = ai_improvement_enabled }
+			add = 0
+		}
+		if = {
+			limit = {
+				has_game_rule = ai_improvement_enabled
+				gold_reserves <= 0
+				investment_pool > 100000
+			}
+			add = 100
+		}
+	}
+
+	effect = {
+		add_investment_pool = -100000
+		add_treasury = 100000
+	}
+}
+
+rf_auto_transfer_activate_button = {
+	name = "rf_auto_transfer_activate_button"
+	desc = "rf_auto_transfer_activate_button_desc"
+
+	visible = {
+		NOT = {
+			has_variable = rf_auto_transfer_var
+		}
+	}
+
+	possible = {
+		always = yes
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { has_game_rule = ai_improvement_enabled }
+			add = 100
+		}
+	}
+
+	effect = {
+		set_variable = rf_auto_transfer_var
+		custom_tooltip = rf_auto_transfer_tt
+	}
+}
+
+rf_auto_transfer_deactivate_button = {
+	name = "rf_auto_transfer_deactivate_button"
+	desc = "rf_auto_transfer_deactivate_button_desc"
+
+	visible = {
+		has_variable = rf_auto_transfer_var
+	}
+
+	possible = {
+		always = yes
+	}
+
+	ai_chance = {
+		value = 0
+	}
+
+	effect = {
+		remove_variable = rf_auto_transfer_var
+		custom_tooltip = rf_stop_auto_transfer_tt
+	}
+}

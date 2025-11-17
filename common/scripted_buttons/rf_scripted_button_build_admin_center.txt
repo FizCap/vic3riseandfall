@@ -1,0 +1,306 @@
+rf_scripted_button_build_admin_center = {
+    name = "rf_scripted_button_build_admin_center"
+    desc = "rf_scripted_button_build_admin_center_desc"
+
+    effect = {
+        rf_manual_build_government_administration = yes
+    }
+
+    visible = {
+        always = yes
+    }
+
+    possible = {
+            can_construct_building = building_government_administration
+        }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                gold_reserves > 10000
+                bureaucracy < 0
+                NOT = {
+                    any_scope_state = {
+                        b:building_government_administration ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
+    }
+}
+
+rf_scripted_button_build_railway = {
+    name = "rf_scripted_button_build_railway"
+    desc = "rf_scripted_button_build_railway_desc"
+
+
+    effect = {
+        rf_manual_build_railway = yes
+    }
+
+    visible = {
+        always = yes
+    }
+
+    possible = {
+            has_technology_researched = railways
+        }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                gold_reserves > rf_autobuild_reserve_limit
+                any_scope_state = { delta_infrastructure < 0 }
+                bureaucracy > 0
+                NOT = {
+                    any_scope_state = {
+                        b:building_railway ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
+    }
+}
+
+rf_scripted_button_build_port = {
+    name = "rf_scripted_button_build_port"
+    desc = "rf_scripted_button_build_port_desc"
+
+    effect = {
+        rf_manual_build_port = yes
+    }
+
+    visible = {
+        always = yes
+    }
+
+    possible = {
+            can_construct_building = building_port
+        }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                gold_reserves > rf_autobuild_reserve_limit
+                any_scope_state = { delta_infrastructure < 0 }
+                bureaucracy > 0
+                NOT = {
+                    any_scope_state = {
+                        b:building_port ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            add = 100
+        }
+    }
+}
+
+rf_scripted_button_build_power_plant = {
+    name = "rf_scripted_button_build_power_plant"
+    desc = "rf_scripted_button_build_power_plant_desc"
+
+    effect = {
+        rf_manual_build_power_plant = yes
+    }
+
+    visible = {
+        always = yes
+    }
+
+    possible = {
+            has_technology_researched = electrical_generation
+        }
+
+    ai_chance = { value = 0 }
+}
+
+rf_scripted_button_auto_build_admin_activate = {
+    name = "rf_scripted_button_auto_build_admin_activate"
+    desc = "rf_scripted_button_auto_build_admin_activate_desc"
+    visible = {
+        NOT = { has_variable = rf_auto_build_gov_cooldown }
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = rf_auto_build_gov_cooldown
+        custom_tooltip = rf_auto_build_admin_on_tt
+    }
+}
+
+
+rf_scripted_button_auto_build_admin_deactivate = {
+    name = "rf_scripted_button_auto_build_admin_deactivate"
+    desc = "rf_scripted_button_auto_build_admin_deactivate_desc"
+    visible = {
+        has_variable = rf_auto_build_gov_cooldown
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = rf_auto_build_gov_cooldown
+        custom_tooltip = rf_auto_build_admin_off_tt
+    }
+}
+
+rf_scripted_button_auto_build_railway_activate = {
+    name = "rf_scripted_button_auto_build_railway_activate"
+    desc = "rf_scripted_button_auto_build_railway_activate_desc"
+    visible = {
+        NOT = { has_variable = rf_auto_build_rail_cooldown }
+    }
+    possible = { has_technology_researched = railways }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = rf_auto_build_rail_cooldown
+        custom_tooltip = rf_auto_build_railway_on_tt
+    }
+}
+
+rf_scripted_button_auto_build_railway_deactivate = {
+    name = "rf_scripted_button_auto_build_railway_deactivate"
+    desc = "rf_scripted_button_auto_build_railway_deactivate_desc"
+    visible = {
+        has_variable = rf_auto_build_rail_cooldown
+    }
+    possible = { has_technology_researched = railways }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = rf_auto_build_rail_cooldown
+        custom_tooltip = rf_auto_build_railway_off_tt
+    }
+}
+
+rf_scripted_button_auto_build_port_activate = {
+    name = "rf_scripted_button_auto_build_port_activate"
+    desc = "rf_scripted_button_auto_build_port_activate_desc"
+    visible = {
+        NOT = { has_variable = rf_auto_build_port_cooldown }
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = rf_auto_build_port_cooldown
+        custom_tooltip = rf_auto_build_port_on_tt
+    }
+}
+
+rf_scripted_button_auto_build_port_deactivate = {
+    name = "rf_scripted_button_auto_build_port_deactivate"
+    desc = "rf_scripted_button_auto_build_port_deactivate_desc"
+    visible = {
+        has_variable = rf_auto_build_port_cooldown
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = rf_auto_build_port_cooldown
+        custom_tooltip = rf_auto_build_port_off_tt
+    }
+}
+
+rf_scripted_button_auto_build_power_activate = {
+    name = "rf_scripted_button_auto_build_power_activate"
+    desc = "rf_scripted_button_auto_build_power_activate_desc"
+    visible = {
+        NOT = { has_variable = rf_auto_build_power_cooldown }
+    }
+    possible = {
+    has_technology_researched = electrical_generation
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = rf_auto_build_power_cooldown
+        custom_tooltip = rf_auto_build_power_on_tt
+    }
+}
+
+rf_scripted_button_auto_build_power_deactivate = {
+    name = "rf_scripted_button_auto_build_power_deactivate"
+    desc = "rf_scripted_button_auto_build_power_deactivate_desc"
+    visible = {
+        has_variable = rf_auto_build_power_cooldown
+    }
+    possible = {
+    has_technology_researched = electrical_generation
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = rf_auto_build_power_cooldown
+        custom_tooltip = rf_auto_build_power_off_tt
+    }
+}
+
+rf_scripted_button_build_construction_sector = {
+    name = "rf_scripted_button_build_construction_sector"
+    desc = "rf_scripted_button_build_construction_sector_desc"
+
+    effect = {
+        rf_manual_build_construction_sector = yes
+    }
+
+    visible = { always = yes }
+
+    possible = {
+        can_construct_building = building_construction_sector
+    }
+
+    ai_chance = {
+        value = 0
+        if = {
+            limit = {
+                has_game_rule = ai_improvement_enabled
+                NOT = {
+                    any_scope_state = {
+                        b:building_construction_sector ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+                AND = {
+                    has_wasted_construction = no
+                    investment_pool_net_income > 1
+                }
+            }
+            add = 100
+        }
+    }
+}
+
+rf_scripted_button_auto_build_construction_activate = {
+    name = "rf_scripted_button_auto_build_construction_activate"
+    desc = "rf_scripted_button_auto_build_construction_activate_desc"
+    visible = { NOT = { has_variable = rf_auto_build_construction_cooldown } }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = rf_auto_build_construction_cooldown
+        custom_tooltip = rf_auto_build_construction_on_tt
+    }
+}
+
+rf_scripted_button_auto_build_construction_deactivate = {
+    name = "rf_scripted_button_auto_build_construction_deactivate"
+    desc = "rf_scripted_button_auto_build_construction_deactivate_desc"
+    visible = { has_variable = rf_auto_build_construction_cooldown }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = rf_auto_build_construction_cooldown
+        custom_tooltip = rf_auto_build_construction_off_tt
+    }
+}

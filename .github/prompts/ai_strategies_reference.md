@@ -11,52 +11,52 @@ This document summarizes the structure, commands, and conventions used in Victor
 
 ## Structure & Key Commands
 
-- **ai_strategy_name = { ... }**  
+- **ai_strategy_name = { ... }**
   The main block for each AI strategy. Each strategy has a unique name (e.g., `ai_strategy_default`).
 
-- **icon = ...**  
+- **icon = ...**
   Path to the icon for the strategy (for reference/documentation; often not shown in-game).
 
-- **will_form_power_bloc = { ... }**  
+- **will_form_power_bloc = { ... }**
   Trigger block. If true for any active strategy, the AI will try to form a power bloc.
 
-- **desired_tax_level / max_tax_level / min_tax_level**  
+- **desired_tax_level / max_tax_level / min_tax_level**
   Sets the AI's preferred, maximum, and minimum tax levels.
 
-- **undesirable_infamy_level / unacceptable_infamy_level = { value = ... }**  
+- **undesirable_infamy_level / unacceptable_infamy_level = { value = ... }**
   Infamy thresholds for AI behavior regarding wargoals.
 
-- **ideological_opinion_effect_mult = { value = ... }**  
+- **ideological_opinion_effect_mult = { value = ... }**
   Multiplier for how much government ideology differences affect AI diplomatic acceptance.
 
-- **revolution_aversion = { value = ... if = { ... } }**  
+- **revolution_aversion = { value = ... if = { ... } }**
   Aversion to enacting laws that could spark civil war, with conditional modifiers.
 
-- **min_law_chance_to_pass / max_progressiveness / max_regressiveness = { value = ... }**  
+- **min_law_chance_to_pass / max_progressiveness / max_regressiveness = { value = ... }**
   Law-passing thresholds and AI willingness to be progressive or regressive.
 
-- **diplomatic_play_support / diplomatic_play_neutrality / diplomatic_play_boldness = { value = ... if = { ... } }**  
+- **diplomatic_play_support / diplomatic_play_neutrality / diplomatic_play_boldness = { value = ... if = { ... } }**
   Modifiers for AI behavior in diplomatic plays, with detailed conditional logic.
 
-- **wargoal_maneuvers_fraction = { value = ... if = { ... } }**  
+- **wargoal_maneuvers_fraction = { value = ... if = { ... } }**
   Fraction of maneuvers AI is willing to use for wargoals, with conditional modifiers.
 
-- **change_law_chance = { value = ... }**  
+- **change_law_chance = { value = ... }**
   Chance each update that the AI will try to change a law.
 
-- **pro_interest_groups / anti_interest_groups = { ... }**  
+- **pro_interest_groups / anti_interest_groups = { ... }**
   Interest groups the AI prefers or avoids in government.
 
-- **institution_scores = { institution_name = { value = ... } ... }**  
+- **institution_scores = { institution_name = { value = ... } ... }**
   AI preference for investing in specific institutions.
 
-- **obligation_value = { value = ... if = { ... } multiply = { ... } }**  
+- **obligation_value = { value = ... if = { ... } multiply = { ... } }**
   How much the AI values obligations from other countries, with complex conditional logic.
 
-- **state_value / treaty_port_value = { value = ... if = { ... } }**  
+- **state_value / treaty_port_value = { value = ... if = { ... } }**
   How much the AI desires a state or treaty port, with many nested conditions.
 
-- **subject_value = { ... }**  
+- **subject_value = { ... }**
   How much the AI desires another country as a subject.
 
 ---

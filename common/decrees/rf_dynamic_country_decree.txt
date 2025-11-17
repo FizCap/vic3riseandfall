@@ -1,10 +1,10 @@
-﻿decree_et_mark_state_for_dyn_country = {
+decree_rf_mark_state_for_dyn_country = {
 	texture = "gfx/interface/icons/decree/decree_promote_national_values.dds"
 
 	# Only available to player and when builder is enabled in the JE
 	country_trigger = {
 		is_player = yes
-		has_variable = et_dyn_builder_enabled
+		has_variable = rf_dyn_builder_enabled
 	}
 
 	# Neutral modifier block; serves only as a visual marker via the decree icon on the map

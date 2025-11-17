@@ -1,4 +1,4 @@
-on_monthly_pulse = {
+﻿on_monthly_pulse = {
     on_actions = {
         rf_annex_decentralized_monthly
     }

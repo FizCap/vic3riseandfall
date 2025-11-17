@@ -1,4 +1,4 @@
-rf_negative_bureaucracy = {
+﻿rf_negative_bureaucracy = {
     country_force_privatization_bool = yes
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }

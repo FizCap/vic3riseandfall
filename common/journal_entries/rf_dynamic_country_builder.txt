@@ -1,4 +1,4 @@
-rf_dynamic_country_builder = {
+﻿rf_dynamic_country_builder = {
 	icon = "gfx/interface/icons/journal_entry_icons/je_unification.dds"
 	group = je_group_foreign_affairs
 	should_be_pinned_by_default = yes

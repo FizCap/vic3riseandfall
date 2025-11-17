@@ -1,4 +1,4 @@
-#############################################
+﻿#############################################
 # DYNAMIC COUNTRY FINALIZATION (RECOGNIZED) #
 #############################################
 rf_button_finalize_dynamic_country = {
@@ -88,7 +88,7 @@ rf_button_finalize_dynamic_country = {
 			}
 		}
 		else = {
-			# AI PATH â€” call the main AI effect
+			# AI PATH Ã¢â‚¬â€ call the main AI effect
 			rf_dynamic_country_ai_recognized = yes
 		}
 
@@ -192,7 +192,7 @@ rf_button_finalize_dynamic_country_unrecognized = {
 			}
 		}
 		else = {
-			# AI auto path â€” call the main AI effect
+			# AI auto path Ã¢â‚¬â€ call the main AI effect
 			rf_dynamic_country_ai_unrecognized = yes
 		}
 

@@ -1,4 +1,4 @@
-# Maintain and expire colony claims after a trial period.
+﻿# Maintain and expire colony claims after a trial period.
 # - If a country has a claim on a state and the state is not being colonized or
 #   the country is not at war with the owner, then the claim should expire
 #   after 10 years.

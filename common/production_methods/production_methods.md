@@ -1,4 +1,4 @@
-    pm_key = {									# a pm's key must be unique for its building
+﻿    pm_key = {									# a pm's key must be unique for its building
         texture = "path/to/texture"				# pm icon
         is_default = yes/no						# is this the default pm for its group? if no pm in a group is designated as the default, the first pm is considered the default.
 

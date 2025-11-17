@@ -1,4 +1,4 @@
-# This will do investment pool calculations based on the gold reserves.
+﻿# This will do investment pool calculations based on the gold reserves.
 
 rf_reserve_floor = {
 	value = gold_reserves_limit

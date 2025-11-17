@@ -1,4 +1,4 @@
-rf_decentralized_culture_merge_effect = {
+﻿rf_decentralized_culture_merge_effect = {
             every_decentralized_country = {
                 # Iberian cultures merge into Spanish/Portuguese
                 if = {

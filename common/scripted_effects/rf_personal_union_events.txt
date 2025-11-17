@@ -1,4 +1,4 @@
-rf_austria_burgundy_union_effect = {
+﻿rf_austria_burgundy_union_effect = {
     c:AUS = {
         create_diplomatic_pact = {
             country = c:X59

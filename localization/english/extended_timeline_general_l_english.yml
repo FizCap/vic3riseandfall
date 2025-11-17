@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
   rf_research_Debuff: "ET: Apply Research Debuff (1444-1820)"
   rf_transfer_to_treasury_button: "Transfer to Treasury"
   rf_transfer_to_treasury_button_desc: "Transfer 100,000 from the investment pool to the treasury. Only available if the investment pool has sufficient funds."

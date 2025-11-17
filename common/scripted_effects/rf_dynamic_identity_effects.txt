@@ -1,4 +1,4 @@
-#############################################
+﻿#############################################
 # Dynamic Identity (Culture & Religion Pick) #
 # Heuristic inspired by dynamic cultures mod #
 #############################################
@@ -45,7 +45,7 @@ rf_assign_dominant_identity = {
     # Choose a religion from a random pop of the primary culture
     random_scope_pop = {
         # Choose a sample pop located in a state owned by the newly created country
-        # (use `state` not `location` Ã¢â‚¬â€ `location` isn't a valid trigger here).
+        # (use `state` not `location` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â `location` isn't a valid trigger here).
         limit = { state = { owner = ROOT } culture = scope:rf_new_primary_culture }
         save_scope_as = rf_random_pop
     }

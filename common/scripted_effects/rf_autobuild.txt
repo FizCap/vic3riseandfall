@@ -1,4 +1,4 @@
-rf_manual_build_government_administration = {
+﻿rf_manual_build_government_administration = {
     #manual build button for the government administration
 
     # 1) If many states already have admin buildings with good occupancy, expand those (existing behaviour)

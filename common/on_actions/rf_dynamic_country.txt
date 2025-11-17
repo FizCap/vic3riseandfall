@@ -1,4 +1,4 @@
-on_monthly_pulse_country = {
+﻿on_monthly_pulse_country = {
     on_actions = {
         rf_dynamic_country_ai_monthly
         rf_dynamic_country_ai_monthly_unrecognized

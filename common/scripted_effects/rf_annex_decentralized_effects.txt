@@ -1,4 +1,4 @@
-rf_annex_decentralized_limited_effect = {
+﻿rf_annex_decentralized_limited_effect = {
     every_decentralized_country = {
         limit = {
             num_states <= 3

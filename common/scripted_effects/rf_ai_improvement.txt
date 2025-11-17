@@ -1,4 +1,4 @@
-rf_ai_improvement_effect_dynamic = {
+﻿rf_ai_improvement_effect_dynamic = {
     if = {
         # Use reserve/income ratio for dynamic scaling
         if = {

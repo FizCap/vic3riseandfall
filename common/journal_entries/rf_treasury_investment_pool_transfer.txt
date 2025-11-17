@@ -1,4 +1,4 @@
-rf_treasury_investment_pool_transfer = {
+﻿rf_treasury_investment_pool_transfer = {
 	icon = "gfx/interface/icons/investment_pool.dds"
 	group = je_group_foreign_affairs
 

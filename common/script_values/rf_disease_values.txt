@@ -1,4 +1,4 @@
-rf_epidemic_outbreak_chance = {
+﻿rf_epidemic_outbreak_chance = {
     # Base chance for an epidemic outbreak
     value = 0.0012
     multiply = {

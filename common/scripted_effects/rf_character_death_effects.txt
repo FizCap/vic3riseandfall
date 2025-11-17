@@ -1,4 +1,4 @@
-rf_random_character_death_effect = {
+﻿rf_random_character_death_effect = {
   if = {
     limit = { age < -1 } #kill immortal characters that should not exist
     kill_character = yes

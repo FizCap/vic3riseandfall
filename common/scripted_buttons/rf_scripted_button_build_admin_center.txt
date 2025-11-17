@@ -1,4 +1,4 @@
-rf_scripted_button_build_admin_center = {
+﻿rf_scripted_button_build_admin_center = {
     name = "rf_scripted_button_build_admin_center"
     desc = "rf_scripted_button_build_admin_center_desc"
 

@@ -1,4 +1,4 @@
-rf_transfer_to_treasury_button = {
+﻿rf_transfer_to_treasury_button = {
 	name = "rf_transfer_to_treasury_button"
 	desc = "rf_transfer_to_treasury_button_desc"
 

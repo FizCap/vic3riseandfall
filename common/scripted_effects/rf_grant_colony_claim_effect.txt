@@ -1,4 +1,4 @@
-rf_grant_colony_claim_effect = {
+﻿rf_grant_colony_claim_effect = {
     if = {
         limit = {
             exists = owner

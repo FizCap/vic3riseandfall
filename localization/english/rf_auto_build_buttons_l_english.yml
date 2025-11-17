@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
  rf_scripted_button_auto_build_admin_activate: "Enable Auto-Build: Government Administration"
  rf_scripted_button_auto_build_admin_activate_desc: "Toggle auto-build: automatically construct Government Administration buildings using the mod's per-state checks (expands high-occupancy centres; if none exist, a single eligible state will get one)."
  rf_scripted_button_build_port: "Construct Port"

@@ -1,4 +1,4 @@
-rf_reserve_income_ratio = {
+﻿rf_reserve_income_ratio = {
     if = {
         limit = { income > expenses }
         value = gold_reserves_limit

@@ -1,4 +1,4 @@
-rf_centralized_culture_merge_cleanup = {
+﻿rf_centralized_culture_merge_cleanup = {
     every_country = {
         save_scope_as = rf_country
 

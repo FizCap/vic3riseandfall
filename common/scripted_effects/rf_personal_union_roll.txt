@@ -1,4 +1,4 @@
-rf_personal_union_roll = {
+﻿rf_personal_union_roll = {
     save_scope_as = pu_target_country
     random_list = {
         10 = {

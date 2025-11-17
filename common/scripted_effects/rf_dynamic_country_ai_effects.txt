@@ -1,4 +1,4 @@
-#############################################
+﻿#############################################
 # Dynamic Country AI Expansion (Randomized) #
 # rf_dynamic_country_ai_effects.txt         #
 #

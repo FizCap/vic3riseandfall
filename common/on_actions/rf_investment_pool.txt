@@ -1,4 +1,4 @@
-on_monthly_pulse_country = {
+﻿on_monthly_pulse_country = {
 	on_actions = {
 		rf_investment_pool_monthly
 		rf_admin_center_framework_monthly

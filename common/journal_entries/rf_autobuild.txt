@@ -1,4 +1,4 @@
-rf_je_admin_center_framework = {
+﻿rf_je_admin_center_framework = {
 	icon = "journal_entry_icon_government"
 	group = je_group_foreign_affairs
 

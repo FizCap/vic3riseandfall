@@ -1,4 +1,4 @@
-on_game_started_after_lobby = {
+﻿on_game_started_after_lobby = {
     on_actions = {
         rf_centralized_culture_merge_action_effect
     }

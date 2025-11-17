@@ -1,4 +1,4 @@
-on_monthly_pulse_country = {
+﻿on_monthly_pulse_country = {
     on_actions = {
         rf_auto_build_monthly_gov
         rf_auto_build_monthly_rail

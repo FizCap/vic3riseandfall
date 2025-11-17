@@ -1,4 +1,4 @@
-rf_centralized_culture_merge_effect = {
+﻿rf_centralized_culture_merge_effect = {
             every_country = {
                 # Iberian cultures merge into Spanish/Portuguese
                 if = {

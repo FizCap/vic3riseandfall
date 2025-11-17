@@ -37,4 +37,18 @@ et_assign_dominant_identity = {
     }
     # Kill the ruler of the country
     ruler = { kill_character = yes }
-}
+
+    # RELIGION SELECTION ----------------------------------------
+    # Choose a religion from a random pop of the primary culture
+    random_scope_pop = {
+        limit = { location = { owner = ROOT } culture = scope:et_new_primary_culture }
+        save_scope_as = et_random_pop
+    }
+
+    if = {
+        limit = { scope:et_random_pop = { exists = yes } }
+        scope:et_random_pop = {
+            religion = { save_scope_as = et_new_state_religion }
+        }
+        set_state_religion = scope:et_new_state_religion
+    }

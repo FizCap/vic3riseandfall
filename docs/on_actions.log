@@ -2,6 +2,12 @@ On Action Documentation:
 
 --------------------
 
+start_boost:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_law_enactment_fail:
 From Code: Yes
 Expected Scope: none
@@ -26,6 +32,12 @@ Expected Scope: none
 
 --------------------
 
+et_personal_union_on_character_death:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 korea_half_yearly_events:
 From Code: No
 Expected Scope: country
@@ -41,6 +53,12 @@ Expected Scope: country
 on_yearly_pulse_country:
 From Code: Yes
 Expected Scope: country
+
+--------------------
+
+et_debug_grant_colonization_tech:
+From Code: No
+Expected Scope: none
 
 --------------------
 
@@ -62,6 +80,12 @@ Expected Scope: none
 
 --------------------
 
+ai_improvement2:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_self_capitulated_notification:
 From Code: Yes
 Expected Scope: none
@@ -76,12 +100,6 @@ Expected Scope: none
 
 on_yearly_pulse_character:
 From Code: Yes
-Expected Scope: none
-
---------------------
-
-converter_acquired_technology_on_actions:
-From Code: No
 Expected Scope: none
 
 --------------------
@@ -110,15 +128,15 @@ Expected Scope: none
 
 --------------------
 
-converter_deposed_immortal_on_actions:
-From Code: No
+on_military_formation_created:
+From Code: Yes
 Expected Scope: none
 
 --------------------
 
-on_military_formation_created:
-From Code: Yes
-Expected Scope: none
+et_natural_disaster_yearly_events:
+From Code: No
+Expected Scope: country
 
 --------------------
 
@@ -130,6 +148,12 @@ Expected Scope: none
 
 on_reverse_sway_offer_accepted:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_admin_center_framework_monthly:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -152,8 +176,20 @@ Expected Scope: none
 
 --------------------
 
+et_random_character_death:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_demobilized_general:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_centralized_culture_new_country:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -176,8 +212,8 @@ Expected Scope: none
 
 --------------------
 
-ttip_on_monthly_effects:
-From Code: No
+on_new_interest_group_leader:
+From Code: Yes
 Expected Scope: none
 
 --------------------
@@ -224,6 +260,12 @@ Expected Scope: country
 
 --------------------
 
+colony_grant_claim:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_diplomatic_demand:
 From Code: Yes
 Expected Scope: none
@@ -232,6 +274,24 @@ Expected Scope: none
 
 on_battle_lost:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_auto_build_monthly_gov:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+et_create_csl:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+et_auto_build_monthly_construction:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -260,13 +320,19 @@ Expected Scope: country
 
 --------------------
 
+bpm_dynamic_modifier_law_promise_add:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_election_campaign_start:
 From Code: Yes
 Expected Scope: none
 
 --------------------
 
-converter_country_released_as_independent_on_actions:
+et_debug_mark_all_states_new_world:
 From Code: No
 Expected Scope: none
 
@@ -356,12 +422,6 @@ Expected Scope: none
 
 --------------------
 
-converter_revolution_start_on_actions:
-From Code: No
-Expected Scope: none
-
---------------------
-
 on_memento_mori:
 From Code: No
 Expected Scope: none
@@ -370,12 +430,6 @@ Expected Scope: none
 
 on_diplomatic_proposal_break:
 From Code: Yes
-Expected Scope: none
-
---------------------
-
-on_action_mwid_infamy_check:
-From Code: No
 Expected Scope: none
 
 --------------------
@@ -393,6 +447,18 @@ Expected Scope: none
 --------------------
 
 on_treaty_entered_into_force:
+From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_dynamic_country_ai_monthly:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+on_treaty_article_removed:
 From Code: Yes
 Expected Scope: none
 
@@ -417,6 +483,18 @@ Expected Scope: state
 --------------------
 
 on_our_convoys_raided:
+From Code: Yes
+Expected Scope: none
+
+--------------------
+
+stts_events_pulse:
+From Code: No
+Expected Scope: country
+
+--------------------
+
+on_national_awakening_started:
 From Code: Yes
 Expected Scope: none
 
@@ -448,6 +526,12 @@ Expected Scope: none
 
 on_treaty_enforced:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+ai_improvement3:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -488,6 +572,18 @@ Expected Scope: none
 
 --------------------
 
+et_homeland_cleanup:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+ai_improvement:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_enemy_convoys_raided:
 From Code: Yes
 Expected Scope: none
@@ -508,6 +604,12 @@ Expected Scope: country
 
 on_retarget_link:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_investment_pool_monthly:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -608,6 +710,12 @@ Expected Scope: none
 
 --------------------
 
+kamehameha_coin_toss:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 indochina_yearly_events:
 From Code: No
 Expected Scope: country
@@ -623,12 +731,6 @@ Expected Scope: none
 on_yearly_pulse_state:
 From Code: Yes
 Expected Scope: state
-
---------------------
-
-converter_country_formed_on_actions:
-From Code: No
-Expected Scope: none
 
 --------------------
 
@@ -668,6 +770,12 @@ Expected Scope: none
 
 --------------------
 
+start_boost4:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_diplomatic_action_third_party_break_accepted:
 From Code: Yes
 Expected Scope: none
@@ -686,6 +794,12 @@ Expected Scope: none
 
 --------------------
 
+austrian_monarchy_yearly_events:
+From Code: No
+Expected Scope: country
+
+--------------------
+
 on_investment_increased:
 From Code: Yes
 Expected Scope: none
@@ -700,6 +814,12 @@ Expected Scope: none
 
 on_mobilized_general:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+stts_civil_war_won:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -730,6 +850,12 @@ Expected Scope: none
 
 on_diplo_play_subject_released_overlord:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_centralized_culture_merge_action_effect:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -800,12 +926,6 @@ Expected Scope: none
 
 --------------------
 
-converter_dead_immortal_on_actions:
-From Code: No
-Expected Scope: none
-
---------------------
-
 on_revolution_checkpoint_reached:
 From Code: Yes
 Expected Scope: country
@@ -854,6 +974,12 @@ Expected Scope: none
 
 --------------------
 
+et_auto_build_monthly_power:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 tunguska_yearly_events:
 From Code: No
 Expected Scope: country
@@ -878,6 +1004,12 @@ Expected Scope: none
 
 --------------------
 
+start_boost3:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_civil_war_won:
 From Code: Yes
 Expected Scope: none
@@ -892,6 +1024,12 @@ Expected Scope: country
 
 on_diplomatic_action_subject_increase_own_autonomy:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_state_owner_change:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -929,6 +1067,12 @@ Expected Scope: none
 on_decade_pulse_country:
 From Code: Yes
 Expected Scope: country
+
+--------------------
+
+krakatoa_on_action:
+From Code: No
+Expected Scope: none
 
 --------------------
 
@@ -974,12 +1118,6 @@ Expected Scope: none
 
 --------------------
 
-converter_country_released_on_actions:
-From Code: No
-Expected Scope: none
-
---------------------
-
 on_diplomatic_demand_accepted:
 From Code: Yes
 Expected Scope: none
@@ -994,6 +1132,12 @@ Expected Scope: none
 
 on_country_released_as_independent:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_auto_build_monthly_rail:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -1036,6 +1180,12 @@ Expected Scope: none
 
 on_diplomatic_proposal_break_owe_obligation:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+et_annex_decentralized_monthly:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -1100,6 +1250,12 @@ Expected Scope: none
 
 --------------------
 
+et_dynamic_country_ai_monthly_unrecognized:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 on_repudiate_obligation:
 From Code: Yes
 Expected Scope: none
@@ -1130,6 +1286,12 @@ Expected Scope: none
 
 --------------------
 
+montenegro_half_yearly_events:
+From Code: No
+Expected Scope: country
+
+--------------------
+
 on_start_expanding_building:
 From Code: Yes
 Expected Scope: none
@@ -1150,6 +1312,12 @@ Expected Scope: none
 
 on_journal_entry_completed:
 From Code: Yes
+Expected Scope: none
+
+--------------------
+
+on_bpm_law_enactment_started:
+From Code: No
 Expected Scope: none
 
 --------------------
@@ -1180,12 +1348,6 @@ Expected Scope: none
 
 on_native_uprising:
 From Code: Yes
-Expected Scope: none
-
---------------------
-
-converter_BRZ_je_on_actions:
-From Code: No
 Expected Scope: none
 
 --------------------
@@ -1226,12 +1388,6 @@ Expected Scope: country
 
 --------------------
 
-converter_monthly_events:
-From Code: No
-Expected Scope: country
-
---------------------
-
 on_migration_target_created_other:
 From Code: Yes
 Expected Scope: none
@@ -1262,6 +1418,12 @@ Expected Scope: state
 
 --------------------
 
+et_auto_build_monthly_port:
+From Code: No
+Expected Scope: none
+
+--------------------
+
 exiles_yearly_events:
 From Code: No
 Expected Scope: country
@@ -1288,12 +1450,6 @@ Expected Scope: country
 
 on_secession_start:
 From Code: Yes
-Expected Scope: none
-
---------------------
-
-converter_immortal_republic_on_actions:
-From Code: No
 Expected Scope: none
 
 --------------------
@@ -1340,7 +1496,13 @@ Expected Scope: none
 
 --------------------
 
-converter_secession_end_on_actions:
+bpm_dynamic_modifier_law_promise_remove:
+From Code: No
+Expected Scope: none
+
+--------------------
+
+statistics_on_actions:
 From Code: No
 Expected Scope: none
 

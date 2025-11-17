@@ -1,0 +1,45 @@
+﻿on_yearly_pulse_country = {
+  on_actions = {
+    ai_improvement
+    ai_improvement2
+    ai_improvement3
+  }
+}
+
+# Economic Boost Game Rule Effects
+
+ai_improvement = {
+    trigger = {
+        has_game_rule = ai_improvement_enabled
+        is_ai = yes
+    }
+    effect = {
+        rf_ai_improvement_effect_dynamic = yes
+    }
+}
+
+ai_improvement2 = {
+    trigger = {
+        has_game_rule = ai_improvement_enabled
+        is_ai = yes
+    }
+    effect = {
+        rf_ai_building_subsidized = yes
+    }
+}
+
+ai_improvement3 = {
+    trigger = {
+        has_game_rule = ai_improvement_enabled
+        is_ai = yes
+    }
+    effect = {
+        rf_ai_building_not_subsidized = yes
+    }
+}
+
+rf_homeland_cleanup = {
+    effect = {
+        rf_homeland_cleanup_script = yes
+    }
+}

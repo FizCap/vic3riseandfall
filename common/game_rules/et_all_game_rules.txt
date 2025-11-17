@@ -33,3 +33,25 @@ ai_improvement = {
     ai_improvement_disabled = {
     }
 }
+
+et_random_character_death = {
+    default = death_enabled
+
+    death_enabled = {
+        flag = et_random_character_death_enabled
+    }
+
+    death_disabled = {
+    }
+}
+
+et_colony_grant_claim = {
+    default = colony_grant_claim_enabled
+
+    colony_grant_claim_enabled = {
+        flag = et_colony_grant_claim_enabled
+    }
+
+    colony_grant_claim_disabled = {
+    }
+}

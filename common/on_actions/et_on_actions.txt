@@ -21,55 +21,20 @@ on_state_owner_change = {
 et_random_character_death = {
   trigger = {
     is_character_alive = yes
-    year >= 1454
-    NOT = { owner = { has_technology_researched = pharmaceuticals } }
+    has_game_rule = death_enabled
   }
   effect = {
-    if = {
-      limit = { age < -1 } #kill immortal characters that should not exist
-      kill_character = yes
-    }
-    else_if = {
-      limit = { age < 3 }
-      random_list = {
-        7 = { kill_character = yes }   # 3.5% chance per year for all under 3
-        193 = { }
-      }
-    }
-    else_if = {
-      limit = { age < 30 }
-      random_list = {
-        1 = { kill_character = yes }   # 0.5% chance per year for ages 3-29
-        199 = { }
-      }
-    }
-    else_if = {
-      limit = { age < 50 }
-      random_list = {
-        2 = { kill_character = yes }   # 1% chance per year (middle age)
-        198 = { }
-      }
-    }
-    else_if = {
-      limit = { age < 65 }
-      random_list = {
-        7 = { kill_character = yes }  # 3.5% chance per year (older adult)
-        193 = { }
-      }
-    }
-    else = {
-      random_list = {
-        20 = { kill_character = yes }  # 10% chance per year (elderly)
-        180 = { }
-      }
-    }
+    et_random_character_death_effect = yes
   }
 }
 
 colony_grant_claim = {
-    effect = {
-        et_grant_colony_claim_effect = yes
-    }
+  trigger = {
+    has_game_rule = colony_grant_claim_enabled
+  }
+  effect = {
+    et_grant_colony_claim_effect = yes
+  }
 }
 
 et_state_owner_change = {

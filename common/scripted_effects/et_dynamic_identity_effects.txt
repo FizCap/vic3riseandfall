@@ -12,22 +12,23 @@ et_assign_dominant_identity = {
     set_variable = { name = newly_formed_country_cooldown value = yes days = 7 }
     # CULTURE SELECTION ----------------------------------------
     random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.60 } } } save_scope_as = et_new_primary_culture }
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.55 } } } save_scope_as = et_new_primary_culture } }
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.50 } } } save_scope_as = et_new_primary_culture } }
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.45 } } } save_scope_as = et_new_primary_culture } }
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.40 } } } save_scope_as = et_new_primary_culture } }
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.35 } } } save_scope_as = et_new_primary_culture } }
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.30 } } } save_scope_as = et_new_primary_culture } }
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.25 } } } save_scope_as = et_new_primary_culture } }
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } } save_scope_as = et_new_primary_culture } }
+    if = { limit = { scope:et_new_primary_culture = { exists = yes } } ROOT = { set_variable = { name = et_new_primary_culture_found value = yes } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.55 } } } save_scope_as = et_new_primary_culture } ROOT = { if = { limit = { scope:et_new_primary_culture = { exists = yes } } set_variable = { name = et_new_primary_culture_found value = yes } } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.50 } } } save_scope_as = et_new_primary_culture } ROOT = { if = { limit = { scope:et_new_primary_culture = { exists = yes } } set_variable = { name = et_new_primary_culture_found value = yes } } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.45 } } } save_scope_as = et_new_primary_culture } ROOT = { if = { limit = { scope:et_new_primary_culture = { exists = yes } } set_variable = { name = et_new_primary_culture_found value = yes } } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.40 } } } save_scope_as = et_new_primary_culture } ROOT = { if = { limit = { scope:et_new_primary_culture = { exists = yes } } set_variable = { name = et_new_primary_culture_found value = yes } } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.35 } } } save_scope_as = et_new_primary_culture } ROOT = { if = { limit = { scope:et_new_primary_culture = { exists = yes } } set_variable = { name = et_new_primary_culture_found value = yes } } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.30 } } } save_scope_as = et_new_primary_culture } ROOT = { if = { limit = { scope:et_new_primary_culture = { exists = yes } } set_variable = { name = et_new_primary_culture_found value = yes } } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.25 } } } save_scope_as = et_new_primary_culture } ROOT = { if = { limit = { scope:et_new_primary_culture = { exists = yes } } set_variable = { name = et_new_primary_culture_found value = yes } } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } } save_scope_as = et_new_primary_culture } ROOT = { if = { limit = { scope:et_new_primary_culture = { exists = yes } } set_variable = { name = et_new_primary_culture_found value = yes } } } }
 
     # Fallback: capital homeland culture
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } capital = { state_region = { random_scope_culture = { limit = { has_homeland = PREV } save_scope_as = et_new_primary_culture } } } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } capital = { state_region = { random_scope_culture = { limit = { has_homeland = PREV } save_scope_as = et_new_primary_culture } } } }
     # Fallback: any existing primary
-    if = { limit = { NOT = { scope:et_new_primary_culture = { exists = yes } } } random_primary_culture = { save_scope_as = et_new_primary_culture } }
+    if = { limit = { NOT = { has_variable = et_new_primary_culture_found } } random_primary_culture = { save_scope_as = et_new_primary_culture } }
 
     if = {
-        limit = { scope:et_new_primary_culture = { exists = yes } }
+        limit = { has_variable = et_new_primary_culture_found }
         # Robust removal: iterate primaries, remove each explicitly from ROOT
         every_primary_culture = {
             save_scope_as = et_old_primary
@@ -35,13 +36,17 @@ et_assign_dominant_identity = {
         }
         add_primary_culture = scope:et_new_primary_culture
     }
+    # Cleanup temp marker
+    ROOT = { remove_variable = et_new_primary_culture_found }
     # Kill the ruler of the country
     ruler = { kill_character = yes }
 
     # RELIGION SELECTION ----------------------------------------
     # Choose a religion from a random pop of the primary culture
     random_scope_pop = {
-        limit = { location = { owner = ROOT } culture = scope:et_new_primary_culture }
+        # Choose a sample pop located in a state owned by the newly created country
+        # (use `state` not `location` — `location` isn't a valid trigger here).
+        limit = { state = { owner = ROOT } culture = scope:et_new_primary_culture }
         save_scope_as = et_random_pop
     }
 

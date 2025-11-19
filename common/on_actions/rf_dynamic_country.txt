@@ -13,6 +13,15 @@ rf_dynamic_country_ai_monthly = {
         is_subject = no
         is_country_type = recognized
         num_states > 1
+        # Performance: only run for countries that have at least one state showing
+        # significant turmoil or very low market access (candidates for dynamic country creation)
+        any_scope_state = {
+            owner = root
+            OR = {
+                turmoil > 0.30
+                market_access < 0.15
+            }
+        }
     }
     effect = {
         rf_dynamic_country_ai_recognized = yes
@@ -27,6 +36,15 @@ rf_dynamic_country_ai_monthly_unrecognized = {
         is_subject = no
         is_country_type = unrecognized
         num_states > 1
+        # Performance: only run for countries that have at least one state showing
+        # significant turmoil or very low market access (candidates for dynamic country creation)
+        any_scope_state = {
+            owner = root
+            OR = {
+                turmoil > 0.30
+                market_access < 0.15
+            }
+        }
     }
     effect = {
         rf_dynamic_country_ai_unrecognized = yes

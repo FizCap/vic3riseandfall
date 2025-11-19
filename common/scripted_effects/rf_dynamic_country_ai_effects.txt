@@ -371,7 +371,7 @@ rf_dynamic_country_ai_unrecognized = {
                             NOT = { is_homeland_of_country_cultures = ROOT }
                             market_access < 0.01
                         }
-                        OR = { turmoil > 0.50 market_access < 0.15 }
+                        OR = { turmoil > 0.30 market_access < 0.15 }
                     }
                 }
             }

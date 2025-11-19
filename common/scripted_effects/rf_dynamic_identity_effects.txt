@@ -17,63 +17,78 @@ rf_assign_dominant_identity = {
     # Fallback: If none >= 25%, pick the largest available.
     # ==========================================================
 
-    set_variable = { name = rf_culture_selection_made value = no }
+    # IMPORTANT: Clear ALL inherited primary cultures first
+    every_primary_culture = {
+        ROOT = { remove_primary_culture = PREV }
+    }
 
-    # 1. Add all cultures >= 25%
-    # Iterate through states to find cultures present in the country
-    every_scope_state = {
-        limit = { owner = ROOT }
-        every_scope_culture = {
-            limit = {
-                ROOT = { culture_percent_country = { target = PREV value >= 0.25 } }
-                NOT = { ROOT = { country_has_primary_culture = PREV } }
-            }
-            ROOT = {
-                add_primary_culture = PREV
-                set_variable = { name = rf_culture_selection_made value = yes }
-            }
+    # 1. Try to add all cultures >= 25%
+    every_scope_culture = {
+        limit = {
+            ROOT = { culture_percent_country = { target = PREV value >= 0.25 } }
+        }
+        ROOT = {
+            add_primary_culture = PREV
         }
     }
 
-    # 2. Fallback if none found
+    # 2. Check if we have any primary culture at all
     if = {
-        limit = { NOT = { has_variable = rf_culture_selection_made } }
+        limit = { NOT = { any_primary_culture = yes } }
         
-        # Try descending thresholds to find the largest minority
-        random_scope_culture = {
-            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } }
-            save_scope_as = rf_fallback_culture
-            ROOT = { set_variable = { name = rf_fallback_found value = yes } }
-        }
-        if = { limit = { NOT = { has_variable = rf_fallback_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.15 } } } save_scope_as = rf_fallback_culture ROOT = { set_variable = { name = rf_fallback_found value = yes } } } }
-        if = { limit = { NOT = { has_variable = rf_fallback_found } } random_scope_culture = { limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.10 } } } save_scope_as = rf_fallback_culture ROOT = { set_variable = { name = rf_fallback_found value = yes } } } }
-        
-        # Absolute fallback: Capital's culture
+        # Fallback: Find the largest culture in the country by threshold
         if = {
-            limit = { NOT = { has_variable = rf_fallback_found } }
+            limit = { 
+                any_scope_culture = { 
+                    ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } 
+                } 
+            }
+            random_scope_culture = {
+                limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } }
+                ROOT = { add_primary_culture = PREV }
+            }
+        }
+        else_if = {
+            limit = { 
+                any_scope_culture = { 
+                    ROOT = { culture_percent_country = { target = PREV value >= 0.15 } } 
+                } 
+            }
+            random_scope_culture = {
+                limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.15 } } }
+                ROOT = { add_primary_culture = PREV }
+            }
+        }
+        else_if = {
+            limit = { 
+                any_scope_culture = { 
+                    ROOT = { culture_percent_country = { target = PREV value >= 0.10 } } 
+                } 
+            }
+            random_scope_culture = {
+                limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.10 } } }
+                ROOT = { add_primary_culture = PREV }
+            }
+        }
+        else = {
+            # Absolute fallback: Use capital's culture
             capital = {
                 random_scope_culture = {
-                    limit = { culture_percent_state = { target = PREV value >= 0.0 } }
-                    save_scope_as = rf_fallback_culture
+                    save_scope_as = rf_capital_culture
+                    ROOT = { add_primary_culture = scope:rf_capital_culture }
                 }
             }
         }
-        
-        add_primary_culture = scope:rf_fallback_culture
-        set_variable = { name = rf_culture_selection_made value = yes }
     }
 
-    # 3. Cleanup: Remove any primary culture that is NOT part of our selection
+    # 3. Final cleanup: Remove any primary culture that is < 25% (unless it's the only one)
     if = {
-        limit = { has_variable = rf_fallback_found }
-        # Fallback mode: We only want the fallback culture.
-        every_primary_culture = {
-            limit = { NOT = { this = scope:rf_fallback_culture } }
-            ROOT = { remove_primary_culture = PREV }
+        limit = { 
+            any_primary_culture = {
+                limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.25 } } }
+            }
         }
-    }
-    else = {
-        # Standard mode: We want everyone >= 25%. Remove everyone < 25%.
+        # We have at least one culture >= 25%, so remove all < 25%
         every_primary_culture = {
             limit = {
                 ROOT = { culture_percent_country = { target = PREV value < 0.25 } }
@@ -81,11 +96,7 @@ rf_assign_dominant_identity = {
             ROOT = { remove_primary_culture = PREV }
         }
     }
-
-    # Cleanup variables
-    remove_variable = rf_culture_selection_made
-    remove_variable = rf_fallback_found
-    remove_variable = rf_fallback_culture
+    # else: Keep whatever primary culture we have (fallback was used)
 
     # ==========================================================
     # RELIGION SELECTION

@@ -1,38 +1,84 @@
 ﻿rf_ai_improvement_effect_dynamic = {
     if = {
-        # Use reserve/income ratio for dynamic scaling
+        # Use months-based reserve/income metric for dynamic scaling
+        # Keep a cooldown to avoid frequent flipping
         if = {
             limit = { NOT = { has_variable = rf_budget_cooldown } }
+
+            # Default to medium for administrative and military wages unless exceptions apply.
+            set_government_wage_level = medium
+            set_military_wage_level = medium
+
+            # Branch on current fiscal balance: deficit vs surplus
             if = {
-                limit = { rf_reserve_income_ratio > 100 }
-                set_government_wage_level = very_low
-                set_military_wage_level = medium
-            }
-            else_if = {
-                limit = { rf_reserve_income_ratio > 50 }
-                set_government_wage_level = low
-                set_military_wage_level = medium
-            }
-            else_if = {
-                limit = {
-                    rf_reserve_income_ratio > 10
-                    gold_reserves > 0
+                limit = { expenses > income }
+                # In deficit -> rf_reserve_income_ratio = months_of_runway (smaller = worse)
+                # If a country is effectively bankrupt (no reserves), reduce military aggressively
+                if = {
+                    limit = { gold_reserves <= 0 }
+                    set_government_wage_level = very_low
+                    set_military_wage_level = very_low
                 }
-                set_government_wage_level = medium
-                set_military_wage_level = very_high
-            }
-            else_if = {
-                limit = {
-                    rf_reserve_income_ratio > 5
-                    gold_reserves > 0
+                else_if = { limit = { rf_reserve_income_ratio < 0.5 } 
+                    # Very short runway but reserves exist: government cuts take priority, keep military at medium
+                    set_government_wage_level = very_low
+                    set_military_wage_level = medium
                 }
-                set_government_wage_level = high
-                set_military_wage_level = very_high
+                else_if = { limit = { rf_reserve_income_ratio < 2 }
+                    set_government_wage_level = very_low
+                    set_military_wage_level = medium
+                }
+                else_if = { limit = { rf_reserve_income_ratio < 6 }
+                    set_government_wage_level = low
+                    set_military_wage_level = medium
+                }
+                else = {
+                    # >= 6 months runway: normal operations
+                    set_government_wage_level = medium
+                    set_military_wage_level = medium
+                }
             }
             else = {
-                limit = { gold_reserves > 0 }
-                set_government_wage_level = very_high
-                set_military_wage_level = very_high
+                # Surplus -> rf_reserve_income_ratio = months_to_fill_target (smaller = faster savings)
+                # Only increase government wages when the AI will reach its reserve target quickly.
+                if = { limit = { rf_reserve_income_ratio <= 1 rf_positive_surplus_months >= 6 }
+                    # exceptional: very fast savings sustained for several months
+                    # Prioritize military wages first: promote military to VERY_HIGH for massive income.
+                    if = {
+                        # Very large surpluses: raise military aggressively first
+                        limit = { rf_weekly_net_share_of_income >= 0.3 }
+                        set_military_wage_level = very_high
+                    }
+                    else_if = {
+                        # Big one-off wealth injections relative to reserve target
+                        limit = { rf_weekly_net_share_of_reserve_limit >= 0.01 }
+                        set_military_wage_level = very_high
+                    }
+                    else = {
+                        # fast but not massive: increase military, keep government conservative
+                        # Fast but not massive: raise military first
+                        set_military_wage_level = high
+                        set_government_wage_level = medium
+                    }
+                }
+                else_if = { limit = { rf_reserve_income_ratio <= 3 rf_positive_surplus_months >= 6 }
+                    # fast savings sustained: prioritize military increase
+                    # Prioritise military wage growth for shorter surpluses
+                    set_military_wage_level = high
+                    set_government_wage_level = medium
+                }
+                else_if = { limit = { rf_reserve_income_ratio <= 12 }
+                    # short-term safe: favor military spending over costly admin raises
+                    set_military_wage_level = high
+                    set_government_wage_level = medium
+                }
+                else = {
+                    # Long time to hit target: conserve
+                    # Long time to hit target: conserve on government wages
+                    set_government_wage_level = low
+                    set_military_wage_level = medium
+                }
+                # NOTE: we deliberately avoid setting `very_high` by default; reduce volatility.
             }
         }
         set_variable = { name = rf_budget_cooldown days = 90 }

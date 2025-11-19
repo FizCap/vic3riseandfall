@@ -1,0 +1,28 @@
+on_monthly_pulse_country = {
+    on_actions = {
+        rf_budget_momentum_monthly
+    }
+}
+
+rf_budget_momentum_monthly = {
+    effect = {
+        # Weekly_net is income - expenses (positive when in surplus)
+        rf_weekly_net_value = yes
+
+        if = {
+            limit = { rf_weekly_net_value > 0 }
+            change_variable = { name = rf_positive_surplus_months add = 1 }
+        }
+        else = {
+            set_variable = { name = rf_positive_surplus_months value = 0 }
+        }
+
+        if = {
+            limit = { rf_weekly_net_value < 0 }
+            change_variable = { name = rf_consecutive_deficit_months add = 1 }
+        }
+        else = {
+            set_variable = { name = rf_consecutive_deficit_months value = 0 }
+        }
+    }
+}

@@ -1,19 +1,114 @@
-﻿rf_reserve_income_ratio = {
+﻿############################################################
+# rf_reserve_income_ratio
+#
+# Produces a months-based metric the AI can use to reason about
+# short-term solvency (runway) and savings speed (time to reach
+# gold_reserves_limit). This returns a month value:
+# - If the country is in deficit (expenses > income): returns
+#   months_of_runway (how many months reserves + partial investment
+#   pool cover the deficit).
+# - If the country is in surplus (income > expenses): returns
+#   months_to_fill_target (how many months to reach gold_reserves_limit
+#   at current surplus rate).
+#
+# Notes:
+# - We count 25% of the `investment_pool` as an emergency buffer.
+# - We clamp divisors to at least 1 to avoid exploding values from
+#   tiny denominators.
+# - Smoothing (EMA over multiple weeks) requires a persistent numeric
+#   variable to be read back and blended; implementing that reliably
+#   would need a monthly scripted effect that stores the EMA and a
+#   getter pattern. For now we use the current weekly net but keep the
+#   existing `rf_budget_cooldown` in AI logic to avoid flip-flopping.
+############################################################
+
+rf_effective_reserves = {
+    # effective_reserves = gold_reserves + 0.25 * investment_pool
+    value = gold_reserves
+    add = {
+        value = investment_pool
+        multiply = 0.25
+    }
+}
+
+rf_runway_weeks = {
+    # If in deficit, compute weeks of runway = effective_reserves / weekly_deficit
+    if = {
+        limit = { expenses > income }
+        rf_effective_reserves = yes
+        value = scope:rf_effective_reserves
+        divide = {
+            value = expenses
+            subtract = income
+        }
+        # ensure reasonable lower bound
+        if = { limit = { value < 0.1 } value = 0.1 }
+    }
+    else = { value = 9999 }
+}
+
+rf_weeks_to_target = {
+    # If in surplus, compute weeks to reach reserve target = (gold_reserves_limit - effective_reserves) / weekly_surplus
     if = {
         limit = { income > expenses }
+        rf_effective_reserves = yes
         value = gold_reserves_limit
+        subtract = scope:rf_effective_reserves
+        # if already above target, zero time
+        if = { limit = { value < 0 } value = 0 }
         divide = {
             value = income
             subtract = expenses
         }
+        if = { limit = { value < 0.1 } value = 0.1 }
+    }
+    else = { value = 9999 }
+}
+
+rf_reserve_income_ratio = {
+    # Convert weeks -> months (approx 4.33 weeks per month) and return the months metric
+    if = {
+        limit = { expenses > income }
+        rf_runway_weeks = yes
+        value = scope:rf_runway_weeks
+        divide = 4.33
     }
     else = {
-        value = 1000
+        rf_weeks_to_target = yes
+        value = scope:rf_weeks_to_target
+        divide = 4.33
     }
 }
 
+# rf_autobuild_reserve_limit: Reserve limit for autobuilding: 45% of gold_reserves_limit
 rf_autobuild_reserve_limit = {
-    # Reserve limit for autobuilding: 45% of gold_reserves_limit
     value = gold_reserves_limit
     multiply = 0.45
+}
+
+# Weekly net value helper script (income - expenses) used by budgeting logic
+rf_weekly_net_value = {
+    value = income
+    subtract = expenses
+}
+
+rf_weekly_net_share_of_income = {
+    if = {
+        limit = { income > 0 }
+        value = income
+        subtract = expenses
+        divide = { value = income }
+    }
+    else = { value = 0 }
+}
+
+rf_weekly_net_share_of_reserve_limit = {
+    # fraction of gold_reserves_limit gained in the current week
+    if = {
+        limit = { gold_reserves_limit > 0 }
+        rf_weekly_net_value = yes
+        value = scope:rf_weekly_net_value
+        divide = { value = gold_reserves_limit }
+    }
+    else = { value = 0 }
 }

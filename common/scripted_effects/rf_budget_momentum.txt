@@ -1,0 +1,32 @@
+﻿# Budget momentum tracking effect
+# Tracks consecutive surplus and deficit months for AI budgeting decisions
+
+et_budget_momentum_update_se = {
+    # Initialize variables if they don't exist
+    if = {
+        limit = { NOT = { has_variable = rf_positive_surplus_months } }
+        set_variable = { name = rf_positive_surplus_months value = 0 }
+    }
+    if = {
+        limit = { NOT = { has_variable = rf_consecutive_deficit_months } }
+        set_variable = { name = rf_consecutive_deficit_months value = 0 }
+    }
+
+    # If the country is in surplus this month
+    if = { 
+        limit = { income > expenses }
+        change_variable = { name = rf_positive_surplus_months add = 1 }
+    }
+    else = {
+        set_variable = { name = rf_positive_surplus_months value = 0 }
+    }
+
+    # If the country is in deficit this month
+    if = { 
+        limit = { income < expenses }
+        change_variable = { name = rf_consecutive_deficit_months add = 1 }
+    }
+    else = {
+        set_variable = { name = rf_consecutive_deficit_months value = 0 }
+    }
+}

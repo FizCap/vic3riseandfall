@@ -1,0 +1,10 @@
+﻿## rf_positive_surplus_months_value
+# Return the numeric value of local variable rf_positive_surplus_months for use in triggers
+# Falls back to 0 if not present
+rf_positive_surplus_months_value = {
+    value = 0
+    if = {
+        limit = { has_variable = rf_positive_surplus_months }
+        value = var:rf_positive_surplus_months
+    }
+}

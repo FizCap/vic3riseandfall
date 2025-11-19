@@ -35,14 +35,15 @@ rf_runway_weeks = {
     # If in deficit, compute weeks of runway = effective_reserves / weekly_deficit
     if = {
         limit = { expenses > income }
-        rf_effective_reserves = yes
-        value = scope:rf_effective_reserves
+        value = gold_reserves
+        add = {
+            value = investment_pool
+            multiply = 0.25
+        }
         divide = {
             value = expenses
             subtract = income
         }
-        # ensure reasonable lower bound
-        if = { limit = { value < 0.1 } value = 0.1 }
     }
     else = { value = 9999 }
 }
@@ -51,16 +52,16 @@ rf_weeks_to_target = {
     # If in surplus, compute weeks to reach reserve target = (gold_reserves_limit - effective_reserves) / weekly_surplus
     if = {
         limit = { income > expenses }
-        rf_effective_reserves = yes
         value = gold_reserves_limit
-        subtract = scope:rf_effective_reserves
-        # if already above target, zero time
-        if = { limit = { value < 0 } value = 0 }
+        subtract = gold_reserves
+        subtract = {
+            value = investment_pool
+            multiply = 0.25
+        }
         divide = {
             value = income
             subtract = expenses
         }
-        if = { limit = { value < 0.1 } value = 0.1 }
     }
     else = { value = 9999 }
 }
@@ -69,13 +70,28 @@ rf_reserve_income_ratio = {
     # Convert weeks -> months (approx 4.33 weeks per month) and return the months metric
     if = {
         limit = { expenses > income }
-        rf_runway_weeks = yes
-        value = scope:rf_runway_weeks
+        value = gold_reserves
+        add = {
+            value = investment_pool
+            multiply = 0.25
+        }
+        divide = {
+            value = expenses
+            subtract = income
+        }
         divide = 4.33
     }
     else = {
-        rf_weeks_to_target = yes
-        value = scope:rf_weeks_to_target
+        value = gold_reserves_limit
+        subtract = gold_reserves
+        subtract = {
+            value = investment_pool
+            multiply = 0.25
+        }
+        divide = {
+            value = income
+            subtract = expenses
+        }
         divide = 4.33
     }
 }
@@ -106,8 +122,8 @@ rf_weekly_net_share_of_reserve_limit = {
     # fraction of gold_reserves_limit gained in the current week
     if = {
         limit = { gold_reserves_limit > 0 }
-        rf_weekly_net_value = yes
-        value = scope:rf_weekly_net_value
+        value = income
+        subtract = expenses
         divide = { value = gold_reserves_limit }
     }
     else = { value = 0 }

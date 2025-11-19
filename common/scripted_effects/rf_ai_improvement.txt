@@ -41,7 +41,7 @@
             else = {
                 # Surplus -> rf_reserve_income_ratio = months_to_fill_target (smaller = faster savings)
                 # Only increase government wages when the AI will reach its reserve target quickly.
-                if = { limit = { rf_reserve_income_ratio <= 1 rf_positive_surplus_months >= 6 }
+                if = { limit = { rf_reserve_income_ratio <= 1 rf_positive_surplus_months_value >= 6 }
                     # exceptional: very fast savings sustained for several months
                     # Prioritize military wages first: promote military to VERY_HIGH for massive income.
                     if = {
@@ -61,7 +61,7 @@
                         set_government_wage_level = medium
                     }
                 }
-                else_if = { limit = { rf_reserve_income_ratio <= 3 rf_positive_surplus_months >= 6 }
+                else_if = { limit = { rf_reserve_income_ratio <= 3 rf_positive_surplus_months_value >= 6 }
                     # fast savings sustained: prioritize military increase
                     # Prioritise military wage growth for shorter surpluses
                     set_military_wage_level = high

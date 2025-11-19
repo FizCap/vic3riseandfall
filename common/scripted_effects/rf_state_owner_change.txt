@@ -4,3 +4,11 @@
         years = 2
     }
 }
+
+rf_war_counter_se = {
+    set_variable = {
+        name = riseandfall_recent_war
+        value = 1
+        months = 3
+    }
+}

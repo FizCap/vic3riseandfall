@@ -28,7 +28,14 @@ rf_dyn_country_ai_single_pass = {
                 NOT = { is_capital = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
-                    market_access < 0.01
+                    # Do NOT include states with effectively zero market access if the owning
+                    # country is currently participating in a diplomatic play. This avoids
+                    # the AI creating puppets out of completely isolated states while the
+                    # owner is engaged in diplomatic action.
+                    AND = {
+                        market_access < 0.01
+                        NOT = { owner = scope:original_country is_diplomatic_play_participant = yes }
+                    }
                 }
             }
             set_variable = ai_potential_dyn_country_state
@@ -42,13 +49,6 @@ rf_dynamic_country_ai_expand_recognized = {
     random_list = {
         60 = {
             # Medium (2 passes)
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-        }
-
-        30 = {
-            # Large (3 passes)
-            rf_dyn_country_ai_single_pass = yes
             rf_dyn_country_ai_single_pass = yes
             rf_dyn_country_ai_single_pass = yes
         }
@@ -72,7 +72,7 @@ rf_dynamic_country_ai_expand_unrecognized = {
             rf_dyn_country_ai_single_pass = yes
         }
 
-        35 = {
+        30 = {
             # Large (3 passes)
             rf_dyn_country_ai_single_pass = yes
             rf_dyn_country_ai_single_pass = yes
@@ -177,7 +177,10 @@ rf_dyn_country_ai_single_pass_culture = {
                 NOT = { is_capital = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
-                    market_access < 0.01
+                    AND = {
+                        market_access < 0.01
+                        NOT = { owner = scope:original_country is_diplomatic_play_participant = yes }
+                    }
                 }
             }
             set_variable = ai_potential_dyn_country_state
@@ -236,7 +239,7 @@ rf_dynamic_country_ai_expand_unrecognized_culture = {
 rf_dynamic_country_ai_recognized = {
     # Only proceed if AI improvements enabled and not at war
     if = {
-        limit = { has_game_rule = ai_improvement_enabled is_at_war = no }
+        limit = { has_game_rule = ai_improvement_enabled is_at_war = no NOT = { has_variable = riseandfall_recent_war } }
 
         # Clean stale selection variables (only touch states owned by this country)
         every_scope_state = {
@@ -257,19 +260,28 @@ rf_dynamic_country_ai_recognized = {
                 is_capital = no
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }
-                    market_access < 0.01
+                    AND = {
+                        market_access < 0.01
+                        NOT = { owner = ROOT is_diplomatic_play_participant = yes }
+                    }
                 }
 
                 OR = {
                     NOT = { has_modifier = recent_state_owner_change }
-                    market_access < 0.01
+                    AND = {
+                        market_access < 0.01
+                        NOT = { owner = ROOT is_diplomatic_play_participant = yes }
+                    }
                 }
 
                 OR = {
                     AND = {
                         OR = {
                             NOT = { is_homeland_of_country_cultures = ROOT }
-                            market_access < 0.01
+                            AND = {
+                                market_access < 0.01
+                                NOT = { owner = ROOT is_diplomatic_play_participant = yes }
+                            }
                         }
                         OR = { turmoil > 0.50 market_access < 0.15 }
                     }
@@ -337,7 +349,7 @@ rf_dynamic_country_ai_recognized = {
 rf_dynamic_country_ai_unrecognized = {
     # Only proceed if AI improvements enabled and not at war
     if = {
-        limit = { has_game_rule = ai_improvement_enabled is_at_war = no }
+        limit = { has_game_rule = ai_improvement_enabled is_at_war = no NOT = { has_variable = riseandfall_recent_war } }
 
         # Cleanup (only touch states owned by this country)
         every_scope_state = {
@@ -357,19 +369,28 @@ rf_dynamic_country_ai_unrecognized = {
                 is_capital = no
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }
-                    market_access < 0.01
+                    AND = {
+                        market_access < 0.01
+                        NOT = { owner = ROOT is_diplomatic_play_participant = yes }
+                    }
                 }
 
                 OR = {
                     NOT = { has_modifier = recent_state_owner_change }
-                    market_access < 0.01
+                    AND = {
+                        market_access < 0.01
+                        NOT = { owner = ROOT is_diplomatic_play_participant = yes }
+                    }
                 }
 
                 OR = {
                     AND = {
                         OR = {
                             NOT = { is_homeland_of_country_cultures = ROOT }
-                            market_access < 0.01
+                            AND = {
+                                market_access < 0.01
+                                NOT = { owner = ROOT is_diplomatic_play_participant = yes }
+                            }
                         }
                         OR = { turmoil > 0.30 market_access < 0.15 }
                     }

@@ -1,5 +1,6 @@
 ﻿on_monthly_pulse_country = {
     on_actions = {
+        rf_war_counter
         rf_dynamic_country_ai_monthly
         rf_dynamic_country_ai_monthly_unrecognized
     }
@@ -12,6 +13,7 @@ rf_dynamic_country_ai_monthly = {
         is_at_war = no
         is_subject = no
         is_country_type = recognized
+        NOT = { has_variable = riseandfall_recent_war }
         num_states > 1
         # Performance: only run for countries that have at least one state showing
         # significant turmoil or very low market access (candidates for dynamic country creation)
@@ -35,6 +37,7 @@ rf_dynamic_country_ai_monthly_unrecognized = {
         is_at_war = no
         is_subject = no
         is_country_type = unrecognized
+        NOT = { has_variable = riseandfall_recent_war }
         num_states > 1
         # Performance: only run for countries that have at least one state showing
         # significant turmoil or very low market access (candidates for dynamic country creation)
@@ -48,5 +51,15 @@ rf_dynamic_country_ai_monthly_unrecognized = {
     }
     effect = {
         rf_dynamic_country_ai_unrecognized = yes
+    }
+}
+
+rf_war_counter = {
+    trigger = {
+        has_game_rule = ai_improvement_enabled
+        is_at_war = yes
+    }
+    effect = {
+        rf_war_counter_se = yes
     }
 }

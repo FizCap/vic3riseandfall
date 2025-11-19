@@ -8,10 +8,6 @@
 
 	possible = {
 		investment_pool > 100000
-		OR = {
-			is_ai = yes
-			is_player = yes
-		}
 	}
 
 	ai_chance = {

@@ -34,7 +34,7 @@ rf_assign_dominant_identity = {
 
     # 2. Check if we have any primary culture at all
     if = {
-        limit = { NOT = { any_primary_culture = yes } }
+        limit = { any_primary_culture = { count = 0 } }
         
         # Fallback: Find the largest culture in the country by threshold
         if = {
@@ -107,10 +107,60 @@ rf_assign_dominant_identity = {
     # religion for the newly formed country.
     # ==========================================================
 
-    # Pick a (random) primary culture (works whether there's one or many)
-    random_primary_culture = {
+    # Pick the dominant primary culture using descending thresholds
+    # Try to find a primary culture with large country share; prefer larger cultural shares so
+    # the religion selection reflects the actual majority.
+    random_scope_culture = {
+        limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.40 } } }
         save_scope_as = rf_new_primary_culture
         ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        random_scope_culture = {
+            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.35 } } }
+            save_scope_as = rf_new_primary_culture
+            ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        random_scope_culture = {
+            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.30 } } }
+            save_scope_as = rf_new_primary_culture
+            ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        random_scope_culture = {
+            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.25 } } }
+            save_scope_as = rf_new_primary_culture
+            ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        random_scope_culture = {
+            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } }
+            save_scope_as = rf_new_primary_culture
+            ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+        }
+    }
+
+    # If still none found, use the capital's leading culture
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                save_scope_as = rf_new_primary_culture
+                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
     }
 
     # Sample a pop of that culture within the country's states
@@ -127,6 +177,20 @@ rf_assign_dominant_identity = {
                 religion = { save_scope_as = rf_target_religion }
             }
             set_state_religion = scope:rf_target_religion
+        }
+        else = {
+            # Fallback: pick any pop in the country and use its religion
+            random_scope_pop = {
+                limit = { state = { owner = ROOT } }
+                save_scope_as = rf_random_pop
+            }
+            if = {
+                limit = { exists = scope:rf_random_pop }
+                scope:rf_random_pop = {
+                    religion = { save_scope_as = rf_target_religion }
+                }
+                set_state_religion = scope:rf_target_religion
+            }
         }
     }
 

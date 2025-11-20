@@ -25,6 +25,7 @@ rf_dyn_country_ai_single_pass = {
             limit = {
                 owner = scope:original_country
                 NOT = { has_variable = dynamic_state_cede }
+                NOT = { has_variable = riseandfall_recent_state_owner_change }
                 NOT = { is_capital = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
@@ -34,7 +35,6 @@ rf_dyn_country_ai_single_pass = {
                     # owner is engaged in diplomatic action.
                     AND = {
                         market_access < 0.01
-                        NOT = { owner = scope:original_country is_diplomatic_play_participant = yes }
                     }
                 }
             }
@@ -173,13 +173,13 @@ rf_dyn_country_ai_single_pass_culture = {
             limit = {
                 owner = scope:original_country
                 NOT = { has_variable = dynamic_state_cede }
+            NOT = { has_variable = riseandfall_recent_state_owner_change }
                 culture_percent_state = { target = scope:rf_dyn_target_culture value >= 0.20 }
                 NOT = { is_capital = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
                     AND = {
                         market_access < 0.01
-                        NOT = { owner = scope:original_country is_diplomatic_play_participant = yes }
                     }
                 }
             }
@@ -258,21 +258,15 @@ rf_dynamic_country_ai_recognized = {
             limit = {
                 owner = ROOT
                 is_capital = no
+                NOT = { has_variable = riseandfall_recent_state_owner_change }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }
                     AND = {
                         market_access < 0.01
-                        NOT = { owner = ROOT is_diplomatic_play_participant = yes }
                     }
                 }
 
-                OR = {
-                    NOT = { has_modifier = recent_state_owner_change }
-                    AND = {
-                        market_access < 0.01
-                        NOT = { owner = ROOT is_diplomatic_play_participant = yes }
-                    }
-                }
+                # (explicit owner change exclusion has been moved to the top-level limit)
 
                 OR = {
                     AND = {
@@ -280,7 +274,6 @@ rf_dynamic_country_ai_recognized = {
                             NOT = { is_homeland_of_country_cultures = ROOT }
                             AND = {
                                 market_access < 0.01
-                                NOT = { owner = ROOT is_diplomatic_play_participant = yes }
                             }
                         }
                         OR = { turmoil > 0.50 market_access < 0.15 }
@@ -367,21 +360,15 @@ rf_dynamic_country_ai_unrecognized = {
             limit = {
                 owner = ROOT
                 is_capital = no
+                NOT = { has_variable = riseandfall_recent_state_owner_change }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }
                     AND = {
                         market_access < 0.01
-                        NOT = { owner = ROOT is_diplomatic_play_participant = yes }
                     }
                 }
 
-                OR = {
-                    NOT = { has_modifier = recent_state_owner_change }
-                    AND = {
-                        market_access < 0.01
-                        NOT = { owner = ROOT is_diplomatic_play_participant = yes }
-                    }
-                }
+                # (explicit owner change exclusion has been moved to the top-level limit)
 
                 OR = {
                     AND = {
@@ -389,7 +376,6 @@ rf_dynamic_country_ai_unrecognized = {
                             NOT = { is_homeland_of_country_cultures = ROOT }
                             AND = {
                                 market_access < 0.01
-                                NOT = { owner = ROOT is_diplomatic_play_participant = yes }
                             }
                         }
                         OR = { turmoil > 0.30 market_access < 0.15 }

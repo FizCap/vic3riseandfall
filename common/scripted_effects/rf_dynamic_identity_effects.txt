@@ -309,6 +309,81 @@ rf_assign_dynamic_color = {
     remove_variable = dynamic_color98_variable
     remove_variable = dynamic_color99_variable
     remove_variable = dynamic_color100_variable
+    remove_variable = dynamic_color101_variable
+    remove_variable = dynamic_color102_variable
+    remove_variable = dynamic_color103_variable
+    remove_variable = dynamic_color104_variable
+    remove_variable = dynamic_color105_variable
+    remove_variable = dynamic_color106_variable
+    remove_variable = dynamic_color107_variable
+    remove_variable = dynamic_color108_variable
+    remove_variable = dynamic_color109_variable
+    remove_variable = dynamic_color110_variable
+    remove_variable = dynamic_color111_variable
+    remove_variable = dynamic_color112_variable
+    remove_variable = dynamic_color113_variable
+    remove_variable = dynamic_color114_variable
+    remove_variable = dynamic_color115_variable
+    remove_variable = dynamic_color116_variable
+    remove_variable = dynamic_color117_variable
+    remove_variable = dynamic_color118_variable
+    remove_variable = dynamic_color119_variable
+    remove_variable = dynamic_color120_variable
+    remove_variable = dynamic_color121_variable
+    remove_variable = dynamic_color122_variable
+    remove_variable = dynamic_color123_variable
+    remove_variable = dynamic_color124_variable
+    remove_variable = dynamic_color125_variable
+    remove_variable = dynamic_color126_variable
+    remove_variable = dynamic_color127_variable
+    remove_variable = dynamic_color128_variable
+    remove_variable = dynamic_color129_variable
+    remove_variable = dynamic_color130_variable
+    remove_variable = dynamic_color131_variable
+    remove_variable = dynamic_color132_variable
+    remove_variable = dynamic_color133_variable
+    remove_variable = dynamic_color134_variable
+    remove_variable = dynamic_color135_variable
+    remove_variable = dynamic_color136_variable
+    remove_variable = dynamic_color137_variable
+    remove_variable = dynamic_color138_variable
+    remove_variable = dynamic_color139_variable
+    remove_variable = dynamic_color140_variable
+    remove_variable = dynamic_color141_variable
+    remove_variable = dynamic_color142_variable
+    remove_variable = dynamic_color143_variable
+    remove_variable = dynamic_color144_variable
+    remove_variable = dynamic_color145_variable
+    remove_variable = dynamic_color146_variable
+    remove_variable = dynamic_color147_variable
+    remove_variable = dynamic_color148_variable
+    remove_variable = dynamic_color149_variable
+    remove_variable = dynamic_color150_variable
+    remove_variable = dynamic_color151_variable
+    remove_variable = dynamic_color152_variable
+    remove_variable = dynamic_color153_variable
+    remove_variable = dynamic_color154_variable
+    remove_variable = dynamic_color155_variable
+    remove_variable = dynamic_color156_variable
+    remove_variable = dynamic_color157_variable
+    remove_variable = dynamic_color158_variable
+    remove_variable = dynamic_color159_variable
+    remove_variable = dynamic_color160_variable
+    remove_variable = dynamic_color161_variable
+    remove_variable = dynamic_color162_variable
+    remove_variable = dynamic_color163_variable
+    remove_variable = dynamic_color164_variable
+    remove_variable = dynamic_color165_variable
+    remove_variable = dynamic_color166_variable
+    remove_variable = dynamic_color167_variable
+    remove_variable = dynamic_color168_variable
+    remove_variable = dynamic_color169_variable
+    remove_variable = dynamic_color170_variable
+    remove_variable = dynamic_color171_variable
+    remove_variable = dynamic_color172_variable
+    remove_variable = dynamic_color173_variable
+    remove_variable = dynamic_color174_variable
+    remove_variable = dynamic_color175_variable
 
     # Attempt to assign a UNIQUE color first (one not used by any other country)
     random_list = {
@@ -812,6 +887,381 @@ rf_assign_dynamic_color = {
             set_variable = dynamic_color100_variable
             set_variable = rf_color_assigned
         }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color101_variable } } }
+            set_variable = dynamic_color101_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color102_variable } } }
+            set_variable = dynamic_color102_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color103_variable } } }
+            set_variable = dynamic_color103_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color104_variable } } }
+            set_variable = dynamic_color104_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color105_variable } } }
+            set_variable = dynamic_color105_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color106_variable } } }
+            set_variable = dynamic_color106_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color107_variable } } }
+            set_variable = dynamic_color107_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color108_variable } } }
+            set_variable = dynamic_color108_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color109_variable } } }
+            set_variable = dynamic_color109_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color110_variable } } }
+            set_variable = dynamic_color110_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color111_variable } } }
+            set_variable = dynamic_color111_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color112_variable } } }
+            set_variable = dynamic_color112_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color113_variable } } }
+            set_variable = dynamic_color113_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color114_variable } } }
+            set_variable = dynamic_color114_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color115_variable } } }
+            set_variable = dynamic_color115_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color116_variable } } }
+            set_variable = dynamic_color116_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color117_variable } } }
+            set_variable = dynamic_color117_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color118_variable } } }
+            set_variable = dynamic_color118_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color119_variable } } }
+            set_variable = dynamic_color119_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color120_variable } } }
+            set_variable = dynamic_color120_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color121_variable } } }
+            set_variable = dynamic_color121_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color122_variable } } }
+            set_variable = dynamic_color122_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color123_variable } } }
+            set_variable = dynamic_color123_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color124_variable } } }
+            set_variable = dynamic_color124_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color125_variable } } }
+            set_variable = dynamic_color125_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color126_variable } } }
+            set_variable = dynamic_color126_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color127_variable } } }
+            set_variable = dynamic_color127_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color128_variable } } }
+            set_variable = dynamic_color128_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color129_variable } } }
+            set_variable = dynamic_color129_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color130_variable } } }
+            set_variable = dynamic_color130_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color131_variable } } }
+            set_variable = dynamic_color131_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color132_variable } } }
+            set_variable = dynamic_color132_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color133_variable } } }
+            set_variable = dynamic_color133_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color134_variable } } }
+            set_variable = dynamic_color134_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color135_variable } } }
+            set_variable = dynamic_color135_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color136_variable } } }
+            set_variable = dynamic_color136_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color137_variable } } }
+            set_variable = dynamic_color137_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color138_variable } } }
+            set_variable = dynamic_color138_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color139_variable } } }
+            set_variable = dynamic_color139_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color140_variable } } }
+            set_variable = dynamic_color140_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color141_variable } } }
+            set_variable = dynamic_color141_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color142_variable } } }
+            set_variable = dynamic_color142_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color143_variable } } }
+            set_variable = dynamic_color143_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color144_variable } } }
+            set_variable = dynamic_color144_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color145_variable } } }
+            set_variable = dynamic_color145_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color146_variable } } }
+            set_variable = dynamic_color146_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color147_variable } } }
+            set_variable = dynamic_color147_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color148_variable } } }
+            set_variable = dynamic_color148_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color149_variable } } }
+            set_variable = dynamic_color149_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color150_variable } } }
+            set_variable = dynamic_color150_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color151_variable } } }
+            set_variable = dynamic_color151_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color152_variable } } }
+            set_variable = dynamic_color152_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color153_variable } } }
+            set_variable = dynamic_color153_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color154_variable } } }
+            set_variable = dynamic_color154_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color155_variable } } }
+            set_variable = dynamic_color155_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color156_variable } } }
+            set_variable = dynamic_color156_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color157_variable } } }
+            set_variable = dynamic_color157_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color158_variable } } }
+            set_variable = dynamic_color158_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color159_variable } } }
+            set_variable = dynamic_color159_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color160_variable } } }
+            set_variable = dynamic_color160_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color161_variable } } }
+            set_variable = dynamic_color161_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color162_variable } } }
+            set_variable = dynamic_color162_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color163_variable } } }
+            set_variable = dynamic_color163_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color164_variable } } }
+            set_variable = dynamic_color164_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color165_variable } } }
+            set_variable = dynamic_color165_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color166_variable } } }
+            set_variable = dynamic_color166_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color167_variable } } }
+            set_variable = dynamic_color167_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color168_variable } } }
+            set_variable = dynamic_color168_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color169_variable } } }
+            set_variable = dynamic_color169_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color170_variable } } }
+            set_variable = dynamic_color170_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color171_variable } } }
+            set_variable = dynamic_color171_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color172_variable } } }
+            set_variable = dynamic_color172_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color173_variable } } }
+            set_variable = dynamic_color173_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color174_variable } } }
+            set_variable = dynamic_color174_variable
+            set_variable = rf_color_assigned
+        }
+        1 = {
+            trigger = { NOT = { any_country = { has_variable = dynamic_color175_variable } } }
+            set_variable = dynamic_color175_variable
+            set_variable = rf_color_assigned
+        }
     }
 
     # Fallback: If no unique color found (all taken), assign random duplicate
@@ -918,6 +1368,81 @@ rf_assign_dynamic_color = {
             1 = { set_variable = dynamic_color98_variable }
             1 = { set_variable = dynamic_color99_variable }
             1 = { set_variable = dynamic_color100_variable }
+            1 = { set_variable = dynamic_color101_variable }
+            1 = { set_variable = dynamic_color102_variable }
+            1 = { set_variable = dynamic_color103_variable }
+            1 = { set_variable = dynamic_color104_variable }
+            1 = { set_variable = dynamic_color105_variable }
+            1 = { set_variable = dynamic_color106_variable }
+            1 = { set_variable = dynamic_color107_variable }
+            1 = { set_variable = dynamic_color108_variable }
+            1 = { set_variable = dynamic_color109_variable }
+            1 = { set_variable = dynamic_color110_variable }
+            1 = { set_variable = dynamic_color111_variable }
+            1 = { set_variable = dynamic_color112_variable }
+            1 = { set_variable = dynamic_color113_variable }
+            1 = { set_variable = dynamic_color114_variable }
+            1 = { set_variable = dynamic_color115_variable }
+            1 = { set_variable = dynamic_color116_variable }
+            1 = { set_variable = dynamic_color117_variable }
+            1 = { set_variable = dynamic_color118_variable }
+            1 = { set_variable = dynamic_color119_variable }
+            1 = { set_variable = dynamic_color120_variable }
+            1 = { set_variable = dynamic_color121_variable }
+            1 = { set_variable = dynamic_color122_variable }
+            1 = { set_variable = dynamic_color123_variable }
+            1 = { set_variable = dynamic_color124_variable }
+            1 = { set_variable = dynamic_color125_variable }
+            1 = { set_variable = dynamic_color126_variable }
+            1 = { set_variable = dynamic_color127_variable }
+            1 = { set_variable = dynamic_color128_variable }
+            1 = { set_variable = dynamic_color129_variable }
+            1 = { set_variable = dynamic_color130_variable }
+            1 = { set_variable = dynamic_color131_variable }
+            1 = { set_variable = dynamic_color132_variable }
+            1 = { set_variable = dynamic_color133_variable }
+            1 = { set_variable = dynamic_color134_variable }
+            1 = { set_variable = dynamic_color135_variable }
+            1 = { set_variable = dynamic_color136_variable }
+            1 = { set_variable = dynamic_color137_variable }
+            1 = { set_variable = dynamic_color138_variable }
+            1 = { set_variable = dynamic_color139_variable }
+            1 = { set_variable = dynamic_color140_variable }
+            1 = { set_variable = dynamic_color141_variable }
+            1 = { set_variable = dynamic_color142_variable }
+            1 = { set_variable = dynamic_color143_variable }
+            1 = { set_variable = dynamic_color144_variable }
+            1 = { set_variable = dynamic_color145_variable }
+            1 = { set_variable = dynamic_color146_variable }
+            1 = { set_variable = dynamic_color147_variable }
+            1 = { set_variable = dynamic_color148_variable }
+            1 = { set_variable = dynamic_color149_variable }
+            1 = { set_variable = dynamic_color150_variable }
+            1 = { set_variable = dynamic_color151_variable }
+            1 = { set_variable = dynamic_color152_variable }
+            1 = { set_variable = dynamic_color153_variable }
+            1 = { set_variable = dynamic_color154_variable }
+            1 = { set_variable = dynamic_color155_variable }
+            1 = { set_variable = dynamic_color156_variable }
+            1 = { set_variable = dynamic_color157_variable }
+            1 = { set_variable = dynamic_color158_variable }
+            1 = { set_variable = dynamic_color159_variable }
+            1 = { set_variable = dynamic_color160_variable }
+            1 = { set_variable = dynamic_color161_variable }
+            1 = { set_variable = dynamic_color162_variable }
+            1 = { set_variable = dynamic_color163_variable }
+            1 = { set_variable = dynamic_color164_variable }
+            1 = { set_variable = dynamic_color165_variable }
+            1 = { set_variable = dynamic_color166_variable }
+            1 = { set_variable = dynamic_color167_variable }
+            1 = { set_variable = dynamic_color168_variable }
+            1 = { set_variable = dynamic_color169_variable }
+            1 = { set_variable = dynamic_color170_variable }
+            1 = { set_variable = dynamic_color171_variable }
+            1 = { set_variable = dynamic_color172_variable }
+            1 = { set_variable = dynamic_color173_variable }
+            1 = { set_variable = dynamic_color174_variable }
+            1 = { set_variable = dynamic_color175_variable }
         }
     }
     remove_variable = rf_color_assigned

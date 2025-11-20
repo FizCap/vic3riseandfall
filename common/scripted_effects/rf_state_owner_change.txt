@@ -1,7 +1,8 @@
 ﻿rf_state_owner_change_effect = {
-    add_modifier = {
-        name = recent_state_owner_change
-        years = 2
+    set_variable = {
+        name = riseandfall_recent_state_owner_change
+        value = yes
+        months = 24
     }
 }
 

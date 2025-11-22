@@ -27,6 +27,7 @@ rf_dyn_country_ai_single_pass = {
                 NOT = { has_variable = dynamic_state_cede }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
                 NOT = { is_capital = yes }
+                NOT = { is_treaty_port = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
                     # Do NOT include states with effectively zero market access if the owning
@@ -176,6 +177,7 @@ rf_dyn_country_ai_single_pass_culture = {
             NOT = { has_variable = riseandfall_recent_state_owner_change }
                 culture_percent_state = { target = scope:rf_dyn_target_culture value >= 0.20 }
                 NOT = { is_capital = yes }
+                NOT = { is_treaty_port = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
                     AND = {
@@ -258,6 +260,7 @@ rf_dynamic_country_ai_recognized = {
             limit = {
                 owner = ROOT
                 is_capital = no
+                NOT = { is_treaty_port = yes }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }
@@ -360,6 +363,7 @@ rf_dynamic_country_ai_unrecognized = {
             limit = {
                 owner = ROOT
                 is_capital = no
+                NOT = { is_treaty_port = yes }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }

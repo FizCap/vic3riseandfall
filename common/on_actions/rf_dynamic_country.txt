@@ -21,6 +21,7 @@ rf_dynamic_country_ai_monthly = {
         # significant turmoil or very low market access (candidates for dynamic country creation)
         any_scope_state = {
             owner = root
+            NOT = { is_treaty_port = yes }
             OR = {
                 turmoil > 0.30
                 market_access < 0.15
@@ -49,6 +50,7 @@ rf_dynamic_country_ai_monthly_unrecognized = {
         # significant turmoil or very low market access (candidates for dynamic country creation)
         any_scope_state = {
             owner = root
+            NOT = { is_treaty_port = yes }
             OR = {
                 turmoil > 0.30
                 market_access < 0.15

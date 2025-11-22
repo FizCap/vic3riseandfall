@@ -55,3 +55,14 @@ rf_colony_grant_claim = {
     colony_grant_claim_disabled = {
     }
 }
+
+rf_vassal_auto_protectorate = {
+    default = rf_vassal_auto_protectorate_enabled
+
+    rf_vassal_auto_protectorate_enabled = {
+        flag = rf_vassal_auto_protectorate_enabled
+    }
+
+    rf_vassal_auto_protectorate_disabled = {
+    }
+}

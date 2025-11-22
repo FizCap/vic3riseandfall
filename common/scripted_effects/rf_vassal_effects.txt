@@ -1,0 +1,7 @@
+﻿# Scripted effects for vassal handling
+# `rf_vassal_check` is called from the yearly on_action `rf_vassal_rank`.
+# Runs in a country scope.
+
+rf_vassal_check = {
+    change_subject_type = subject_type_protectorate
+}

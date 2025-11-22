@@ -1,0 +1,26 @@
+﻿# Yearly check for subject liberty desire -> auto-convert to protectorate
+# Runs once per year for every country scope registered on the yearly pulse.
+# If a subject (vassal or puppet) reaches liberty_desire >= 100, convert to protectorate.
+
+on_yearly_pulse_country = {
+  on_actions = {
+    rf_vassal_rank
+  }
+}
+
+# Calls the scripted effect `rf_vassal_check` so the logic lives in
+# `common/scripted_effects/` and can be reused or tested separately.
+rf_vassal_rank = {
+  trigger = {
+    has_game_rule = rf_vassal_auto_protectorate_enabled
+    is_subject = yes
+    OR = {
+      is_subject_type = subject_type_vassal
+      is_subject_type = subject_type_puppet
+    }
+    liberty_desire >= 100
+  }
+  effect = {
+    rf_vassal_check = yes
+  }
+}

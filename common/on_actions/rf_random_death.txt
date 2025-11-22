@@ -1,0 +1,15 @@
+﻿on_yearly_pulse_character = {
+  on_actions = {
+    rf_random_character_death
+  }
+}
+
+rf_random_character_death = {
+  trigger = {
+    is_character_alive = yes
+    has_game_rule = death_enabled
+  }
+  effect = {
+    rf_random_character_death_effect = yes
+  }
+}

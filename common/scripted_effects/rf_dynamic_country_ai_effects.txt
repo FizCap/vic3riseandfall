@@ -461,7 +461,7 @@ rf_dynamic_country_create = {
 
         create_dynamic_country = {
             origin = root
-            tier = city_state
+            tier = principality
             capital = scope:rf_dyn_country_capital
             cede_state_trigger = { has_variable = dynamic_state_cede }
 

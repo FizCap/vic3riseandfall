@@ -27,7 +27,7 @@ dynamic_color1 = {
 
 	possible = {
 		has_variable = dynamic_color1_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -36,7 +36,7 @@ dynamic_color2 = {
 
 	possible = {
 		has_variable = dynamic_color2_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -45,7 +45,7 @@ dynamic_color3 = {
 
 	possible = {
 		has_variable = dynamic_color3_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -54,7 +54,7 @@ dynamic_color4 = {
 
 	possible = {
 		has_variable = dynamic_color4_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -63,7 +63,7 @@ dynamic_color5 = {
 
 	possible = {
 		has_variable = dynamic_color5_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -72,7 +72,7 @@ dynamic_color6 = {
 
 	possible = {
 		has_variable = dynamic_color6_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -81,7 +81,7 @@ dynamic_color7 = {
 
 	possible = {
 		has_variable = dynamic_color7_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -90,7 +90,7 @@ dynamic_color8 = {
 
 	possible = {
 		has_variable = dynamic_color8_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -99,7 +99,7 @@ dynamic_color9 = {
 
 	possible = {
 		has_variable = dynamic_color9_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -108,7 +108,7 @@ dynamic_color10 = {
 
 	possible = {
 		has_variable = dynamic_color10_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -117,7 +117,7 @@ dynamic_color11 = {
 
 	possible = {
 		has_variable = dynamic_color11_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -126,7 +126,7 @@ dynamic_color12 = {
 
 	possible = {
 		has_variable = dynamic_color12_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -135,7 +135,7 @@ dynamic_color13 = {
 
 	possible = {
 		has_variable = dynamic_color13_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -144,7 +144,7 @@ dynamic_color14 = {
 
 	possible = {
 		has_variable = dynamic_color14_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -153,7 +153,7 @@ dynamic_color15 = {
 
 	possible = {
 		has_variable = dynamic_color15_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -162,7 +162,7 @@ dynamic_color16 = {
 
 	possible = {
 		has_variable = dynamic_color16_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -171,7 +171,7 @@ dynamic_color17 = {
 
 	possible = {
 		has_variable = dynamic_color17_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -180,7 +180,7 @@ dynamic_color18 = {
 
 	possible = {
 		has_variable = dynamic_color18_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -189,7 +189,7 @@ dynamic_color19 = {
 
 	possible = {
 		has_variable = dynamic_color19_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -198,7 +198,7 @@ dynamic_color20 = {
 
 	possible = {
 		has_variable = dynamic_color20_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -207,7 +207,7 @@ dynamic_color21 = {
 
 	possible = {
 		has_variable = dynamic_color21_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -216,7 +216,7 @@ dynamic_color22 = {
 
 	possible = {
 		has_variable = dynamic_color22_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -225,7 +225,7 @@ dynamic_color23 = {
 
 	possible = {
 		has_variable = dynamic_color23_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -234,7 +234,7 @@ dynamic_color24 = {
 
 	possible = {
 		has_variable = dynamic_color24_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -243,7 +243,7 @@ dynamic_color25 = {
 
 	possible = {
 		has_variable = dynamic_color25_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -252,7 +252,7 @@ dynamic_color26 = {
 
 	possible = {
 		has_variable = dynamic_color26_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -261,7 +261,7 @@ dynamic_color27 = {
 
 	possible = {
 		has_variable = dynamic_color27_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -270,7 +270,7 @@ dynamic_color28 = {
 
 	possible = {
 		has_variable = dynamic_color28_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -279,7 +279,7 @@ dynamic_color29 = {
 
 	possible = {
 		has_variable = dynamic_color29_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -288,7 +288,7 @@ dynamic_color30 = {
 
 	possible = {
 		has_variable = dynamic_color30_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -297,7 +297,7 @@ dynamic_color31 = {
 
 	possible = {
 		has_variable = dynamic_color31_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -306,7 +306,7 @@ dynamic_color32 = {
 
 	possible = {
 		has_variable = dynamic_color32_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -315,7 +315,7 @@ dynamic_color33 = {
 
 	possible = {
 		has_variable = dynamic_color33_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -324,7 +324,7 @@ dynamic_color34 = {
 
 	possible = {
 		has_variable = dynamic_color34_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -333,7 +333,7 @@ dynamic_color35 = {
 
 	possible = {
 		has_variable = dynamic_color35_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -342,7 +342,7 @@ dynamic_color36 = {
 
 	possible = {
 		has_variable = dynamic_color36_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -351,7 +351,7 @@ dynamic_color37 = {
 
 	possible = {
 		has_variable = dynamic_color37_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -360,7 +360,7 @@ dynamic_color38 = {
 
 	possible = {
 		has_variable = dynamic_color38_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -369,7 +369,7 @@ dynamic_color39 = {
 
 	possible = {
 		has_variable = dynamic_color39_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -378,7 +378,7 @@ dynamic_color40 = {
 
 	possible = {
 		has_variable = dynamic_color40_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -387,7 +387,7 @@ dynamic_color41 = {
 
 	possible = {
 		has_variable = dynamic_color41_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -396,7 +396,7 @@ dynamic_color42 = {
 
 	possible = {
 		has_variable = dynamic_color42_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -405,7 +405,7 @@ dynamic_color43 = {
 
 	possible = {
 		has_variable = dynamic_color43_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -414,7 +414,7 @@ dynamic_color44 = {
 
 	possible = {
 		has_variable = dynamic_color44_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -423,7 +423,7 @@ dynamic_color45 = {
 
 	possible = {
 		has_variable = dynamic_color45_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -432,7 +432,7 @@ dynamic_color46 = {
 
 	possible = {
 		has_variable = dynamic_color46_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -441,7 +441,7 @@ dynamic_color47 = {
 
 	possible = {
 		has_variable = dynamic_color47_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -450,7 +450,7 @@ dynamic_color48 = {
 
 	possible = {
 		has_variable = dynamic_color48_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -459,7 +459,7 @@ dynamic_color49 = {
 
 	possible = {
 		has_variable = dynamic_color49_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -468,7 +468,7 @@ dynamic_color50 = {
 
 	possible = {
 		has_variable = dynamic_color50_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -477,7 +477,7 @@ dynamic_color51 = {
 
 	possible = {
 		has_variable = dynamic_color51_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -486,7 +486,7 @@ dynamic_color52 = {
 
 	possible = {
 		has_variable = dynamic_color52_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -495,7 +495,7 @@ dynamic_color53 = {
 
 	possible = {
 		has_variable = dynamic_color53_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -504,7 +504,7 @@ dynamic_color54 = {
 
 	possible = {
 		has_variable = dynamic_color54_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -513,7 +513,7 @@ dynamic_color55 = {
 
 	possible = {
 		has_variable = dynamic_color55_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -522,7 +522,7 @@ dynamic_color56 = {
 
 	possible = {
 		has_variable = dynamic_color56_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -531,7 +531,7 @@ dynamic_color57 = {
 
 	possible = {
 		has_variable = dynamic_color57_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -540,7 +540,7 @@ dynamic_color58 = {
 
 	possible = {
 		has_variable = dynamic_color58_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -549,7 +549,7 @@ dynamic_color59 = {
 
 	possible = {
 		has_variable = dynamic_color59_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -558,7 +558,7 @@ dynamic_color60 = {
 
 	possible = {
 		has_variable = dynamic_color60_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -567,7 +567,7 @@ dynamic_color61 = {
 
 	possible = {
 		has_variable = dynamic_color61_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -576,7 +576,7 @@ dynamic_color62 = {
 
 	possible = {
 		has_variable = dynamic_color62_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -585,7 +585,7 @@ dynamic_color63 = {
 
 	possible = {
 		has_variable = dynamic_color63_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -594,7 +594,7 @@ dynamic_color64 = {
 
 	possible = {
 		has_variable = dynamic_color64_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -603,7 +603,7 @@ dynamic_color65 = {
 
 	possible = {
 		has_variable = dynamic_color65_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -612,7 +612,7 @@ dynamic_color66 = {
 
 	possible = {
 		has_variable = dynamic_color66_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -621,7 +621,7 @@ dynamic_color67 = {
 
 	possible = {
 		has_variable = dynamic_color67_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -630,7 +630,7 @@ dynamic_color68 = {
 
 	possible = {
 		has_variable = dynamic_color68_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -639,7 +639,7 @@ dynamic_color69 = {
 
 	possible = {
 		has_variable = dynamic_color69_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -648,7 +648,7 @@ dynamic_color70 = {
 
 	possible = {
 		has_variable = dynamic_color70_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -657,7 +657,7 @@ dynamic_color71 = {
 
 	possible = {
 		has_variable = dynamic_color71_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -666,7 +666,7 @@ dynamic_color72 = {
 
 	possible = {
 		has_variable = dynamic_color72_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -675,7 +675,7 @@ dynamic_color73 = {
 
 	possible = {
 		has_variable = dynamic_color73_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -684,7 +684,7 @@ dynamic_color74 = {
 
 	possible = {
 		has_variable = dynamic_color74_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -693,7 +693,7 @@ dynamic_color75 = {
 
 	possible = {
 		has_variable = dynamic_color75_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -702,7 +702,7 @@ dynamic_color76 = {
 
 	possible = {
 		has_variable = dynamic_color76_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -711,7 +711,7 @@ dynamic_color77 = {
 
 	possible = {
 		has_variable = dynamic_color77_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -720,7 +720,7 @@ dynamic_color78 = {
 
 	possible = {
 		has_variable = dynamic_color78_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -729,7 +729,7 @@ dynamic_color79 = {
 
 	possible = {
 		has_variable = dynamic_color79_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -738,7 +738,7 @@ dynamic_color80 = {
 
 	possible = {
 		has_variable = dynamic_color80_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -747,7 +747,7 @@ dynamic_color81 = {
 
 	possible = {
 		has_variable = dynamic_color81_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -756,7 +756,7 @@ dynamic_color82 = {
 
 	possible = {
 		has_variable = dynamic_color82_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -765,7 +765,7 @@ dynamic_color83 = {
 
 	possible = {
 		has_variable = dynamic_color83_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -774,7 +774,7 @@ dynamic_color84 = {
 
 	possible = {
 		has_variable = dynamic_color84_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -783,7 +783,7 @@ dynamic_color85 = {
 
 	possible = {
 		has_variable = dynamic_color85_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -792,7 +792,7 @@ dynamic_color86 = {
 
 	possible = {
 		has_variable = dynamic_color86_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -801,7 +801,7 @@ dynamic_color87 = {
 
 	possible = {
 		has_variable = dynamic_color87_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -810,7 +810,7 @@ dynamic_color88 = {
 
 	possible = {
 		has_variable = dynamic_color88_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -819,7 +819,7 @@ dynamic_color89 = {
 
 	possible = {
 		has_variable = dynamic_color89_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -828,7 +828,7 @@ dynamic_color90 = {
 
 	possible = {
 		has_variable = dynamic_color90_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -837,7 +837,7 @@ dynamic_color91 = {
 
 	possible = {
 		has_variable = dynamic_color91_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -846,7 +846,7 @@ dynamic_color92 = {
 
 	possible = {
 		has_variable = dynamic_color92_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -855,7 +855,7 @@ dynamic_color93 = {
 
 	possible = {
 		has_variable = dynamic_color93_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -864,7 +864,7 @@ dynamic_color94 = {
 
 	possible = {
 		has_variable = dynamic_color94_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -873,7 +873,7 @@ dynamic_color95 = {
 
 	possible = {
 		has_variable = dynamic_color95_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -882,7 +882,7 @@ dynamic_color96 = {
 
 	possible = {
 		has_variable = dynamic_color96_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -891,7 +891,7 @@ dynamic_color97 = {
 
 	possible = {
 		has_variable = dynamic_color97_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -900,7 +900,7 @@ dynamic_color98 = {
 
 	possible = {
 		has_variable = dynamic_color98_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -909,7 +909,7 @@ dynamic_color99 = {
 
 	possible = {
 		has_variable = dynamic_color99_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -918,7 +918,7 @@ dynamic_color100 = {
 
 	possible = {
 		has_variable = dynamic_color100_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -927,7 +927,7 @@ dynamic_color101 = {
 
 	possible = {
 		has_variable = dynamic_color101_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -936,7 +936,7 @@ dynamic_color102 = {
 
 	possible = {
 		has_variable = dynamic_color102_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -945,7 +945,7 @@ dynamic_color103 = {
 
 	possible = {
 		has_variable = dynamic_color103_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -954,7 +954,7 @@ dynamic_color104 = {
 
 	possible = {
 		has_variable = dynamic_color104_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -963,7 +963,7 @@ dynamic_color105 = {
 
 	possible = {
 		has_variable = dynamic_color105_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -972,7 +972,7 @@ dynamic_color106 = {
 
 	possible = {
 		has_variable = dynamic_color106_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -981,7 +981,7 @@ dynamic_color107 = {
 
 	possible = {
 		has_variable = dynamic_color107_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -990,7 +990,7 @@ dynamic_color108 = {
 
 	possible = {
 		has_variable = dynamic_color108_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -999,7 +999,7 @@ dynamic_color109 = {
 
 	possible = {
 		has_variable = dynamic_color109_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1008,7 +1008,7 @@ dynamic_color110 = {
 
 	possible = {
 		has_variable = dynamic_color110_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1017,7 +1017,7 @@ dynamic_color111 = {
 
 	possible = {
 		has_variable = dynamic_color111_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1026,7 +1026,7 @@ dynamic_color112 = {
 
 	possible = {
 		has_variable = dynamic_color112_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1035,7 +1035,7 @@ dynamic_color113 = {
 
 	possible = {
 		has_variable = dynamic_color113_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1044,7 +1044,7 @@ dynamic_color114 = {
 
 	possible = {
 		has_variable = dynamic_color114_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1053,7 +1053,7 @@ dynamic_color115 = {
 
 	possible = {
 		has_variable = dynamic_color115_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1062,7 +1062,7 @@ dynamic_color116 = {
 
 	possible = {
 		has_variable = dynamic_color116_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1071,7 +1071,7 @@ dynamic_color117 = {
 
 	possible = {
 		has_variable = dynamic_color117_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1080,7 +1080,7 @@ dynamic_color118 = {
 
 	possible = {
 		has_variable = dynamic_color118_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1089,7 +1089,7 @@ dynamic_color119 = {
 
 	possible = {
 		has_variable = dynamic_color119_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1098,7 +1098,7 @@ dynamic_color120 = {
 
 	possible = {
 		has_variable = dynamic_color120_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1107,7 +1107,7 @@ dynamic_color121 = {
 
 	possible = {
 		has_variable = dynamic_color121_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1116,7 +1116,7 @@ dynamic_color122 = {
 
 	possible = {
 		has_variable = dynamic_color122_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1125,7 +1125,7 @@ dynamic_color123 = {
 
 	possible = {
 		has_variable = dynamic_color123_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1134,7 +1134,7 @@ dynamic_color124 = {
 
 	possible = {
 		has_variable = dynamic_color124_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1143,7 +1143,7 @@ dynamic_color125 = {
 
 	possible = {
 		has_variable = dynamic_color125_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1152,7 +1152,7 @@ dynamic_color126 = {
 
 	possible = {
 		has_variable = dynamic_color126_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1161,7 +1161,7 @@ dynamic_color127 = {
 
 	possible = {
 		has_variable = dynamic_color127_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1170,7 +1170,7 @@ dynamic_color128 = {
 
 	possible = {
 		has_variable = dynamic_color128_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1179,7 +1179,7 @@ dynamic_color129 = {
 
 	possible = {
 		has_variable = dynamic_color129_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1188,7 +1188,7 @@ dynamic_color130 = {
 
 	possible = {
 		has_variable = dynamic_color130_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1197,7 +1197,7 @@ dynamic_color131 = {
 
 	possible = {
 		has_variable = dynamic_color131_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1206,7 +1206,7 @@ dynamic_color132 = {
 
 	possible = {
 		has_variable = dynamic_color132_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1215,7 +1215,7 @@ dynamic_color133 = {
 
 	possible = {
 		has_variable = dynamic_color133_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1224,7 +1224,7 @@ dynamic_color134 = {
 
 	possible = {
 		has_variable = dynamic_color134_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1233,7 +1233,7 @@ dynamic_color135 = {
 
 	possible = {
 		has_variable = dynamic_color135_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1242,7 +1242,7 @@ dynamic_color136 = {
 
 	possible = {
 		has_variable = dynamic_color136_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1251,7 +1251,7 @@ dynamic_color137 = {
 
 	possible = {
 		has_variable = dynamic_color137_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1260,7 +1260,7 @@ dynamic_color138 = {
 
 	possible = {
 		has_variable = dynamic_color138_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1269,7 +1269,7 @@ dynamic_color139 = {
 
 	possible = {
 		has_variable = dynamic_color139_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1278,7 +1278,7 @@ dynamic_color140 = {
 
 	possible = {
 		has_variable = dynamic_color140_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1287,7 +1287,7 @@ dynamic_color141 = {
 
 	possible = {
 		has_variable = dynamic_color141_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1296,7 +1296,7 @@ dynamic_color142 = {
 
 	possible = {
 		has_variable = dynamic_color142_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1305,7 +1305,7 @@ dynamic_color143 = {
 
 	possible = {
 		has_variable = dynamic_color143_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1314,7 +1314,7 @@ dynamic_color144 = {
 
 	possible = {
 		has_variable = dynamic_color144_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1323,7 +1323,7 @@ dynamic_color145 = {
 
 	possible = {
 		has_variable = dynamic_color145_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1332,7 +1332,7 @@ dynamic_color146 = {
 
 	possible = {
 		has_variable = dynamic_color146_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1341,7 +1341,7 @@ dynamic_color147 = {
 
 	possible = {
 		has_variable = dynamic_color147_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1350,7 +1350,7 @@ dynamic_color148 = {
 
 	possible = {
 		has_variable = dynamic_color148_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1359,7 +1359,7 @@ dynamic_color149 = {
 
 	possible = {
 		has_variable = dynamic_color149_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1368,7 +1368,7 @@ dynamic_color150 = {
 
 	possible = {
 		has_variable = dynamic_color150_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1377,7 +1377,7 @@ dynamic_color151 = {
 
 	possible = {
 		has_variable = dynamic_color151_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1386,7 +1386,7 @@ dynamic_color152 = {
 
 	possible = {
 		has_variable = dynamic_color152_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1395,7 +1395,7 @@ dynamic_color153 = {
 
 	possible = {
 		has_variable = dynamic_color153_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1404,7 +1404,7 @@ dynamic_color154 = {
 
 	possible = {
 		has_variable = dynamic_color154_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1413,7 +1413,7 @@ dynamic_color155 = {
 
 	possible = {
 		has_variable = dynamic_color155_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1422,7 +1422,7 @@ dynamic_color156 = {
 
 	possible = {
 		has_variable = dynamic_color156_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1431,7 +1431,7 @@ dynamic_color157 = {
 
 	possible = {
 		has_variable = dynamic_color157_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1440,7 +1440,7 @@ dynamic_color158 = {
 
 	possible = {
 		has_variable = dynamic_color158_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1449,7 +1449,7 @@ dynamic_color159 = {
 
 	possible = {
 		has_variable = dynamic_color159_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1458,7 +1458,7 @@ dynamic_color160 = {
 
 	possible = {
 		has_variable = dynamic_color160_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1467,7 +1467,7 @@ dynamic_color161 = {
 
 	possible = {
 		has_variable = dynamic_color161_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1476,7 +1476,7 @@ dynamic_color162 = {
 
 	possible = {
 		has_variable = dynamic_color162_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1485,7 +1485,7 @@ dynamic_color163 = {
 
 	possible = {
 		has_variable = dynamic_color163_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1494,7 +1494,7 @@ dynamic_color164 = {
 
 	possible = {
 		has_variable = dynamic_color164_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1503,7 +1503,7 @@ dynamic_color165 = {
 
 	possible = {
 		has_variable = dynamic_color165_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1512,7 +1512,7 @@ dynamic_color166 = {
 
 	possible = {
 		has_variable = dynamic_color166_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1521,7 +1521,7 @@ dynamic_color167 = {
 
 	possible = {
 		has_variable = dynamic_color167_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1530,7 +1530,7 @@ dynamic_color168 = {
 
 	possible = {
 		has_variable = dynamic_color168_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1539,7 +1539,7 @@ dynamic_color169 = {
 
 	possible = {
 		has_variable = dynamic_color169_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1548,7 +1548,7 @@ dynamic_color170 = {
 
 	possible = {
 		has_variable = dynamic_color170_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1557,7 +1557,7 @@ dynamic_color171 = {
 
 	possible = {
 		has_variable = dynamic_color171_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1566,7 +1566,7 @@ dynamic_color172 = {
 
 	possible = {
 		has_variable = dynamic_color172_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1575,7 +1575,7 @@ dynamic_color173 = {
 
 	possible = {
 		has_variable = dynamic_color173_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1584,7 +1584,7 @@ dynamic_color174 = {
 
 	possible = {
 		has_variable = dynamic_color174_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }
 
@@ -1593,6 +1593,6 @@ dynamic_color175 = {
 
 	possible = {
 		has_variable = dynamic_color175_variable
-		country_tier = city_state
+		country_tier = principality
 	}
 }

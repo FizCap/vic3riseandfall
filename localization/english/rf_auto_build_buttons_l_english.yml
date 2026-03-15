@@ -10,7 +10,7 @@
  rf_je_admin_center_framework: "Rise and Fall Autobuilder"
  rf_scripted_button_auto_build_railway_activate: "Enable Auto-Build: Railway"
  rf_scripted_button_auto_build_railway_activate_desc: "Toggle auto-build: automatically initiate Railway construction in eligible states when the mod's checks allow (requires the Railways technology)."
- rf_je_admin_center_framework_reason: "Enjoy this quality-of-life autobuilder â€” check each button's tooltip for exact behavior and details."
+ rf_je_admin_center_framework_reason: "Enjoy this quality-of-life autobuilder. Check each button's tooltip for exact behavior and details."
  rf_scripted_button_auto_build_admin_center: "Enable Auto-Build: Government Administration"
  rf_scripted_button_auto_build_admin_center_desc: "Toggle auto-build: automatically construct Government Administration buildings according to the same per-state logic as the manual button."
  rf_scripted_button_auto_build_admin_deactivate: "Disable Auto-Build: Government Administration"

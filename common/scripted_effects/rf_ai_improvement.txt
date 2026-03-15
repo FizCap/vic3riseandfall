@@ -11,7 +11,7 @@
 
             # Branch on current fiscal balance: deficit vs surplus
             if = {
-                limit = { expenses > income }
+                limit = { rf_weekly_net_value < 0 }
                 # In deficit -> rf_reserve_income_ratio = months_of_runway (smaller = worse)
                 # If a country is effectively bankrupt (no reserves), reduce military aggressively
                 if = {

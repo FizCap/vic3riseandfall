@@ -34,15 +34,15 @@ rf_effective_reserves = {
 rf_runway_weeks = {
     # If in deficit, compute weeks of runway = effective_reserves / weekly_deficit
     if = {
-        limit = { expenses > income }
+        limit = { rf_weekly_net_value < 0 }
         value = gold_reserves
         add = {
             value = investment_pool
             multiply = 0.25
         }
         divide = {
-            value = expenses
-            subtract = income
+            value = fixed_expenses
+            subtract = fixed_income
         }
     }
     else = { value = 9999 }
@@ -51,7 +51,7 @@ rf_runway_weeks = {
 rf_weeks_to_target = {
     # If in surplus, compute weeks to reach reserve target = (gold_reserves_limit - effective_reserves) / weekly_surplus
     if = {
-        limit = { income > expenses }
+        limit = { rf_weekly_net_value > 0 }
         value = gold_reserves_limit
         subtract = gold_reserves
         subtract = {
@@ -59,8 +59,8 @@ rf_weeks_to_target = {
             multiply = 0.25
         }
         divide = {
-            value = income
-            subtract = expenses
+            value = fixed_income
+            subtract = fixed_expenses
         }
     }
     else = { value = 9999 }
@@ -69,19 +69,20 @@ rf_weeks_to_target = {
 rf_reserve_income_ratio = {
     # Convert weeks -> months (approx 4.33 weeks per month) and return the months metric
     if = {
-        limit = { expenses > income }
+        limit = { rf_weekly_net_value < 0 }
         value = gold_reserves
         add = {
             value = investment_pool
             multiply = 0.25
         }
         divide = {
-            value = expenses
-            subtract = income
+            value = fixed_expenses
+            subtract = fixed_income
         }
         divide = 4.33
     }
-    else = {
+    else_if = {
+        limit = { rf_weekly_net_value > 0 }
         value = gold_reserves_limit
         subtract = gold_reserves
         subtract = {
@@ -89,10 +90,13 @@ rf_reserve_income_ratio = {
             multiply = 0.25
         }
         divide = {
-            value = income
-            subtract = expenses
+            value = fixed_income
+            subtract = fixed_expenses
         }
         divide = 4.33
+    }
+    else = {
+        value = 9999
     }
 }
 
@@ -104,16 +108,16 @@ rf_autobuild_reserve_limit = {
 
 # Weekly net value helper script (income - expenses) used by budgeting logic
 rf_weekly_net_value = {
-    value = income
-    subtract = expenses
+    value = fixed_income
+    subtract = fixed_expenses
 }
 
 rf_weekly_net_share_of_income = {
     if = {
         limit = { income > 0 }
-        value = income
-        subtract = expenses
-        divide = { value = income }
+        value = fixed_income
+        subtract = fixed_expenses
+        divide = { value = fixed_income }
     }
     else = { value = 0 }
 }
@@ -122,8 +126,8 @@ rf_weekly_net_share_of_reserve_limit = {
     # fraction of gold_reserves_limit gained in the current week
     if = {
         limit = { gold_reserves_limit > 0 }
-        value = income
-        subtract = expenses
+        value = fixed_income
+        subtract = fixed_expenses
         divide = { value = gold_reserves_limit }
     }
     else = { value = 0 }

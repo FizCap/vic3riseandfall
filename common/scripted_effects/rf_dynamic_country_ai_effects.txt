@@ -91,79 +91,29 @@ rf_dynamic_country_ai_expand_unrecognized = {
 }
 
 #############################################
-# Culture-Based Clustering (Optional Path)  #
+# Homeland-Based Clustering (Optional Path) #
 #############################################
 
-# Pick a dominant culture from the chosen capital state using descending thresholds.
-# Saves scope as rf_dyn_target_culture if any culture meets thresholds.
-rf_dyn_country_ai_select_culture_for_cluster = {
-    # Try descending culture thresholds on the chosen capital and pick the first that matches
-    random_scope_culture = {
-        limit = {
-            scope:rf_dyn_country_capital = {
-                culture_percent_state = { target = PREV value >= 0.40 }
-            }
-        }
-        save_scope_as = rf_dyn_target_culture
-        ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
+# Pick one homeland culture from the chosen capital state's region.
+# Saves scope as rf_dyn_target_culture if any homeland culture exists there.
+rf_dyn_country_ai_select_homeland_culture_for_cluster = {
+    ROOT = {
+        remove_variable = rf_dyn_target_culture_found
+        clear_saved_scope = rf_dyn_target_culture
     }
 
-    if = {
-        limit = { NOT = { has_variable = rf_dyn_target_culture_found } }
+    scope:rf_dyn_country_capital = {
         random_scope_culture = {
-            limit = {
-                scope:rf_dyn_country_capital = {
-                    culture_percent_state = { target = PREV value >= 0.35 }
-                }
-            }
+            limit = { has_homeland = scope:rf_dyn_country_capital }
             save_scope_as = rf_dyn_target_culture
-                ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
-        }
-    }
-
-    if = {
-        limit = { NOT = { has_variable = rf_dyn_target_culture_found } }
-        random_scope_culture = {
-            limit = {
-                scope:rf_dyn_country_capital = {
-                    culture_percent_state = { target = PREV value >= 0.30 }
-                }
-            }
-            save_scope_as = rf_dyn_target_culture
-                ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
-        }
-    }
-
-    if = {
-        limit = { NOT = { has_variable = rf_dyn_target_culture_found } }
-        random_scope_culture = {
-            limit = {
-                scope:rf_dyn_country_capital = {
-                    culture_percent_state = { target = PREV value >= 0.25 }
-                }
-            }
-            save_scope_as = rf_dyn_target_culture
-                ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
-        }
-    }
-
-    if = {
-        limit = { NOT = { has_variable = rf_dyn_target_culture_found } }
-        random_scope_culture = {
-            limit = {
-                scope:rf_dyn_country_capital = {
-                    culture_percent_state = { target = PREV value >= 0.20 }
-                }
-            }
-            save_scope_as = rf_dyn_target_culture
-                ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
+            ROOT = { set_variable = { name = rf_dyn_target_culture_found value = yes } }
         }
     }
 }
 
-# Single adjacency expansion pass restricted by selected culture share >= 20% in neighbor state.
-# Also dynamically expands candidate pool with culture filter
-rf_dyn_country_ai_single_pass_culture = {
+# Single adjacency expansion pass restricted to states that share the selected homeland culture.
+# Also dynamically expands candidate pool with the homeland filter.
+rf_dyn_country_ai_single_pass_homeland = {
     # Save the current country scope for reference
     ROOT = { save_scope_as = original_country }
 
@@ -174,8 +124,8 @@ rf_dyn_country_ai_single_pass_culture = {
             limit = {
                 owner = scope:original_country
                 NOT = { has_variable = dynamic_state_cede }
-            NOT = { has_variable = riseandfall_recent_state_owner_change }
-                culture_percent_state = { target = scope:rf_dyn_target_culture value >= 0.20 }
+                NOT = { has_variable = riseandfall_recent_state_owner_change }
+                state_region = { is_homeland = scope:rf_dyn_target_culture }
                 NOT = { is_capital = yes }
                 NOT = { is_treaty_port = yes }
                 OR = {
@@ -191,48 +141,48 @@ rf_dyn_country_ai_single_pass_culture = {
     }
 }
 
-# Recognized variant with cultural filter
-rf_dynamic_country_ai_expand_recognized_culture = {
+# Recognized variant with homeland filter
+rf_dynamic_country_ai_expand_recognized_homeland = {
     random_list = {
         60 = {
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
         }
 
         30 = {
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
         }
 
         10 = {
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
         }
     }
 }
 
-# Unrecognized variant with cultural filter (slightly larger bias)
-rf_dynamic_country_ai_expand_unrecognized_culture = {
+# Unrecognized variant with homeland filter (slightly larger bias)
+rf_dynamic_country_ai_expand_unrecognized_homeland = {
     random_list = {
         50 = {
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
         }
 
         35 = {
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
         }
 
         15 = {
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
-            rf_dyn_country_ai_single_pass_culture = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
+            rf_dyn_country_ai_single_pass_homeland = yes
         }
     }
 }
@@ -242,6 +192,11 @@ rf_dynamic_country_ai_recognized = {
     # Only proceed if AI improvements enabled and not at war
     if = {
         limit = { has_game_rule = ai_improvement_enabled is_at_war = no NOT = { has_variable = riseandfall_recent_war } }
+
+        remove_variable = rf_dyn_country_capital_found
+        clear_saved_scope = rf_dyn_country_capital
+        remove_variable = rf_dyn_target_culture_found
+        clear_saved_scope = rf_dyn_target_culture
 
         # Clean stale selection variables (only touch states owned by this country)
         every_scope_state = {
@@ -310,12 +265,12 @@ rf_dynamic_country_ai_recognized = {
                 }
 
                 80 = {
-                    # Try culture-based clustering; fallback to adjacency expansion
-                    rf_dyn_country_ai_select_culture_for_cluster = yes
+                    # Try homeland-based clustering; fallback to generic adjacency expansion
+                    rf_dyn_country_ai_select_homeland_culture_for_cluster = yes
 
                     if = {
                         limit = { has_variable = rf_dyn_target_culture_found }
-                        rf_dynamic_country_ai_expand_recognized_culture = yes
+                        rf_dynamic_country_ai_expand_recognized_homeland = yes
                     }
                     else = {
                         rf_dynamic_country_ai_expand_recognized = yes
@@ -346,6 +301,11 @@ rf_dynamic_country_ai_unrecognized = {
     # Only proceed if AI improvements enabled and not at war
     if = {
         limit = { has_game_rule = ai_improvement_enabled is_at_war = no NOT = { has_variable = riseandfall_recent_war } }
+
+        remove_variable = rf_dyn_country_capital_found
+        clear_saved_scope = rf_dyn_country_capital
+        remove_variable = rf_dyn_target_culture_found
+        clear_saved_scope = rf_dyn_target_culture
 
         # Cleanup (only touch states owned by this country)
         every_scope_state = {
@@ -412,12 +372,12 @@ rf_dynamic_country_ai_unrecognized = {
                 }
 
                 80 = {
-                    # Culture-based clustering attempt
-                    rf_dyn_country_ai_select_culture_for_cluster = yes
+                    # Homeland-based clustering attempt
+                    rf_dyn_country_ai_select_homeland_culture_for_cluster = yes
 
                     if = {
                         limit = { has_variable = rf_dyn_target_culture_found }
-                        rf_dynamic_country_ai_expand_unrecognized_culture = yes
+                        rf_dynamic_country_ai_expand_unrecognized_homeland = yes
                     }
                     else = {
                         rf_dynamic_country_ai_expand_unrecognized = yes
@@ -481,6 +441,9 @@ rf_dynamic_country_create = {
     }
 
     hidden_effect = {
+        remove_variable = rf_dyn_target_culture_found
+        remove_variable = rf_dyn_target_culture
+
         if = {
             limit = { exists = scope:rf_dyn_country_capital.owner }
             if = {
@@ -497,6 +460,9 @@ rf_dynamic_country_create = {
                 }
             }
         }
+
+        remove_variable = rf_dyn_country_capital_found
+        clear_saved_scope = rf_dyn_country_capital
     }
 }
 

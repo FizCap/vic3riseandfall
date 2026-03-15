@@ -5,7 +5,8 @@
 
 # rf_assign_dominant_identity
 # Scope: country (new dynamic country just created) with transferred ceded states.
-# Culture approach: descending national share thresholds, fallback to capital homeland, then any primary.
+# Culture approach: use homeland cultures from the capital state's region, then add any extra
+# capital-state cultures at or above 30%, with a country-share fallback if no primaries were found.
 
 rf_assign_dominant_identity = {
     set_variable = { name = newly_formed_country value = yes days = 90 }
@@ -13,8 +14,9 @@ rf_assign_dominant_identity = {
 
     # ==========================================================
     # CULTURE SELECTION
-    # Criteria: All cultures >= 25% become primary.
-    # Fallback: If none >= 25%, pick the largest available.
+    # Base primaries come from homeland cultures in the capital state's region.
+    # Then add any additional cultures that make up >= 30% of the capital state.
+    # Duplicate primary cultures are skipped explicitly.
     # ==========================================================
 
     # IMPORTANT: Clear ALL inherited primary cultures first
@@ -22,26 +24,56 @@ rf_assign_dominant_identity = {
         ROOT = { remove_primary_culture = PREV }
     }
 
-    # 1. Try to add all cultures >= 25%
-    every_scope_culture = {
-        limit = {
-            ROOT = { culture_percent_country = { target = PREV value >= 0.25 } }
-        }
-        ROOT = {
-            add_primary_culture = PREV
+    clear_saved_scope = rf_identity_capital_state
+    clear_saved_scope = rf_identity_candidate_culture
+
+    capital = {
+        save_scope_as = rf_identity_capital_state
+    }
+
+    # 1. Add homeland cultures from the capital state's region first.
+    capital = {
+        every_scope_culture = {
+            limit = {
+                has_homeland = scope:rf_identity_capital_state
+                NOT = { is_primary_culture_of = ROOT }
+            }
+            save_scope_as = rf_identity_candidate_culture
+
+            ROOT = {
+                if = {
+                    limit = { NOT = { country_has_primary_culture = scope:rf_identity_candidate_culture } }
+                    add_primary_culture = scope:rf_identity_candidate_culture
+                }
+            }
         }
     }
 
-    # 2. Check if we have any primary culture at all
+    # 2. Add major non-homeland cultures from the capital state if they reach 30% there.
+    every_scope_culture = {
+        limit = {
+            scope:rf_identity_capital_state = {
+                culture_percent_state = { target = PREV value >= 0.30 }
+            }
+        }
+
+        ROOT = {
+            if = {
+                limit = { NOT = { country_has_primary_culture = PREV } }
+                add_primary_culture = PREV
+            }
+        }
+    }
+
+    # 3. Fallback if homeland-based selection yielded nothing usable.
     if = {
         limit = { any_primary_culture = { count = 0 } }
-        
-        # Fallback: Find the largest culture in the country by threshold
+
         if = {
-            limit = { 
-                any_scope_culture = { 
-                    ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } 
-                } 
+            limit = {
+                any_scope_culture = {
+                    ROOT = { culture_percent_country = { target = PREV value >= 0.20 } }
+                }
             }
             random_scope_culture = {
                 limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } }
@@ -49,10 +81,10 @@ rf_assign_dominant_identity = {
             }
         }
         else_if = {
-            limit = { 
-                any_scope_culture = { 
-                    ROOT = { culture_percent_country = { target = PREV value >= 0.15 } } 
-                } 
+            limit = {
+                any_scope_culture = {
+                    ROOT = { culture_percent_country = { target = PREV value >= 0.15 } }
+                }
             }
             random_scope_culture = {
                 limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.15 } } }
@@ -60,10 +92,10 @@ rf_assign_dominant_identity = {
             }
         }
         else_if = {
-            limit = { 
-                any_scope_culture = { 
-                    ROOT = { culture_percent_country = { target = PREV value >= 0.10 } } 
-                } 
+            limit = {
+                any_scope_culture = {
+                    ROOT = { culture_percent_country = { target = PREV value >= 0.10 } }
+                }
             }
             random_scope_culture = {
                 limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.10 } } }
@@ -81,23 +113,6 @@ rf_assign_dominant_identity = {
         }
     }
 
-    # 3. Final cleanup: Remove any primary culture that is < 25% (unless it's the only one)
-    if = {
-        limit = { 
-            any_primary_culture = {
-                limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.25 } } }
-            }
-        }
-        # We have at least one culture >= 25%, so remove all < 25%
-        every_primary_culture = {
-            limit = {
-                ROOT = { culture_percent_country = { target = PREV value < 0.25 } }
-            }
-            ROOT = { remove_primary_culture = PREV }
-        }
-    }
-    # else: Keep whatever primary culture we have (fallback was used)
-
     # ==========================================================
     # RELIGION SELECTION
     # Simpler, robust selection: pick one of the country's primary
@@ -107,19 +122,14 @@ rf_assign_dominant_identity = {
     # religion for the newly formed country.
     # ==========================================================
 
-    # Pick the dominant primary culture using descending thresholds
-    # Try to find a primary culture with large country share; prefer larger cultural shares so
-    # the religion selection reflects the actual majority.
-    random_scope_culture = {
-        limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.40 } } }
-        save_scope_as = rf_new_primary_culture
-        ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-    }
-
-    if = {
-        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+    # Pick a homeland culture from the capital state using descending thresholds.
+    # If none of the homeland cultures actually have pops there, fall back to a random homeland culture.
+    capital = {
         random_scope_culture = {
-            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.35 } } }
+            limit = {
+                has_homeland = scope:rf_identity_capital_state
+                scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.40 } }
+            }
             save_scope_as = rf_new_primary_culture
             ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
         }
@@ -127,32 +137,87 @@ rf_assign_dominant_identity = {
 
     if = {
         limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        random_scope_culture = {
-            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.30 } } }
-            save_scope_as = rf_new_primary_culture
-            ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.35 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
         }
     }
 
     if = {
         limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        random_scope_culture = {
-            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.25 } } }
-            save_scope_as = rf_new_primary_culture
-            ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.30 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
         }
     }
 
     if = {
         limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        random_scope_culture = {
-            limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } }
-            save_scope_as = rf_new_primary_culture
-            ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.25 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
         }
     }
 
-    # If still none found, use the capital's leading culture
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.20 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.10 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    # If still none found, use any homeland culture from the capital region.
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = { has_homeland = scope:rf_identity_capital_state }
+                save_scope_as = rf_new_primary_culture
+                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    # Final fallback: use the capital's leading culture.
     if = {
         limit = { NOT = { has_variable = rf_new_primary_culture_found } }
         capital = {
@@ -195,10 +260,13 @@ rf_assign_dominant_identity = {
     }
 
     # Final cleanup
+    clear_saved_scope = rf_identity_capital_state
+    clear_saved_scope = rf_identity_candidate_culture
     remove_variable = rf_new_primary_culture_found
-    remove_variable = rf_new_primary_culture
-    remove_variable = rf_random_pop
-    remove_variable = rf_target_religion
+    clear_saved_scope = rf_new_primary_culture
+    clear_saved_scope = rf_capital_culture
+    clear_saved_scope = rf_random_pop
+    clear_saved_scope = rf_target_religion
     
     # Kill the ruler (from original code)
     ruler = { kill_character = yes }

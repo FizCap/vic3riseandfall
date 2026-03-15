@@ -45,6 +45,84 @@ This file merges all key lessons, best practices, and conventions for modding Vi
 
 ---
 
+## 2a. Overwrite Modes (INJECT / REPLACE)
+- The game supports special overwrite keywords (introduced in V3 1.12+) that modify how mod files merge with existing objects.
+- **INJECT** – adds the script to the end of an existing object. Errors if the object does not exist.
+- **REPLACE** – replaces an existing object entirely. Errors if the object does not exist.
+- **TRY_INJECT** – same as INJECT but does not error if the object does not exist.
+- **TRY_REPLACE** – same as REPLACE but does not error if the object does not exist.
+- **REPLACE_OR_CREATE** – same as REPLACE, but creates the object if it does not exist.
+- **INJECT_OR_CREATE** – same as INJECT, but creates the object if it does not exist.
+
+### Behavior Notes
+- `REPLACE` keywords overwrite the specified object as expected, replacing any previous definition with the new one.
+  - Note: This still follows normal loading order; if multiple mods replace the same entry, the **last loaded** mod wins.
+- `INJECT` keywords add the specified blocks to the object without changing any existing definition.
+  - Some types of blocks cannot be injected if the same block already exists (most notably, `is_visible`, `trigger`, and `effect` blocks).
+  - `INJECT` does **not** work for scripted effects or scripted triggers; using it will overwrite the original effect/trigger instead of injecting.
+
+#### Example: INJECT appending blocks
+Given a base game object like:
+
+```vic3
+ai_strategy_default = {
+    #... some code
+    wargoal_scores = {
+        a = {
+            # some score calc
+        }
+        b = {
+            # some score calc
+        }
+        c = {
+            # some score calc
+        }
+    }
+    #... some code
+}
+```
+
+Injecting this from a mod:
+
+```vic3
+INJECT:ai_strategy_default = {
+    wargoal_scores = {
+        d = {
+            # some score calc
+        }
+    }
+}
+```
+
+Will effectively result in:
+
+```vic3
+ai_strategy_default = {
+    #... some code
+    wargoal_scores = {
+        a = {
+            # some score calc
+        }
+        b = {
+            # some score calc
+        }
+        c = {
+            # some score calc
+        }
+    }
+    #... some code
+    wargoal_scores = {
+        d = {
+            # some score calc
+        }
+    }
+}
+```
+
+This can lead to unexpected behavior if the injected blocks refer to the same elements as the original blocks (e.g., trying to modify `a` from the injected block may be ignored or overwrite the base calculation).
+
+---
+
 ## 3. Scope Usage & Patterns
 - Each effect/trigger/on_action starts in a default scope (country, character, state, etc.).
 - Switch scope explicitly using keywords: `owner = { ... }`, `ruler = { ... }`, `state = { ... }`.

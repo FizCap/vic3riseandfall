@@ -66,3 +66,14 @@ rf_vassal_auto_protectorate = {
     rf_vassal_auto_protectorate_disabled = {
     }
 }
+
+rf_stronger_rebellions = {
+    default = rf_stronger_rebellions_enabled
+
+    rf_stronger_rebellions_enabled = {
+        flag = rf_stronger_rebellions_enabled
+    }
+
+    rf_stronger_rebellions_disabled = {
+    }
+}

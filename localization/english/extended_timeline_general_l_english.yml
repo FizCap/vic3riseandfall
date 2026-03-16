@@ -49,6 +49,8 @@
   rf_button_authority_cheat_disable: "Disable Authority Cheat"
   rf_button_authority_cheat_disable_desc: "Removes the Authority cheat modifier."
   rf_authority_cheat: "Authority Cheat"
+  rf_stronger_rebellions: "RF: Stronger Rebellions"
+  rf_stronger_rebellions_desc: "Rebelling countries receive a temporary boost to training, conscription, and tax capacity."
   rf_dynamic_country_builder_reason: "Creating a new dynamic country from marked states. Use the authority cheat if you don't have enough authority for decrees."
   state_harvest_condition_et_epidemic_outbreak_impact_mult: "[GetHarvestConditionType('disease_outbreak').GetName] [concept_harvest_condition] Impact"
   state_harvest_condition_et_epidemic_outbreak_impact_mult_desc: "An increase or decrease to the impact of Epidemic Outbreaks."

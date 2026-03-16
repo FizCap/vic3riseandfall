@@ -6,3 +6,11 @@
 rf_authority_cheat = {
     country_authority_add = 10000
 }
+
+rf_stronger_rebellions = {
+    building_training_rate_mult = 5.0
+    state_tax_capacity_mult = 5.0
+    state_conscription_rate_mult = 5.0
+    country_bureaucracy_mult = 5.0
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}

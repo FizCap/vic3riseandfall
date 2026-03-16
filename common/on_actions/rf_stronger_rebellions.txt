@@ -1,0 +1,61 @@
+﻿# Adds a positive modifier to countries that start a secession/uprising when the game rule is enabled.
+# (The modifier itself is a placeholder; fill it out in common/static_modifiers/rf_modifiers.txt)
+
+on_secession_start = {
+    on_actions = {
+        rf_stronger_rebellions
+    }
+}
+
+on_secession_end = {
+    on_actions = {
+        rf_stronger_rebellions_end
+    }
+}
+
+# Also handle revolutions/civil-war starts: apply to rebels only when
+# the contested/government country is a subject of another country
+# and the rebels do not share any primary culture with that country.
+on_revolution_start = {
+    on_actions = {
+        rf_stronger_rebellions_civil
+    }
+}
+
+on_revolution_end = {
+    on_actions = {
+        rf_stronger_rebellions_end
+    }
+}
+
+rf_stronger_rebellions = {
+    trigger = {
+        has_game_rule = rf_stronger_rebellions_enabled
+    }
+    effect = {
+        scope:target ?= {
+            add_modifier = {
+                name = rf_stronger_rebellions
+            }
+        }
+    }
+}
+
+rf_stronger_rebellions_end = {
+    effect = {
+        scope:target ?= {
+            remove_modifier = rf_stronger_rebellions
+        }
+    }
+}
+
+rf_stronger_rebellions_civil = {
+    trigger = {
+        has_game_rule = rf_stronger_rebellions_enabled
+    }
+    effect = {
+        # Call the scripted effect which contains the conditional logic
+        rf_stronger_rebellions_civil_script = yes
+    }
+}
+

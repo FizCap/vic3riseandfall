@@ -56,17 +56,6 @@ rf_colony_grant_claim = {
     }
 }
 
-rf_vassal_auto_protectorate = {
-    default = rf_vassal_auto_protectorate_enabled
-
-    rf_vassal_auto_protectorate_enabled = {
-        flag = rf_vassal_auto_protectorate_enabled
-    }
-
-    rf_vassal_auto_protectorate_disabled = {
-    }
-}
-
 rf_stronger_rebellions = {
     default = rf_stronger_rebellions_enabled
 

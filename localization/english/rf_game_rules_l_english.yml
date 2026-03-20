@@ -54,12 +54,6 @@
   setting_claim_expiration_disabled: "Disabled"
   setting_claim_expiration_disabled_desc: "Claims will not expire automatically."
 
-  rule_rf_vassal_auto_protectorate: "RF: Auto-convert Subjects to Protectorates"
-  setting_rf_vassal_auto_protectorate_enabled: "Enabled"
-  setting_rf_vassal_auto_protectorate_enabled_desc: "Subjects (vassals or puppets) with Liberty Desire >= 100 will automatically be converted to protectorates on the yearly check."
-  setting_rf_vassal_auto_protectorate_disabled: "Disabled"
-  setting_rf_vassal_auto_protectorate_disabled_desc: "No automatic conversion of high-liberty subjects will occur."
-
   rule_rf_stronger_rebellions: "RF: Stronger Rebellions"
   setting_rf_stronger_rebellions_enabled: "Enabled"
   setting_rf_stronger_rebellions_enabled_desc: "Rebelling countries receive a special modifier when they begin a secession/rebellion."

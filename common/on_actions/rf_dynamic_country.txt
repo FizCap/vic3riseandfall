@@ -13,6 +13,7 @@ rf_dynamic_country_ai_monthly = {
         is_player = no
         is_subject = no
         is_at_war = no
+        # Only block the countries directly leading or being targeted by a play.
         is_diplomatic_play_initiator = no
         is_diplomatic_play_target = no
         NOT = { has_variable = riseandfall_recent_war }
@@ -27,8 +28,6 @@ rf_dynamic_country_ai_monthly = {
                 market_access < 0.15
             }
         }
-        # Ensure not involved in any diplomatic play (as ally or enemy)
-        NOT = { any_country = { is_diplomatic_play_enemy_of = ROOT } }
     }
     effect = {
         rf_dynamic_country_ai_recognized = yes
@@ -42,6 +41,7 @@ rf_dynamic_country_ai_monthly_unrecognized = {
         is_subject = no
         is_player = no
         is_at_war = no
+        # Only block the countries directly leading or being targeted by a play.
         is_diplomatic_play_initiator = no
         is_diplomatic_play_target = no
         NOT = { has_variable = riseandfall_recent_war }
@@ -56,8 +56,6 @@ rf_dynamic_country_ai_monthly_unrecognized = {
                 market_access < 0.15
             }
         }
-        # Ensure not involved in any diplomatic play (as ally or enemy)
-        NOT = { any_country = { is_diplomatic_play_enemy_of = ROOT } }
     }
     effect = {
         rf_dynamic_country_ai_unrecognized = yes

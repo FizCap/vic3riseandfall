@@ -8,9 +8,15 @@ rf_authority_cheat = {
 }
 
 rf_stronger_rebellions = {
-    building_training_rate_mult = 5.0
+    building_training_rate_mult = 1.0
+    country_minting_mult = 10.0
     state_tax_capacity_mult = 5.0
     state_conscription_rate_mult = 5.0
     country_bureaucracy_mult = 5.0
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+}
+
+rf_faster_training = {
+    building_training_rate_mult = 10.0
     icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
 }

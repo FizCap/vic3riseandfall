@@ -82,22 +82,24 @@ rf_manual_build_port = {
 rf_manual_build_power_plant = {
     #manual build button for power plant (QoL)
     # Build one power plant in every state that does not already have one.
+    # Additionally, expand profitable existing power plants (weekly_profit > 500).
 
     every_scope_state = {
         limit = {
             turmoil < 0.50
-            NOT = {
+            owner = ROOT
+            can_construct_building = building_power_plant
+            OR = {
+                NOT = {
+                    any_scope_building = {
+                        is_building_type = building_power_plant
+                    }
+                }
                 any_scope_building = {
                     is_building_type = building_power_plant
+                    weekly_profit > 500
                 }
             }
-            # Only build in this state if there's already at least one profitable power plant here
-            any_scope_building = {
-                is_building_type = building_power_plant
-                weekly_profit > 500
-            }
-            can_construct_building = building_power_plant
-            owner = ROOT
         }
         start_building_construction = building_power_plant
     }

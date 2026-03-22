@@ -1,4 +1,4 @@
-# Scripted effect for applying stronger rebellion modifier during civil war/revolution
+﻿# Scripted effect for applying stronger rebellion modifier during civil war/revolution
 rf_stronger_rebellions_civil_script = {
     # ROOT is the subject country that spawned the rebellion.
     # scope:target is the rebel country from on_revolution_start.
@@ -18,13 +18,11 @@ rf_stronger_rebellions_civil_script = {
                 if = {
                     limit = {
                         any_primary_culture = {
-                            limit = {
-                                scope:rf_subject_country = {
-                                    country_has_primary_culture = PREV
-                                }
-                                scope:rf_subject_overlord = {
-                                    NOT = { country_has_primary_culture = PREV }
-                                }
+                            scope:rf_subject_country = {
+                                country_has_primary_culture = PREV
+                            }
+                            scope:rf_subject_overlord = {
+                                NOT = { country_has_primary_culture = PREV }
                             }
                         }
                     }

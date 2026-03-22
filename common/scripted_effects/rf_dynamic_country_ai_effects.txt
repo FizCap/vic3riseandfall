@@ -217,6 +217,7 @@ rf_dynamic_country_ai_recognized = {
             limit = {
                 owner = ROOT
                 is_capital = no
+                is_under_colonization = no
                 NOT = { is_treaty_port = yes }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
                 NOT = { is_incorporated = yes }
@@ -254,6 +255,7 @@ rf_dynamic_country_ai_recognized = {
                 limit = {
                     has_variable = ai_potential_dyn_country_state
                     owner = ROOT
+                    is_under_colonization = no
                     NOT = { is_capital = yes }
                 }
                 save_scope_as = rf_dyn_country_capital
@@ -326,6 +328,7 @@ rf_dynamic_country_ai_unrecognized = {
             limit = {
                 owner = ROOT
                 is_capital = no
+                is_under_colonization = no
                 NOT = { is_treaty_port = yes }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
                 OR = {
@@ -361,6 +364,7 @@ rf_dynamic_country_ai_unrecognized = {
                 limit = {
                     has_variable = ai_potential_dyn_country_state
                     owner = ROOT
+                    is_under_colonization = no
                     NOT = { is_capital = yes }
                 }
                 save_scope_as = rf_dyn_country_capital

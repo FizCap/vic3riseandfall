@@ -28,6 +28,7 @@ rf_dyn_country_ai_single_pass = {
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
                 NOT = { is_capital = yes }
                 NOT = { is_treaty_port = yes }
+                NOT = { is_incorporated = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
                     # Do NOT include states with effectively zero market access if the owning
@@ -128,6 +129,7 @@ rf_dyn_country_ai_single_pass_homeland = {
                 state_region = { is_homeland = scope:rf_dyn_target_culture }
                 NOT = { is_capital = yes }
                 NOT = { is_treaty_port = yes }
+                NOT = { is_incorporated = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
                     AND = {
@@ -217,6 +219,7 @@ rf_dynamic_country_ai_recognized = {
                 is_capital = no
                 NOT = { is_treaty_port = yes }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
+                NOT = { is_incorporated = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }
                     AND = {

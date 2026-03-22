@@ -39,7 +39,7 @@ rf_stronger_rebellions = {
             }
             add_modifier = {
                 name = rf_faster_training
-                months = 6
+                days = 100
             }
         }
     }

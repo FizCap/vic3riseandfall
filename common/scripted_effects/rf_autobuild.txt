@@ -5,6 +5,7 @@
     every_scope_state = {
         limit = {
             turmoil < 0.25
+            is_incorporated = no
             any_scope_building = {
                 is_building_type = building_government_administration
                 occupancy > 0.50
@@ -22,6 +23,7 @@
         random_state = {
             limit = {
                 turmoil < 0.25
+                is_incorporated = no
                 NOT = {
                     any_scope_building = {
                         is_building_type = building_government_administration
@@ -32,6 +34,22 @@
             }
             start_building_construction = building_government_administration
         }
+    }
+}
+
+rf_manual_build_university = {
+    # manual build for university: in every state that does not have one yet
+    every_scope_state = {
+        limit = {
+            owner = ROOT
+            NOT = {
+                any_scope_building = {
+                    is_building_type = building_university
+                }
+            }
+            can_construct_building = building_university
+        }
+        start_building_construction = building_university
     }
 }
 

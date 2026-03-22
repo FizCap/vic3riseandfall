@@ -16,6 +16,7 @@
 	scripted_button = rf_scripted_button_build_railway
 	scripted_button = rf_scripted_button_build_port
 	scripted_button = rf_scripted_button_build_power_plant
+	scripted_button = rf_scripted_button_build_university
 	# Construction sector manual and auto
 	scripted_button = rf_scripted_button_build_construction_sector
 	scripted_button = rf_scripted_button_auto_build_construction_activate
@@ -29,6 +30,8 @@
 	scripted_button = rf_scripted_button_auto_build_port_deactivate
 	scripted_button = rf_scripted_button_auto_build_power_activate
 	scripted_button = rf_scripted_button_auto_build_power_deactivate
+	scripted_button = rf_scripted_button_auto_build_university_activate
+	scripted_button = rf_scripted_button_auto_build_university_deactivate
 
 	should_be_pinned_by_default = yes
 	weight = 100

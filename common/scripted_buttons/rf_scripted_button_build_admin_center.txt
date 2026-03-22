@@ -115,6 +115,57 @@ rf_scripted_button_build_power_plant = {
     ai_chance = { value = 0 }
 }
 
+rf_scripted_button_build_university = {
+    name = "rf_scripted_button_build_university"
+    desc = "rf_scripted_button_build_university_desc"
+
+    effect = {
+        rf_manual_build_university = yes
+    }
+
+    visible = {
+        always = yes
+    }
+
+    possible = {
+        any_scope_state = {
+            can_construct_building = building_university
+        }
+    }
+
+    ai_chance = {
+        value = 0
+    }
+}
+
+rf_scripted_button_auto_build_university_activate = {
+    name = "rf_scripted_button_auto_build_university_activate"
+    desc = "rf_scripted_button_auto_build_university_activate_desc"
+    visible = {
+        NOT = { has_variable = rf_auto_build_university_cooldown }
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        set_variable = rf_auto_build_university_cooldown
+        custom_tooltip = rf_auto_build_university_on_tt
+    }
+}
+
+rf_scripted_button_auto_build_university_deactivate = {
+    name = "rf_scripted_button_auto_build_university_deactivate"
+    desc = "rf_scripted_button_auto_build_university_deactivate_desc"
+    visible = {
+        has_variable = rf_auto_build_university_cooldown
+    }
+    possible = { always = yes }
+    ai_chance = { value = 0 }
+    effect = {
+        remove_variable = rf_auto_build_university_cooldown
+        custom_tooltip = rf_auto_build_university_off_tt
+    }
+}
+
 rf_scripted_button_auto_build_admin_activate = {
     name = "rf_scripted_button_auto_build_admin_activate"
     desc = "rf_scripted_button_auto_build_admin_activate_desc"

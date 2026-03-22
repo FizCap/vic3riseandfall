@@ -4,6 +4,7 @@
         rf_auto_build_monthly_rail
         rf_auto_build_monthly_port
         rf_auto_build_monthly_power
+        rf_auto_build_monthly_university
         rf_auto_build_monthly_construction
     }
 }
@@ -85,6 +86,26 @@ rf_auto_build_monthly_power = {
                 }
             }
             rf_manual_build_power_plant = yes
+        }
+    }
+}
+
+rf_auto_build_monthly_university = {
+    trigger = {
+        has_variable = rf_auto_build_university_cooldown
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    any_scope_state = {
+                        b:building_university ?= {
+                            is_under_construction = yes
+                        }
+                    }
+                }
+            }
+            rf_manual_build_university = yes
         }
     }
 }

@@ -48,7 +48,13 @@ rf_stronger_rebellions = {
 rf_stronger_rebellions_end = {
     effect = {
         scope:target ?= {
+            # If the rebel target still exists after the uprising/revolution, keep the effect as a 3-year cooldown.
             remove_modifier = rf_stronger_rebellions
+            add_modifier = {
+                name = rf_stronger_rebellions
+                days = 1095
+                is_decaying = yes
+            }
         }
     }
 }

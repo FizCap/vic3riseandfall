@@ -24,11 +24,12 @@ rf_dyn_country_ai_single_pass = {
         every_neighbouring_state = {
             limit = {
                 owner = scope:original_country
+                controller = owner
                 NOT = { has_variable = dynamic_state_cede }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
+                NOT = { has_variable = riseandfall_recent_state_occupation }
                 NOT = { is_capital = yes }
                 NOT = { is_treaty_port = yes }
-                NOT = { is_incorporated = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
                     # Do NOT include states with effectively zero market access if the owning
@@ -124,12 +125,13 @@ rf_dyn_country_ai_single_pass_homeland = {
         every_neighbouring_state = {
             limit = {
                 owner = scope:original_country
+                controller = owner
                 NOT = { has_variable = dynamic_state_cede }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
+                NOT = { has_variable = riseandfall_recent_state_occupation }
                 state_region = { is_homeland = scope:rf_dyn_target_culture }
                 NOT = { is_capital = yes }
                 NOT = { is_treaty_port = yes }
-                NOT = { is_incorporated = yes }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = scope:original_country }
                     AND = {
@@ -191,9 +193,19 @@ rf_dynamic_country_ai_expand_unrecognized_homeland = {
 
 # Main AI logic for dynamic country creation (Recognized)
 rf_dynamic_country_ai_recognized = {
-    # Only proceed if AI improvements enabled and not at war
+    # Only proceed if AI improvements enabled
     if = {
-        limit = { has_game_rule = ai_improvement_enabled is_at_war = no NOT = { has_variable = riseandfall_recent_war } }
+        limit = {
+            has_game_rule = ai_improvement_enabled
+            NOT = {
+                any_country = {
+                    OR = {
+                        play_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
+                        war_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
+                    }
+                }
+            }
+        }
 
         remove_variable = rf_dyn_country_capital_found
         clear_saved_scope = rf_dyn_country_capital
@@ -216,11 +228,13 @@ rf_dynamic_country_ai_recognized = {
             # Candidate marks (recognized)
             limit = {
                 owner = ROOT
+                controller = owner
                 is_capital = no
                 is_under_colonization = no
                 NOT = { is_treaty_port = yes }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
-                NOT = { is_incorporated = yes }
+                NOT = { has_variable = riseandfall_recent_state_occupation }
+                NOT = { is_target_of_wargoal = ROOT }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }
                     AND = {
@@ -303,9 +317,19 @@ rf_dynamic_country_ai_recognized = {
 
 # Main AI logic for dynamic country creation (Unrecognized)
 rf_dynamic_country_ai_unrecognized = {
-    # Only proceed if AI improvements enabled and not at war
+    # Only proceed if AI improvements enabled
     if = {
-        limit = { has_game_rule = ai_improvement_enabled is_at_war = no NOT = { has_variable = riseandfall_recent_war } }
+        limit = {
+            has_game_rule = ai_improvement_enabled
+            NOT = {
+                any_country = {
+                    OR = {
+                        play_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
+                        war_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
+                    }
+                }
+            }
+        }
 
         remove_variable = rf_dyn_country_capital_found
         clear_saved_scope = rf_dyn_country_capital
@@ -327,10 +351,13 @@ rf_dynamic_country_ai_unrecognized = {
         every_scope_state = {
             limit = {
                 owner = ROOT
+                controller = owner
                 is_capital = no
                 is_under_colonization = no
                 NOT = { is_treaty_port = yes }
                 NOT = { has_variable = riseandfall_recent_state_owner_change }
+                NOT = { has_variable = riseandfall_recent_state_occupation }
+                NOT = { is_target_of_wargoal = ROOT }
                 OR = {
                     NOT = { is_homeland_of_country_cultures = ROOT }
                     AND = {

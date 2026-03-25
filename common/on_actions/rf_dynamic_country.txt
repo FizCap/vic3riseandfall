@@ -1,8 +1,13 @@
 ﻿on_monthly_pulse_country = {
     on_actions = {
-        rf_war_counter
         rf_dynamic_country_ai_monthly
         rf_dynamic_country_ai_monthly_unrecognized
+    }
+}
+
+on_monthly_pulse_state = {
+    on_actions = {
+        rf_recent_state_occupation_monthly
     }
 }
 
@@ -12,10 +17,14 @@ rf_dynamic_country_ai_monthly = {
         is_country_type = recognized
         is_player = no
         is_subject = no
-        is_at_war = no
-        is_diplomatic_play_initiator = no
-        is_diplomatic_play_target = no
-        NOT = { has_variable = riseandfall_recent_war }
+        NOT = {
+            any_country = {
+                OR = {
+                    play_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
+                    war_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
+                }
+            }
+        }
         num_states > 1
         # Performance: only run for countries that have at least one state showing
         # significant turmoil or very low market access (candidates for dynamic country creation)
@@ -27,8 +36,6 @@ rf_dynamic_country_ai_monthly = {
                 market_access < 0.15
             }
         }
-        # Ensure not involved in any diplomatic play (as ally or enemy)
-        NOT = { any_country = { is_diplomatic_play_enemy_of = ROOT } }
     }
     effect = {
         rf_dynamic_country_ai_recognized = yes
@@ -41,10 +48,14 @@ rf_dynamic_country_ai_monthly_unrecognized = {
         is_country_type = unrecognized
         is_subject = no
         is_player = no
-        is_at_war = no
-        is_diplomatic_play_initiator = no
-        is_diplomatic_play_target = no
-        NOT = { has_variable = riseandfall_recent_war }
+        NOT = {
+            any_country = {
+                OR = {
+                    play_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
+                    war_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
+                }
+            }
+        }
         num_states > 1
         # Performance: only run for countries that have at least one state showing
         # significant turmoil or very low market access (candidates for dynamic country creation)
@@ -56,20 +67,17 @@ rf_dynamic_country_ai_monthly_unrecognized = {
                 market_access < 0.15
             }
         }
-        # Ensure not involved in any diplomatic play (as ally or enemy)
-        NOT = { any_country = { is_diplomatic_play_enemy_of = ROOT } }
     }
     effect = {
         rf_dynamic_country_ai_unrecognized = yes
     }
 }
 
-rf_war_counter = {
+rf_recent_state_occupation_monthly = {
     trigger = {
-        has_game_rule = ai_improvement_enabled
-        is_at_war = yes
+        NOT = { controller = owner }
     }
     effect = {
-        rf_war_counter_se = yes
+        rf_state_recent_occupation_effect = yes
     }
 }

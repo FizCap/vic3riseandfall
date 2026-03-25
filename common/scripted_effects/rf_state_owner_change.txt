@@ -6,10 +6,10 @@
     }
 }
 
-rf_war_counter_se = {
+rf_state_recent_occupation_effect = {
     set_variable = {
-        name = riseandfall_recent_war
-        value = 1
-        months = 3
+        name = riseandfall_recent_state_occupation
+        value = yes
+        days = 90
     }
 }

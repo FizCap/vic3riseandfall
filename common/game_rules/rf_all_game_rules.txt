@@ -66,3 +66,14 @@ rf_stronger_rebellions = {
     rf_stronger_rebellions_disabled = {
     }
 }
+
+rf_forced_colonization = {
+    default = rf_forced_colonization_enabled
+
+    rf_forced_colonization_enabled = {
+        flag = rf_forced_colonization_enabled
+    }
+
+    rf_forced_colonization_disabled = {
+    }
+}

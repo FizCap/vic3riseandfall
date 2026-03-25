@@ -1,0 +1,47 @@
+﻿namespace = rf_forced_colonization
+
+rf_forced_colonization.1 = {
+    type = country_event
+    title = rf_forced_colonization.1.t
+    desc = rf_forced_colonization.1.d
+
+    event_image = {
+        video = "africa_desert_expedition"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    duration = 3
+
+    trigger = {
+        has_game_rule = rf_forced_colonization_enabled
+        has_law_or_variant = law_type:law_no_colonial_affairs
+        NOT = { is_enacting_law = law_type:law_frontier_colonization }
+    }
+
+    option = {
+        name = rf_forced_colonization.1.a
+        default_option = yes
+        ai_chance = { factor = 100 }
+
+        hidden_effect = {
+            remove_variable = rf_forced_colonization_pending
+            remove_variable = rf_forced_colonization_declined
+        }
+
+        activate_law = law_type:law_frontier_colonization
+    }
+
+    option = {
+        name = rf_forced_colonization.1.b
+        ai_chance = { factor = 0 }
+
+        remove_variable = rf_forced_colonization_pending
+        set_variable = {
+            name = rf_forced_colonization_declined
+            years = 5
+        }
+    }
+}

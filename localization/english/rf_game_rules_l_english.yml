@@ -59,3 +59,9 @@
   setting_rf_stronger_rebellions_enabled_desc: "Rebelling countries receive a special modifier when they begin a secession/rebellion."
   setting_rf_stronger_rebellions_disabled: "Disabled"
   setting_rf_stronger_rebellions_disabled_desc: "No special modifier is applied to rebelling countries."
+
+  rule_rf_forced_colonization: "RF: Forced Colonization"
+  setting_rf_forced_colonization_enabled: "Enabled"
+  setting_rf_forced_colonization_enabled_desc: "After 50 years, bordering countries with No Colonial Affairs may be prompted to adopt Frontier Colonization when they border a decentralized country. Claim holders are preferred, AI always accepts, and players may decline."
+  setting_rf_forced_colonization_disabled: "Disabled"
+  setting_rf_forced_colonization_disabled_desc: "No automatic Frontier Colonization prompt is generated for countries bordering decentralized nations."

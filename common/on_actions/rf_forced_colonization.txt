@@ -1,0 +1,66 @@
+﻿on_game_started_after_lobby = {
+    on_actions = {
+        rf_forced_colonization_setup
+    }
+}
+
+on_yearly_pulse_country = {
+    on_actions = {
+        rf_forced_colonization_yearly
+    }
+}
+
+rf_forced_colonization_setup = {
+    effect = {
+        if = {
+            limit = {
+                has_game_rule = rf_forced_colonization_enabled
+            }
+            set_global_variable = {
+                name = rf_forced_colonization_startup_lock
+                years = 50
+            }
+        }
+    }
+}
+
+rf_forced_colonization_yearly = {
+    trigger = {
+        has_game_rule = rf_forced_colonization_enabled
+        NOT = { has_global_variable = rf_forced_colonization_startup_lock }
+        NOT = { is_country_type = decentralized }
+        has_law_or_variant = law_type:law_no_colonial_affairs
+        NOT = { is_enacting_law = law_type:law_frontier_colonization }
+        NOT = { is_enacting_law = law_type:law_colonial_resettlement }
+        NOT = { is_enacting_law = law_type:law_colonial_exploitation }
+        NOT = { has_variable = rf_forced_colonization_declined }
+        NOT = { has_variable = rf_forced_colonization_pending }
+        any_scope_state = {
+            any_neighbouring_state = {
+                NOT = { is_under_colonization = yes }
+                owner = {
+                    is_country_type = decentralized
+                }
+                NOT = {
+                    any_neighbouring_state = {
+                        owner = {
+                            NOT = { this = ROOT }
+                            NOT = { is_country_type = decentralized }
+                            OR = {
+                                has_law_or_variant = law_type:law_frontier_colonization
+                                has_law_or_variant = law_type:law_colonial_resettlement
+                                has_law_or_variant = law_type:law_colonial_exploitation
+                                is_enacting_law = law_type:law_frontier_colonization
+                                is_enacting_law = law_type:law_colonial_resettlement
+                                is_enacting_law = law_type:law_colonial_exploitation
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        rf_forced_colonization_select_recipient = yes
+    }
+}

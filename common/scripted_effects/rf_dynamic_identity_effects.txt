@@ -259,6 +259,53 @@ rf_assign_dominant_identity = {
         }
     }
 
+    # For monarchies, generate a fresh ruler so the new culture can also produce a fitting name.
+    if = {
+        limit = {
+            has_law = law_type:law_monarchy
+            exists = ruler
+            exists = scope:rf_new_primary_culture
+            exists = scope:rf_target_religion
+        }
+
+        ruler = {
+            save_scope_as = rf_old_ruler
+        }
+
+        create_character = {
+            culture = scope:rf_new_primary_culture
+            religion = scope:rf_target_religion
+            ruler = yes
+        }
+    }
+
+    # Retarget the country's existing characters to the new national identity
+    every_scope_character = {
+        limit = {
+            OR = {
+                is_ruler = yes
+                is_heir = yes
+                owner = ROOT
+            }
+        }
+
+        if = {
+            limit = {
+                exists = scope:rf_new_primary_culture
+                NOT = { culture = scope:rf_new_primary_culture }
+            }
+            change_character_culture = scope:rf_new_primary_culture
+        }
+
+        if = {
+            limit = {
+                exists = scope:rf_target_religion
+                NOT = { religion = scope:rf_target_religion }
+            }
+            change_character_religion = scope:rf_target_religion
+        }
+    }
+
     # Final cleanup
     clear_saved_scope = rf_identity_capital_state
     clear_saved_scope = rf_identity_candidate_culture
@@ -267,9 +314,7 @@ rf_assign_dominant_identity = {
     clear_saved_scope = rf_capital_culture
     clear_saved_scope = rf_random_pop
     clear_saved_scope = rf_target_religion
-    
-    # Kill the ruler (from original code)
-    ruler = { kill_character = yes }
+    clear_saved_scope = rf_old_ruler
 }
 
 # Assign a random dynamic country map color variable to the newly created dynamic country

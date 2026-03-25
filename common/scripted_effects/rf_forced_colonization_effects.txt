@@ -1,0 +1,91 @@
+﻿rf_forced_colonization_select_recipient = {
+    if = {
+        limit = {
+            any_scope_state = {
+                any_neighbouring_state = {
+                    NOT = { is_under_colonization = yes }
+                    has_claim_by = ROOT
+                    owner = {
+                        is_country_type = decentralized
+                    }
+                    NOT = {
+                        any_neighbouring_state = {
+                            owner = {
+                                NOT = { this = ROOT }
+                                NOT = { is_country_type = decentralized }
+                                OR = {
+                                    has_law_or_variant = law_type:law_frontier_colonization
+                                    has_law_or_variant = law_type:law_colonial_resettlement
+                                    has_law_or_variant = law_type:law_colonial_exploitation
+                                    is_enacting_law = law_type:law_frontier_colonization
+                                    is_enacting_law = law_type:law_colonial_resettlement
+                                    is_enacting_law = law_type:law_colonial_exploitation
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = { is_ai = yes }
+                activate_law = law_type:law_frontier_colonization
+            }
+            else = {
+                set_variable = {
+                    name = rf_forced_colonization_pending
+                    days = 7
+                }
+                trigger_event = {
+                    id = rf_forced_colonization.1
+                    popup = yes
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            any_scope_state = {
+                any_neighbouring_state = {
+                    NOT = { is_under_colonization = yes }
+                    owner = {
+                        is_country_type = decentralized
+                    }
+                    NOT = {
+                        any_neighbouring_state = {
+                            owner = {
+                                NOT = { this = ROOT }
+                                NOT = { is_country_type = decentralized }
+                                OR = {
+                                    has_law_or_variant = law_type:law_frontier_colonization
+                                    has_law_or_variant = law_type:law_colonial_resettlement
+                                    has_law_or_variant = law_type:law_colonial_exploitation
+                                    is_enacting_law = law_type:law_frontier_colonization
+                                    is_enacting_law = law_type:law_colonial_resettlement
+                                    is_enacting_law = law_type:law_colonial_exploitation
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        hidden_effect = {
+            if = {
+                limit = { is_ai = yes }
+                activate_law = law_type:law_frontier_colonization
+            }
+            else = {
+                set_variable = {
+                    name = rf_forced_colonization_pending
+                    days = 7
+                }
+                trigger_event = {
+                    id = rf_forced_colonization.1
+                    popup = yes
+                }
+            }
+        }
+    }
+}

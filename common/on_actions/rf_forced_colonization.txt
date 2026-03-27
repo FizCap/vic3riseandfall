@@ -35,24 +35,36 @@ rf_forced_colonization_yearly = {
         NOT = { is_enacting_law = law_type:law_colonial_exploitation }
         NOT = { has_variable = rf_forced_colonization_declined }
         NOT = { has_variable = rf_forced_colonization_pending }
-        any_scope_state = {
-            any_neighbouring_state = {
-                NOT = { is_under_colonization = yes }
-                owner = {
-                    is_country_type = decentralized
+        OR = {
+            any_scope_state = {
+                any_neighbouring_state = {
+                    NOT = { is_under_colonization = yes }
+                    has_claim_by = ROOT
+                    owner = {
+                        is_country_type = decentralized
+                    }
                 }
-                NOT = {
-                    any_neighbouring_state = {
-                        owner = {
-                            NOT = { this = ROOT }
-                            NOT = { is_country_type = decentralized }
-                            OR = {
-                                has_law_or_variant = law_type:law_frontier_colonization
-                                has_law_or_variant = law_type:law_colonial_resettlement
-                                has_law_or_variant = law_type:law_colonial_exploitation
-                                is_enacting_law = law_type:law_frontier_colonization
-                                is_enacting_law = law_type:law_colonial_resettlement
-                                is_enacting_law = law_type:law_colonial_exploitation
+            }
+            any_scope_state = {
+                any_neighbouring_state = {
+                    NOT = { is_under_colonization = yes }
+                    owner = {
+                        is_country_type = decentralized
+                    }
+                    NOT = { has_claim_by = ROOT }
+                    NOT = {
+                        any_neighbouring_state = {
+                            owner = {
+                                NOT = { this = ROOT }
+                                NOT = { is_country_type = decentralized }
+                                OR = {
+                                    has_law_or_variant = law_type:law_frontier_colonization
+                                    has_law_or_variant = law_type:law_colonial_resettlement
+                                    has_law_or_variant = law_type:law_colonial_exploitation
+                                    is_enacting_law = law_type:law_frontier_colonization
+                                    is_enacting_law = law_type:law_colonial_resettlement
+                                    is_enacting_law = law_type:law_colonial_exploitation
+                                }
                             }
                         }
                     }

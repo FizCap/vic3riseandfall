@@ -41,9 +41,23 @@ rf_dyn_country_ai_single_pass = {
                         market_access < 0.01
                     }
                 }
+                # GDP budget check: only include this state if adding it stays within the overlord's GDP allowance.
+                # The remaining budget shrinks as each state is added (accumulator updated below).
+                gdp <= {
+                    add = root.var:rf_dyn_gdp_budget
+                    subtract = root.var:rf_dyn_accumulated_gdp
+                    min = 0
+                }
             }
             set_variable = ai_potential_dyn_country_state
             set_variable = dynamic_state_cede
+            # Deduct this state's GDP from the remaining budget
+            scope:original_country = {
+                change_variable = {
+                    name = rf_dyn_accumulated_gdp
+                    add = prev.gdp
+                }
+            }
         }
     }
 }
@@ -140,9 +154,22 @@ rf_dyn_country_ai_single_pass_homeland = {
                         market_access < 0.01
                     }
                 }
+                # GDP budget check (same as generic pass)
+                gdp <= {
+                    add = root.var:rf_dyn_gdp_budget
+                    subtract = root.var:rf_dyn_accumulated_gdp
+                    min = 0
+                }
             }
             set_variable = ai_potential_dyn_country_state
             set_variable = dynamic_state_cede
+            # Deduct this state's GDP from the remaining budget
+            scope:original_country = {
+                change_variable = {
+                    name = rf_dyn_accumulated_gdp
+                    add = prev.gdp
+                }
+            }
         }
     }
 }
@@ -218,6 +245,8 @@ rf_dynamic_country_ai = {
         clear_saved_scope = rf_dyn_country_capital
         remove_variable = rf_dyn_target_culture_found
         clear_saved_scope = rf_dyn_target_culture
+        remove_variable = rf_dyn_gdp_budget
+        remove_variable = rf_dyn_accumulated_gdp
 
         # Clean stale selection variables (only touch states owned by this country)
         every_scope_state = {
@@ -295,6 +324,29 @@ rf_dynamic_country_ai = {
                 save_scope_as = rf_dyn_country_capital
                 set_variable = dynamic_state_cede
                 ROOT = { set_variable = { name = rf_dyn_country_capital_found value = yes } }
+            }
+
+            # GDP budget: the new country's GDP may not exceed this fraction of the overlord's GDP.
+            # Scaled by country rank so great powers can afford large subjects and small nations cannot.
+            if = {
+                limit = { country_rank >= rank_value:great_power }
+                set_variable = { name = rf_dyn_gdp_budget value = { add = gdp multiply = 0.6 } }
+            }
+            else_if = {
+                limit = { country_rank >= rank_value:major_power }
+                set_variable = { name = rf_dyn_gdp_budget value = { add = gdp multiply = 0.4 } }
+            }
+            else_if = {
+                limit = { country_rank >= rank_value:minor_power }
+                set_variable = { name = rf_dyn_gdp_budget value = { add = gdp multiply = 0.25 } }
+            }
+            else = {
+                set_variable = { name = rf_dyn_gdp_budget value = { add = gdp multiply = 0.15 } }
+            }
+            # Initialise accumulator with the capital state's GDP
+            set_variable = {
+                name = rf_dyn_accumulated_gdp
+                value = scope:rf_dyn_country_capital.gdp
             }
 
             # Randomly decide: single-state (keep only the capital) or run the multi-state expansion
@@ -392,6 +444,8 @@ rf_dynamic_country_create = {
 
         remove_variable = rf_dyn_country_capital_found
         clear_saved_scope = rf_dyn_country_capital
+        remove_variable = rf_dyn_gdp_budget
+        remove_variable = rf_dyn_accumulated_gdp
     }
 }
 

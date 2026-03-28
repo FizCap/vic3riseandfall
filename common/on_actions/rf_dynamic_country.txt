@@ -1,7 +1,6 @@
 ﻿on_monthly_pulse_country = {
     on_actions = {
         rf_dynamic_country_ai_monthly
-        rf_dynamic_country_ai_monthly_unrecognized
     }
 }
 
@@ -14,7 +13,10 @@ on_monthly_pulse_state = {
 rf_dynamic_country_ai_monthly = {
     trigger = {
         has_game_rule = ai_improvement_enabled
-        is_country_type = recognized
+        OR = {
+            is_country_type = recognized
+            is_country_type = unrecognized
+        }
         is_player = no
         is_subject = no
         NOT = {
@@ -38,38 +40,7 @@ rf_dynamic_country_ai_monthly = {
         }
     }
     effect = {
-        rf_dynamic_country_ai_recognized = yes
-    }
-}
-
-rf_dynamic_country_ai_monthly_unrecognized = {
-    trigger = {
-        has_game_rule = ai_improvement_enabled
-        is_country_type = unrecognized
-        is_subject = no
-        is_player = no
-        NOT = {
-            any_country = {
-                OR = {
-                    play_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
-                    war_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
-                }
-            }
-        }
-        num_states > 1
-        # Performance: only run for countries that have at least one state showing
-        # significant turmoil or very low market access (candidates for dynamic country creation)
-        any_scope_state = {
-            owner = root
-            NOT = { is_treaty_port = yes }
-            OR = {
-                turmoil > 0.30
-                market_access < 0.15
-            }
-        }
-    }
-    effect = {
-        rf_dynamic_country_ai_unrecognized = yes
+        rf_dynamic_country_ai = yes
     }
 }
 

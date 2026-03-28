@@ -4,8 +4,9 @@
 #
 # Purpose: Provide randomized adjacency expansion passes
 # so AI-created dynamic countries don't routinely become
-# very large. Recognized & unrecognized variants use
-# different weightings (recognized tends to be smaller).
+# very large. Recognized and unrecognized countries branch
+# inside the same effects, with recognized countries tending
+# to split into smaller subjects.
 #
 # Safe to extend further by adding more weight tiers or
 # additional pruning logic after expansion.
@@ -47,47 +48,48 @@ rf_dyn_country_ai_single_pass = {
     }
 }
 
-# Recognized variant: bias to fewer passes (puppets should be compact)
-rf_dynamic_country_ai_expand_recognized = {
-    random_list = {
-        60 = {
-            # Medium (2 passes)
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-        }
+# Branching expansion weights for recognized and unrecognized countries.
+rf_dynamic_country_ai_expand = {
+    if = {
+        limit = { is_country_type = recognized }
+        random_list = {
+            60 = {
+                # Medium (2 passes)
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+            }
 
-        10 = {
-            # Rare very large (4 passes)
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
+            10 = {
+                # Rare very large (4 passes)
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+            }
         }
     }
-}
+    else = {
+        random_list = {
+            50 = {
+                # Medium (2 passes)
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+            }
 
-# Unrecognized variant: slightly higher chance of medium/large splits
-rf_dynamic_country_ai_expand_unrecognized = {
-    random_list = {
-        50 = {
-            # Medium (2 passes)
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-        }
+            30 = {
+                # Large (3 passes)
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+            }
 
-        30 = {
-            # Large (3 passes)
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-        }
-
-        15 = {
-            # Rare very large (4 passes)
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
-            rf_dyn_country_ai_single_pass = yes
+            15 = {
+                # Rare very large (4 passes)
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+                rf_dyn_country_ai_single_pass = yes
+            }
         }
     }
 }
@@ -145,58 +147,63 @@ rf_dyn_country_ai_single_pass_homeland = {
     }
 }
 
-# Recognized variant with homeland filter
-rf_dynamic_country_ai_expand_recognized_homeland = {
-    random_list = {
-        60 = {
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-        }
+# Branching homeland-cluster weights for recognized and unrecognized countries.
+rf_dynamic_country_ai_expand_homeland = {
+    if = {
+        limit = { is_country_type = recognized }
+        random_list = {
+            60 = {
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+            }
 
-        30 = {
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-        }
+            30 = {
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+            }
 
-        10 = {
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
+            10 = {
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+            }
+        }
+    }
+    else = {
+        random_list = {
+            50 = {
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+            }
+
+            35 = {
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+            }
+
+            15 = {
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+                rf_dyn_country_ai_single_pass_homeland = yes
+            }
         }
     }
 }
 
-# Unrecognized variant with homeland filter (slightly larger bias)
-rf_dynamic_country_ai_expand_unrecognized_homeland = {
-    random_list = {
-        50 = {
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-        }
-
-        35 = {
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-        }
-
-        15 = {
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-            rf_dyn_country_ai_single_pass_homeland = yes
-        }
-    }
-}
-
-# Main AI logic for dynamic country creation (Recognized)
-rf_dynamic_country_ai_recognized = {
+# Main AI logic for dynamic country creation.
+rf_dynamic_country_ai = {
     # Only proceed if AI improvements enabled
     if = {
         limit = {
             has_game_rule = ai_improvement_enabled
+            OR = {
+                is_country_type = recognized
+                is_country_type = unrecognized
+            }
             NOT = {
                 any_country = {
                     OR = {
@@ -223,131 +230,7 @@ rf_dynamic_country_ai_recognized = {
             remove_variable = dynamic_state_cede
         }
 
-        # Mark candidate states (recognized)
-        every_scope_state = {
-            # Candidate marks (recognized)
-            limit = {
-                owner = ROOT
-                controller = owner
-                is_capital = no
-                is_under_colonization = no
-                NOT = { is_treaty_port = yes }
-                NOT = { has_variable = riseandfall_recent_state_owner_change }
-                NOT = { has_variable = riseandfall_recent_state_occupation }
-                NOT = { is_target_of_wargoal = ROOT }
-                OR = {
-                    NOT = { is_homeland_of_country_cultures = ROOT }
-                    AND = {
-                        market_access < 0.01
-                    }
-                }
-
-                # (explicit owner change exclusion has been moved to the top-level limit)
-
-                OR = {
-                    AND = {
-                        OR = {
-                            NOT = { is_homeland_of_country_cultures = ROOT }
-                            AND = {
-                                market_access < 0.01
-                            }
-                        }
-                        OR = { turmoil > 0.50 market_access < 0.15 }
-                    }
-                }
-            }
-
-            set_variable = ai_potential_dyn_country_state
-        }
-
-        # Proceed only if there are candidate states
-        if = {
-            limit = { any_scope_state = { has_variable = ai_potential_dyn_country_state } }
-
-            # Pick capital among candidates owned by this country
-            random_scope_state = {
-                limit = {
-                    has_variable = ai_potential_dyn_country_state
-                    owner = ROOT
-                    is_under_colonization = no
-                    NOT = { is_capital = yes }
-                }
-                save_scope_as = rf_dyn_country_capital
-                set_variable = dynamic_state_cede
-                ROOT = { set_variable = { name = rf_dyn_country_capital_found value = yes } }
-            }
-
-            # Randomly decide: single-state (keep only the capital) or run the multi-state expansion
-            random_list = {
-                20 = {
-                    # Single-state: capital already marked via set_variable above
-                }
-
-                80 = {
-                    # Try homeland-based clustering; fallback to generic adjacency expansion
-                    rf_dyn_country_ai_select_homeland_culture_for_cluster = yes
-
-                    if = {
-                        limit = { has_variable = rf_dyn_target_culture_found }
-                        rf_dynamic_country_ai_expand_recognized_homeland = yes
-                    }
-                    else = {
-                        rf_dynamic_country_ai_expand_recognized = yes
-                    }
-                }
-            }
-
-            # Cleanup candidate markers (keep dynamic_state_cede for ceding)
-            every_scope_state = {
-                limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
-                remove_variable = ai_potential_dyn_country_state
-            }
-
-            # Ensure capital never has dynamic_state_cede
-            every_scope_state = {
-                limit = { is_capital = yes owner = ROOT }
-                remove_variable = dynamic_state_cede
-            }
-        }
-    }
-
-    # Create the dynamic country
-    rf_dynamic_country_create = yes
-}
-
-# Main AI logic for dynamic country creation (Unrecognized)
-rf_dynamic_country_ai_unrecognized = {
-    # Only proceed if AI improvements enabled
-    if = {
-        limit = {
-            has_game_rule = ai_improvement_enabled
-            NOT = {
-                any_country = {
-                    OR = {
-                        play_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
-                        war_participant_has_war_goal_of_type_against = { type = annex_country target = ROOT }
-                    }
-                }
-            }
-        }
-
-        remove_variable = rf_dyn_country_capital_found
-        clear_saved_scope = rf_dyn_country_capital
-        remove_variable = rf_dyn_target_culture_found
-        clear_saved_scope = rf_dyn_target_culture
-
-        # Cleanup (only touch states owned by this country)
-        every_scope_state = {
-            limit = { has_variable = ai_potential_dyn_country_state owner = ROOT }
-            remove_variable = ai_potential_dyn_country_state
-        }
-
-        every_scope_state = {
-            limit = { has_variable = dynamic_state_cede owner = ROOT }
-            remove_variable = dynamic_state_cede
-        }
-
-        # Mark candidates (unrecognized)
+        # Mark candidate states using country-type-specific turmoil thresholds.
         every_scope_state = {
             limit = {
                 owner = ROOT
@@ -375,7 +258,22 @@ rf_dynamic_country_ai_unrecognized = {
                                 market_access < 0.01
                             }
                         }
-                        OR = { turmoil > 0.30 market_access < 0.15 }
+                        OR = {
+                            AND = {
+                                ROOT = { is_country_type = recognized }
+                                OR = {
+                                    turmoil > 0.50
+                                    market_access < 0.15
+                                }
+                            }
+                            AND = {
+                                ROOT = { is_country_type = unrecognized }
+                                OR = {
+                                    turmoil > 0.30
+                                    market_access < 0.15
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -411,10 +309,10 @@ rf_dynamic_country_ai_unrecognized = {
 
                     if = {
                         limit = { has_variable = rf_dyn_target_culture_found }
-                        rf_dynamic_country_ai_expand_unrecognized_homeland = yes
+                        rf_dynamic_country_ai_expand_homeland = yes
                     }
                     else = {
-                        rf_dynamic_country_ai_expand_unrecognized = yes
+                        rf_dynamic_country_ai_expand = yes
                     }
                 }
             }
@@ -460,26 +358,18 @@ rf_dynamic_country_create = {
             cede_state_trigger = { has_variable = dynamic_state_cede }
 
             on_created = {
-                # Randomly assign one of 51 possible dynamic colors to the new country
-                # This uses the dynamic_country_map_colors entries to set the map color
-                # Save the new country as a named scope, then assign the variable inside that scope
                 rf_assign_dynamic_color = yes
                 every_scope_state = {
                     limit = { has_variable = dynamic_state_cede owner = ROOT }
                     remove_variable = dynamic_state_cede
                 }
-
                 rf_assign_dominant_identity = yes
             }
         }
-    }
 
-    hidden_effect = {
-        remove_variable = rf_dyn_target_culture_found
-        remove_variable = rf_dyn_target_culture
-
-        if = {
-            limit = { exists = scope:rf_dyn_country_capital.owner }
+        # After create_dynamic_country, the capital state's owner is now the new country.
+        # Create the subject pact from ROOT (overlord) to the new country using this reference.
+        hidden_effect = {
             if = {
                 limit = { is_country_type = recognized }
                 create_diplomatic_pact = {
@@ -494,6 +384,11 @@ rf_dynamic_country_create = {
                 }
             }
         }
+    }
+
+    hidden_effect = {
+        remove_variable = rf_dyn_target_culture_found
+        clear_saved_scope = rf_dyn_target_culture
 
         remove_variable = rf_dyn_country_capital_found
         clear_saved_scope = rf_dyn_country_capital

@@ -28,14 +28,38 @@ rf_dynamic_country_ai_monthly = {
             }
         }
         num_states > 1
-        # Performance: only run for countries that have at least one state showing
-        # significant turmoil or very low market access (candidates for dynamic country creation)
+        # Performance: only run for countries that already have at least one
+        # state matching the same candidate filter used by rf_dynamic_country_ai.
         any_scope_state = {
-            owner = root
+            owner = ROOT
+            controller = owner
+            is_capital = no
+            is_under_colonization = no
             NOT = { is_treaty_port = yes }
+            NOT = { has_variable = riseandfall_recent_state_owner_change }
+            NOT = { has_variable = riseandfall_recent_state_occupation }
+            NOT = { is_target_of_wargoal = ROOT }
             OR = {
-                turmoil > 0.30
-                market_access < 0.15
+                NOT = { is_homeland_of_country_cultures = ROOT }
+                AND = {
+                    market_access < 0.01
+                }
+            }
+            OR = {
+                AND = {
+                    ROOT = { is_country_type = recognized }
+                    OR = {
+                        turmoil > 0.50
+                        market_access < 0.15
+                    }
+                }
+                AND = {
+                    ROOT = { is_country_type = unrecognized }
+                    OR = {
+                        turmoil > 0.50
+                        market_access < 0.15
+                    }
+                }
             }
         }
     }

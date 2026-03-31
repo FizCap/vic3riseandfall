@@ -98,26 +98,173 @@ rf_ai_building_subsidized = {
     every_scope_building = {
         limit = {
             OR = {
-                is_building_type = building_trade_center
-                is_building_type = building_power_plant
-            }
-            weekly_profit > -500
-        }
-        set_subsidized = yes
-    }
-}
-
-rf_ai_building_not_subsidized = {
-    every_scope_building = {
-        limit = {
-            OR = {
-                is_building_type = building_trade_center
-                is_building_type = building_port
-                is_building_type = building_power_plant
                 is_building_type = building_railway
+                is_building_type = building_port
+                is_building_type = building_trade_center
+                is_building_type = building_power_plant
             }
-            weekly_profit < -500
         }
-        set_subsidized = no
+
+        # Severe crises only keep the most critical local infrastructure alive.
+        if = {
+            limit = {
+                ROOT = {
+                    OR = {
+                        gold_reserves <= 0
+                        AND = {
+                            rf_weekly_net_value < 0
+                            rf_reserve_income_ratio < 2
+                        }
+                        AND = {
+                            rf_consecutive_deficit_months_value >= 6
+                            rf_reserve_income_ratio < 6
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            OR = {
+                                is_building_type = building_railway
+                                is_building_type = building_port
+                            }
+                            occupancy >= 0.4
+                            weekly_profit > -250
+                            state = {
+                                OR = {
+                                    infrastructure_delta <= -15
+                                    market_access < 0.85
+                                    sg:transportation = {
+                                        state_goods_pricier > 0.5
+                                    }
+                                }
+                            }
+                        }
+                        AND = {
+                            is_building_type = building_power_plant
+                            occupancy >= 0.4
+                            weekly_profit > -250
+                            state = {
+                                sg:electricity = {
+                                    state_goods_pricier > 0.5
+                                }
+                            }
+                        }
+                    }
+                }
+                set_subsidized = yes
+            }
+            else_if = {
+                limit = { is_subsidized = yes }
+                set_subsidized = no
+            }
+        }
+
+        # Healthy countries can sustain strategic subsidies, but still only for real need.
+        else_if = {
+            limit = {
+                ROOT = {
+                    OR = {
+                        rf_ai_subsidy_cash_buffer >= 0
+                        AND = {
+                            rf_weekly_net_value > 0
+                            rf_positive_surplus_months_value >= 6
+                            rf_reserve_income_ratio <= 12
+                        }
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            OR = {
+                                is_building_type = building_railway
+                                is_building_type = building_port
+                            }
+                            occupancy >= 0.4
+                            weekly_profit > -600
+                            state = {
+                                OR = {
+                                    infrastructure_delta < 0
+                                    market_access < 1
+                                    sg:transportation = {
+                                        state_goods_pricier > 0.15
+                                    }
+                                }
+                            }
+                        }
+                        AND = {
+                            is_building_type = building_power_plant
+                            occupancy >= 0.4
+                            weekly_profit > -500
+                            state = {
+                                sg:electricity = {
+                                    state_goods_pricier > 0.15
+                                }
+                            }
+                        }
+                        AND = {
+                            is_building_type = building_trade_center
+                            occupancy >= 0.75
+                            weekly_profit > -150
+                        }
+                    }
+                }
+                set_subsidized = yes
+            }
+            else_if = {
+                limit = { is_subsidized = yes }
+                set_subsidized = no
+            }
+        }
+
+        # Everyone else stays conservative and only props up important shortages.
+        else = {
+            if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            OR = {
+                                is_building_type = building_railway
+                                is_building_type = building_port
+                            }
+                            occupancy >= 0.5
+                            weekly_profit > -400
+                            state = {
+                                OR = {
+                                    infrastructure_delta < 0
+                                    market_access < 0.95
+                                    sg:transportation = {
+                                        state_goods_pricier > 0.25
+                                    }
+                                }
+                            }
+                        }
+                        AND = {
+                            is_building_type = building_power_plant
+                            occupancy >= 0.5
+                            weekly_profit > -350
+                            state = {
+                                sg:electricity = {
+                                    state_goods_pricier > 0.25
+                                }
+                            }
+                        }
+                    }
+                }
+                set_subsidized = yes
+            }
+            else_if = {
+                limit = { is_subsidized = yes }
+                set_subsidized = no
+            }
+        }
     }
+
+    validate_subsidies = yes
 }

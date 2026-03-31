@@ -8,3 +8,11 @@ rf_positive_surplus_months_value = {
         value = var:rf_positive_surplus_months
     }
 }
+
+rf_consecutive_deficit_months_value = {
+    value = 0
+    if = {
+        limit = { has_variable = rf_consecutive_deficit_months }
+        value = var:rf_consecutive_deficit_months
+    }
+}

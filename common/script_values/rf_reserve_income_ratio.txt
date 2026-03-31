@@ -106,6 +106,17 @@ rf_autobuild_reserve_limit = {
     multiply = 0.45
 }
 
+# Reserve buffer used by monthly AI subsidy logic.
+rf_ai_subsidy_reserve_floor = {
+    value = gold_reserves_limit
+    multiply = 0.30
+}
+
+rf_ai_subsidy_cash_buffer = {
+    value = gold_reserves
+    subtract = rf_ai_subsidy_reserve_floor
+}
+
 # Weekly net value helper script (income - expenses) used by budgeting logic
 rf_weekly_net_value = {
     value = fixed_income

@@ -60,6 +60,8 @@ This file merges all key lessons, best practices, and conventions for modding Vi
 - `INJECT` keywords add the specified blocks to the object without changing any existing definition.
   - Some types of blocks cannot be injected if the same block already exists (most notably, `is_visible`, `trigger`, and `effect` blocks).
   - `INJECT` does **not** work for scripted effects or scripted triggers; using it will overwrite the original effect/trigger instead of injecting.
+- GUI files are not database objects. Do **not** use `INJECT`, `REPLACE`, or similar overwrite keywords inside `.gui` files.
+    - To modify GUI, copy the full vanilla `.gui` file into the mod under the same path/name and edit that file directly.
 
 #### Example: INJECT appending blocks
 Given a base game object like:

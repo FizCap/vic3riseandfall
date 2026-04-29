@@ -1,55 +1,209 @@
 ﻿rf_manual_build_government_administration = {
-    #manual build button for the government administration
-
-    # 1) If many states already have admin buildings with good occupancy, expand those (existing behaviour)
-    every_scope_state = {
+    # Fix bureaucracy first; only rich, stable economies invest in broader tax-capacity coverage.
+    if = {
         limit = {
-            turmoil < 0.25
-            is_incorporated = no
-            any_scope_building = {
-                is_building_type = building_government_administration
-                occupancy > 0.50
-            }
-            can_construct_building = building_government_administration
+            bureaucracy < 0
+            rf_can_queue_admin_bureaucracy_construction = yes
         }
-        start_building_construction = building_government_administration
+        rf_build_best_admin_center_bureaucracy_state = yes
     }
 
-    # 2) Fallback: if there are states that do NOT have any admin centre and exceed an employment/unemployment threshold,
-    #    pick a single eligible state and build one admin centre there. This ensures we only build one new admin centre in
-    # Fallback: pick a single eligible state only if country-wide building levels are low
     if = {
-        limit = { country_has_building_type_levels = { target = bt:building_government_administration value < 1 } }
-        random_state = {
-            limit = {
-                turmoil < 0.25
-                is_incorporated = no
-                NOT = {
-                    any_scope_building = {
-                        is_building_type = building_government_administration
-                    }
+        limit = {
+            rf_can_queue_admin_tax_capacity_construction = yes
+        }
+        rf_build_best_admin_center_tax_capacity_state = yes
+    }
+}
+
+rf_build_best_admin_center_tax_capacity_state = {
+    # Tax-capacity shortages are the best target when the economy can afford long-term administration growth.
+    ordered_state = {
+        limit = {
+            rf_admin_center_tax_capacity_state_candidate = yes
+        }
+        order_by = rf_tax_capacity_shortfall_value
+        position = 0
+        check_range_bounds = no
+        start_building_construction = building_government_administration
+    }
+}
+
+rf_build_best_admin_center_bureaucracy_state = {
+    # Bureaucracy deficits prefer staffed incorporated admin centers, then large incorporated states, then any eligible state.
+    if = {
+        limit = {
+            any_scope_state = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                is_incorporated = yes
+                any_scope_building = {
+                    is_building_type = building_government_administration
+                    occupancy > 0.50
                 }
-                can_construct_building = building_government_administration
-                owner = ROOT
             }
+        }
+        ordered_state = {
+            limit = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                is_incorporated = yes
+                any_scope_building = {
+                    is_building_type = building_government_administration
+                    occupancy > 0.50
+                }
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_government_administration
+        }
+    }
+    else_if = {
+        limit = {
+            any_scope_state = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                is_incorporated = yes
+                any_scope_building = {
+                    is_building_type = building_government_administration
+                }
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                is_incorporated = yes
+                any_scope_building = {
+                    is_building_type = building_government_administration
+                }
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_government_administration
+        }
+    }
+    else_if = {
+        limit = {
+            any_scope_state = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                is_incorporated = yes
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                is_incorporated = yes
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_government_administration
+        }
+    }
+    else = {
+        ordered_state = {
+            limit = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
             start_building_construction = building_government_administration
         }
     }
 }
 
 rf_manual_build_university = {
-    # manual build for university: in every state that does not have one yet
-    every_scope_state = {
+    # Queue a limited university batch so the player button improves coverage without overwhelming the budget.
+    if = {
         limit = {
-            owner = ROOT
-            NOT = {
-                any_scope_building = {
-                    is_building_type = building_university
-                }
-            }
-            can_construct_building = building_university
+            rf_can_queue_university_construction = yes
         }
-        start_building_construction = building_university
+        rf_build_best_university_state = yes
+    }
+
+    if = {
+        limit = {
+            rf_can_queue_university_construction = yes
+            rf_positive_surplus_months_value >= 6
+            construction_queue_num_queued_government_levels < 9
+            construction_queue_government_duration < 39
+        }
+        rf_build_best_university_state = yes
+    }
+
+    if = {
+        limit = {
+            rf_can_queue_university_construction = yes
+            rf_positive_surplus_months_value >= 9
+            rf_reserve_income_ratio <= 12
+            construction_queue_num_queued_government_levels < 6
+            construction_queue_government_duration < 26
+        }
+        rf_build_best_university_state = yes
+    }
+
+    if = {
+        limit = {
+            rf_can_queue_university_construction = yes
+            rf_positive_surplus_months_value >= 12
+            rf_reserve_income_ratio <= 6
+            construction_queue_num_queued_government_levels < 3
+            construction_queue_government_duration < 13
+        }
+        rf_build_best_university_state = yes
+    }
+}
+
+rf_build_best_university_state = {
+    # Prefer populous incorporated states first; fall back to smaller states only after good candidates are covered.
+    if = {
+        limit = {
+            any_scope_state = {
+                rf_university_state_candidate = yes
+                is_incorporated = yes
+                state_population >= 250000
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_university_state_candidate = yes
+                is_incorporated = yes
+                state_population >= 250000
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_university
+        }
+    }
+    else_if = {
+        limit = {
+            any_scope_state = {
+                rf_university_state_candidate = yes
+                is_incorporated = yes
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_university_state_candidate = yes
+                is_incorporated = yes
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_university
+        }
+    }
+    else = {
+        ordered_state = {
+            limit = {
+                rf_university_state_candidate = yes
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_university
+        }
     }
 }
 
@@ -80,44 +234,133 @@ rf_manual_build_port = {
 }
 
 rf_manual_build_power_plant = {
-    #manual build button for power plant (QoL)
-    # Build one power plant in every state that does not already have one.
-    # Additionally, expand profitable existing power plants (weekly_profit > 500).
-
-    every_scope_state = {
+    # Queue a limited power plant batch. Missing states are always prioritized before profitable expansion.
+    if = {
         limit = {
-            turmoil < 0.50
-            owner = ROOT
-            can_construct_building = building_power_plant
-            OR = {
-                NOT = {
-                    any_scope_building = {
-                        is_building_type = building_power_plant
-                    }
-                }
-                any_scope_building = {
-                    is_building_type = building_power_plant
-                    weekly_profit > 500
+            rf_can_queue_power_plant_construction = yes
+        }
+        rf_build_best_power_plant_state = yes
+    }
+
+    if = {
+        limit = {
+            rf_can_queue_power_plant_construction = yes
+            rf_positive_surplus_months_value >= 6
+            construction_queue_num_queued_government_levels < 9
+            construction_queue_government_duration < 39
+        }
+        rf_build_best_power_plant_state = yes
+    }
+
+    if = {
+        limit = {
+            rf_can_queue_power_plant_construction = yes
+            rf_positive_surplus_months_value >= 9
+            rf_reserve_income_ratio <= 12
+            construction_queue_num_queued_government_levels < 6
+            construction_queue_government_duration < 26
+        }
+        rf_build_best_power_plant_state = yes
+    }
+
+    if = {
+        limit = {
+            rf_can_queue_power_plant_construction = yes
+            rf_positive_surplus_months_value >= 12
+            rf_reserve_income_ratio <= 6
+            construction_queue_num_queued_government_levels < 3
+            construction_queue_government_duration < 13
+        }
+        rf_build_best_power_plant_state = yes
+    }
+}
+
+rf_build_best_power_plant_state = {
+    # Cover every state first, favoring electricity shortages and larger incorporated states.
+    if = {
+        limit = {
+            any_scope_state = {
+                rf_power_plant_missing_state_candidate = yes
+                sg:electricity = {
+                    state_goods_pricier > 0.15
                 }
             }
         }
-        start_building_construction = building_power_plant
-    }
-
-    # Fallback: if the country has no power plants at all, pick a single eligible state and build one there.
-    if = {
-        limit = { country_has_building_type_levels = { target = bt:building_power_plant value < 1 } }
-        random_state = {
+        ordered_state = {
             limit = {
-                turmoil < 0.50
-                NOT = {
-                    any_scope_building = {
-                        is_building_type = building_power_plant
-                    }
+                rf_power_plant_missing_state_candidate = yes
+                sg:electricity = {
+                    state_goods_pricier > 0.15
                 }
-                can_construct_building = building_power_plant
-                owner = ROOT
             }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_power_plant
+        }
+    }
+    else_if = {
+        limit = {
+            any_scope_state = {
+                rf_power_plant_missing_state_candidate = yes
+                is_incorporated = yes
+                state_population >= 250000
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_power_plant_missing_state_candidate = yes
+                is_incorporated = yes
+                state_population >= 250000
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_power_plant
+        }
+    }
+    else_if = {
+        limit = {
+            any_scope_state = {
+                rf_power_plant_missing_state_candidate = yes
+                is_incorporated = yes
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_power_plant_missing_state_candidate = yes
+                is_incorporated = yes
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_power_plant
+        }
+    }
+    else_if = {
+        limit = {
+            any_scope_state = {
+                rf_power_plant_missing_state_candidate = yes
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_power_plant_missing_state_candidate = yes
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_power_plant
+        }
+    }
+    else = {
+        ordered_state = {
+            limit = {
+                rf_power_plant_expansion_state_candidate = yes
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
             start_building_construction = building_power_plant
         }
     }
@@ -126,9 +369,7 @@ rf_manual_build_power_plant = {
 rf_manual_build_construction_sector = {
     # Manual / Auto build for construction sector (prioritised: coastal first, then inland)
 
-    # 1) Preferred pick: choose a coastal state that is improving (infrastructure_delta > 0).
-    #    Country cap prevents runaway building (allow up to 2 total construction sector levels).
-    # Try coastal candidates first. If any coastal state meets the criteria, pick one and stop.
+    # Prefer a coastal state with positive infrastructure so each new sector is placed where it can be staffed and used.
     if = {
         limit = {
             any_scope_state = {

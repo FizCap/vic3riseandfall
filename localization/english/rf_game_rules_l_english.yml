@@ -33,13 +33,6 @@
   setting_ai_improvement_disabled: "Disabled"
   setting_ai_improvement_disabled_desc: "AI will behave like vanilla"
 
-  rule_et_random_character_death: "RF: Random Character Death"
-  rule_rf_random_character_death: "RF: Random Character Death"
-  setting_death_enabled: "Enabled"
-  setting_death_enabled_desc: "Characters have a chance to die randomly based on historical mortality rates from 1836 onwards."
-  setting_death_disabled: "Disabled"
-  setting_death_disabled_desc: "Characters do not die randomly."
-
   rule_et_colony_grant_claim: "RF: Grant Colony Claims on Colonization"
   rule_rf_colony_grant_claim: "RF: Grant Colony Claims on Colonization"
   setting_colony_grant_claim_enabled: "Enabled"

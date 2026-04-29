@@ -1,0 +1,5 @@
+﻿rf_tax_capacity_shortfall_value = {
+    # Positive values mean the state is using more taxation capacity than it has.
+    value = tax_capacity_usage
+    subtract = tax_capacity
+}

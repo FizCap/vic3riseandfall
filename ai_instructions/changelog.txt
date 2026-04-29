@@ -1,0 +1,27 @@
+﻿Victoria 3 Timeline v1.0.0
+1.13 Compatibility & Autobuilder Update
+
+Compatibility
+- Updated the mod for Victoria 3 v1.13.
+- Updated mod metadata and description.
+
+Autobuilder
+- Reworked Construction Sector autobuilding.
+  Result: AI countries should only expand construction when there is sustained government queue demand, reducing wasted idle construction spending.
+- Improved Government Administration autobuilding.
+  The autobuilder now fixes bureaucracy first.
+  Tax-capacity expansion is reserved for stronger, stable economies.
+- Updated University construction.
+  Universities are now queued in economy-aware batches instead of being built in every eligible state at once.
+- Updated Power Plant construction.
+  Power Plants now prioritize states without one first, then expand profitable or electricity-starved states.
+- Added new scripted checks for construction sectors, universities, power plants, bureaucracy fixes, and tax-capacity expansion.
+
+Colonization
+- Forced colonization now requires Civilizing Mission before countries can be prompted into colonization.
+- Cleaned up forced colonization eligibility so frontier checks happen in the yearly trigger instead of duplicated effect logic.
+
+Game Rules & Fixes
+- Fixed the Merge Decentralized Countries game rule not working correctly.
+- Removed the old Random Character Death game rule and its related scripts/localization.
+- Fixed the Personal Union event picture not displaying correctly.

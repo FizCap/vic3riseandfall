@@ -1,80 +1,17 @@
-﻿rf_forced_colonization_select_recipient = {
+﻿# Eligibility is handled by the on_action trigger; this effect only applies the country response.
+rf_forced_colonization_apply_pressure = {
     if = {
-        limit = {
-            any_scope_state = {
-                any_neighbouring_state = {
-                    NOT = { is_under_colonization = yes }
-                    has_claim_by = ROOT
-                    owner = {
-                        is_country_type = decentralized
-                    }
-                }
-            }
-        }
-        hidden_effect = {
-            if = {
-                limit = { is_ai = yes }
-                activate_law = law_type:law_frontier_colonization
-            }
-            else = {
-                set_variable = {
-                    name = rf_forced_colonization_pending
-                    days = 7
-                }
-                trigger_event = {
-                    id = rf_forced_colonization.1
-                    popup = yes
-                }
-            }
-        }
+        limit = { is_ai = yes }
+        activate_law = law_type:law_frontier_colonization
     }
-    else_if = {
-        limit = {
-            any_scope_state = {
-                any_neighbouring_state = {
-                    NOT = { is_under_colonization = yes }
-                    owner = {
-                        is_country_type = decentralized
-                        NOT = {
-                            any_scope_state = {
-                                has_claim_by = ROOT
-                            }
-                        }
-                    }
-                    NOT = {
-                        any_neighbouring_state = {
-                            owner = {
-                                NOT = { this = ROOT }
-                                NOT = { is_country_type = decentralized }
-                                OR = {
-                                    has_law_or_variant = law_type:law_frontier_colonization
-                                    has_law_or_variant = law_type:law_colonial_resettlement
-                                    has_law_or_variant = law_type:law_colonial_exploitation
-                                    is_enacting_law = law_type:law_frontier_colonization
-                                    is_enacting_law = law_type:law_colonial_resettlement
-                                    is_enacting_law = law_type:law_colonial_exploitation
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    else = {
+        set_variable = {
+            name = rf_forced_colonization_pending
+            days = 7
         }
-        hidden_effect = {
-            if = {
-                limit = { is_ai = yes }
-                activate_law = law_type:law_frontier_colonization
-            }
-            else = {
-                set_variable = {
-                    name = rf_forced_colonization_pending
-                    days = 7
-                }
-                trigger_event = {
-                    id = rf_forced_colonization.1
-                    popup = yes
-                }
-            }
+        trigger_event = {
+            id = rf_forced_colonization.1
+            popup = yes
         }
     }
 }

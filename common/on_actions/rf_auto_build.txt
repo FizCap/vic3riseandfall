@@ -117,6 +117,7 @@ rf_auto_build_monthly_construction = {
     effect = {
         if = {
             limit = {
+                rf_can_expand_construction_sector = yes
                 NOT = {
                     any_scope_state = {
                         b:building_construction_sector ?= {

@@ -12,13 +12,17 @@ on_monthly_pulse_state = {
 
 rf_dynamic_country_ai_monthly = {
     trigger = {
-        has_game_rule = ai_improvement_enabled
+        # Keep AI dynamic country creation controlled separately from the general AI economy helper.
+        OR = {
+            has_game_rule = dynamic_country_ai_creation_roleplay
+            has_game_rule = dynamic_country_ai_creation_gameplay
+        }
         OR = {
             is_country_type = recognized
             is_country_type = unrecognized
         }
+        NOT = { is_subject_type = subject_type_chartered_company }
         is_player = no
-        is_subject = no
         NOT = {
             any_country = {
                 OR = {
@@ -40,24 +44,35 @@ rf_dynamic_country_ai_monthly = {
             NOT = { has_variable = riseandfall_recent_state_occupation }
             NOT = { is_target_of_wargoal = ROOT }
             OR = {
-                NOT = { is_homeland_of_country_cultures = ROOT }
                 AND = {
-                    market_access < 0.01
+                    # Roleplay mode lets AI split off non-primary-culture land without unrest pressure.
+                    ROOT = { has_game_rule = dynamic_country_ai_creation_roleplay }
+                    NOT = { is_homeland_of_country_cultures = ROOT }
                 }
-            }
-            OR = {
                 AND = {
-                    ROOT = { is_country_type = recognized }
+                    # Gameplay mode keeps the previous turmoil and market-access safeguards.
+                    ROOT = { has_game_rule = dynamic_country_ai_creation_gameplay }
                     OR = {
-                        turmoil > 0.50
-                        market_access < 0.15
+                        NOT = { is_homeland_of_country_cultures = ROOT }
+                        AND = {
+                            market_access < 0.01
+                        }
                     }
-                }
-                AND = {
-                    ROOT = { is_country_type = unrecognized }
                     OR = {
-                        turmoil > 0.50
-                        market_access < 0.15
+                        AND = {
+                            ROOT = { is_country_type = recognized }
+                            OR = {
+                                turmoil > 0.50
+                                market_access < 0.15
+                            }
+                        }
+                        AND = {
+                            ROOT = { is_country_type = unrecognized }
+                            OR = {
+                                turmoil > 0.50
+                                market_access < 0.15
+                            }
+                        }
                     }
                 }
             }

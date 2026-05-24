@@ -1,20 +1,18 @@
 ﻿#############################################
-# Dynamic Country AI Expansion (Randomized) #
+# Dynamic Country AI Expansion             #
 # rf_dynamic_country_ai_effects.txt         #
 #
-# Purpose: Provide randomized adjacency expansion passes
-# so AI-created dynamic countries don't routinely become
-# very large. Recognized and unrecognized countries branch
-# inside the same effects, with recognized countries tending
-# to split into smaller subjects.
+# Purpose: Provide ordered adjacency expansion passes
+# so AI-created dynamic countries can grow into nearby matching states.
+# Final size is constrained by the GDP budget calculated from the origin country.
 #
 # Safe to extend further by adding more weight tiers or
 # additional pruning logic after expansion.
 #############################################
 
-# Generic expansion pass (one hop)
-# Dynamically expands candidate pool: newly-found neighbors are added to ai_potential_dyn_country_state
-# and marked for ceding, allowing multi-hop expansion even from limited initial pools
+# Generic ordered expansion pass.
+# Each frontier state adds its cheapest valid neighbors if the GDP budget has room.
+# The per-frontier pickup limit scales by origin rank so great powers can form broader subjects.
 rf_dyn_country_ai_single_pass = {
     # Save the current country scope for reference
     ROOT = { save_scope_as = original_country }
@@ -22,7 +20,7 @@ rf_dyn_country_ai_single_pass = {
     every_scope_state = {
         limit = { has_variable = dynamic_state_cede owner = scope:original_country }
 
-        every_neighbouring_state = {
+        ordered_neighbouring_state = {
             limit = {
                 owner = scope:original_country
                 controller = owner
@@ -49,6 +47,9 @@ rf_dyn_country_ai_single_pass = {
                     min = 0
                 }
             }
+            order_by = gdp
+            max = root.var:rf_dyn_frontier_pick_limit
+            check_range_bounds = no
             set_variable = ai_potential_dyn_country_state
             set_variable = dynamic_state_cede
             # Deduct this state's GDP from the remaining budget
@@ -62,49 +63,38 @@ rf_dyn_country_ai_single_pass = {
     }
 }
 
-# Branching expansion weights for recognized and unrecognized countries.
+# Budget-driven generic expansion. It keeps adding cheap adjacent valid states
+# until no valid neighbor fits the remaining GDP budget, with a hard cap for safety.
 rf_dynamic_country_ai_expand = {
-    if = {
-        limit = { is_country_type = recognized }
-        random_list = {
-            60 = {
-                # Medium (2 passes)
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-            }
-
-            10 = {
-                # Rare very large (4 passes)
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-            }
-        }
-    }
-    else = {
-        random_list = {
-            50 = {
-                # Medium (2 passes)
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-            }
-
-            30 = {
-                # Large (3 passes)
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-            }
-
-            15 = {
-                # Rare very large (4 passes)
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
-                rf_dyn_country_ai_single_pass = yes
+    while = {
+        count = 12
+        limit = {
+            any_scope_state = {
+                has_variable = dynamic_state_cede
+                owner = ROOT
+                any_neighbouring_state = {
+                    owner = ROOT
+                    controller = owner
+                    NOT = { has_variable = dynamic_state_cede }
+                    NOT = { has_variable = riseandfall_recent_state_owner_change }
+                    NOT = { has_variable = riseandfall_recent_state_occupation }
+                    NOT = { is_capital = yes }
+                    NOT = { is_treaty_port = yes }
+                    OR = {
+                        NOT = { is_homeland_of_country_cultures = ROOT }
+                        AND = {
+                            market_access < 0.01
+                        }
+                    }
+                    gdp <= {
+                        add = root.var:rf_dyn_gdp_budget
+                        subtract = root.var:rf_dyn_accumulated_gdp
+                        min = 0
+                    }
+                }
             }
         }
+        rf_dyn_country_ai_single_pass = yes
     }
 }
 
@@ -129,8 +119,9 @@ rf_dyn_country_ai_select_homeland_culture_for_cluster = {
     }
 }
 
-# Single adjacency expansion pass restricted to states that share the selected homeland culture.
-# Also dynamically expands candidate pool with the homeland filter.
+# Single ordered adjacency expansion pass restricted to states that share the selected homeland culture.
+# Each frontier state adds its cheapest valid homeland neighbors if the GDP budget has room.
+# The per-frontier pickup limit scales by origin rank so great powers can form broader subjects.
 rf_dyn_country_ai_single_pass_homeland = {
     # Save the current country scope for reference
     ROOT = { save_scope_as = original_country }
@@ -138,7 +129,7 @@ rf_dyn_country_ai_single_pass_homeland = {
     every_scope_state = {
         limit = { has_variable = dynamic_state_cede owner = scope:original_country }
 
-        every_neighbouring_state = {
+        ordered_neighbouring_state = {
             limit = {
                 owner = scope:original_country
                 controller = owner
@@ -161,6 +152,9 @@ rf_dyn_country_ai_single_pass_homeland = {
                     min = 0
                 }
             }
+            order_by = gdp
+            max = root.var:rf_dyn_frontier_pick_limit
+            check_range_bounds = no
             set_variable = ai_potential_dyn_country_state
             set_variable = dynamic_state_cede
             # Deduct this state's GDP from the remaining budget
@@ -174,63 +168,56 @@ rf_dyn_country_ai_single_pass_homeland = {
     }
 }
 
-# Branching homeland-cluster weights for recognized and unrecognized countries.
+# Budget-driven homeland expansion. It keeps adding cheap adjacent homeland states
+# until no valid neighbor fits the remaining GDP budget, with a hard cap for safety.
 rf_dynamic_country_ai_expand_homeland = {
-    if = {
-        limit = { is_country_type = recognized }
-        random_list = {
-            60 = {
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-            }
-
-            30 = {
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-            }
-
-            10 = {
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-            }
-        }
-    }
-    else = {
-        random_list = {
-            50 = {
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-            }
-
-            35 = {
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-            }
-
-            15 = {
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
-                rf_dyn_country_ai_single_pass_homeland = yes
+    while = {
+        count = 12
+        limit = {
+            any_scope_state = {
+                has_variable = dynamic_state_cede
+                owner = ROOT
+                any_neighbouring_state = {
+                    owner = ROOT
+                    controller = owner
+                    NOT = { has_variable = dynamic_state_cede }
+                    NOT = { has_variable = riseandfall_recent_state_owner_change }
+                    NOT = { has_variable = riseandfall_recent_state_occupation }
+                    state_region = { is_homeland = scope:rf_dyn_target_culture }
+                    NOT = { is_capital = yes }
+                    NOT = { is_treaty_port = yes }
+                    OR = {
+                        NOT = { is_homeland_of_country_cultures = ROOT }
+                        AND = {
+                            market_access < 0.01
+                        }
+                    }
+                    gdp <= {
+                        add = root.var:rf_dyn_gdp_budget
+                        subtract = root.var:rf_dyn_accumulated_gdp
+                        min = 0
+                    }
+                }
             }
         }
+        rf_dyn_country_ai_single_pass_homeland = yes
     }
 }
 
 # Main AI logic for dynamic country creation.
 rf_dynamic_country_ai = {
-    # Only proceed if AI improvements enabled
+    # Only proceed when the Dynamic Country AI Creation game rule allows it.
     if = {
         limit = {
-            has_game_rule = ai_improvement_enabled
+            OR = {
+                has_game_rule = dynamic_country_ai_creation_roleplay
+                has_game_rule = dynamic_country_ai_creation_gameplay
+            }
             OR = {
                 is_country_type = recognized
                 is_country_type = unrecognized
             }
+            NOT = { is_subject_type = subject_type_chartered_company }
             NOT = {
                 any_country = {
                     OR = {
@@ -247,6 +234,7 @@ rf_dynamic_country_ai = {
         clear_saved_scope = rf_dyn_target_culture
         remove_variable = rf_dyn_gdp_budget
         remove_variable = rf_dyn_accumulated_gdp
+        remove_variable = rf_dyn_frontier_pick_limit
 
         # Clean stale selection variables (only touch states owned by this country)
         every_scope_state = {
@@ -259,7 +247,7 @@ rf_dynamic_country_ai = {
             remove_variable = dynamic_state_cede
         }
 
-        # Mark candidate states using country-type-specific turmoil thresholds.
+        # Mark candidate states. Roleplay favors cultural puppet creation, while Gameplay keeps unrest/economic safeguards.
         every_scope_state = {
             limit = {
                 owner = ROOT
@@ -271,16 +259,14 @@ rf_dynamic_country_ai = {
                 NOT = { has_variable = riseandfall_recent_state_occupation }
                 NOT = { is_target_of_wargoal = ROOT }
                 OR = {
-                    NOT = { is_homeland_of_country_cultures = ROOT }
                     AND = {
-                        market_access < 0.01
+                        # Roleplay mode creates subjects from non-primary-culture land regardless of turmoil.
+                        ROOT = { has_game_rule = dynamic_country_ai_creation_roleplay }
+                        NOT = { is_homeland_of_country_cultures = ROOT }
                     }
-                }
-
-                # (explicit owner change exclusion has been moved to the top-level limit)
-
-                OR = {
                     AND = {
+                        # Gameplay mode preserves the previous candidate requirements.
+                        ROOT = { has_game_rule = dynamic_country_ai_creation_gameplay }
                         OR = {
                             NOT = { is_homeland_of_country_cultures = ROOT }
                             AND = {
@@ -305,6 +291,8 @@ rf_dynamic_country_ai = {
                         }
                     }
                 }
+
+                # (explicit owner change exclusion has been moved to the top-level limit)
             }
 
             set_variable = ai_potential_dyn_country_state
@@ -331,17 +319,21 @@ rf_dynamic_country_ai = {
             if = {
                 limit = { country_rank >= rank_value:great_power }
                 set_variable = { name = rf_dyn_gdp_budget value = { add = gdp multiply = 0.6 } }
+                set_variable = { name = rf_dyn_frontier_pick_limit value = 4 }
             }
             else_if = {
                 limit = { country_rank >= rank_value:major_power }
                 set_variable = { name = rf_dyn_gdp_budget value = { add = gdp multiply = 0.4 } }
+                set_variable = { name = rf_dyn_frontier_pick_limit value = 3 }
             }
             else_if = {
                 limit = { country_rank >= rank_value:minor_power }
                 set_variable = { name = rf_dyn_gdp_budget value = { add = gdp multiply = 0.25 } }
+                set_variable = { name = rf_dyn_frontier_pick_limit value = 2 }
             }
             else = {
                 set_variable = { name = rf_dyn_gdp_budget value = { add = gdp multiply = 0.15 } }
+                set_variable = { name = rf_dyn_frontier_pick_limit value = 1 }
             }
             # Initialise accumulator with the capital state's GDP
             set_variable = {
@@ -349,22 +341,37 @@ rf_dynamic_country_ai = {
                 value = scope:rf_dyn_country_capital.gdp
             }
 
-            # Randomly decide: single-state (keep only the capital) or run the multi-state expansion
-            random_list = {
-                20 = {
-                    # Single-state: capital already marked via set_variable above
+            # Major and great powers should usually form coherent regional subjects.
+            # Smaller origins may still occasionally create a compact one-state subject.
+            if = {
+                limit = { country_rank >= rank_value:major_power }
+                rf_dyn_country_ai_select_homeland_culture_for_cluster = yes
+
+                if = {
+                    limit = { has_variable = rf_dyn_target_culture_found }
+                    rf_dynamic_country_ai_expand_homeland = yes
                 }
-
-                80 = {
-                    # Homeland-based clustering attempt
-                    rf_dyn_country_ai_select_homeland_culture_for_cluster = yes
-
-                    if = {
-                        limit = { has_variable = rf_dyn_target_culture_found }
-                        rf_dynamic_country_ai_expand_homeland = yes
+                else = {
+                    rf_dynamic_country_ai_expand = yes
+                }
+            }
+            else = {
+                random_list = {
+                    20 = {
+                        # Single-state: capital already marked via set_variable above
                     }
-                    else = {
-                        rf_dynamic_country_ai_expand = yes
+
+                    80 = {
+                        # Homeland-based clustering attempt
+                        rf_dyn_country_ai_select_homeland_culture_for_cluster = yes
+
+                        if = {
+                            limit = { has_variable = rf_dyn_target_culture_found }
+                            rf_dynamic_country_ai_expand_homeland = yes
+                        }
+                        else = {
+                            rf_dynamic_country_ai_expand = yes
+                        }
                     }
                 }
             }
@@ -389,16 +396,27 @@ rf_dynamic_country_ai = {
 
 # Effect to create the dynamic country (merged for recognized and unrecognized)
 rf_dynamic_country_create = {
-    # Before attempting creation, ensure no 'dynamic_state_cede' marks remain on states not owned by this country
+    ROOT = { save_scope_as = rf_dyn_origin_country }
+
+    # create_dynamic_country evaluates cede_state_trigger globally. Use a temporary
+    # per-creation marker so stale dynamic_state_cede variables elsewhere cannot leak in.
+    every_state = {
+        limit = { has_variable = rf_dynamic_state_cede_current }
+        remove_variable = rf_dynamic_state_cede_current
+    }
+
     every_scope_state = {
-        limit = { has_variable = dynamic_state_cede NOT = { owner = ROOT } }
-        remove_variable = dynamic_state_cede
+        limit = {
+            has_variable = dynamic_state_cede
+            owner = ROOT
+        }
+        set_variable = rf_dynamic_state_cede_current
     }
 
     # Create dynamic country
     if = {
         limit = {
-            any_scope_state = { has_variable = dynamic_state_cede owner = ROOT }
+            any_scope_state = { has_variable = rf_dynamic_state_cede_current owner = ROOT }
             has_variable = rf_dyn_country_capital_found
             scope:rf_dyn_country_capital = { is_capital = no }
         }
@@ -407,32 +425,80 @@ rf_dynamic_country_create = {
             origin = root
             tier = principality
             capital = scope:rf_dyn_country_capital
-            cede_state_trigger = { has_variable = dynamic_state_cede }
+            cede_state_trigger = { has_variable = rf_dynamic_state_cede_current }
 
             on_created = {
                 rf_assign_dynamic_color = yes
                 every_scope_state = {
-                    limit = { has_variable = dynamic_state_cede owner = ROOT }
+                    limit = { has_variable = rf_dynamic_state_cede_current }
+                    remove_variable = rf_dynamic_state_cede_current
                     remove_variable = dynamic_state_cede
+                }
+                every_state = {
+                    limit = { has_variable = rf_dynamic_state_cede_current }
+                    remove_variable = rf_dynamic_state_cede_current
                 }
                 rf_assign_dominant_identity = yes
             }
         }
 
         # After create_dynamic_country, the capital state's owner is now the new country.
-        # Create the subject pact from ROOT (overlord) to the new country using this reference.
+        # Low-autonomy subjects like puppets and vassals cannot keep subjects, so route
+        # those new countries to the top overlord. Tributaries and dominions can hold
+        # subjects, so they use the regular origin-owned pact path.
         hidden_effect = {
             if = {
-                limit = { is_country_type = recognized }
-                create_diplomatic_pact = {
-                    country = scope:rf_dyn_country_capital.owner
-                    type = puppet
+                limit = {
+                    OR = {
+                        is_subject_type = subject_type_tributary
+                        is_subject_type = subject_type_dominion
+                    }
+                }
+                if = {
+                    limit = { is_country_type = recognized }
+                    create_diplomatic_pact = {
+                        country = scope:rf_dyn_country_capital.owner
+                        type = puppet
+                    }
+                }
+                else = {
+                    create_diplomatic_pact = {
+                        country = scope:rf_dyn_country_capital.owner
+                        type = vassal
+                    }
+                }
+            }
+            else_if = {
+                limit = { is_subject = yes }
+                top_overlord = {
+                    if = {
+                        limit = { is_country_type = recognized }
+                        create_diplomatic_pact = {
+                            country = scope:rf_dyn_country_capital.owner
+                            type = puppet
+                        }
+                    }
+                    else = {
+                        create_diplomatic_pact = {
+                            country = scope:rf_dyn_country_capital.owner
+                            type = vassal
+                        }
+                    }
                 }
             }
             else = {
-                create_diplomatic_pact = {
-                    country = scope:rf_dyn_country_capital.owner
-                    type = vassal
+                if = {
+                    limit = { is_country_type = recognized }
+                    create_diplomatic_pact = {
+                        country = scope:rf_dyn_country_capital.owner
+                        type = puppet
+                    }
+                }
+                else = {
+                    create_diplomatic_pact = {
+                        country = scope:rf_dyn_country_capital.owner
+                        type = vassal
+                    }
                 }
             }
         }
@@ -444,8 +510,14 @@ rf_dynamic_country_create = {
 
         remove_variable = rf_dyn_country_capital_found
         clear_saved_scope = rf_dyn_country_capital
+        clear_saved_scope = rf_dyn_origin_country
+        every_state = {
+            limit = { has_variable = rf_dynamic_state_cede_current }
+            remove_variable = rf_dynamic_state_cede_current
+        }
         remove_variable = rf_dyn_gdp_budget
         remove_variable = rf_dyn_accumulated_gdp
+        remove_variable = rf_dyn_frontier_pick_limit
     }
 }
 

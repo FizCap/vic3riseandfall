@@ -6,7 +6,6 @@
             save_scope_as = rf_old_primary
             scope:rf_country = {
             remove_primary_culture = scope:rf_old_primary
-                set_variable = { name = rf_removed_primary value = yes days = 1 }
             }
         }
 
@@ -36,7 +35,6 @@ rf_decentralized_culture_merge_cleanup = {
             save_scope_as = rf_old_primary
             scope:rf_country = {
             remove_primary_culture = scope:rf_old_primary
-                set_variable = { name = rf_removed_primary value = yes days = 1 }
             }
         }
 

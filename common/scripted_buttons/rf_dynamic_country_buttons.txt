@@ -12,6 +12,7 @@ rf_button_finalize_dynamic_country = {
 			is_country_type = recognized
 			is_country_type = unrecognized
 		}
+		NOT = { is_subject_type = subject_type_chartered_company }
 		is_player = yes
 		has_variable = rf_dyn_builder_enabled
 		any_scope_state = {
@@ -25,7 +26,7 @@ rf_button_finalize_dynamic_country = {
 			is_country_type = recognized
 			is_country_type = unrecognized
 		}
-		NOT = { is_subject = yes }
+		NOT = { is_subject_type = subject_type_chartered_company }
 		is_player = yes
 		has_variable = rf_dyn_builder_enabled
 		any_scope_state = {
@@ -34,7 +35,18 @@ rf_button_finalize_dynamic_country = {
 		}
 	}
 
-		effect = {
+	effect = {
+			# Clear stale builder markers before selecting the states for this new country.
+			remove_variable = rf_dyn_country_capital_found
+			clear_saved_scope = rf_dyn_country_capital
+			every_scope_state = {
+				limit = {
+					has_variable = dynamic_state_cede
+					owner = ROOT
+				}
+				remove_variable = dynamic_state_cede
+			}
+
 			# Pick a capital among marked states
 			random_scope_state = {
 				limit = {
@@ -66,10 +78,14 @@ rf_button_enable_builder = {
 	name = "rf_button_enable_builder"
 	desc = "rf_button_enable_builder_desc"
 	visible = { 
+		NOT = { is_subject_type = subject_type_chartered_company }
 		is_player = yes
 		NOT = { has_variable = rf_dyn_builder_enabled }
 	}
-	possible = { NOT = { has_variable = rf_dyn_builder_enabled } }
+	possible = {
+		NOT = { is_subject_type = subject_type_chartered_company }
+		NOT = { has_variable = rf_dyn_builder_enabled }
+	}
 	effect = { set_variable = rf_dyn_builder_enabled }
 	ai_chance = { value = 0 }
 }

@@ -86,7 +86,8 @@
         # Bureaucracy modifier logic always runs
         if = {
             limit = {
-                bureaucracy < -10
+                # Scale the intervention to country size instead of a flat bureaucracy shortfall.
+                relative_bureaucracy <= -0.05
                 NOT = { has_modifier = rf_negative_bureaucracy }
             }
             add_modifier = { name = rf_negative_bureaucracy days = 365 }

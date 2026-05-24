@@ -283,8 +283,8 @@ rf_assign_dominant_identity = {
     every_scope_character = {
         limit = {
             OR = {
-                is_ruler = yes
-                is_heir = yes
+                is_ruler_of_own_country = yes
+                is_heir_of_own_country = yes
                 owner = ROOT
             }
         }

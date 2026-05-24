@@ -33,6 +33,5 @@
 	scripted_button = rf_scripted_button_auto_build_university_activate
 	scripted_button = rf_scripted_button_auto_build_university_deactivate
 
-	should_be_pinned_by_default = yes
 	weight = 100
 }

@@ -30,6 +30,7 @@ rf_centralized_culture_new_country = {
             limit = {
                 has_game_rule = culture_merging_enabled
             }
+            rf_decentralized_culture_merge_cleanup = yes
             rf_centralized_culture_merge_cleanup = yes
         }
     }

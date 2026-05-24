@@ -1,27 +1,39 @@
-﻿Victoria 3 Timeline v1.0.0
-1.13 Compatibility & Autobuilder Update
+﻿Victoria 3 Timeline v1.0.1
 
-Compatibility
-- Updated the mod for Victoria 3 v1.13.
-- Updated mod metadata and description.
+Bug Fixes
+- Fixed duplicate economic boost localization and invalid journal entry fields that could produce startup errors.
+- Removed stale auto-build monthly checks that referenced unset variables.
+- Updated personal union and dynamic country character checks to use Victoria 3 1.13 ruler and heir triggers.
 
-Autobuilder
-- Reworked Construction Sector autobuilding.
-  Result: AI countries should only expand construction when there is sustained government queue demand, reducing wasted idle construction spending.
-- Improved Government Administration autobuilding.
-  The autobuilder now fixes bureaucracy first.
-  Tax-capacity expansion is reserved for stronger, stable economies.
-- Updated University construction.
-  Universities are now queued in economy-aware batches instead of being built in every eligible state at once.
-- Updated Power Plant construction.
-  Power Plants now prioritize states without one first, then expand profitable or electricity-starved states.
-- Added new scripted checks for construction sectors, universities, power plants, bureaucracy fixes, and tax-capacity expansion.
+Production methods
+- Deleted the vanilla production method override
 
-Colonization
-- Forced colonization now requires Civilizing Mission before countries can be prompted into colonization.
-- Cleaned up forced colonization eligibility so frontier checks happen in the yearly trigger instead of duplicated effect logic.
+AI
+- Changed the negative bureaucracy AI boost to trigger at a 5% bureaucracy shortfall instead of a flat -10 deficit.
+
+Treasury/Investment Pool
+- Reduced automatic investment pool transfers to keep only 20% of the reserve limit in the treasury and added a 1,000,000 transfer button.
 
 Game Rules & Fixes
-- Fixed the Merge Decentralized Countries game rule not working correctly.
-- Removed the old Random Character Death game rule and its related scripts/localization.
-- Fixed the Personal Union event picture not displaying correctly.
+- Split AI dynamic country creation into its own Off, Roleplay, and Gameplay rule so AI Improvement can focus on economy automation.
+- Fixed dynamic country creation so stale state markers from another country can no longer be absorbed into the wrong new country.
+- Made dynamic country expansion use shared GDP-limited clustering instead of separate recognized and unrecognized size weights.
+- Reworked dynamic country expansion to grow through ordered GDP-budget passes instead of random pass counts.
+- Increased dynamic country expansion breadth for major and great powers while keeping GDP limits in place.
+- Made major and great powers always attempt dynamic country expansion instead of occasionally creating one-state subjects.
+- Routed dynamic countries created by subject nations to the top overlord so low-autonomy subjects do not lose them to independence.
+- Restored normal dynamic country subject creation for tributaries and dominions, which can hold subjects.
+- Blocked chartered company subjects from creating dynamic countries.
+
+Culture Merging
+- Expanded centralized culture merging to cover Eastern German, Cree, Inuit, and additional South Asian cultures for better late-game performance.
+- Added Luri, Champa, Philippine, and southern African culture consolidation to reduce small pop fragmentation while keeping regional targets plausible.
+- Added Bashkir, Chuvash, Chechen, and Circassian centralized culture consolidation for cleaner Russia and North Caucasus pop maps.
+- Merged Scottish Gaelic into Scottish in centralized culture consolidation to reduce British Isles pop fragmentation.
+- Added Mesoamerican native culture consolidation into Nahua for Zapotec, Tarascan, and Maya pops.
+- Added South American culture consolidation for Aimara, Guarani, Sulista, and Paulista pops.
+- Added Mazanderani, Buryat, Wolof, and southern Nigerian culture consolidation for cleaner regional pop maps.
+- Added Haratin and Asturleonese culture consolidation into nearby regional targets.
+- Added Assyrian and Mari culture consolidation and removed the beta label from the culture merging game rule.
+- Added culture merge cleanup to decentralized countries as well
+- Added Mordvin culture consolidation into the Volga-Uralic merge path.

@@ -34,6 +34,21 @@ ai_improvement = {
     }
 }
 
+dynamic_country_ai_creation = {
+    default = dynamic_country_ai_creation_gameplay
+
+    dynamic_country_ai_creation_off = {
+    }
+
+    dynamic_country_ai_creation_roleplay = {
+        flag = dynamic_country_ai_creation_roleplay
+    }
+
+    dynamic_country_ai_creation_gameplay = {
+        flag = dynamic_country_ai_creation_gameplay
+    }
+}
+
 rf_colony_grant_claim = {
     default = colony_grant_claim_enabled
 

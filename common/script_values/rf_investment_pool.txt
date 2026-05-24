@@ -2,7 +2,7 @@
 
 rf_reserve_floor = {
 	value = gold_reserves_limit
-	multiply = 0.8
+	multiply = 0.2
 }
 
 rf_surplus_gold = {

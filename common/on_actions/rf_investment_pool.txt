@@ -43,18 +43,5 @@ rf_admin_center_framework_monthly = {
 			add_journal_entry = { type = rf_je_admin_center_framework }
 		}
 
-		# Auto build logic if enabled
-		if = {
-			limit = { has_variable = rf_auto_build_admin_enabled }
-			rf_manual_build_government_administration = yes
-		}
-		if = {
-			limit = { has_variable = rf_auto_build_railway_enabled }
-			rf_manual_build_railway = yes
-		}
-		if = {
-			limit = { has_variable = rf_auto_build_port_enabled }
-			rf_manual_build_port = yes
-		}
 	}
 }

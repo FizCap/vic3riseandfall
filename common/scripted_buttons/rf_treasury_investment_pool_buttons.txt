@@ -32,6 +32,41 @@
 	}
 }
 
+rf_transfer_to_treasury_million_button = {
+	name = "rf_transfer_to_treasury_million_button"
+	desc = "rf_transfer_to_treasury_million_button_desc"
+
+	visible = {
+		always = yes
+	}
+
+	possible = {
+		investment_pool > 1000000
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { has_game_rule = ai_improvement_enabled }
+			add = 0
+		}
+		if = {
+			limit = {
+				has_game_rule = ai_improvement_enabled
+				gold_reserves <= 0
+				investment_pool > 1000000
+			}
+			add = 100
+		}
+	}
+
+	effect = {
+		# Larger manual transfer for countries with a deep investment pool.
+		add_investment_pool = -1000000
+		add_treasury = 1000000
+	}
+}
+
 rf_auto_transfer_activate_button = {
 	name = "rf_auto_transfer_activate_button"
 	desc = "rf_auto_transfer_activate_button_desc"

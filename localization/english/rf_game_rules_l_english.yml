@@ -15,7 +15,7 @@
   setting_annexation_disabled: "Disabled"
   setting_annexation_disabled_desc: "No automatic merging of decentralized nations."
 
-  rule_culture_merging: "RF: Rise and Fall Culture Merging (BETA)"
+  rule_culture_merging: "RF: Rise and Fall Culture Merging"
   setting_culture_merging_disabled: "Disabled"
   setting_culture_merging_disabled_desc: "Cultures will not be merged and will remain as separate entities."
   setting_culture_merging_enabled: "Enabled"
@@ -32,6 +32,14 @@
   setting_ai_improvement_enabled_desc: "Experimental: Changes vanilla AI to aggressively balance its budget and avoid running deficits. Will have better building logic. Behavior may be unpredictable and cause performance issues."
   setting_ai_improvement_disabled: "Disabled"
   setting_ai_improvement_disabled_desc: "AI will behave like vanilla"
+
+  rule_dynamic_country_ai_creation: "RF: Dynamic Country AI Creation"
+  setting_dynamic_country_ai_creation_off: "Off"
+  setting_dynamic_country_ai_creation_off_desc: "AI countries will not automatically create dynamic countries."
+  setting_dynamic_country_ai_creation_roleplay: "Roleplay"
+  setting_dynamic_country_ai_creation_roleplay_desc: "AI countries will more readily release non-primary-culture states as dynamic puppet or vassal countries, even without severe turmoil."
+  setting_dynamic_country_ai_creation_gameplay: "Gameplay"
+  setting_dynamic_country_ai_creation_gameplay_desc: "AI countries may release dynamic puppet or vassal countries only from unstable, isolated, or low-access states."
 
   rule_et_colony_grant_claim: "RF: Grant Colony Claims on Colonization"
   rule_rf_colony_grant_claim: "RF: Grant Colony Claims on Colonization"

@@ -438,8 +438,31 @@ rf_dynamic_country_create = {
                     limit = { has_variable = rf_dynamic_state_cede_current }
                     remove_variable = rf_dynamic_state_cede_current
                 }
-                rf_assign_dominant_identity = yes
             }
+        }
+
+        scope:rf_dyn_country_capital.owner = {
+            save_scope_as = rf_dyn_created_country
+        }
+
+        if = {
+            limit = {
+                is_player = yes
+                has_variable = rf_dyn_identity_auto_enabled
+            }
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_auto_assign = yes
+            }
+        }
+        else_if = {
+            limit = { is_player = yes }
+            trigger_event = {
+                id = rf_dynamic_country_identity.1
+                popup = yes
+            }
+        }
+        else = {
+            trigger_event = rf_dynamic_country_identity.1
         }
 
         # After create_dynamic_country, the capital state's owner is now the new country.
@@ -510,6 +533,7 @@ rf_dynamic_country_create = {
 
         remove_variable = rf_dyn_country_capital_found
         clear_saved_scope = rf_dyn_country_capital
+        clear_saved_scope = rf_dyn_created_country
         clear_saved_scope = rf_dyn_origin_country
         every_state = {
             limit = { has_variable = rf_dynamic_state_cede_current }

@@ -2,7 +2,7 @@
   "name" : "Rise and Fall",
   "id" : "3548354778",
   "picture" : "thumbnail.png",
-  "version" : "1.0.0",
+  "version" : "1.0.2",
   "supported_game_version" : "1.13*",
   "short_description" : "Improves balance and gameplay for Victoria 3.",
   "tags" : ["Balance", "Fixes", "Gameplay" ],

@@ -104,6 +104,44 @@ rf_button_disable_builder = {
 	ai_chance = { value = 0 }
 }
 
+rf_button_auto_identity_enable = {
+	name = "rf_button_auto_identity_enable"
+	desc = "rf_button_auto_identity_enable_desc"
+	visible = {
+		is_player = yes
+		has_variable = rf_dyn_builder_enabled
+		NOT = { has_variable = rf_dyn_identity_auto_enabled }
+	}
+	possible = {
+		is_player = yes
+		has_variable = rf_dyn_builder_enabled
+		NOT = { has_variable = rf_dyn_identity_auto_enabled }
+	}
+	effect = {
+		set_variable = rf_dyn_identity_auto_enabled
+	}
+	ai_chance = { value = 0 }
+}
+
+rf_button_auto_identity_disable = {
+	name = "rf_button_auto_identity_disable"
+	desc = "rf_button_auto_identity_disable_desc"
+	visible = {
+		is_player = yes
+		has_variable = rf_dyn_builder_enabled
+		has_variable = rf_dyn_identity_auto_enabled
+	}
+	possible = {
+		is_player = yes
+		has_variable = rf_dyn_builder_enabled
+		has_variable = rf_dyn_identity_auto_enabled
+	}
+	effect = {
+		remove_variable = rf_dyn_identity_auto_enabled
+	}
+	ai_chance = { value = 0 }
+}
+
 rf_button_authority_cheat_enable = {
 	name = "rf_button_authority_cheat_enable"
 	desc = "rf_button_authority_cheat_enable_desc"

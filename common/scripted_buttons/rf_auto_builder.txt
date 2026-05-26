@@ -32,7 +32,7 @@
         value = 0
         if = {
             limit = {
-                has_game_rule = ai_improvement_enabled
+                rf_ai_improvement_active = yes
                 rf_can_queue_admin_bureaucracy_construction = yes
                 bureaucracy < 0
                 NOT = { any_scope_state = { any_scope_building = { is_building_type = building_government_administration is_under_construction = yes } } }
@@ -63,7 +63,7 @@ rf_scripted_button_build_railway = {
         value = 0
         if = {
             limit = {
-                has_game_rule = ai_improvement_enabled
+                rf_ai_improvement_active = yes
                 gold_reserves > rf_autobuild_reserve_limit
                 bureaucracy > 0
                 NOT = { any_scope_state = { any_scope_building = { is_building_type = building_railway is_under_construction = yes } } }
@@ -95,7 +95,7 @@ rf_scripted_button_build_port = {
         value = 0
         if = {
             limit = {
-                has_game_rule = ai_improvement_enabled
+                rf_ai_improvement_active = yes
                 gold_reserves > rf_autobuild_reserve_limit
                 bureaucracy > 0
                 NOT = { any_scope_state = { any_scope_building = {
@@ -322,7 +322,7 @@ rf_scripted_button_build_construction_sector = {
         value = 0
         if = {
             limit = {
-                has_game_rule = ai_improvement_enabled
+                rf_ai_improvement_active = yes
                 NOT = { any_scope_state = { any_scope_building = {
                     is_building_type = building_construction_sector
                     is_under_construction = yes

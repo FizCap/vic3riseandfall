@@ -98,3 +98,11 @@ rf_power_plant_expansion_state_candidate = {
         }
     }
 }
+
+rf_ai_improvement_active = {
+    # Treat both AI Improvement modes as active for shared AI button behavior.
+    OR = {
+        has_game_rule = ai_improvement_lite
+        has_game_rule = ai_improvement_on
+    }
+}

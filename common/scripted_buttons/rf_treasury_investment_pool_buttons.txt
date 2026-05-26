@@ -13,12 +13,12 @@
 	ai_chance = {
 		value = 0
 		if = {
-			limit = { has_game_rule = ai_improvement_enabled }
+			limit = { rf_ai_improvement_active = yes }
 			add = 0
 		}
 		if = {
 			limit = {
-				has_game_rule = ai_improvement_enabled
+				rf_ai_improvement_active = yes
 				gold_reserves <= 0
 				investment_pool > 100000
 			}
@@ -47,12 +47,12 @@ rf_transfer_to_treasury_million_button = {
 	ai_chance = {
 		value = 0
 		if = {
-			limit = { has_game_rule = ai_improvement_enabled }
+			limit = { rf_ai_improvement_active = yes }
 			add = 0
 		}
 		if = {
 			limit = {
-				has_game_rule = ai_improvement_enabled
+				rf_ai_improvement_active = yes
 				gold_reserves <= 0
 				investment_pool > 1000000
 			}
@@ -84,7 +84,7 @@ rf_auto_transfer_activate_button = {
 	ai_chance = {
 		value = 0
 		if = {
-			limit = { has_game_rule = ai_improvement_enabled }
+			limit = { rf_ai_improvement_active = yes }
 			add = 100
 		}
 	}

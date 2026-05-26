@@ -1,0 +1,392 @@
+﻿namespace = rf_dynamic_country_identity
+
+rf_dynamic_country_identity.1 = {
+    type = country_event
+    title = rf_dynamic_country_identity.1.t
+    desc = rf_dynamic_country_identity.1.d
+
+    event_image = {
+        video = "africa_desert_expedition"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    duration = 3
+
+    trigger = {
+        exists = scope:rf_dyn_created_country
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.1.a
+        ai_chance = {
+            factor = 10
+            modifier = {
+                factor = 20
+                OR = {
+                    has_law = law_type:law_ethnostate
+                    has_law = law_type:law_national_supremacy
+                }
+            }
+            modifier = {
+                factor = 8
+                has_law = law_type:law_racial_segregation
+            }
+            modifier = {
+                factor = 3
+                has_law = law_type:law_cultural_exclusion
+            }
+            modifier = {
+                factor = 2
+                has_law = law_type:law_subjecthood
+            }
+            modifier = {
+                factor = 0.1
+                has_law = law_type:law_multicultural
+            }
+        }
+
+        scope:rf_dyn_created_country = {
+            rf_dyn_identity_origin_primary_only = yes
+            rf_dyn_identity_select_representative_primary_culture = yes
+        }
+        if = {
+            limit = { is_player = yes }
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_prepare_religion_preview = yes
+            }
+            trigger_event = {
+                id = rf_dynamic_country_identity.2
+                popup = yes
+            }
+        }
+        else = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_select_religion_by_origin_law = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.1.b
+        default_option = yes
+        ai_chance = {
+            factor = 30
+            modifier = {
+                factor = 8
+                has_law = law_type:law_cultural_exclusion
+            }
+            modifier = {
+                factor = 8
+                has_law = law_type:law_subjecthood
+            }
+            modifier = {
+                factor = 2
+                has_law = law_type:law_racial_segregation
+            }
+            modifier = {
+                factor = 0.5
+                OR = {
+                    has_law = law_type:law_ethnostate
+                    has_law = law_type:law_national_supremacy
+                    has_law = law_type:law_multicultural
+                }
+            }
+        }
+
+        scope:rf_dyn_created_country = {
+            rf_dyn_identity_homeland_only = yes
+            rf_dyn_identity_select_representative_primary_culture = yes
+        }
+        if = {
+            limit = { is_player = yes }
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_prepare_religion_preview = yes
+            }
+            trigger_event = {
+                id = rf_dynamic_country_identity.2
+                popup = yes
+            }
+        }
+        else = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_select_religion_by_origin_law = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.1.c
+        ai_chance = {
+            factor = 5
+            modifier = {
+                factor = 25
+                has_law = law_type:law_multicultural
+            }
+            modifier = {
+                factor = 0.1
+                OR = {
+                    has_law = law_type:law_ethnostate
+                    has_law = law_type:law_national_supremacy
+                }
+            }
+            modifier = {
+                factor = 0.3
+                has_law = law_type:law_racial_segregation
+            }
+            modifier = {
+                factor = 0.5
+                has_law = law_type:law_cultural_exclusion
+            }
+            modifier = {
+                factor = 0.3
+                has_law = law_type:law_subjecthood
+            }
+        }
+
+        scope:rf_dyn_created_country = {
+            rf_dyn_identity_multicultural = yes
+            rf_dyn_identity_select_representative_primary_culture = yes
+        }
+        if = {
+            limit = { is_player = yes }
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_prepare_religion_preview = yes
+            }
+            trigger_event = {
+                id = rf_dynamic_country_identity.2
+                popup = yes
+            }
+        }
+        else = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_select_religion_by_origin_law = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+}
+
+rf_dynamic_country_identity.2 = {
+    type = country_event
+    title = rf_dynamic_country_identity.2.t
+    desc = rf_dynamic_country_identity.2.d
+
+    event_image = {
+        video = "africa_desert_expedition"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+    duration = 3
+
+    trigger = {
+        is_player = yes
+        exists = scope:rf_dyn_created_country
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.2.b
+        default_option = yes
+        trigger = {
+            scope:rf_dyn_created_country = { has_variable = rf_recommend_religion_origin }
+        }
+        ai_chance = { base = 100 }
+
+        show_as_tooltip = {
+            scope:rf_dyn_created_country = {
+                if = {
+                    limit = { exists = scope:rf_preview_origin_religion }
+                    set_state_religion = scope:rf_preview_origin_religion
+                }
+            }
+        }
+
+        hidden_effect = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_apply_origin_state_religion_preview = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.2.b
+        trigger = {
+            scope:rf_dyn_created_country = {
+                NOT = { has_variable = rf_recommend_religion_origin }
+            }
+        }
+        ai_chance = {
+            base = 10
+            modifier = {
+                trigger = {
+                    OR = {
+                        has_law = law_type:law_state_religion
+                        has_law = law_type:law_people_of_the_book
+                        has_law = law_type:law_religious_schools
+                    }
+                }
+                add = 100
+            }
+            modifier = {
+                trigger = {
+                    OR = {
+                        has_law_or_variant = law_type:law_total_separation
+                        has_law_or_variant = law_type:law_state_atheism
+                        has_law = law_type:law_millet_system
+                    }
+                }
+                add = -10
+            }
+        }
+
+        show_as_tooltip = {
+            scope:rf_dyn_created_country = {
+                if = {
+                    limit = { exists = scope:rf_preview_origin_religion }
+                    set_state_religion = scope:rf_preview_origin_religion
+                }
+            }
+        }
+
+        hidden_effect = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_apply_origin_state_religion_preview = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.2.local
+        default_option = yes
+        trigger = {
+            scope:rf_dyn_created_country = { has_variable = rf_recommend_religion_local }
+        }
+        ai_chance = { base = 100 }
+
+        show_as_tooltip = {
+            scope:rf_dyn_created_country = {
+                if = {
+                    limit = { exists = scope:rf_preview_local_religion }
+                    set_state_religion = scope:rf_preview_local_religion
+                }
+            }
+        }
+
+        hidden_effect = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_apply_local_religion_preview = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.2.local
+        trigger = {
+            scope:rf_dyn_created_country = {
+                NOT = { has_variable = rf_recommend_religion_local }
+            }
+        }
+        ai_chance = {
+            base = 25
+            modifier = {
+                trigger = {
+                    OR = {
+                        has_law_or_variant = law_type:law_total_separation
+                        has_law_or_variant = law_type:law_freedom_of_conscience
+                        has_law = law_type:law_millet_system
+                    }
+                }
+                add = 80
+            }
+            modifier = {
+                trigger = {
+                    OR = {
+                        has_law = law_type:law_state_religion
+                        has_law_or_variant = law_type:law_state_atheism
+                        has_law = law_type:law_people_of_the_book
+                    }
+                }
+                add = -20
+            }
+        }
+
+        show_as_tooltip = {
+            scope:rf_dyn_created_country = {
+                if = {
+                    limit = { exists = scope:rf_preview_local_religion }
+                    set_state_religion = scope:rf_preview_local_religion
+                }
+            }
+        }
+
+        hidden_effect = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_apply_local_religion_preview = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.2.e
+        default_option = yes
+        trigger = {
+            scope:rf_dyn_created_country = { has_variable = rf_recommend_religion_atheist }
+        }
+        ai_chance = { base = 100 }
+
+        show_as_tooltip = {
+            scope:rf_dyn_created_country = {
+                set_state_religion = rel:atheist
+            }
+        }
+
+        hidden_effect = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_set_atheist_religion = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+
+    option = {
+        name = rf_dynamic_country_identity.2.e
+        trigger = {
+            scope:rf_dyn_created_country = {
+                NOT = { has_variable = rf_recommend_religion_atheist }
+            }
+        }
+        ai_chance = {
+            base = 0
+            modifier = {
+                trigger = {
+                    has_law_or_variant = law_type:law_state_atheism
+                }
+                add = 100
+            }
+        }
+
+        show_as_tooltip = {
+            scope:rf_dyn_created_country = {
+                set_state_religion = rel:atheist
+            }
+        }
+
+        hidden_effect = {
+            scope:rf_dyn_created_country = {
+                rf_dyn_identity_set_atheist_religion = yes
+                rf_dyn_identity_apply_characters_and_cleanup = yes
+            }
+        }
+    }
+}

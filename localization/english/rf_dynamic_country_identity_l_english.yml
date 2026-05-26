@@ -1,0 +1,11 @@
+﻿l_english:
+  rf_dynamic_country_identity.1.t: "A New National Settlement"
+  rf_dynamic_country_identity.1.d: "[SCOPE.sCountry('rf_dyn_created_country').GetName] must decide which peoples and faiths will define its national institutions. Our citizenship and religious laws shape the answer, but the final settlement can still be directed from the start."
+  rf_dynamic_country_identity.1.a: "Establish a Colonial Administration"
+  rf_dynamic_country_identity.1.b: "Recognize the Homeland Government"
+  rf_dynamic_country_identity.1.c: "Found a Multicultural Nation"
+  rf_dynamic_country_identity.2.t: "A New Religious Settlement"
+  rf_dynamic_country_identity.2.d: "[SCOPE.sCountry('rf_dyn_created_country').GetName] must now settle its official faith. It can preserve our state religion, adopt the religion of its own people, or reject religious authority altogether."
+  rf_dynamic_country_identity.2.b: "Preserve Our State Faith"
+  rf_dynamic_country_identity.2.local: "Adopt a Local Popular Faith"
+  rf_dynamic_country_identity.2.e: "Proclaim State Atheism"

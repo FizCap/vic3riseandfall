@@ -3,44 +3,124 @@
 # Heuristic inspired by dynamic cultures mod #
 #############################################
 
-# rf_assign_dominant_identity
-# Scope: country (new dynamic country just created) with transferred ceded states.
-# Culture approach: use homeland cultures from the capital state's region, then add any extra
-# capital-state cultures at or above 30%, with a country-share fallback if no primaries were found.
+rf_dyn_identity_prepare = {
+    save_scope_as = rf_dyn_created_country
 
-rf_assign_dominant_identity = {
     set_variable = { name = newly_formed_country value = yes days = 90 }
     set_variable = { name = newly_formed_country_cooldown value = yes days = 7 }
 
-    # ==========================================================
-    # CULTURE SELECTION
-    # Base primaries come from homeland cultures in the capital state's region.
-    # Then add any additional cultures that make up >= 30% of the capital state.
-    # Duplicate primary cultures are skipped explicitly.
-    # ==========================================================
-
-    # IMPORTANT: Clear ALL inherited primary cultures first
+    # Clear inherited primary cultures so each policy creates a clean national identity.
     every_primary_culture = {
-        ROOT = { remove_primary_culture = PREV }
+        save_scope_as = rf_identity_old_primary_culture
+        scope:rf_dyn_created_country = { remove_primary_culture = scope:rf_identity_old_primary_culture }
     }
 
     clear_saved_scope = rf_identity_capital_state
     clear_saved_scope = rf_identity_candidate_culture
+    clear_saved_scope = rf_identity_old_primary_culture
 
     capital = {
         save_scope_as = rf_identity_capital_state
     }
+}
 
-    # 1. Add homeland cultures from the capital state's region first.
+rf_dyn_identity_fallback_primary_culture = {
+    # Every policy must leave the country with at least one primary culture.
+    if = {
+        limit = { any_primary_culture = { count = 0 } }
+        capital = {
+            random_scope_culture = {
+                limit = { has_homeland = scope:rf_identity_capital_state }
+                save_scope_as = rf_identity_candidate_culture
+                scope:rf_dyn_created_country = { add_primary_culture = scope:rf_identity_candidate_culture }
+            }
+        }
+    }
+
+    if = {
+        limit = { any_primary_culture = { count = 0 } }
+        capital = {
+            random_scope_culture = {
+                save_scope_as = rf_capital_culture
+                scope:rf_dyn_created_country = { add_primary_culture = scope:rf_capital_culture }
+            }
+        }
+    }
+}
+
+# Colonial policy: use origin primary cultures that are meaningfully present in the new country.
+# This lets exclusionary empires create metropole-led colonial subjects.
+rf_dyn_identity_origin_primary_only = {
+    rf_dyn_identity_prepare = yes
+
+    if = {
+        limit = { exists = scope:rf_dyn_origin_country }
+        scope:rf_dyn_origin_country = {
+            every_primary_culture = {
+                save_scope_as = rf_identity_candidate_culture
+                if = {
+                    limit = {
+                        scope:rf_dyn_created_country = {
+                            culture_percent_country = { target = scope:rf_identity_candidate_culture value >= 0.05 }
+                        }
+                    }
+
+                    scope:rf_dyn_created_country = {
+                        if = {
+                            limit = { NOT = { country_has_primary_culture = scope:rf_identity_candidate_culture } }
+                            add_primary_culture = scope:rf_identity_candidate_culture
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if = {
+        limit = {
+            any_primary_culture = { count = 0 }
+            exists = scope:rf_dyn_origin_country
+        }
+        scope:rf_dyn_origin_country = {
+            every_primary_culture = {
+                save_scope_as = rf_identity_candidate_culture
+                if = {
+                    limit = {
+                        scope:rf_dyn_created_country = {
+                            capital = {
+                                culture_percent_state = { target = scope:rf_identity_candidate_culture value >= 0.05 }
+                            }
+                        }
+                    }
+
+                    scope:rf_dyn_created_country = {
+                        if = {
+                            limit = { NOT = { country_has_primary_culture = scope:rf_identity_candidate_culture } }
+                            add_primary_culture = scope:rf_identity_candidate_culture
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    rf_dyn_identity_fallback_primary_culture = yes
+}
+
+# Homeland policy: recognize the capital region's homeland cultures, but do not add
+# extra populated non-homeland cultures.
+rf_dyn_identity_homeland_only = {
+    rf_dyn_identity_prepare = yes
+
     capital = {
         every_scope_culture = {
             limit = {
                 has_homeland = scope:rf_identity_capital_state
-                NOT = { is_primary_culture_of = ROOT }
+                NOT = { is_primary_culture_of = scope:rf_dyn_created_country }
             }
             save_scope_as = rf_identity_candidate_culture
 
-            ROOT = {
+            scope:rf_dyn_created_country = {
                 if = {
                     limit = { NOT = { country_has_primary_culture = scope:rf_identity_candidate_culture } }
                     add_primary_culture = scope:rf_identity_candidate_culture
@@ -49,7 +129,31 @@ rf_assign_dominant_identity = {
         }
     }
 
-    # 2. Add major non-homeland cultures from the capital state if they reach 30% there.
+    rf_dyn_identity_fallback_primary_culture = yes
+}
+
+# Multicultural policy: preserve the previous broad behavior by using homeland cultures
+# plus major populated cultures in the new country's capital state.
+rf_dyn_identity_multicultural = {
+    rf_dyn_identity_prepare = yes
+
+    capital = {
+        every_scope_culture = {
+            limit = {
+                has_homeland = scope:rf_identity_capital_state
+                NOT = { is_primary_culture_of = scope:rf_dyn_created_country }
+            }
+            save_scope_as = rf_identity_candidate_culture
+
+            scope:rf_dyn_created_country = {
+                if = {
+                    limit = { NOT = { country_has_primary_culture = scope:rf_identity_candidate_culture } }
+                    add_primary_culture = scope:rf_identity_candidate_culture
+                }
+            }
+        }
+    }
+
     every_scope_culture = {
         limit = {
             scope:rf_identity_capital_state = {
@@ -57,7 +161,7 @@ rf_assign_dominant_identity = {
             }
         }
 
-        ROOT = {
+        scope:rf_dyn_created_country = {
             if = {
                 limit = { NOT = { country_has_primary_culture = PREV } }
                 add_primary_culture = PREV
@@ -65,200 +169,104 @@ rf_assign_dominant_identity = {
         }
     }
 
-    # 3. Fallback if homeland-based selection yielded nothing usable.
     if = {
         limit = { any_primary_culture = { count = 0 } }
 
         if = {
             limit = {
                 any_scope_culture = {
-                    ROOT = { culture_percent_country = { target = PREV value >= 0.20 } }
+                    scope:rf_dyn_created_country = { culture_percent_country = { target = PREV value >= 0.20 } }
                 }
             }
             random_scope_culture = {
-                limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.20 } } }
-                ROOT = { add_primary_culture = PREV }
+                limit = { scope:rf_dyn_created_country = { culture_percent_country = { target = PREV value >= 0.20 } } }
+                scope:rf_dyn_created_country = { add_primary_culture = PREV }
             }
         }
         else_if = {
             limit = {
                 any_scope_culture = {
-                    ROOT = { culture_percent_country = { target = PREV value >= 0.15 } }
+                    scope:rf_dyn_created_country = { culture_percent_country = { target = PREV value >= 0.15 } }
                 }
             }
             random_scope_culture = {
-                limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.15 } } }
-                ROOT = { add_primary_culture = PREV }
+                limit = { scope:rf_dyn_created_country = { culture_percent_country = { target = PREV value >= 0.15 } } }
+                scope:rf_dyn_created_country = { add_primary_culture = PREV }
             }
         }
         else_if = {
             limit = {
                 any_scope_culture = {
-                    ROOT = { culture_percent_country = { target = PREV value >= 0.10 } }
+                    scope:rf_dyn_created_country = { culture_percent_country = { target = PREV value >= 0.10 } }
                 }
             }
             random_scope_culture = {
-                limit = { ROOT = { culture_percent_country = { target = PREV value >= 0.10 } } }
-                ROOT = { add_primary_culture = PREV }
+                limit = { scope:rf_dyn_created_country = { culture_percent_country = { target = PREV value >= 0.10 } } }
+                scope:rf_dyn_created_country = { add_primary_culture = PREV }
             }
         }
         else = {
-            # Absolute fallback: Use capital's culture
-            capital = {
-                random_scope_culture = {
-                    save_scope_as = rf_capital_culture
-                    ROOT = { add_primary_culture = scope:rf_capital_culture }
+            rf_dyn_identity_fallback_primary_culture = yes
+        }
+    }
+}
+
+# Automatic player/AI identity policy: use the same historical law logic as the
+# event weights, but resolve without showing player popups.
+rf_dyn_identity_auto_assign = {
+    if = {
+        limit = {
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = {
+                OR = {
+                    has_law = law_type:law_ethnostate
+                    has_law = law_type:law_national_supremacy
+                    has_law = law_type:law_racial_segregation
                 }
             }
         }
+        rf_dyn_identity_origin_primary_only = yes
+    }
+    else_if = {
+        limit = {
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = { has_law = law_type:law_multicultural }
+        }
+        rf_dyn_identity_multicultural = yes
+    }
+    else_if = {
+        limit = {
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = { has_law = law_type:law_subjecthood }
+        }
+        # Imperial subjecthood recognizes a local subject homeland, but not a broad plural nation.
+        rf_dyn_identity_homeland_only = yes
+    }
+    else = {
+        rf_dyn_identity_homeland_only = yes
     }
 
+    rf_dyn_identity_select_representative_primary_culture = yes
+    rf_dyn_identity_select_religion_by_origin_law = yes
+    rf_dyn_identity_apply_characters_and_cleanup = yes
+}
+
+# Shared post-culture identity logic.
+rf_dyn_identity_finalize = {
     # ==========================================================
     # RELIGION SELECTION
-    # Simpler, robust selection: pick one of the country's primary
-    # cultures, sample a pop of that culture, and set the country's
-    # state religion to that pop's religion. This avoids unsupported
-    # tokens and scope mismatches while producing a representative
-    # religion for the newly formed country.
+    # Religion policy follows the origin country's church-and-state law:
+    # state religion and Muslim state-religion variants export the origin
+    # faith; tolerant/secular laws prefer local popular faiths; state atheism exports atheism.
     # ==========================================================
 
-    # Pick a homeland culture from the capital state using descending thresholds.
-    # If none of the homeland cultures actually have pops there, fall back to a random homeland culture.
-    capital = {
-        random_scope_culture = {
-            limit = {
-                has_homeland = scope:rf_identity_capital_state
-                scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.40 } }
-            }
-            save_scope_as = rf_new_primary_culture
-            ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-        }
-    }
+    rf_dyn_identity_select_representative_primary_culture = yes
+    rf_dyn_identity_select_religion_by_origin_law = yes
+    rf_dyn_identity_apply_characters_and_cleanup = yes
+}
 
-    if = {
-        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        capital = {
-            random_scope_culture = {
-                limit = {
-                    has_homeland = scope:rf_identity_capital_state
-                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.35 } }
-                }
-                save_scope_as = rf_new_primary_culture
-                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-            }
-        }
-    }
-
-    if = {
-        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        capital = {
-            random_scope_culture = {
-                limit = {
-                    has_homeland = scope:rf_identity_capital_state
-                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.30 } }
-                }
-                save_scope_as = rf_new_primary_culture
-                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-            }
-        }
-    }
-
-    if = {
-        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        capital = {
-            random_scope_culture = {
-                limit = {
-                    has_homeland = scope:rf_identity_capital_state
-                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.25 } }
-                }
-                save_scope_as = rf_new_primary_culture
-                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-            }
-        }
-    }
-
-    if = {
-        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        capital = {
-            random_scope_culture = {
-                limit = {
-                    has_homeland = scope:rf_identity_capital_state
-                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.20 } }
-                }
-                save_scope_as = rf_new_primary_culture
-                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-            }
-        }
-    }
-
-    if = {
-        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        capital = {
-            random_scope_culture = {
-                limit = {
-                    has_homeland = scope:rf_identity_capital_state
-                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.10 } }
-                }
-                save_scope_as = rf_new_primary_culture
-                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-            }
-        }
-    }
-
-    # If still none found, use any homeland culture from the capital region.
-    if = {
-        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        capital = {
-            random_scope_culture = {
-                limit = { has_homeland = scope:rf_identity_capital_state }
-                save_scope_as = rf_new_primary_culture
-                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-            }
-        }
-    }
-
-    # Final fallback: use the capital's leading culture.
-    if = {
-        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
-        capital = {
-            random_scope_culture = {
-                save_scope_as = rf_new_primary_culture
-                ROOT = { set_variable = { name = rf_new_primary_culture_found value = yes } }
-            }
-        }
-    }
-
-    # Sample a pop of that culture within the country's states
-    if = {
-        limit = { has_variable = rf_new_primary_culture_found }
-        random_scope_pop = {
-            limit = { state = { owner = ROOT } culture = scope:rf_new_primary_culture }
-            save_scope_as = rf_random_pop
-        }
-
-        if = {
-            limit = { exists = scope:rf_random_pop }
-            scope:rf_random_pop = {
-                religion = { save_scope_as = rf_target_religion }
-            }
-            set_state_religion = scope:rf_target_religion
-        }
-        else = {
-            # Fallback: pick any pop in the country and use its religion
-            random_scope_pop = {
-                limit = { state = { owner = ROOT } }
-                save_scope_as = rf_random_pop
-            }
-            if = {
-                limit = { exists = scope:rf_random_pop }
-                scope:rf_random_pop = {
-                    religion = { save_scope_as = rf_target_religion }
-                }
-                set_state_religion = scope:rf_target_religion
-            }
-        }
-    }
-
+# Apply ruler/character identity after culture and religion have both been selected.
+rf_dyn_identity_apply_characters_and_cleanup = {
     # For monarchies, generate a fresh ruler so the new culture can also produce a fitting name.
     if = {
         limit = {
@@ -285,7 +293,7 @@ rf_assign_dominant_identity = {
             OR = {
                 is_ruler_of_own_country = yes
                 is_heir_of_own_country = yes
-                owner = ROOT
+                owner = scope:rf_dyn_created_country
             }
         }
 
@@ -309,12 +317,346 @@ rf_assign_dominant_identity = {
     # Final cleanup
     clear_saved_scope = rf_identity_capital_state
     clear_saved_scope = rf_identity_candidate_culture
+    clear_saved_scope = rf_identity_old_primary_culture
     remove_variable = rf_new_primary_culture_found
+    remove_variable = rf_target_religion_found
     clear_saved_scope = rf_new_primary_culture
     clear_saved_scope = rf_capital_culture
     clear_saved_scope = rf_random_pop
     clear_saved_scope = rf_target_religion
+    clear_saved_scope = rf_origin_state_religion
+    clear_saved_scope = rf_preview_origin_religion
+    clear_saved_scope = rf_preview_local_religion
+    clear_saved_scope = rf_preview_local_pop
+    remove_variable = rf_recommend_religion_origin
+    remove_variable = rf_recommend_religion_local
+    remove_variable = rf_recommend_religion_atheist
     clear_saved_scope = rf_old_ruler
+}
+
+# Pick a representative primary culture for ruler naming and religion sampling.
+rf_dyn_identity_select_representative_primary_culture = {
+    capital = {
+        random_scope_culture = {
+            limit = {
+                has_homeland = scope:rf_identity_capital_state
+                scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.40 } }
+            }
+            save_scope_as = rf_new_primary_culture
+            scope:rf_dyn_created_country = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.35 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                scope:rf_dyn_created_country = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.30 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                scope:rf_dyn_created_country = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.25 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                scope:rf_dyn_created_country = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.20 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                scope:rf_dyn_created_country = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = {
+                    has_homeland = scope:rf_identity_capital_state
+                    scope:rf_identity_capital_state = { culture_percent_state = { target = PREV value >= 0.10 } }
+                }
+                save_scope_as = rf_new_primary_culture
+                scope:rf_dyn_created_country = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    # If still none found, use any homeland culture from the capital region.
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                limit = { has_homeland = scope:rf_identity_capital_state }
+                save_scope_as = rf_new_primary_culture
+                scope:rf_dyn_created_country = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+
+    # Final fallback: use the capital's leading culture.
+    if = {
+        limit = { NOT = { has_variable = rf_new_primary_culture_found } }
+        capital = {
+            random_scope_culture = {
+                save_scope_as = rf_new_primary_culture
+                scope:rf_dyn_created_country = { set_variable = { name = rf_new_primary_culture_found value = yes } }
+            }
+        }
+    }
+}
+
+# Preselect religion results for the player popup so show_as_tooltip can display
+# the actual state religion effect without exposing the full fallback script.
+rf_dyn_identity_prepare_religion_preview = {
+    remove_variable = rf_recommend_religion_origin
+    remove_variable = rf_recommend_religion_local
+    remove_variable = rf_recommend_religion_atheist
+
+    if = {
+        limit = { exists = scope:rf_dyn_origin_country }
+        scope:rf_dyn_origin_country = {
+            religion = { save_scope_as = rf_preview_origin_religion }
+        }
+    }
+
+    # Store a single player recommendation so the event checkmark matches auto identity logic.
+    if = {
+        limit = {
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = { has_law_or_variant = law_type:law_state_atheism }
+        }
+        set_variable = rf_recommend_religion_atheist
+    }
+    else_if = {
+        limit = {
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = {
+                OR = {
+                    has_law = law_type:law_state_religion
+                    has_law = law_type:law_people_of_the_book
+                    has_law = law_type:law_religious_schools
+                }
+            }
+        }
+        set_variable = rf_recommend_religion_origin
+    }
+    else = {
+        set_variable = rf_recommend_religion_local
+    }
+
+    if = {
+        limit = { has_variable = rf_new_primary_culture_found }
+        random_scope_pop = {
+            limit = {
+                state = { owner = scope:rf_dyn_created_country }
+                culture = scope:rf_new_primary_culture
+            }
+            save_scope_as = rf_preview_local_pop
+        }
+    }
+
+    if = {
+        limit = {
+            NOT = { exists = scope:rf_preview_local_pop }
+        }
+        random_scope_pop = {
+            limit = { state = { owner = scope:rf_dyn_created_country } }
+            save_scope_as = rf_preview_local_pop
+        }
+    }
+
+    if = {
+        limit = { exists = scope:rf_preview_local_pop }
+        scope:rf_preview_local_pop = {
+            religion = { save_scope_as = rf_preview_local_religion }
+        }
+    }
+}
+
+rf_dyn_identity_apply_origin_state_religion_preview = {
+    if = {
+        limit = { exists = scope:rf_preview_origin_religion }
+        set_state_religion = scope:rf_preview_origin_religion
+        religion = { save_scope_as = rf_target_religion }
+        set_variable = rf_target_religion_found
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_target_religion_found } }
+        rf_dyn_identity_set_origin_state_religion = yes
+    }
+}
+
+rf_dyn_identity_apply_local_religion_preview = {
+    if = {
+        limit = { exists = scope:rf_preview_local_religion }
+        set_state_religion = scope:rf_preview_local_religion
+        religion = { save_scope_as = rf_target_religion }
+        set_variable = rf_target_religion_found
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_target_religion_found } }
+        rf_dyn_identity_select_local_religion = yes
+    }
+}
+
+# Select the state religion according to the creator's religion laws, with local fallbacks.
+rf_dyn_identity_select_religion_by_origin_law = {
+    if = {
+        limit = {
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = { has_law_or_variant = law_type:law_state_atheism }
+        }
+        rf_dyn_identity_set_atheist_religion = yes
+    }
+
+    # Millet administration historically recognized local religious communities,
+    # so successor states should prefer the homeland/pop religion over metropole faith.
+    if = {
+        limit = {
+            NOT = { has_variable = rf_target_religion_found }
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = { has_law = law_type:law_millet_system }
+        }
+        rf_dyn_identity_select_local_religion = yes
+    }
+
+    if = {
+        limit = {
+            NOT = { has_variable = rf_target_religion_found }
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = {
+                OR = {
+                    has_law_or_variant = law_type:law_state_religion
+                    has_law = law_type:law_people_of_the_book
+                    has_law = law_type:law_religious_schools
+                }
+            }
+        }
+        rf_dyn_identity_set_origin_state_religion = yes
+    }
+
+    if = {
+        limit = {
+            NOT = { has_variable = rf_target_religion_found }
+            exists = scope:rf_dyn_origin_country
+            scope:rf_dyn_origin_country = { has_law_or_variant = law_type:law_freedom_of_conscience }
+        }
+        rf_dyn_identity_select_local_religion = yes
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_target_religion_found } }
+        rf_dyn_identity_select_local_religion = yes
+    }
+}
+
+# Preserve the creator's official faith when the new country is meant to be an extension
+# of a confessional state or mission-school administration.
+rf_dyn_identity_set_origin_state_religion = {
+    if = {
+        limit = { exists = scope:rf_dyn_origin_country }
+        scope:rf_dyn_origin_country = {
+            religion = { save_scope_as = rf_origin_state_religion }
+        }
+    }
+
+    if = {
+        limit = { exists = scope:rf_origin_state_religion }
+        set_state_religion = scope:rf_origin_state_religion
+        religion = { save_scope_as = rf_target_religion }
+        set_variable = rf_target_religion_found
+    }
+
+    if = {
+        limit = { NOT = { has_variable = rf_target_religion_found } }
+        rf_dyn_identity_select_local_religion = yes
+    }
+}
+
+# Let player-directed settlements explicitly found a secular anti-clerical state.
+rf_dyn_identity_set_atheist_religion = {
+    set_state_religion = rel:atheist
+    religion = { save_scope_as = rf_target_religion }
+    set_variable = rf_target_religion_found
+}
+
+# Representative local fallback: use a pop of the chosen primary culture, then any pop.
+rf_dyn_identity_select_local_religion = {
+    if = {
+        limit = { has_variable = rf_new_primary_culture_found }
+        random_scope_pop = {
+            limit = { state = { owner = scope:rf_dyn_created_country } culture = scope:rf_new_primary_culture }
+            save_scope_as = rf_random_pop
+        }
+
+        if = {
+            limit = { exists = scope:rf_random_pop }
+            scope:rf_random_pop = {
+                religion = { save_scope_as = rf_target_religion }
+            }
+            set_state_religion = scope:rf_target_religion
+            set_variable = rf_target_religion_found
+        }
+        else = {
+            # Fallback: pick any pop in the country and use its religion
+            random_scope_pop = {
+                limit = { state = { owner = scope:rf_dyn_created_country } }
+                save_scope_as = rf_random_pop
+            }
+            if = {
+                limit = { exists = scope:rf_random_pop }
+                scope:rf_random_pop = {
+                    religion = { save_scope_as = rf_target_religion }
+                }
+                set_state_religion = scope:rf_target_religion
+                set_variable = rf_target_religion_found
+            }
+        }
+    }
+}
+
+# Backwards-compatible default for any other dynamic identity callers.
+rf_assign_dominant_identity = {
+    rf_dyn_identity_multicultural = yes
+    rf_dyn_identity_finalize = yes
 }
 
 # Assign a random dynamic country map color variable to the newly created dynamic country

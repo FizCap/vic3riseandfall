@@ -28,8 +28,10 @@
   setting_economic_boost_disabled_desc: "No economic boost is applied."
 
   rule_ai_improvement: "RF: AI Improvement"
-  setting_ai_improvement_enabled: "Enabled (Experimental)"
-  setting_ai_improvement_enabled_desc: "Experimental: Changes vanilla AI to aggressively balance its budget and avoid running deficits. Will have better building logic. Behavior may be unpredictable and cause performance issues."
+  setting_ai_improvement_lite: "Lite"
+  setting_ai_improvement_lite_desc: "AI countries use the improved economy logic on the yearly pulse and subsidies on the monthly pulse. This is the previous enabled behavior."
+  setting_ai_improvement_on: "On"
+  setting_ai_improvement_on_desc: "AI countries use the improved economy logic and subsidies on the monthly pulse. This is more responsive but may affect performance."
   setting_ai_improvement_disabled: "Disabled"
   setting_ai_improvement_disabled_desc: "AI will behave like vanilla"
 

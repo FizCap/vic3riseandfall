@@ -13,6 +13,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:spanish }
+                                state_region = { is_homeland = cu:catalan }
                             }
                             state_region = {
                                 remove_homeland = cu:catalan
@@ -33,6 +34,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:spanish }
+                                state_region = { is_homeland = cu:galician }
                             }
                             state_region = {
                                 remove_homeland = cu:galician
@@ -53,6 +55,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:spanish }
+                                state_region = { is_homeland = cu:basque }
                             }
                             state_region = {
                                 remove_homeland = cu:basque
@@ -73,6 +76,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:spanish }
+                                state_region = { is_homeland = cu:asturleonese }
                             }
                             state_region = {
                                 remove_homeland = cu:asturleonese
@@ -96,6 +100,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:french }
+                                state_region = { is_homeland = cu:occitan }
                             }
                             state_region = {
                                 remove_homeland = cu:occitan
@@ -116,6 +121,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:french }
+                                state_region = { is_homeland = cu:breton }
                             }
                             state_region = {
                                 remove_homeland = cu:breton
@@ -138,6 +144,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:dutch }
+                                state_region = { is_homeland = cu:flemish }
                             }
                             state_region = {
                                 remove_homeland = cu:flemish
@@ -158,6 +165,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:dutch }
+                                state_region = { is_homeland = cu:wallonian }
                             }
                             state_region = {
                                 remove_homeland = cu:wallonian
@@ -180,6 +188,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:south_german }
+                                state_region = { is_homeland = cu:alemannic }
                             }
                             state_region = {
                                 remove_homeland = cu:alemannic
@@ -202,6 +211,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:serb }
+                                state_region = { is_homeland = cu:croat }
                             }
                             state_region = {
                                 remove_homeland = cu:croat
@@ -222,6 +232,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:serb }
+                                state_region = { is_homeland = cu:slovene }
                             }
                             state_region = {
                                 remove_homeland = cu:slovene
@@ -242,6 +253,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:serb }
+                                state_region = { is_homeland = cu:bosniak }
                             }
                             state_region = {
                                 remove_homeland = cu:bosniak
@@ -262,6 +274,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:serb }
+                                state_region = { is_homeland = cu:bulgarian }
                             }
                             state_region = {
                                 remove_homeland = cu:bulgarian
@@ -284,6 +297,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:czech }
+                                state_region = { is_homeland = cu:slovak }
                             }
                             state_region = {
                                 remove_homeland = cu:slovak
@@ -304,6 +318,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:czech }
+                                state_region = { is_homeland = cu:sorb }
                             }
                             state_region = {
                                 remove_homeland = cu:sorb
@@ -326,6 +341,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:lithuanian }
+                                state_region = { is_homeland = cu:latvian }
                             }
                             state_region = {
                                 remove_homeland = cu:latvian
@@ -346,6 +362,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:finnish }
+                                state_region = { is_homeland = cu:estonian }
                             }
                             state_region = {
                                 remove_homeland = cu:estonian
@@ -368,6 +385,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:finnish }
+                                state_region = { is_homeland = cu:sami }
                             }
                             state_region = {
                                 remove_homeland = cu:sami
@@ -388,6 +406,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hungarian }
+                                state_region = { is_homeland = cu:ugrian }
                             }
                             state_region = {
                                 remove_homeland = cu:ugrian
@@ -408,6 +427,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:finnish }
+                                state_region = { is_homeland = cu:mari }
                             }
                             state_region = {
                                 remove_homeland = cu:mari
@@ -428,6 +448,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:finnish }
+                                state_region = { is_homeland = cu:mordvin }
                             }
                             state_region = {
                                 remove_homeland = cu:mordvin
@@ -450,6 +471,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:south_italian }
+                                state_region = { is_homeland = cu:maltese }
                             }
                             state_region = {
                                 remove_homeland = cu:maltese
@@ -475,6 +497,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:irish }
+                                state_region = { is_homeland = cu:breton }
                             }
                             state_region = {
                                 remove_homeland = cu:breton
@@ -497,6 +520,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:scottish }
+                                state_region = { is_homeland = cu:scottish_gaelic }
                             }
                             state_region = {
                                 remove_homeland = cu:scottish_gaelic
@@ -519,6 +543,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:turkish }
+                                state_region = { is_homeland = cu:azerbaijani }
                             }
                             state_region = {
                                 remove_homeland = cu:azerbaijani
@@ -539,6 +564,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:turkish }
+                                state_region = { is_homeland = cu:tatar }
                             }
                             state_region = {
                                 remove_homeland = cu:tatar
@@ -559,6 +585,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:turkish }
+                                state_region = { is_homeland = cu:bashkir }
                             }
                             state_region = {
                                 remove_homeland = cu:bashkir
@@ -579,6 +606,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:turkish }
+                                state_region = { is_homeland = cu:chuvash }
                             }
                             state_region = {
                                 remove_homeland = cu:chuvash
@@ -601,6 +629,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:uzbek }
+                                state_region = { is_homeland = cu:kazak }
                             }
                             state_region = {
                                 remove_homeland = cu:kazak
@@ -621,6 +650,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:uzbek }
+                                state_region = { is_homeland = cu:kirgiz }
                             }
                             state_region = {
                                 remove_homeland = cu:kirgiz
@@ -641,6 +671,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:uzbek }
+                                state_region = { is_homeland = cu:turkmen }
                             }
                             state_region = {
                                 remove_homeland = cu:turkmen
@@ -661,6 +692,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:uzbek }
+                                state_region = { is_homeland = cu:uighur }
                             }
                             state_region = {
                                 remove_homeland = cu:uighur
@@ -683,6 +715,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:persian }
+                                state_region = { is_homeland = cu:tajik }
                             }
                             state_region = {
                                 remove_homeland = cu:tajik
@@ -703,6 +736,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:persian }
+                                state_region = { is_homeland = cu:kurdish }
                             }
                             state_region = {
                                 remove_homeland = cu:kurdish
@@ -723,6 +757,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:persian }
+                                state_region = { is_homeland = cu:pashtun }
                             }
                             state_region = {
                                 remove_homeland = cu:pashtun
@@ -743,6 +778,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:persian }
+                                state_region = { is_homeland = cu:baluchi }
                             }
                             state_region = {
                                 remove_homeland = cu:baluchi
@@ -763,6 +799,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:persian }
+                                state_region = { is_homeland = cu:hazara }
                             }
                             state_region = {
                                 remove_homeland = cu:hazara
@@ -783,6 +820,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:persian }
+                                state_region = { is_homeland = cu:luri }
                             }
                             state_region = {
                                 remove_homeland = cu:luri
@@ -803,6 +841,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:persian }
+                                state_region = { is_homeland = cu:mazanderani }
                             }
                             state_region = {
                                 remove_homeland = cu:mazanderani
@@ -825,6 +864,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:north_caucasian }
+                                state_region = { is_homeland = cu:chechen }
                             }
                             state_region = {
                                 remove_homeland = cu:chechen
@@ -845,6 +885,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:north_caucasian }
+                                state_region = { is_homeland = cu:circassian }
                             }
                             state_region = {
                                 remove_homeland = cu:circassian
@@ -867,6 +908,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mongol }
+                                state_region = { is_homeland = cu:kalmyk }
                             }
                             state_region = {
                                 remove_homeland = cu:kalmyk
@@ -887,6 +929,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mongol }
+                                state_region = { is_homeland = cu:tuvan }
                             }
                             state_region = {
                                 remove_homeland = cu:tuvan
@@ -907,6 +950,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mongol }
+                                state_region = { is_homeland = cu:buryat }
                             }
                             state_region = {
                                 remove_homeland = cu:buryat
@@ -929,6 +973,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:siberian }
+                                state_region = { is_homeland = cu:yakut }
                             }
                             state_region = {
                                 remove_homeland = cu:yakut
@@ -951,6 +996,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:south_italian }
+                                state_region = { is_homeland = cu:corsican }
                             }
                             state_region = {
                                 remove_homeland = cu:corsican
@@ -973,6 +1019,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hungarian }
+                                state_region = { is_homeland = cu:szekely }
                             }
                             state_region = {
                                 remove_homeland = cu:szekely
@@ -995,6 +1042,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mande }
+                                state_region = { is_homeland = cu:bambara }
                             }
                             state_region = {
                                 remove_homeland = cu:bambara
@@ -1015,6 +1063,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mande }
+                                state_region = { is_homeland = cu:dyula }
                             }
                             state_region = {
                                 remove_homeland = cu:dyula
@@ -1035,6 +1084,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mande }
+                                state_region = { is_homeland = cu:kissi }
                             }
                             state_region = {
                                 remove_homeland = cu:kissi
@@ -1055,6 +1105,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mande }
+                                state_region = { is_homeland = cu:senufo }
                             }
                             state_region = {
                                 remove_homeland = cu:senufo
@@ -1075,6 +1126,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mande }
+                                state_region = { is_homeland = cu:mossi }
                             }
                             state_region = {
                                 remove_homeland = cu:mossi
@@ -1095,6 +1147,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mande }
+                                state_region = { is_homeland = cu:songhai }
                             }
                             state_region = {
                                 remove_homeland = cu:songhai
@@ -1115,6 +1168,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mande }
+                                state_region = { is_homeland = cu:wolof }
                             }
                             state_region = {
                                 remove_homeland = cu:wolof
@@ -1135,6 +1189,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:mande }
+                                state_region = { is_homeland = cu:haratin }
                             }
                             state_region = {
                                 remove_homeland = cu:haratin
@@ -1157,6 +1212,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:akan }
+                                state_region = { is_homeland = cu:bassa }
                             }
                             state_region = {
                                 remove_homeland = cu:bassa
@@ -1177,6 +1233,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:akan }
+                                state_region = { is_homeland = cu:kru }
                             }
                             state_region = {
                                 remove_homeland = cu:kru
@@ -1197,6 +1254,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:akan }
+                                state_region = { is_homeland = cu:ewe }
                             }
                             state_region = {
                                 remove_homeland = cu:ewe
@@ -1217,6 +1275,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:akan }
+                                state_region = { is_homeland = cu:fon }
                             }
                             state_region = {
                                 remove_homeland = cu:fon
@@ -1239,6 +1298,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:ibo }
+                                state_region = { is_homeland = cu:ibibio }
                             }
                             state_region = {
                                 remove_homeland = cu:ibibio
@@ -1259,6 +1319,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:ibo }
+                                state_region = { is_homeland = cu:edo }
                             }
                             state_region = {
                                 remove_homeland = cu:edo
@@ -1279,6 +1340,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:yoruba }
+                                state_region = { is_homeland = cu:ibo }
                             }
                             state_region = {
                                 remove_homeland = cu:ibo
@@ -1299,6 +1361,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hausa }
+                                state_region = { is_homeland = cu:tiv }
                             }
                             state_region = {
                                 remove_homeland = cu:tiv
@@ -1319,6 +1382,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hausa }
+                                state_region = { is_homeland = cu:fulbe }
                             }
                             state_region = {
                                 remove_homeland = cu:fulbe
@@ -1341,6 +1405,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:sara }
+                                state_region = { is_homeland = cu:baguirmi }
                             }
                             state_region = {
                                 remove_homeland = cu:baguirmi
@@ -1361,6 +1426,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:sara }
+                                state_region = { is_homeland = cu:kanuri }
                             }
                             state_region = {
                                 remove_homeland = cu:kanuri
@@ -1381,6 +1447,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:sara }
+                                state_region = { is_homeland = cu:teda }
                             }
                             state_region = {
                                 remove_homeland = cu:teda
@@ -1401,6 +1468,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:equatorial_bantu }
+                                state_region = { is_homeland = cu:fang }
                             }
                             state_region = {
                                 remove_homeland = cu:fang
@@ -1421,6 +1489,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:fluvian_bantu }
+                                state_region = { is_homeland = cu:bakongo }
                             }
                             state_region = {
                                 remove_homeland = cu:bakongo
@@ -1441,6 +1510,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:fluvian_bantu }
+                                state_region = { is_homeland = cu:luba }
                             }
                             state_region = {
                                 remove_homeland = cu:luba
@@ -1461,6 +1531,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:fluvian_bantu }
+                                state_region = { is_homeland = cu:lunda }
                             }
                             state_region = {
                                 remove_homeland = cu:lunda
@@ -1481,6 +1552,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:fluvian_bantu }
+                                state_region = { is_homeland = cu:mongo }
                             }
                             state_region = {
                                 remove_homeland = cu:mongo
@@ -1503,6 +1575,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:lacustrine_bantu }
+                                state_region = { is_homeland = cu:baganda }
                             }
                             state_region = {
                                 remove_homeland = cu:baganda
@@ -1523,6 +1596,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:lacustrine_bantu }
+                                state_region = { is_homeland = cu:ruanda }
                             }
                             state_region = {
                                 remove_homeland = cu:ruanda
@@ -1543,6 +1617,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:lacustrine_bantu }
+                                state_region = { is_homeland = cu:rundi }
                             }
                             state_region = {
                                 remove_homeland = cu:rundi
@@ -1563,6 +1638,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:lacustrine_bantu }
+                                state_region = { is_homeland = cu:kikuyu }
                             }
                             state_region = {
                                 remove_homeland = cu:kikuyu
@@ -1583,6 +1659,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:swahili }
+                                state_region = { is_homeland = cu:sukuma }
                             }
                             state_region = {
                                 remove_homeland = cu:sukuma
@@ -1605,6 +1682,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nguni }
+                                state_region = { is_homeland = cu:zulu }
                             }
                             state_region = {
                                 remove_homeland = cu:zulu
@@ -1625,6 +1703,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nguni }
+                                state_region = { is_homeland = cu:xhosa }
                             }
                             state_region = {
                                 remove_homeland = cu:xhosa
@@ -1645,6 +1724,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nguni }
+                                state_region = { is_homeland = cu:sotho }
                             }
                             state_region = {
                                 remove_homeland = cu:sotho
@@ -1665,6 +1745,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nguni }
+                                state_region = { is_homeland = cu:tswana }
                             }
                             state_region = {
                                 remove_homeland = cu:tswana
@@ -1685,6 +1766,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nguni }
+                                state_region = { is_homeland = cu:shona }
                             }
                             state_region = {
                                 remove_homeland = cu:shona
@@ -1705,6 +1787,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nguni }
+                                state_region = { is_homeland = cu:herero }
                             }
                             state_region = {
                                 remove_homeland = cu:herero
@@ -1728,6 +1811,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nilotic }
+                                state_region = { is_homeland = cu:dinka }
                             }
                             state_region = {
                                 remove_homeland = cu:dinka
@@ -1748,6 +1832,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nilotic }
+                                state_region = { is_homeland = cu:nuer }
                             }
                             state_region = {
                                 remove_homeland = cu:nuer
@@ -1768,6 +1853,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nilotic }
+                                state_region = { is_homeland = cu:luo }
                             }
                             state_region = {
                                 remove_homeland = cu:luo
@@ -1788,6 +1874,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:nilotic }
+                                state_region = { is_homeland = cu:maasai }
                             }
                             state_region = {
                                 remove_homeland = cu:maasai
@@ -1810,6 +1897,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:amhara }
+                                state_region = { is_homeland = cu:tigray }
                             }
                             state_region = {
                                 remove_homeland = cu:tigray
@@ -1830,6 +1918,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:oromo }
+                                state_region = { is_homeland = cu:sidama }
                             }
                             state_region = {
                                 remove_homeland = cu:sidama
@@ -1850,6 +1939,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:somali }
+                                state_region = { is_homeland = cu:afar }
                             }
                             state_region = {
                                 remove_homeland = cu:afar
@@ -1870,6 +1960,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:sudanese }
+                                state_region = { is_homeland = cu:beja }
                             }
                             state_region = {
                                 remove_homeland = cu:beja
@@ -1890,6 +1981,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:sudanese }
+                                state_region = { is_homeland = cu:fur }
                             }
                             state_region = {
                                 remove_homeland = cu:fur
@@ -1910,6 +2002,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:armenian }
+                                state_region = { is_homeland = cu:assyrian }
                             }
                             state_region = {
                                 remove_homeland = cu:assyrian
@@ -1933,6 +2026,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:han }
+                                state_region = { is_homeland = cu:manchu }
                             }
                             state_region = {
                                 remove_homeland = cu:manchu
@@ -1953,6 +2047,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:han }
+                                state_region = { is_homeland = cu:miao }
                             }
                             state_region = {
                                 remove_homeland = cu:miao
@@ -1973,6 +2068,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:han }
+                                state_region = { is_homeland = cu:yi }
                             }
                             state_region = {
                                 remove_homeland = cu:yi
@@ -1993,6 +2089,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:han }
+                                state_region = { is_homeland = cu:zhuang }
                             }
                             state_region = {
                                 remove_homeland = cu:zhuang
@@ -2013,6 +2110,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:han }
+                                state_region = { is_homeland = cu:tibetan }
                             }
                             state_region = {
                                 remove_homeland = cu:tibetan
@@ -2035,6 +2133,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:bengali }
                             }
                             state_region = {
                                 remove_homeland = cu:bengali
@@ -2055,6 +2154,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:gujarati }
                             }
                             state_region = {
                                 remove_homeland = cu:gujarati
@@ -2075,6 +2175,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:marathi }
                             }
                             state_region = {
                                 remove_homeland = cu:marathi
@@ -2095,6 +2196,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:tamil }
                             }
                             state_region = {
                                 remove_homeland = cu:tamil
@@ -2115,6 +2217,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:assamese }
                             }
                             state_region = {
                                 remove_homeland = cu:assamese
@@ -2135,6 +2238,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:avadhi }
                             }
                             state_region = {
                                 remove_homeland = cu:avadhi
@@ -2155,6 +2259,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:bihari }
                             }
                             state_region = {
                                 remove_homeland = cu:bihari
@@ -2175,6 +2280,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:panjabi }
                             }
                             state_region = {
                                 remove_homeland = cu:panjabi
@@ -2195,6 +2301,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:kannada }
                             }
                             state_region = {
                                 remove_homeland = cu:kannada
@@ -2215,6 +2322,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:telegu }
                             }
                             state_region = {
                                 remove_homeland = cu:telegu
@@ -2235,6 +2343,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:oriya }
                             }
                             state_region = {
                                 remove_homeland = cu:oriya
@@ -2255,6 +2364,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:hindustani }
+                                state_region = { is_homeland = cu:sinhala }
                             }
                             state_region = {
                                 remove_homeland = cu:sinhala
@@ -2277,6 +2387,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:han }
+                                state_region = { is_homeland = cu:min }
                             }
                             state_region = {
                                 remove_homeland = cu:min
@@ -2297,6 +2408,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:han }
+                                state_region = { is_homeland = cu:hakka }
                             }
                             state_region = {
                                 remove_homeland = cu:hakka
@@ -2317,6 +2429,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:han }
+                                state_region = { is_homeland = cu:yue }
                             }
                             state_region = {
                                 remove_homeland = cu:yue
@@ -2339,6 +2452,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:vietnamese }
+                                state_region = { is_homeland = cu:khmer }
                             }
                             state_region = {
                                 remove_homeland = cu:khmer
@@ -2359,6 +2473,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:vietnamese }
+                                state_region = { is_homeland = cu:lao }
                             }
                             state_region = {
                                 remove_homeland = cu:lao
@@ -2379,6 +2494,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:vietnamese }
+                                state_region = { is_homeland = cu:thai }
                             }
                             state_region = {
                                 remove_homeland = cu:thai
@@ -2399,6 +2515,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:vietnamese }
+                                state_region = { is_homeland = cu:champa }
                             }
                             state_region = {
                                 remove_homeland = cu:champa
@@ -2421,6 +2538,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:javan }
+                                state_region = { is_homeland = cu:batak }
                             }
                             state_region = {
                                 remove_homeland = cu:batak
@@ -2441,6 +2559,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:javan }
+                                state_region = { is_homeland = cu:dayak }
                             }
                             state_region = {
                                 remove_homeland = cu:dayak
@@ -2461,6 +2580,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:javan }
+                                state_region = { is_homeland = cu:moro }
                             }
                             state_region = {
                                 remove_homeland = cu:moro
@@ -2481,6 +2601,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:javan }
+                                state_region = { is_homeland = cu:moluccan }
                             }
                             state_region = {
                                 remove_homeland = cu:moluccan
@@ -2501,6 +2622,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:javan }
+                                state_region = { is_homeland = cu:filipino }
                             }
                             state_region = {
                                 remove_homeland = cu:filipino
@@ -2521,6 +2643,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:javan }
+                                state_region = { is_homeland = cu:lumad }
                             }
                             state_region = {
                                 remove_homeland = cu:lumad
@@ -2541,6 +2664,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:javan }
+                                state_region = { is_homeland = cu:visayan }
                             }
                             state_region = {
                                 remove_homeland = cu:visayan
@@ -2563,6 +2687,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:north_german }
+                                state_region = { is_homeland = cu:south_german }
                             }
                             state_region = {
                                 remove_homeland = cu:south_german
@@ -2583,6 +2708,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:north_german }
+                                state_region = { is_homeland = cu:east_german }
                             }
                             state_region = {
                                 remove_homeland = cu:east_german
@@ -2605,6 +2731,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:north_italian }
+                                state_region = { is_homeland = cu:south_italian }
                             }
                             state_region = {
                                 remove_homeland = cu:south_italian
@@ -2627,6 +2754,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:russian }
+                                state_region = { is_homeland = cu:byelorussian }
                             }
                             state_region = {
                                 remove_homeland = cu:byelorussian
@@ -2647,6 +2775,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:russian }
+                                state_region = { is_homeland = cu:ukrainian }
                             }
                             state_region = {
                                 remove_homeland = cu:ukrainian
@@ -2669,6 +2798,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:swedish }
+                                state_region = { is_homeland = cu:danish }
                             }
                             state_region = {
                                 remove_homeland = cu:danish
@@ -2689,6 +2819,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:swedish }
+                                state_region = { is_homeland = cu:norwegian }
                             }
                             state_region = {
                                 remove_homeland = cu:norwegian
@@ -2709,6 +2840,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:swedish }
+                                state_region = { is_homeland = cu:finnish }
                             }
                             state_region = {
                                 remove_homeland = cu:finnish
@@ -2729,6 +2861,7 @@
                         if = {
                             limit = {
                                 any_scope_pop = { culture = cu:swedish }
+                                state_region = { is_homeland = cu:icelandic }
                             }
                             state_region = {
                                 remove_homeland = cu:icelandic
@@ -2751,6 +2884,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:bedouin }
+								state_region = { is_homeland = cu:maghrebi }
 							}
 						 state_region = {
 								remove_homeland = cu:maghrebi
@@ -2771,6 +2905,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:bedouin }
+								state_region = { is_homeland = cu:mashriqi }
 							}
 							state_region = {
 								remove_homeland = cu:mashriqi
@@ -2791,6 +2926,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:bedouin }
+								state_region = { is_homeland = cu:misri }
 							}
 							state_region = {
 								remove_homeland = cu:misri
@@ -2811,6 +2947,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:bedouin }
+								state_region = { is_homeland = cu:berber }
 							}
 							state_region = {
 								remove_homeland = cu:berber
@@ -2831,6 +2968,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:bedouin }
+								state_region = { is_homeland = cu:yemenite }
 							}
 							state_region = {
 								remove_homeland = cu:yemenite
@@ -2855,6 +2993,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:brazilian }
+								state_region = { is_homeland = cu:brazilian }
 							}
 						 state_region = {
 								remove_homeland = cu:brazilian
@@ -2875,6 +3014,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:brazilian }
+								state_region = { is_homeland = cu:sulista }
 							}
 							state_region = {
 								remove_homeland = cu:sulista
@@ -2895,6 +3035,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:brazilian }
+								state_region = { is_homeland = cu:paulista }
 							}
 							state_region = {
 								remove_homeland = cu:paulista
@@ -2917,6 +3058,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:nahua }
+								state_region = { is_homeland = cu:zapotec }
 							}
 							state_region = {
 								remove_homeland = cu:zapotec
@@ -2937,6 +3079,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:nahua }
+								state_region = { is_homeland = cu:tarascan }
 							}
 							state_region = {
 								remove_homeland = cu:tarascan
@@ -2957,6 +3100,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:nahua }
+								state_region = { is_homeland = cu:mayan }
 							}
 							state_region = {
 								remove_homeland = cu:mayan
@@ -2979,6 +3123,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:metis }
 							}
 						 state_region = {
 								remove_homeland = cu:metis
@@ -2999,6 +3144,7 @@
 					 if = {
 						 limit = {
 							 any_scope_pop = { culture = cu:iroquoian }
+							 state_region = { is_homeland = cu:dakota }
 						 }
 						 state_region = {
 							 remove_homeland = cu:dakota
@@ -3019,6 +3165,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:cherokee }
 							}
 							state_region = {
 								remove_homeland = cu:cherokee
@@ -3039,6 +3186,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:muskogean }
 							}
 							state_region = {
 								remove_homeland = cu:muskogean
@@ -3059,6 +3207,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:navajo }
 							}
 							state_region = {
 								remove_homeland = cu:navajo
@@ -3079,6 +3228,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:athabaskan }
 							}
 							state_region = {
 								remove_homeland = cu:athabaskan
@@ -3099,6 +3249,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:salish }
 							}
 							state_region = {
 								remove_homeland = cu:salish
@@ -3119,6 +3270,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:nez_perce }
 							}
 							state_region = {
 								remove_homeland = cu:nez_perce
@@ -3139,6 +3291,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:siouan }
 							}
 							state_region = {
 								remove_homeland = cu:siouan
@@ -3159,6 +3312,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:comanche }
 							}
 							state_region = {
 								remove_homeland = cu:comanche
@@ -3179,6 +3333,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:algonquian }
 							}
 							state_region = {
 								remove_homeland = cu:algonquian
@@ -3199,6 +3354,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:cree }
 							}
 							state_region = {
 								remove_homeland = cu:cree
@@ -3219,6 +3375,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:inuit }
 							}
 							state_region = {
 								remove_homeland = cu:inuit
@@ -3239,6 +3396,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:caddoan }
 							}
 							state_region = {
 								remove_homeland = cu:caddoan
@@ -3259,6 +3417,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:paiute }
 							}
 							state_region = {
 								remove_homeland = cu:paiute
@@ -3279,6 +3438,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:hokan }
 							}
 							state_region = {
 								remove_homeland = cu:hokan
@@ -3299,6 +3459,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:apache }
 							}
 							state_region = {
 								remove_homeland = cu:apache
@@ -3319,6 +3480,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:iroquoian }
+								state_region = { is_homeland = cu:oodham }
 							}
 							state_region = {
 								remove_homeland = cu:oodham
@@ -3341,6 +3503,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:quechua }
+								state_region = { is_homeland = cu:amazonian }
 							}
 							state_region = {
 								remove_homeland = cu:amazonian
@@ -3361,6 +3524,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:quechua }
+								state_region = { is_homeland = cu:aimara }
 							}
 							state_region = {
 								remove_homeland = cu:aimara
@@ -3381,6 +3545,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:quechua }
+								state_region = { is_homeland = cu:guarani }
 							}
 							state_region = {
 								remove_homeland = cu:guarani
@@ -3401,6 +3566,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:quechua }
+								state_region = { is_homeland = cu:patagonian }
 							}
 							state_region = {
 								remove_homeland = cu:patagonian
@@ -3421,6 +3587,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:quechua }
+								state_region = { is_homeland = cu:guajiro }
 							}
 							state_region = {
 								remove_homeland = cu:guajiro
@@ -3441,6 +3608,7 @@
 						if = {
 							limit = {
 								any_scope_pop = { culture = cu:quechua }
+								state_region = { is_homeland = cu:tupinamba }
 							}
 							state_region = {
 								remove_homeland = cu:tupinamba

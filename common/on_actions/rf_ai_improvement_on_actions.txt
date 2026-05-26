@@ -1,20 +1,33 @@
 ﻿on_yearly_pulse_country = {
   on_actions = {
-    ai_improvement
+    ai_improvement_lite
   }
 }
 
 on_monthly_pulse_country = {
     on_actions = {
+        ai_improvement_on
         ai_improvement_subsidies
     }
 }
 
-# Economic Boost Game Rule Effects
+# Lite mode keeps the expensive AI economy pass on the yearly pulse.
 
-ai_improvement = {
+ai_improvement_lite = {
     trigger = {
-        has_game_rule = ai_improvement_enabled
+        has_game_rule = ai_improvement_lite
+        is_ai = yes
+    }
+    effect = {
+        rf_ai_improvement_effect_dynamic = yes
+    }
+}
+
+# Full mode runs the same AI economy pass every month.
+
+ai_improvement_on = {
+    trigger = {
+        has_game_rule = ai_improvement_on
         is_ai = yes
     }
     effect = {
@@ -24,7 +37,7 @@ ai_improvement = {
 
 ai_improvement_subsidies = {
     trigger = {
-        has_game_rule = ai_improvement_enabled
+        rf_ai_improvement_active = yes
         is_ai = yes
     }
     effect = {

@@ -24,10 +24,14 @@ rf_annex_decentralized_annexation = {
 }
 
 ai_improvement = {
-    default = ai_improvement_enabled
+    default = ai_improvement_lite
 
-    ai_improvement_enabled = {
-        flag = ai_improvement_enabled
+    ai_improvement_lite = {
+        flag = ai_improvement_lite
+    }
+
+    ai_improvement_on = {
+        flag = ai_improvement_on
     }
 
     ai_improvement_disabled = {

@@ -2,36 +2,39 @@
 	icon = "journal_entry_icon_government"
 	group = je_group_foreign_affairs
 
-	# Make available to AI as well so AI can use auto-build buttons
+	# Player-facing controls only; AI construction automation runs from monthly on_actions.
 	is_shown_when_inactive = {
-		always = yes
+		is_player = yes
 	}
 
 	possible = {
 		always = yes
 	}
 
-	# Manual build options using scripted buttons
+	# Keep each manual action next to its matching auto-build toggle.
 	scripted_button = rf_scripted_button_build_admin_center
+	scripted_button = rf_scripted_button_auto_build_admin_activate
+	scripted_button = rf_scripted_button_auto_build_admin_deactivate
+
 	scripted_button = rf_scripted_button_build_railway
+	scripted_button = rf_scripted_button_auto_build_railway_activate
+	scripted_button = rf_scripted_button_auto_build_railway_deactivate
+
 	scripted_button = rf_scripted_button_build_port
+	scripted_button = rf_scripted_button_auto_build_port_activate
+	scripted_button = rf_scripted_button_auto_build_port_deactivate
+
 	scripted_button = rf_scripted_button_build_power_plant
+	scripted_button = rf_scripted_button_auto_build_power_activate
+	scripted_button = rf_scripted_button_auto_build_power_deactivate
+
 	scripted_button = rf_scripted_button_build_university
-	# Construction sector manual and auto
+	scripted_button = rf_scripted_button_auto_build_university_activate
+	scripted_button = rf_scripted_button_auto_build_university_deactivate
+
 	scripted_button = rf_scripted_button_build_construction_sector
 	scripted_button = rf_scripted_button_auto_build_construction_activate
 	scripted_button = rf_scripted_button_auto_build_construction_deactivate
-	# Auto-build toggles (activate/deactivate)
-	scripted_button = rf_scripted_button_auto_build_admin_activate
-	scripted_button = rf_scripted_button_auto_build_admin_deactivate
-	scripted_button = rf_scripted_button_auto_build_railway_activate
-	scripted_button = rf_scripted_button_auto_build_railway_deactivate
-	scripted_button = rf_scripted_button_auto_build_port_activate
-	scripted_button = rf_scripted_button_auto_build_port_deactivate
-	scripted_button = rf_scripted_button_auto_build_power_activate
-	scripted_button = rf_scripted_button_auto_build_power_deactivate
-	scripted_button = rf_scripted_button_auto_build_university_activate
-	scripted_button = rf_scripted_button_auto_build_university_deactivate
 
 	weight = 100
 }

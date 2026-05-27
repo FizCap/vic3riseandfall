@@ -85,3 +85,14 @@ rf_forced_colonization = {
     rf_forced_colonization_disabled = {
     }
 }
+
+rf_personal_union = {
+    default = rf_personal_union_enabled
+
+    rf_personal_union_enabled = {
+        flag = rf_personal_union_enabled
+    }
+
+    rf_personal_union_disabled = {
+    }
+}

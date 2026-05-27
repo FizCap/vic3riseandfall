@@ -1,5 +1,9 @@
 ﻿on_monthly_pulse_country = {
     on_actions = {
+        rf_ai_auto_build_monthly_gov
+        rf_ai_auto_build_monthly_rail
+        rf_ai_auto_build_monthly_port
+        rf_ai_auto_build_monthly_construction
         rf_auto_build_monthly_gov
         rf_auto_build_monthly_rail
         rf_auto_build_monthly_port
@@ -9,10 +13,10 @@
     }
 }
 
-
-rf_auto_build_monthly_gov = {
+rf_ai_auto_build_monthly_gov = {
     trigger = {
-        has_variable = rf_auto_build_gov_cooldown
+        rf_ai_improvement_active = yes
+        is_ai = yes
     }
     effect = {
         if = {
@@ -25,18 +29,21 @@ rf_auto_build_monthly_gov = {
                     }
                 }
             }
-            rf_manual_build_government_administration = yes
+            rf_auto_build_government_administration = yes
         }
     }
 }
 
-rf_auto_build_monthly_rail = {
+rf_ai_auto_build_monthly_rail = {
     trigger = {
-        has_variable = rf_auto_build_rail_cooldown
+        rf_ai_improvement_active = yes
+        is_ai = yes
     }
     effect = {
         if = {
             limit = {
+                gold_reserves > rf_autobuild_reserve_limit
+                bureaucracy > 0
                 NOT = {
                     any_scope_state = {
                         b:building_railway ?= {
@@ -50,13 +57,16 @@ rf_auto_build_monthly_rail = {
     }
 }
 
-rf_auto_build_monthly_port = {
+rf_ai_auto_build_monthly_port = {
     trigger = {
-        has_variable = rf_auto_build_port_cooldown
+        rf_ai_improvement_active = yes
+        is_ai = yes
     }
     effect = {
         if = {
             limit = {
+                gold_reserves > rf_autobuild_reserve_limit
+                bureaucracy > 0
                 NOT = {
                     any_scope_state = {
                         b:building_port ?= {
@@ -70,54 +80,19 @@ rf_auto_build_monthly_port = {
     }
 }
 
-rf_auto_build_monthly_power = {
+rf_ai_auto_build_monthly_construction = {
     trigger = {
-        has_variable = rf_auto_build_power_cooldown
-    }
-    effect = {
-        if = {
-            limit = {
-                NOT = {
-                    any_scope_state = {
-                        b:building_power_plant ?= {
-                            is_under_construction = yes
-                        }
-                    }
-                }
-            }
-            rf_manual_build_power_plant = yes
-        }
-    }
-}
-
-rf_auto_build_monthly_university = {
-    trigger = {
-        has_variable = rf_auto_build_university_cooldown
-    }
-    effect = {
-        if = {
-            limit = {
-                NOT = {
-                    any_scope_state = {
-                        b:building_university ?= {
-                            is_under_construction = yes
-                        }
-                    }
-                }
-            }
-            rf_manual_build_university = yes
-        }
-    }
-}
-
-rf_auto_build_monthly_construction = {
-    trigger = {
-        has_variable = rf_auto_build_construction_cooldown
+        rf_ai_improvement_active = yes
+        is_ai = yes
     }
     effect = {
         if = {
             limit = {
                 rf_can_expand_construction_sector = yes
+                gold_reserves > rf_autobuild_reserve_limit
+                rf_weekly_net_value > 0
+                rf_positive_surplus_months_value >= 6
+                rf_reserve_income_ratio <= 12
                 NOT = {
                     any_scope_state = {
                         b:building_construction_sector ?= {
@@ -128,5 +103,74 @@ rf_auto_build_monthly_construction = {
             }
             rf_manual_build_construction_sector = yes
         }
+    }
+}
+
+rf_auto_build_monthly_gov = {
+    trigger = {
+        is_player = yes
+        has_variable = rf_auto_build_gov_cooldown
+    }
+    effect = {
+        rf_player_auto_build_government_administration_scaled = yes
+    }
+}
+
+rf_auto_build_monthly_rail = {
+    trigger = {
+        is_player = yes
+        has_variable = rf_auto_build_rail_cooldown
+    }
+    effect = {
+        # Railway candidates already avoid states with active railway construction.
+        # Do not let one active railway block infrastructure fixes elsewhere.
+        rf_player_auto_build_railway_scaled = yes
+    }
+}
+
+rf_auto_build_monthly_port = {
+    trigger = {
+        is_player = yes
+        has_variable = rf_auto_build_port_cooldown
+    }
+    effect = {
+        # Port candidates already avoid states with active port construction.
+        # Do not let one active port block infrastructure fixes elsewhere.
+        rf_player_auto_build_port_scaled = yes
+    }
+}
+
+rf_auto_build_monthly_power = {
+    trigger = {
+        is_player = yes
+        has_variable = rf_auto_build_power_cooldown
+    }
+    effect = {
+        # Power plant candidates already avoid repeated coverage in the same state.
+        # Do not let one active power plant block coverage elsewhere.
+        rf_player_auto_build_power_plant_scaled = yes
+    }
+}
+
+rf_auto_build_monthly_university = {
+    trigger = {
+        is_player = yes
+        has_variable = rf_auto_build_university_cooldown
+    }
+    effect = {
+        # University candidates already avoid states with queued/built coverage.
+        # Do not let one active university construction block coverage elsewhere.
+        rf_player_auto_build_university_scaled = yes
+    }
+}
+
+rf_auto_build_monthly_construction = {
+    trigger = {
+        is_player = yes
+        has_variable = rf_auto_build_construction_cooldown
+    }
+    effect = {
+        # Player auto-construction follows the manual placement gate; AI keeps the backlog gate above.
+        rf_player_auto_build_construction_sector_scaled = yes
     }
 }

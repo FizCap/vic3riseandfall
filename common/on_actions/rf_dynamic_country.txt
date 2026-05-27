@@ -22,6 +22,8 @@ rf_dynamic_country_ai_monthly = {
             is_country_type = unrecognized
         }
         NOT = { is_subject_type = subject_type_chartered_company }
+        # AI subjects should not recursively create their own dynamic subjects; players can still use the manual flow.
+        is_subject = no
         is_player = no
         NOT = {
             any_country = {

@@ -218,6 +218,11 @@ rf_dynamic_country_ai = {
                 is_country_type = unrecognized
             }
             NOT = { is_subject_type = subject_type_chartered_company }
+            # Keep AI subject countries from spawning dynamic countries, while leaving player subject creation available.
+            OR = {
+                is_player = yes
+                is_subject = no
+            }
             NOT = {
                 any_country = {
                     OR = {

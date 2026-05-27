@@ -106,6 +106,25 @@ rf_autobuild_reserve_limit = {
     multiply = 0.45
 }
 
+# AI government construction can treat only a small slice of the investment pool as usable cash.
+# This matches the treasury transfer framework's intent without draining the pool pre-emptively.
+rf_ai_government_autobuild_effective_reserves = {
+    value = gold_reserves
+    add = {
+        value = investment_pool
+        multiply = 0.20
+    }
+}
+
+rf_ai_government_autobuild_reserve_surplus = {
+    value = rf_ai_government_autobuild_effective_reserves
+    subtract = rf_autobuild_reserve_limit
+}
+
+rf_autobuild_effective_reserve_surplus = {
+    value = rf_ai_government_autobuild_reserve_surplus
+}
+
 # Reserve buffer used by monthly AI subsidy logic.
 rf_ai_subsidy_reserve_floor = {
     value = gold_reserves_limit

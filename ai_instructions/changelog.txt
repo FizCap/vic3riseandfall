@@ -1,17 +1,21 @@
-﻿Victoria 3 Timeline v1.0.2
+﻿Victoria 3 Timeline v1.0.3
 
-Bug Fixes
-- Fixed culture merge homeland remapping so merged cultures only inherited states that were already homelands of the source culture.
+Autobuilder
+- Removed treasury reserve limits from the manual Government Administration button while keeping queue and target checks.
+- Updated AI Government Administration auto-build logic to count gold reserves plus 20% of the investment pool before queuing new buildings.
+- Removed treasury reserve limits from manual University and Power Plant construction while keeping queue, technology, and target checks.
+- Reworked University construction to cover every eligible state with one university and stop there.
+- Fixed University auto-build so one active university construction no longer blocks coverage in other eligible states.
+- Relaxed player Railway, Port, Power Plant, and Construction Sector auto-build checks so one active construction no longer blocks other valid player auto-build targets.
+- Added dynamic affordability-based player auto-build batching that scales monthly construction with surplus, reserve health, valid targets, and government queue room.
+- Changed University auto-build to coverage-only, stopping once every eligible state has one built or queued University instead of expanding by GDP.
+- Updated manual and automatic University coverage to prioritize the highest-GDP eligible states first.
+- Reordered autobuilder controls so each manual construction button appears next to its matching auto-build toggle.
+- Made autobuilder buttons player-only and moved AI construction automation out of scripted button chance logic into monthly effects.
+- Fixed the missing Government Administration construction queue trigger localization.
 
 Dynamic Countries
-- Added dynamic country identity events that let player-created subjects choose colonial, homeland, or multicultural culture policies and then customize their official religion, while AI-created countries weight both choices by citizenship and church laws.
-- Added a Dynamic Country Builder toggle that lets players automatically apply law-based culture and religion identity choices instead of answering the identity events.
-- Adjusted Millet System auto-religion behavior so dynamic countries prefer their local homeland faith instead of automatically inheriting the creator's state religion.
-- Removed the automated law-following choice from the player religion popup so manual dynamic-country religion choices are explicit.
-- Added visible state-religion effect previews to each manual dynamic-country religion choice.
-- Weighted the player religion popup recommendations so the checkmarked option matches the creator's church law, including State Religion recommending preservation of the creator's faith.
-- Simplified manual dynamic-country religion choices to preserve the creator's state faith, adopt a local popular faith, or proclaim state atheism.
-- Added explicit Subjecthood citizenship handling so dynamic countries favor homeland-based subject governments over colonial-only or multicultural identities.
+- Prevented AI subject nations from creating dynamic countries while keeping dynamic country creation available for player subjects.
 
-AI
-- Added Lite and On modes for AI Improvement, with Lite preserving the yearly economy pass and On running it monthly.
+Personal Unions
+- Added a Personal Unions game rule that toggled personal union succession events and yearly age-weighted ruler or heir death rolls for monarchies, with medical technologies reducing the chance.

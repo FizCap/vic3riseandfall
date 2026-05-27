@@ -1,5 +1,23 @@
 ﻿rf_manual_build_government_administration = {
-    # Fix bureaucracy first; only rich, stable economies invest in broader tax-capacity coverage.
+    # Fix bureaucracy first; manual use bypasses treasury gates and keeps only need and queue checks.
+    if = {
+        limit = {
+            bureaucracy < 0
+            rf_can_manually_queue_admin_bureaucracy_construction = yes
+        }
+        rf_build_best_admin_center_bureaucracy_state = yes
+    }
+
+    if = {
+        limit = {
+            rf_can_manually_queue_admin_tax_capacity_construction = yes
+        }
+        rf_build_best_admin_center_tax_capacity_state = yes
+    }
+}
+
+rf_auto_build_government_administration = {
+    # Automated construction always uses the conservative reserve checks.
     if = {
         limit = {
             bureaucracy < 0
@@ -13,6 +31,140 @@
             rf_can_queue_admin_tax_capacity_construction = yes
         }
         rf_build_best_admin_center_tax_capacity_state = yes
+    }
+}
+
+rf_player_auto_build_government_administration_once = {
+    # Player auto-build uses the same light gates as the manual button, but queues only one target per slot.
+    if = {
+        limit = {
+            bureaucracy < 0
+            rf_can_manually_queue_admin_bureaucracy_construction = yes
+            any_scope_state = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+            }
+        }
+        rf_build_best_admin_center_bureaucracy_state = yes
+    }
+    else_if = {
+        limit = {
+            rf_can_manually_queue_admin_tax_capacity_construction = yes
+            any_scope_state = {
+                rf_admin_center_tax_capacity_state_candidate = yes
+            }
+        }
+        rf_build_best_admin_center_tax_capacity_state = yes
+    }
+}
+
+rf_player_auto_build_government_administration_scaled = {
+    # First slot preserves the current manual/coverage behavior.
+    rf_player_auto_build_government_administration_once = yes
+
+    if = {
+        limit = {
+            bureaucracy < 0
+            rf_player_autobuild_slot_2 = yes
+        }
+        # Rich player economies scale by valid states and current queue room instead of a fixed slot count.
+        every_scope_state = {
+            limit = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                owner = { construction_queue_government_duration < 52 }
+            }
+            start_building_construction = building_government_administration
+        }
+    }
+    if = {
+        limit = {
+            bureaucracy < 0
+            rf_player_autobuild_slot_3 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                owner = { construction_queue_government_duration < 78 }
+            }
+            start_building_construction = building_government_administration
+        }
+    }
+    if = {
+        limit = {
+            bureaucracy < 0
+            rf_player_autobuild_slot_4 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                owner = { construction_queue_government_duration < 104 }
+            }
+            start_building_construction = building_government_administration
+        }
+    }
+    if = {
+        limit = {
+            bureaucracy < 0
+            rf_player_autobuild_slot_5 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_admin_center_bureaucracy_state_candidate = yes
+                owner = { construction_queue_government_duration < 156 }
+            }
+            start_building_construction = building_government_administration
+        }
+    }
+    else_if = {
+        limit = {
+            rf_can_manually_queue_admin_tax_capacity_construction = yes
+            rf_player_autobuild_slot_2 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_admin_center_tax_capacity_state_candidate = yes
+                owner = { construction_queue_government_duration < 52 }
+            }
+            start_building_construction = building_government_administration
+        }
+    }
+    if = {
+        limit = {
+            bureaucracy > 100
+            rf_player_autobuild_slot_3 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_admin_center_tax_capacity_state_candidate = yes
+                owner = { construction_queue_government_duration < 78 }
+            }
+            start_building_construction = building_government_administration
+        }
+    }
+    if = {
+        limit = {
+            bureaucracy > 100
+            rf_player_autobuild_slot_4 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_admin_center_tax_capacity_state_candidate = yes
+                owner = { construction_queue_government_duration < 104 }
+            }
+            start_building_construction = building_government_administration
+        }
+    }
+    if = {
+        limit = {
+            bureaucracy > 100
+            rf_player_autobuild_slot_5 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_admin_center_tax_capacity_state_candidate = yes
+                owner = { construction_queue_government_duration < 156 }
+            }
+            start_building_construction = building_government_administration
+        }
     }
 }
 
@@ -113,64 +265,106 @@ rf_build_best_admin_center_bureaucracy_state = {
 }
 
 rf_manual_build_university = {
-    # Queue a limited university batch so the player button improves coverage without overwhelming the budget.
+    # Cover every eligible state with one university. Expansion is disabled because innovation cap is not script-exposed.
     if = {
         limit = {
-            rf_can_queue_university_construction = yes
+            rf_can_manually_queue_university_construction = yes
+            any_scope_state = {
+                rf_university_missing_state_candidate = yes
+            }
         }
-        rf_build_best_university_state = yes
-    }
-
-    if = {
-        limit = {
-            rf_can_queue_university_construction = yes
-            rf_positive_surplus_months_value >= 6
-            construction_queue_num_queued_government_levels < 9
-            construction_queue_government_duration < 39
-        }
-        rf_build_best_university_state = yes
-    }
-
-    if = {
-        limit = {
-            rf_can_queue_university_construction = yes
-            rf_positive_surplus_months_value >= 9
-            rf_reserve_income_ratio <= 12
-            construction_queue_num_queued_government_levels < 6
-            construction_queue_government_duration < 26
-        }
-        rf_build_best_university_state = yes
-    }
-
-    if = {
-        limit = {
-            rf_can_queue_university_construction = yes
-            rf_positive_surplus_months_value >= 12
-            rf_reserve_income_ratio <= 6
-            construction_queue_num_queued_government_levels < 3
-            construction_queue_government_duration < 13
-        }
-        rf_build_best_university_state = yes
+        rf_build_best_university_missing_state = yes
     }
 }
 
-rf_build_best_university_state = {
-    # Prefer populous incorporated states first; fall back to smaller states only after good candidates are covered.
+rf_auto_build_university = {
+    # Coverage-only university auto-build. Do not expand past one per eligible state.
+    if = {
+        limit = {
+            rf_can_manually_queue_university_construction = yes
+            any_scope_state = {
+                rf_university_missing_state_candidate = yes
+            }
+        }
+        rf_build_best_university_missing_state = yes
+    }
+}
+
+rf_player_auto_build_university_scaled = {
+    # University automation is dynamic for coverage, but never expands past one built-or-queued level per state.
+    rf_auto_build_university = yes
+
+    if = {
+        limit = { rf_player_autobuild_slot_2 = yes }
+        ordered_state = {
+            limit = {
+                rf_university_missing_state_candidate = yes
+                owner = { construction_queue_government_duration < 52 }
+            }
+            order_by = gdp
+            max = 9999
+            check_range_bounds = no
+            start_building_construction = building_university
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_3 = yes }
+        ordered_state = {
+            limit = {
+                rf_university_missing_state_candidate = yes
+                owner = { construction_queue_government_duration < 78 }
+            }
+            order_by = gdp
+            max = 9999
+            check_range_bounds = no
+            start_building_construction = building_university
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_4 = yes }
+        ordered_state = {
+            limit = {
+                rf_university_missing_state_candidate = yes
+                owner = { construction_queue_government_duration < 104 }
+            }
+            order_by = gdp
+            max = 9999
+            check_range_bounds = no
+            start_building_construction = building_university
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_5 = yes }
+        ordered_state = {
+            limit = {
+                rf_university_missing_state_candidate = yes
+                owner = { construction_queue_government_duration < 156 }
+            }
+            order_by = gdp
+            max = 9999
+            check_range_bounds = no
+            start_building_construction = building_university
+        }
+    }
+}
+
+rf_build_best_university_missing_state = {
+    # Prefer the highest-GDP missing states first; fall back to unincorporated coverage only after incorporated candidates.
     if = {
         limit = {
             any_scope_state = {
-                rf_university_state_candidate = yes
+                rf_university_missing_state_candidate = yes
                 is_incorporated = yes
                 state_population >= 250000
             }
         }
         ordered_state = {
             limit = {
-                rf_university_state_candidate = yes
+                rf_university_missing_state_candidate = yes
                 is_incorporated = yes
                 state_population >= 250000
             }
-            order_by = state_population
+            order_by = gdp
             position = 0
             check_range_bounds = no
             start_building_construction = building_university
@@ -179,16 +373,16 @@ rf_build_best_university_state = {
     else_if = {
         limit = {
             any_scope_state = {
-                rf_university_state_candidate = yes
+                rf_university_missing_state_candidate = yes
                 is_incorporated = yes
             }
         }
         ordered_state = {
             limit = {
-                rf_university_state_candidate = yes
+                rf_university_missing_state_candidate = yes
                 is_incorporated = yes
             }
-            order_by = state_population
+            order_by = gdp
             position = 0
             check_range_bounds = no
             start_building_construction = building_university
@@ -197,9 +391,9 @@ rf_build_best_university_state = {
     else = {
         ordered_state = {
             limit = {
-                rf_university_state_candidate = yes
+                rf_university_missing_state_candidate = yes
             }
-            order_by = state_population
+            order_by = gdp
             position = 0
             check_range_bounds = no
             start_building_construction = building_university
@@ -233,45 +427,333 @@ rf_manual_build_port = {
     }
 }
 
+rf_auto_build_railway = {
+    rf_player_auto_build_railway_scaled = yes
+}
+
+rf_player_auto_build_railway_once = {
+    # Queue one railway in the largest eligible infrastructure-deficit state.
+    ordered_state = {
+        limit = {
+            rf_railway_auto_state_candidate = yes
+        }
+        order_by = state_population
+        position = 0
+        check_range_bounds = no
+        start_building_construction = building_railway
+    }
+}
+
+rf_player_auto_build_railway_scaled = {
+    # First slot fixes one infrastructure bottleneck even for modest economies.
+    rf_player_auto_build_railway_once = yes
+
+    if = {
+        limit = { rf_player_autobuild_slot_2 = yes }
+        every_scope_state = {
+            limit = {
+                rf_railway_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 52 }
+            }
+            start_building_construction = building_railway
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_3 = yes }
+        every_scope_state = {
+            limit = {
+                rf_railway_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 78 }
+            }
+            start_building_construction = building_railway
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_4 = yes }
+        every_scope_state = {
+            limit = {
+                rf_railway_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 104 }
+            }
+            start_building_construction = building_railway
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_5 = yes }
+        every_scope_state = {
+            limit = {
+                rf_railway_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 156 }
+            }
+            start_building_construction = building_railway
+        }
+    }
+}
+
+rf_auto_build_port = {
+    rf_player_auto_build_port_scaled = yes
+}
+
+rf_player_auto_build_port_once = {
+    # Queue one port in the largest eligible infrastructure-deficit state.
+    ordered_state = {
+        limit = {
+            rf_port_auto_state_candidate = yes
+        }
+        order_by = state_population
+        position = 0
+        check_range_bounds = no
+        start_building_construction = building_port
+    }
+}
+
+rf_player_auto_build_port_scaled = {
+    # First slot fixes one coastal infrastructure bottleneck; surplus economies sweep remaining valid coasts.
+    rf_player_auto_build_port_once = yes
+
+    if = {
+        limit = { rf_player_autobuild_slot_2 = yes }
+        every_scope_state = {
+            limit = {
+                rf_port_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 52 }
+            }
+            start_building_construction = building_port
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_3 = yes }
+        every_scope_state = {
+            limit = {
+                rf_port_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 78 }
+            }
+            start_building_construction = building_port
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_4 = yes }
+        every_scope_state = {
+            limit = {
+                rf_port_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 104 }
+            }
+            start_building_construction = building_port
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_5 = yes }
+        every_scope_state = {
+            limit = {
+                rf_port_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 156 }
+            }
+            start_building_construction = building_port
+        }
+    }
+}
+
 rf_manual_build_power_plant = {
-    # Queue a limited power plant batch. Missing states are always prioritized before profitable expansion.
+    # Queue a limited power plant batch without treasury gates; automated use has its own reserve-checked effect.
     if = {
         limit = {
-            rf_can_queue_power_plant_construction = yes
+            rf_can_manually_queue_power_plant_construction = yes
         }
         rf_build_best_power_plant_state = yes
     }
 
     if = {
         limit = {
-            rf_can_queue_power_plant_construction = yes
-            rf_positive_surplus_months_value >= 6
             construction_queue_num_queued_government_levels < 9
             construction_queue_government_duration < 39
+            rf_can_manually_queue_power_plant_construction = yes
         }
         rf_build_best_power_plant_state = yes
     }
 
     if = {
         limit = {
-            rf_can_queue_power_plant_construction = yes
-            rf_positive_surplus_months_value >= 9
-            rf_reserve_income_ratio <= 12
             construction_queue_num_queued_government_levels < 6
             construction_queue_government_duration < 26
+            rf_can_manually_queue_power_plant_construction = yes
         }
         rf_build_best_power_plant_state = yes
     }
 
     if = {
         limit = {
-            rf_can_queue_power_plant_construction = yes
-            rf_positive_surplus_months_value >= 12
-            rf_reserve_income_ratio <= 6
             construction_queue_num_queued_government_levels < 3
             construction_queue_government_duration < 13
+            rf_can_manually_queue_power_plant_construction = yes
         }
         rf_build_best_power_plant_state = yes
+    }
+}
+
+rf_auto_build_power_plant = {
+    # Automated power plants cover missing states with the same light gate as manual construction.
+    # Extra levels stay economy-gated so auto-build does not over-invest after coverage is complete.
+    if = {
+        limit = {
+            rf_can_manually_queue_power_plant_construction = yes
+            any_scope_state = {
+                rf_power_plant_missing_state_candidate = yes
+            }
+        }
+        rf_build_best_power_plant_state = yes
+    }
+
+    else_if = {
+        limit = {
+            rf_can_manually_queue_power_plant_construction = yes
+            rf_ai_government_autobuild_reserve_surplus > 0
+            rf_weekly_net_value > 0
+            rf_positive_surplus_months_value >= 6
+            rf_reserve_income_ratio <= 12
+            NOT = {
+                any_scope_state = {
+                    rf_power_plant_missing_state_candidate = yes
+                }
+            }
+            any_scope_state = {
+                rf_power_plant_expansion_state_candidate = yes
+            }
+        }
+        rf_build_best_power_plant_state = yes
+    }
+}
+
+rf_player_auto_build_power_plant_scaled = {
+    # First slot uses the existing coverage/expansion priority; large economies then sweep valid targets.
+    rf_auto_build_power_plant = yes
+
+    if = {
+        limit = { rf_player_autobuild_slot_2 = yes }
+        if = {
+            limit = {
+                any_scope_state = {
+                    rf_power_plant_missing_state_candidate = yes
+                }
+            }
+            every_scope_state = {
+                limit = {
+                    rf_power_plant_missing_state_candidate = yes
+                    owner = { construction_queue_government_duration < 52 }
+                }
+                start_building_construction = building_power_plant
+            }
+        }
+        else_if = {
+            limit = {
+                rf_ai_government_autobuild_reserve_surplus > 0
+                rf_weekly_net_value > 0
+                rf_positive_surplus_months_value >= 6
+                rf_reserve_income_ratio <= 12
+            }
+            every_scope_state = {
+                limit = {
+                    rf_power_plant_expansion_state_candidate = yes
+                    owner = { construction_queue_government_duration < 52 }
+                }
+                start_building_construction = building_power_plant
+            }
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_3 = yes }
+        if = {
+            limit = {
+                any_scope_state = {
+                    rf_power_plant_missing_state_candidate = yes
+                }
+            }
+            every_scope_state = {
+                limit = {
+                    rf_power_plant_missing_state_candidate = yes
+                    owner = { construction_queue_government_duration < 78 }
+                }
+                start_building_construction = building_power_plant
+            }
+        }
+        else_if = {
+            limit = {
+                rf_ai_government_autobuild_reserve_surplus > 0
+                rf_weekly_net_value > 0
+                rf_positive_surplus_months_value >= 6
+                rf_reserve_income_ratio <= 12
+            }
+            every_scope_state = {
+                limit = {
+                    rf_power_plant_expansion_state_candidate = yes
+                    owner = { construction_queue_government_duration < 78 }
+                }
+                start_building_construction = building_power_plant
+            }
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_4 = yes }
+        if = {
+            limit = {
+                any_scope_state = {
+                    rf_power_plant_missing_state_candidate = yes
+                }
+            }
+            every_scope_state = {
+                limit = {
+                    rf_power_plant_missing_state_candidate = yes
+                    owner = { construction_queue_government_duration < 104 }
+                }
+                start_building_construction = building_power_plant
+            }
+        }
+        else_if = {
+            limit = {
+                rf_ai_government_autobuild_reserve_surplus > 0
+                rf_weekly_net_value > 0
+                rf_positive_surplus_months_value >= 6
+                rf_reserve_income_ratio <= 12
+            }
+            every_scope_state = {
+                limit = {
+                    rf_power_plant_expansion_state_candidate = yes
+                    owner = { construction_queue_government_duration < 104 }
+                }
+                start_building_construction = building_power_plant
+            }
+        }
+    }
+    if = {
+        limit = { rf_player_autobuild_slot_5 = yes }
+        if = {
+            limit = {
+                any_scope_state = {
+                    rf_power_plant_missing_state_candidate = yes
+                }
+            }
+            every_scope_state = {
+                limit = {
+                    rf_power_plant_missing_state_candidate = yes
+                    owner = { construction_queue_government_duration < 156 }
+                }
+                start_building_construction = building_power_plant
+            }
+        }
+        else_if = {
+            limit = {
+                rf_ai_government_autobuild_reserve_surplus > 0
+                rf_weekly_net_value > 0
+                rf_positive_surplus_months_value >= 6
+                rf_reserve_income_ratio <= 12
+            }
+            every_scope_state = {
+                limit = {
+                    rf_power_plant_expansion_state_candidate = yes
+                    owner = { construction_queue_government_duration < 156 }
+                }
+                start_building_construction = building_power_plant
+            }
+        }
     }
 }
 
@@ -409,6 +891,133 @@ rf_manual_build_construction_sector = {
                 }
                 start_building_construction = building_construction_sector
             }
+        }
+    }
+}
+
+rf_player_auto_build_construction_sector_once = {
+    # Queue one construction sector, preferring coastal states with spare infrastructure.
+    if = {
+        limit = {
+            any_scope_state = {
+                rf_construction_sector_auto_state_candidate = yes
+                is_coastal = yes
+                infrastructure_delta > 0
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_construction_sector_auto_state_candidate = yes
+                is_coastal = yes
+                infrastructure_delta > 0
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_construction_sector
+        }
+    }
+    else_if = {
+        limit = {
+            any_scope_state = {
+                rf_construction_sector_auto_state_candidate = yes
+            }
+        }
+        ordered_state = {
+            limit = {
+                rf_construction_sector_auto_state_candidate = yes
+            }
+            order_by = state_population
+            position = 0
+            check_range_bounds = no
+            start_building_construction = building_construction_sector
+        }
+    }
+}
+
+rf_player_auto_build_construction_sector_scaled = {
+    # Construction sectors keep the existing backlog gate for slot 1, then scale only while demand remains active.
+    if = {
+        limit = {
+            rf_can_expand_construction_sector = yes
+        }
+        rf_player_auto_build_construction_sector_once = yes
+    }
+    if = {
+        limit = {
+            rf_can_expand_construction_sector = yes
+            rf_player_autobuild_slot_2 = yes
+        }
+        if = {
+            limit = {
+                any_scope_state = {
+                    rf_construction_sector_auto_state_candidate = yes
+                    is_coastal = yes
+                    infrastructure_delta > 0
+                }
+            }
+            every_scope_state = {
+                limit = {
+                    rf_construction_sector_auto_state_candidate = yes
+                    is_coastal = yes
+                    infrastructure_delta > 0
+                    owner = { construction_queue_government_duration < 52 }
+                }
+                start_building_construction = building_construction_sector
+            }
+        }
+        else_if = {
+            limit = {
+                any_scope_state = {
+                    rf_construction_sector_auto_state_candidate = yes
+                }
+            }
+            every_scope_state = {
+                limit = {
+                    rf_construction_sector_auto_state_candidate = yes
+                    owner = { construction_queue_government_duration < 52 }
+                }
+                start_building_construction = building_construction_sector
+            }
+        }
+    }
+    if = {
+        limit = {
+            rf_can_expand_construction_sector = yes
+            rf_player_autobuild_slot_3 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_construction_sector_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 78 }
+            }
+            start_building_construction = building_construction_sector
+        }
+    }
+    if = {
+        limit = {
+            rf_can_expand_construction_sector = yes
+            rf_player_autobuild_slot_4 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_construction_sector_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 104 }
+            }
+            start_building_construction = building_construction_sector
+        }
+    }
+    if = {
+        limit = {
+            rf_can_expand_construction_sector = yes
+            rf_player_autobuild_slot_5 = yes
+        }
+        every_scope_state = {
+            limit = {
+                rf_construction_sector_auto_state_candidate = yes
+                owner = { construction_queue_government_duration < 156 }
+            }
+            start_building_construction = building_construction_sector
         }
     }
 }

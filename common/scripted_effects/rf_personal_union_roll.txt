@@ -26,3 +26,105 @@
         }
     }
 }
+
+rf_personal_union_historical_mortality_roll = {
+    # Roll the heir first so a subsequent ruler death can naturally feed the existing personal-union succession logic.
+    if = {
+        limit = {
+            exists = heir
+            heir = {
+                is_character_alive = yes
+            }
+        }
+        heir = {
+            random = {
+                chance = 1
+                modifier = {
+                    if = {
+                        limit = { age >= 50 }
+                        add = 1
+                    }
+                    if = {
+                        limit = { age >= 60 }
+                        add = 2
+                    }
+                    if = {
+                        limit = { age >= 70 }
+                        add = 4
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = medical_degrees } }
+                        multiply = 0.9
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = pharmaceuticals } }
+                        multiply = 0.75
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = quinine } }
+                        multiply = 0.9
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = malaria_prevention } }
+                        multiply = 0.85
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = antibiotics } }
+                        multiply = 0.5
+                    }
+                }
+                kill_character = yes
+            }
+        }
+    }
+
+    # Historical succession volatility: a low yearly chance that climbs sharply for older monarchs.
+    if = {
+        limit = {
+            exists = ruler
+            ruler = {
+                is_character_alive = yes
+            }
+        }
+        ruler = {
+            random = {
+                chance = 1
+                modifier = {
+                    if = {
+                        limit = { age >= 50 }
+                        add = 1
+                    }
+                    if = {
+                        limit = { age >= 60 }
+                        add = 2
+                    }
+                    if = {
+                        limit = { age >= 70 }
+                        add = 4
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = medical_degrees } }
+                        multiply = 0.9
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = pharmaceuticals } }
+                        multiply = 0.75
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = quinine } }
+                        multiply = 0.9
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = malaria_prevention } }
+                        multiply = 0.85
+                    }
+                    if = {
+                        limit = { owner = { has_technology_researched = antibiotics } }
+                        multiply = 0.5
+                    }
+                }
+                kill_character = yes
+            }
+        }
+    }
+}
